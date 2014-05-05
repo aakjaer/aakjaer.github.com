@@ -1,7 +1,13 @@
 @import '../_bower_components/bootstrap-sass/vendor/assets/stylesheets/bootstrap.scss';
 
-/*****************************************************************************/
-/*
-/* Common
-/*
-/*****************************************************************************/
+.stage {
+	padding: 110px 0;
+	text-transform: uppercase;
+	background: #94ecd2;
+
+	.stage-header {
+		font-size: 130px;
+		font-size: 13rem;
+		color: #dffff6;
+	}
+}
