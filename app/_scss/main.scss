@@ -1,13 +1,85 @@
+
+
+// overwriting bootstrap variables
+$text-color: #99a295;
+$link-color: #f24f4d;
+$font-family-sans-serif: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+
+// import Bootstrap files
 @import '../_bower_components/bootstrap-sass/vendor/assets/stylesheets/bootstrap.scss';
 
-.stage {
-	padding: 110px 0;
-	text-transform: uppercase;
-	background: #94ecd2;
 
-	.stage-header {
-		font-size: 130px;
-		font-size: 13rem;
-		color: #dffff6;
+
+
+
+//.......................................
+
+body {
+	margin: 0;
+	font-weight: 300;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+
+// stage section
+.stage {
+	padding: 50px 0;
+
+	.stage-img {
+		display: block;
+		margin: 0 auto 50px; // 100px;
 	}
+
+	.stage-lead {
+		font-size: 30px;
+		font-size: 3rem;
+		letter-spacing: 0.03em;
+		font-weight: 100;
+		text-align: center;
+	}
+
+
+	@media screen and (min-width: $screen-sm-min) {
+		padding: 170px 0 100px;
+
+		.stage-img {
+			margin-bottom: 100px;
+		}
+	}
+}
+
+.teasers [class*="col-"] + [class*="col-"] {
+	@media screen and (max-width: $screen-xs-max) {
+		margin-top: 50px;
+	}
+}
+
+
+.teaser-header,
+.teaser-text {
+	line-height: 1.5em;
+}
+
+.teaser-header {
+	font-size: 25px;
+	font-size: 2.5rem;
+	margin-bottom: 15px;
+	font-weight: normal;
+	text-transform: uppercase;
+	color: #768371;
+}
+
+.teaser-text {
+	padding-right: 30px;
+	font-size: 20px;
+	font-size: 2rem;
+}
+
+
+footer[role="contentinfo"] {
+	margin-top: 25px;
+	padding: 25px 0 40px;
 }
