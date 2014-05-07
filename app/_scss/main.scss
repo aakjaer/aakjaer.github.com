@@ -51,32 +51,41 @@ a:hover {
 	}
 }
 
-.teasers [class*="col-"] + [class*="col-"] {
+.teasers { 
+
+	.teaser-header {
+		font-size: 25px;
+		font-size: 2.5rem;
+		margin-bottom: 15px;
+		font-weight: normal;
+		text-transform: uppercase;
+		color: #768371;
+		line-height: 1.5em;
+	}
+
+	.teaser-text {
+		font-size: 18px;
+		font-size: 1.8rem;
+		line-height: 1.5em;
+	}
+
 	@media screen and (max-width: $screen-xs-max) {
-		margin-top: 50px;
+
+		.teaser + .teaser {
+			margin-top: 50px;
+		}
+	}
+
+	@media screen and (min-width: $screen-sm-min) {
+
+		.teaser-text {
+			padding-right: 30px;
+			font-size: 20px;
+			font-size: 2rem;
+		}
 	}
 }
 
-
-.teaser-header,
-.teaser-text {
-	line-height: 1.5em;
-}
-
-.teaser-header {
-	font-size: 25px;
-	font-size: 2.5rem;
-	margin-bottom: 15px;
-	font-weight: normal;
-	text-transform: uppercase;
-	color: #768371;
-}
-
-.teaser-text {
-	padding-right: 30px;
-	font-size: 20px;
-	font-size: 2rem;
-}
 
 
 footer[role="contentinfo"] {

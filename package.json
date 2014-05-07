@@ -5,7 +5,7 @@
   "description": "Yeoman workflow for hamsterboy.dk",
   "dependencies": {},
   "devDependencies": {
-    "grunt": "~0.4.1",
+    "grunt": "^0.4.4",
     "grunt-build-control": "~0.1.2",
     "grunt-concurrent": "~0.4.3",
     "grunt-contrib-clean": "~0.5.0",
