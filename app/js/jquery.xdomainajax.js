@@ -14,7 +14,7 @@ jQuery.ajax = (function(_ajax){
     
     var protocol = location.protocol,
         hostname = location.hostname,
-        exRegex = RegExp(protocol + '//' + hostname),
+        exRegex = new RegExp(protocol + '//' + hostname),
         YQL = 'http' + (/^https/.test(protocol)?'s':'') + '://query.yahooapis.com/v1/public/yql?callback=?',
         query = 'select * from html where url="{URL}" and xpath="*"';
     
