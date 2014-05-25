@@ -1,0 +1,96 @@
+$body-bg:               	#292929 !default;
+$text-color: 				#ccc;
+$font-family-sans-serif: 	"Lato", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$icon-font-path: 			"../_bower_components/bootstrap-sass/vendor/assets/stylesheets/bootstrap.scss";
+
+// Font awesome icons
+$fa-font-path: "../_bower_components/font-awesome/fonts";
+@import "../_bower_components/font-awesome/scss/font-awesome";
+
+// import Bootstrap
+@import "../_bower_components/bootstrap-sass/vendor/assets/stylesheets/bootstrap.scss";
+
+
+$brand-primary: 			#1fe1c1;
+
+$gaugeDiameter: 			2.5rem;
+$gaugeBorderWidth: 			10px;
+$gaugeBorder:				$gaugeBorderWidth solid #efefef;
+$gaugeArrowHeight: 			20px;
+$gaugeArrowWidth: 			$gaugeArrowHeight / 4;
+
+img {
+	@extend .img-responsive;
+}
+
+
+.weather-stations {
+
+	> li > a {
+		display: block;
+		padding: 0.5em 0;
+		color: $text-color;
+		cursor: pointer;
+	}
+
+		
+	h3 {
+		margin: 0;
+		color: #fff;
+		line-height: 3rem;
+		font-size: 1.6rem;
+		text-transform: uppercase;
+	}
+
+	.speed {
+		display: inline-block;
+		margin-right: 20px;
+		
+		b {
+			color: $brand-primary;
+			font-size: 2.5rem;
+			line-height: 3rem;
+			font-weight: normal;
+			letter-spacing: -.08em;
+		}
+	}
+
+	.wind-direction {
+		position: relative;
+		display: inline-block;
+  		height: $gaugeDiameter;
+  		width: $gaugeDiameter;
+				
+		.wind-arrow {
+			display: block;
+			position: absolute;
+			top: calc(50% - #{$gaugeArrowHeight / 2});
+			left: calc(50% - #{$gaugeArrowWidth });
+			height: $gaugeArrowHeight;
+			-webkit-transform-origin: center center;
+			color: #fff;
+			font-size: 2rem;
+			@include transition(all .4s ease-in);
+		}
+	}
+
+	// collapsable container
+	.station-details-container {
+		margin-left: $grid-gutter-width/-2;
+		margin-right: $grid-gutter-width/-2;
+		padding: 0 $grid-gutter-width/2;
+		background: #fff; 
+		@include transition(all .2s ease);
+	}
+
+	// the actual details
+	.station-details {
+		padding: 1em 0;
+		font-size: 1.2rem;
+		color: $gray;
+	}
+
+	.station-chart {
+		margin-top: 5px;
+	}
+}
