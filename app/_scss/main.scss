@@ -1,13 +1,15 @@
 
 
 // overwriting bootstrap variables
-$brand-primary: rgb(95, 161, 224);
+$brand-primary: #fb6964;
+$white-accent: rgb(240, 240, 240);
 $font-size-base: 16px;
 $line-height-base: 1.6;
 $headings-font-weight: 700;
 $text-color: #777;
 $link-color: $brand-primary;
 $font-family-sans-serif: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$headings-font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 
 // import Bootstrap files
 @import '../_bower_components/bootstrap-sass/vendor/assets/stylesheets/bootstrap.scss';
@@ -21,7 +23,7 @@ $font-family-sans-serif: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-ser
 
 body {
 	margin: 0;
-	font-weight: 300;
+	font-weight: 400;
 }
 
 a:hover {
@@ -117,7 +119,6 @@ img {
 }
 
 blockquote {
-	text-align: center;
 	border: 0;
 
 	&::before {
@@ -229,25 +230,41 @@ th {
 .showcase-recommendation {
 	margin-top: 40px;
 	padding-top: 30px;
-	border-top: 5px solid $gray-lighter;
 }
 
 .showcase blockquote {
 	position: relative;
-	padding-left: 50px;
-	font-size: 1em;
+	margin: 0 -30px -30px;
+	padding: 30px 30px 50px;
+	font-size: 1.2em;
 	border: 0;
+	background: $brand-primary;
+	color: $white-accent;
 
+	&::before {
+		color: rgba(255, 255, 255, 0.5);
+	}
+
+	footer {
+		margin-top: 25px;
+		color: $white-accent;
+	}
 }
 
 .showcase-images {
 	@include make-row(15px);
 	@extend .list-unstyled;
 	margin-top: 10px;
+	padding: 20px 0;
 
 	li {
 		@include make-xs-column(4);
 		@include make-sm-column(3, 15px);
+	}
+
+	img {
+		padding: 5px;
+		background: rgba(0,0,0,0.08);
 	}
 }
 
