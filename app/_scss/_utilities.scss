@@ -1,0 +1,87 @@
+// Utility/helper classes
+
+// margin top
+.mt       { @extend .mt50; }
+.mt0      { margin-top: 0; }
+.mt10     { margin-top: 10px; }
+.mt20     { margin-top: 20px; }
+.mt30     { margin-top: 30px; }
+.mt40     { margin-top: 40px; }
+.mt50     { margin-top: 50px; }
+.mt60     { margin-top: 60px; }
+.mt70     { margin-top: 70px; }
+.mt80     { margin-top: 80px; }
+.mt90     { margin-top: 90px; }
+.mt100    { margin-top: 100px; }
+
+// margin bottom
+.mb       { @extend .mb50; }
+.mb0      { margin-bottom: 0; }
+.mb10     { margin-bottom: 10px; }
+.mb20     { margin-bottom: 20px; }
+.mb30     { margin-bottom: 30px; }
+.mb40     { margin-bottom: 40px; }
+.mb50     { margin-bottom: 50px; }
+.mb60     { margin-bottom: 60px; }
+.mb70     { margin-bottom: 70px; }
+.mb80     { margin-bottom: 80px; }
+.mb90     { margin-bottom: 90px; }
+.mb100    { margin-bottom: 100px; }
+
+// margin top and bottom
+.mtb0     { margin-top: 0; margin-bottom: 0; }
+.mtb      { @extend .mt, .mb; }
+.mtb10    { @extend .mt10, .mb10; }
+.mtb20    { @extend .mt20, .mb20; }
+.mtb30    { @extend .mt30, .mb30; }
+.mtb40    { @extend .mt40, .mb40; }
+.mtb50    { @extend .mt50, .mb50; }
+.mtb60    { @extend .mt60, .mb60; }
+.mtb70    { @extend .mt70, .mb70; }
+.mtb80    { @extend .mt80, .mb80; }
+.mtb90    { @extend .mt90, .mb90; }
+.mtb100   { @extend .mt100, .mb100; }
+
+
+// padding top
+.pt       { @extend .pt50; }
+.pt0      { padding-top: 0; }
+.pt10     { padding-top: 10px; }
+.pt20     { padding-top: 20px; }
+.pt30     { padding-top: 30px; }
+.pt40     { padding-top: 40px; }
+.pt50     { padding-top: 50px; }
+.pt60     { padding-top: 60px; }
+.pt70     { padding-top: 70px; }
+.pt80     { padding-top: 80px; }
+.pt90     { padding-top: 90px; }
+.pt100    { padding-top: 100px; }
+
+// padding bottom
+.pb       { @extend .pb50; }
+.pb0      { padding-bottom: 0; }
+.pb10     { padding-bottom: 10px; }
+.pb20     { padding-bottom: 20px; }
+.pb30     { padding-bottom: 30px; }
+.pb40     { padding-bottom: 40px; }
+.pb50     { padding-bottom: 50px; }
+.pb60     { padding-bottom: 60px; }
+.pb70     { padding-bottom: 70px; }
+.pb80     { padding-bottom: 80px; }
+.pb90     { padding-bottom: 90px; }
+.pb100    { padding-bottom: 100px; }
+
+// padding top and bottom
+.ptb      { @extend .pt, .pb; }
+.ptb0     { padding-top: 0; padding-bottom: 0; }
+.ptb10    { @extend .pt10, .pb10; }
+.ptb20    { @extend .pt20, .pb20; }
+.ptb30    { @extend .pt30, .pb30; }
+.ptb40    { @extend .pt40, .pb40; }
+.ptb50    { @extend .pt50, .pb50; }
+.ptb60    { @extend .pt60, .pb60; }
+.ptb70    { @extend .pt70, .pb70; }
+.ptb80    { @extend .pt80, .pb80; }
+.ptb90    { @extend .pt90, .pb90; }
+.ptb100   { @extend .pt100, .pb100; }
+

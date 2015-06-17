@@ -231,7 +231,7 @@ module.exports = function (grunt) {
             // Like Jekyll, exclude files & folders prefixed with an underscore.
             '!**/_*{,/**}'
             // Explicitly add any files your site needs for distribution here.
-            //'_bower_components/jquery/jquery.js',
+            //'_bower_components/jquery/dist/jquery.min.js'
             //'favicon.ico',
             //'apple-touch*.png'
           ],
@@ -272,6 +272,8 @@ module.exports = function (grunt) {
       all: [
         'Gruntfile.js',
         '<%= yeoman.app %>/js/**/*.js',
+        '!<%= yeoman.app %>/js/salvattore.min.js',
+        '!<%= yeoman.app %>/js/jquery.fancybox.js',
         'test/spec/**/*.js'
       ]
     },
@@ -341,7 +343,7 @@ module.exports = function (grunt) {
     'concat',
     'cssmin',
     'uglify',
-    'imagemin',
+    // 'imagemin',
     'svgmin',
     'filerev',
     'usemin',

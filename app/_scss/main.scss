@@ -1,13 +1,18 @@
 
 
 // overwriting bootstrap variables
-$text-color: #99a295;
-$link-color: #f24f4d;
-$font-family-sans-serif: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$brand-primary: rgb(95, 161, 224);
+$font-size-base: 16px;
+$line-height-base: 1.6;
+$headings-font-weight: 700;
+$text-color: #777;
+$link-color: $brand-primary;
+$font-family-sans-serif: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 
 // import Bootstrap files
 @import '../_bower_components/bootstrap-sass/vendor/assets/stylesheets/bootstrap.scss';
-
+@import 'utilities';
+@import 'fancybox';
 
 
 
@@ -21,6 +26,10 @@ body {
 
 a:hover {
 	text-decoration: underline;
+}
+
+.text-nowrap {
+	white-space: nowrap;
 }
 
 
@@ -56,33 +65,196 @@ a:hover {
 		font-size: 25px;
 		font-size: 2.5rem;
 		margin-bottom: 15px;
-		font-weight: normal;
 		text-transform: uppercase;
 		color: #768371;
 		line-height: 1.5em;
 	}
 
 	.teaser-text {
-		font-size: 18px;
-		font-size: 1.8rem;
+		font-size: 16px;
+		font-size: 1.6rem;
 		line-height: 1.5em;
-	}
 
-	@media screen and (max-width: $screen-xs-max) {
-
-		.teaser + .teaser {
-			margin-top: 50px;
-		}
-	}
-
-	@media screen and (min-width: $screen-sm-min) {
-
-		.teaser-text {
+		@media screen and (min-width: $screen-sm-min) {
 			padding-right: 30px;
-			font-size: 20px;
-			font-size: 2rem;
+			font-size: 18px;
+			font-size: 1.8rem;
+		}
+
+		@media screen and (max-width: $screen-xs-max) {
+
+			& + .teaser {
+				margin-top: 50px;
+			}
 		}
 	}
+}
+
+img {
+	@extend .img-responsive;
+}
+
+
+.content-section {
+	padding: 40px 0;
+}
+
+.section-gray {
+	background: #f4f4f4;
+}
+
+.section-dark {
+	background: $brand-primary;
+	
+	.section-heading,
+	.showcase-heading {
+
+	}
+}
+
+.section-narrow > .container {
+	max-width: 45em;
+}
+
+blockquote {
+	text-align: center;
+	border: 0;
+
+	&::before {
+		content: '“';
+		font-family: serif;
+		font-size: 5em;
+		line-height: 0;
+		display: block;
+		margin: 40px 0 20px;
+	}
+}
+
+.page-cv .container {
+	//max-width: 45em;
+}
+
+.timeline-when,
+.timeline-what {
+	margin-bottom: 10px;
+}
+
+.timeline-when {
+	font-weight: 600;
+	
+	@media (min-width: $screen-sm-min) {
+		text-align: right;
+	}
+}
+
+.lead {
+	font-size: 22px;
+}
+
+.text-light {
+	color: rgb(240, 240, 240);
+}
+
+h1 {
+	margin: 1.5em 0 1em;
+	font-weight: 700;
+}
+
+.page-title + .lead {
+	margin-top: -60px;
+}
+
+h2 {
+	font-size: 32px;
+}
+
+h3 {
+	margin-top: 5px;
+	font-size: 18px;
+}
+
+h4 {
+	font-size: 16px;
+}
+
+th {
+	min-width: 20%;
+	padding-right: 15px;
+}
+
+.section-heading {
+	margin: 20px 0;
+	font-size: 25px;
+}
+
+.cv-profile-img {
+	margin: 40px auto;
+	max-width: 200px;
+}
+
+.showcases {
+	@include make-row();
+}
+
+#showcases[data-columns]::before {
+	@media (min-width: $screen-sm-min){
+		content: '2 .col-sm-6';
+	}	
+}
+
+.showcase {
+	margin-bottom: 30px;
+	padding: 30px;
+	background: white;
+}
+
+.showcase-heading {
+	margin: 0 0 1em;
+	font-size: 22px;
+	// &::after {
+	// 	content: "";
+	// 	display: block;
+	// 	width: 15px;
+	// 	height: 3px;
+	// 	margin: 10px 0 15px;
+	// 	background: darken($brand-primary, 10);
+	// }
+}
+
+.showcase h4 {
+	margin: 20px 0 5px;
+	font-weight: 600;
+}
+
+.showcase-recommendation {
+	margin-top: 40px;
+	padding-top: 30px;
+	border-top: 5px solid $gray-lighter;
+}
+
+.showcase blockquote {
+	position: relative;
+	padding-left: 50px;
+	font-size: 1em;
+	border: 0;
+
+}
+
+.showcase-images {
+	@include make-row(15px);
+	@extend .list-unstyled;
+	margin-top: 10px;
+
+	li {
+		@include make-xs-column(4);
+		@include make-sm-column(3, 15px);
+	}
+}
+
+
+table th,
+table td {
+	vertical-align: top;
 }
 
 
