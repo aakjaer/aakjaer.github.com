@@ -13,14 +13,34 @@ projects:
         large: "/img/work/2015-04-vw-servicebook-03-lg.jpg"
     technology: "HTML5, JS, jQuery SASS, Autoprefixer, CSS3, Twitter Bootstrap, Github"
     role: "Front-end developer"
+    contact: "Project manager Semler Services, Dan Andersen"
 
   - title: "Semler car dealers"
     period: "2014/07 - 2015-04"
     description: |
-      <p>URL: <a href="http://vw-amager.dk">Volkswagen Amager</a></p>
-    technology: "HTML5, JS, LESS, Autoprefixer, CSS3, Jekyll, Twitter Bootstrap, C#, Github"
+      <p>The massive custom build car dealer project, involving more than 300 websites, 17 car brands and multiple portal designs, I helped design and build in 2009, needed a design and functionality overhaul. Focusing on making all websites responsive, Bootstrap was chosen as the front-end framework.</p>
+      
+      <p>Examples:</p>
+      <ul class="list-unstyled">
+        <li><a href="http://amager.audi.dk/">Audi</a></li>
+        <li><a href="http://www.seat-hoejbjerg.dk/">Seat</a></li>
+        <li><a href="http://www.skoda-amager.dk/">Skoda</a></li>
+        <li><a href="http://vw.auto-forum-roskilde.dk/">Volkswagen</a></li>
+        <li><a href="http://www.renault-glostrup.dk/">Renault</a></li>
+        <li><a href="http://www.autohuset-glostrup.dk/">Portal</a></li>
+      </ul>
+    responsibility: |
+      <ul>
+        <li>Updating designs to put emphasis on certain key services and call-to-actions.</li>
+        <li>Updating all brand templates to Bootstrap markup and restyling everything from ground up</li>
+        <li>Building Jekyll prototypes inside the .NET project, to allow the programmers to access the design assets (images, CSS, JS) directly without having to move things everytime changes were made.</li>
+        <li>Building a responsive menu structure to support the 3 levels of pages.</li>
+        <li>Updating form designs by consolidating and cleaning up the old ones, with the main purpose of having better conversion rates on key services.</li>
+        <li></li>
+      </ul>
+    technology: "HTML5, JS, LESS, Autoprefixer, CSS3, Jekyll, Twitter Bootstrap, C#, Github, Teamcity"
     role: "Front-end developer, Webdesigner, UX Specialist, UI Specialist"
-    contact: "Head of the Internet department, Semler Services A/S Thomas Hansen"
+    contact: "Head of the Internet department, Semler Services Thomas Hansen"
 
   - title: "Porsche.dk navigation"
     period: "2015/02 - 2015-02"
@@ -34,7 +54,12 @@ projects:
     period: "2014/12 - 2015-06"
     description: |
       <p>URL: <a href="http://vw-amager.dk">Volkswagen Amager</a></p>
-    technology: "HTML5, JS, LESS, Autoprefixer, CSS3, Jekyll, Twitter Bootstrap, C#, Github"
+    responsibility: |
+      <ul>
+        <li>Updating designs for 13 selected VW retail dealers</li>
+        <li>Making a complete front-end prototype to act as a blueprint for the .NET developers and a styleguide later on.</li>
+      </ul>
+    technology: "HTML5, JS, LESS, Autoprefixer, CSS3, Jekyll, Twitter Bootstrap, C#, EpiServer, Github"
     role: "Front-end developer, Webdesigner, UX Specialist, UI Specialist"
     contact: "Head of the Internet department, Semler Services A/S Thomas Hansen"
     images:
@@ -100,6 +125,6 @@ projects:
       - small: "/img/work/2012-03-28-briza-1.jpg"
         large: "/img/work/2012-03-28-briza-1-lg.jpg"
       - small: "/img/work/2012-03-28-briza-2.jpg"
-        large: "/img/work/2012-03-28-briza-1-lg.jpg"
+        large: "/img/work/2012-03-28-briza-2-lg.jpg"
       - small: "/img/work/2012-03-28-briza-3.jpg"
         large: "/img/work/2012-03-28-briza-3-lg.jpg"

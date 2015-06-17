@@ -28,7 +28,8 @@ bodyclass: page-cv
 <section class="content-section section-narrow section-dark">
 	<div class="container">
 		<blockquote class="quote-lg text-center text-light">
-			I am a senior front-end developer and webdesigner, with more than 10 years of professional experience in front-end development, prototypes, user interfaces and usability.
+			<p>I am a senior front-end developer and webdesigner, with more than 10 years of professional experience in front-end development, prototypes, user interfaces and usability.</p>
+			<p>In my sparetime I am a kitesurfer, passionate traveler, enjoying the simple life.</p>
 		</blockquote>
 	</div>
 </section>
@@ -102,7 +103,7 @@ bodyclass: page-cv
 			<div class="col-sm-6">
 				<h2 class="section-heading text-center">Whereabouts</h2>
 				<p>I currently live in Copenhagen, Denmark, but I have been fortunate enough to spend 2 1/2 years of the last 5 outside Denmark, combining traveling and working, exploring cities and places all around the world.</p>
-				<p>I lived on an of for almost a year in Chiang Mai, Thailand - working online and studying bodywork and buddhism. 4-5 months of 2014 was spend in the inspirational bay area by San Francisco, and 2015 I worked from Bangkok, Thailand and Cape Town, South Africa.</p>
+				<p>I lived in Chiang Mai, Thailand on an off for almost a year... working online and studying bodywork and buddhism. 4-5 months of 2014 was spend in the inspirational bay area by San Francisco, and 2015 I worked from Bangkok, Thailand and Cape Town, South Africa.</p>
 			</div>
 		</div>
 	</div>
@@ -110,48 +111,9 @@ bodyclass: page-cv
 
 <section class="content-section section-gray">
 	<div class="container">
-		<h1 class="section-heading">Project experience</h1>
+		<h1 class="section-heading-lg text-center">Project experience</h1>
 
-		<div id="showcases" class="showcases" data-columns>
-			{% for project in site.data.cv.projects %}
-				<div class="showcase">
-					<h2 class="showcase-heading">{{ project.title }}</h2>
-					<p class="showcase-date text-muted">{{ project.period }}</p>
-					<div class="body">
-						{{ project.description }}
-					</div>
-					{% if project.images %}
-						{% assign project_id = forloop.index %}
-						<ul class="showcase-images">
-							{% for image_set in project.images %}
-								<li>
-									<a class="fancybox" href="{{ image_set.large }}" rel="project-{{ project_id }}"><img src="{{ image_set.small }}" alt="" /></a>
-								</li>								
-							{% endfor %}
-						</ul>
-					{% endif %}
-					{% if project.responsibility %}
-						<h4>Responsibility</h4>
-						{{ project.technology }}
-					{% endif %}
-					<h4>Technologies used</h4>
-					<p>{{ project.technology }}</p>
-					<h4>Role in project</h4>
-					<p>{{ project.role }}</p>
-					{% if project.contact %}
-						<h4>Contact</h4>
-						<p>{{ project.contact }}</p>
-					{% endif %}
-					{% if project.recommendation %}
-						<div class="showcase-recommendation">
-							<blockquote class="compact text-center">
-								{{ project.recommendation.text }}
-								<footer>{{ project.recommendation.footer }}</footer>
-							</blockquote>
-						</div>
-					{% endif %}
-				</div>
-			{% endfor %}
+			{% include projects.html %}
 
 			<div class="showcase">
 				<h2 class="showcase-heading">Volkswagen Denmark</h2>

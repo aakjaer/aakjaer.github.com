@@ -1,0 +1,40 @@
+<div id="showcases" class="showcases" data-columns>
+{% for project in site.data.cv.projects %}
+	<div class="showcase">
+		<h2 class="showcase-heading">{{ project.title }}</h2>
+		<p class="showcase-date text-muted">{{ project.period }}</p>
+		<div class="body">
+			{{ project.description }}
+		</div>
+		{% if project.images %}
+			{% assign project_id = forloop.index %}
+			<ul class="showcase-images">
+				{% for image_set in project.images %}
+					<li>
+						<a class="fancybox" href="{{ image_set.large }}" rel="project-{{ project_id }}"><img src="{{ image_set.small }}" alt="" /></a>
+					</li>								
+				{% endfor %}
+			</ul>
+		{% endif %}
+		{% if project.responsibility %}
+			<h4>Responsibility</h4>
+			{{ project.responsibility }}
+		{% endif %}
+		<h4>Technologies used</h4>
+		<p>{{ project.technology }}</p>
+		<h4>Role in project</h4>
+		<p>{{ project.role }}</p>
+		{% if project.contact %}
+			<h4>Contact</h4>
+			<p>{{ project.contact }}</p>
+		{% endif %}
+		{% if project.recommendation %}
+			<div class="showcase-recommendation">
+				<blockquote class="compact text-center">
+					{{ project.recommendation.text }}
+					<footer>{{ project.recommendation.footer }}</footer>
+				</blockquote>
+			</div>
+		{% endif %}
+	</div>
+{% endfor %}
