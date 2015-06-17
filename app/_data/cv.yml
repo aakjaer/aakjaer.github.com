@@ -1,0 +1,105 @@
+projects:
+  - title: "Volkswagen Service booking"
+    period: "2015/04 - 2015-06"
+    description: |
+      <p>In an attempt to convert more visits to Volkswagen's website into service bookings, I was assigned to redesign the booking form from ground up, focusing on making things easier for VW's mobile visitors.</p>
+      <p>My initial thought was to challange the existing somewhat conservative and restricted CI, while maintaining a calm and professional look/feel. Everything was build with a <a href="http://jekyllrb.com">Jekyll</a>/<a href="http://www.getbootstrap.com/">Bootstrap</a> prototype, with a minimum use of Photoshop.</p>
+    images:
+      - small: "/img/work/2015-04-vw-servicebook-01.jpg"
+        large: "/img/work/2015-04-vw-servicebook-01-lg.jpg"
+      - small: "/img/work/2015-04-vw-servicebook-02.jpg"
+        large: "/img/work/2015-04-vw-servicebook-02-lg.jpg"
+      - small: "/img/work/2015-04-vw-servicebook-03.jpg"
+        large: "/img/work/2015-04-vw-servicebook-03-lg.jpg"
+    technology: "HTML5, JS, jQuery SASS, Autoprefixer, CSS3, Twitter Bootstrap, Github"
+    role: "Front-end developer"
+
+  - title: "Semler car dealers"
+    period: "2014/07 - 2015-04"
+    description: |
+      <p>URL: <a href="http://vw-amager.dk">Volkswagen Amager</a></p>
+    technology: "HTML5, JS, LESS, Autoprefixer, CSS3, Jekyll, Twitter Bootstrap, C#, Github"
+    role: "Front-end developer, Webdesigner, UX Specialist, UI Specialist"
+    contact: "Head of the Internet department, Semler Services A/S Thomas Hansen"
+
+  - title: "Porsche.dk navigation"
+    period: "2015/02 - 2015-02"
+    description: |
+      <p>Minor assignment building a responsive multilevel dropdown navigation for the new danish Porsche website.</p>
+      <p>URL: <a href="http://porsche.dk">Porsche.dk</a></p>
+    technology: "HTML5, JS, jQuery SASS, Autoprefixer, CSS3, Twitter Bootstrap, Github"
+    role: "Front-end developer"
+
+  - title: "Semler Retail"
+    period: "2014/12 - 2015-06"
+    description: |
+      <p>URL: <a href="http://vw-amager.dk">Volkswagen Amager</a></p>
+    technology: "HTML5, JS, LESS, Autoprefixer, CSS3, Jekyll, Twitter Bootstrap, C#, Github"
+    role: "Front-end developer, Webdesigner, UX Specialist, UI Specialist"
+    contact: "Head of the Internet department, Semler Services A/S Thomas Hansen"
+    images:
+      - small: "/img/work/2014-12_vw_retail_01.jpg"
+        large: "/img/work/2014-12_vw_retail_01_lg.jpg"
+      - small: "/img/work/2014-12_vw_retail_02.jpg"
+        large: "/img/work/2014-12_vw_retail_02_lg.jpg"
+      - small: "/img/work/2014-12_vw_retail_03.jpg"
+        large: "/img/work/2014-12_vw_retail_03_lg.jpg"
+      - small: "/img/work/2014-12_vw_retail_04.jpg"
+        large: "/img/work/2014-12_vw_retail_04_lg.jpg"
+
+  - title: "Vivino"
+    period: "2013/12 - 2014/05"
+    description: |
+      <p>During the first part of 2014 I was lucky enough to help Vivino implement their brand new website for <a href="http://vivino.com">Vivino.com</a>. I was responsible for the markup, styling and basic scripting of the new site, working in Bootstrap 3 prototypes and releasing modular segments of the design into the main Rails project, tying the modules together with the Vivino API and base logic.</p>
+    technology: "HTML5, CSS, CSS3, Jekyll, Twitter Bootstrap, RoR, JS, SASS, Github"
+    role: "Front-end developer, UI Specialist"
+    contact: "Founders Theis Søndergaard and Heine Zachariassen"
+    images:
+      - small: "/img/work/2013-12-01_vivino_01.jpg"
+        large: "/img/work/2013-12-01_vivino_01_lg.jpg"
+      - small: "/img/work/2013-12-01_vivino_02.jpg"
+        large: "/img/work/2013-12-01_vivino_02_lg.jpg"
+      - small: "/img/work/2013-12-01_vivino_03.jpg"
+        large: "/img/work/2013-12-01_vivino_03_lg.jpg"
+      - small: "/img/work/2013-12-01_vivino_04.jpg"
+        large: "/img/work/2013-12-01_vivino_04_lg.jpg"
+    recommendation: 
+      text: |
+        <p>Daniel helped us out implementing our brand new website for Vivino.com. He was responsible for the markup, styling and basic scripting of the new site, working in Bootstrap 3 prototypes and releasing modular segments of the design into the main Rails project. </p>
+        <p>Daniel did an amazing job, delivering high quality, while communicating clearly on his deliverables. Will use again!</p>
+      footer: "Theis Søndergaard - COO & Co-founder, Vivino"
+
+  - title: "Atea Denmark"
+    period: "2012/06 - 2013/04"
+    description: |
+      <p>I was hired to design and implement multiple webinterfaces for Atea's tele project.</p>
+    technology: "Photoshop, Jekyll (for prototyping), LESS, CSS, JS, Twitter Bootstrap, jQuery, MVC, Github, Subversion"
+    role: "Front-end developer, UI Specialist"
+    contact: "Sara Amini, Martin Bo, Asbjørn Johansen"
+    images:
+      - small: "/img/work/2012-06_ateatele_01.jpg"
+        large: "/img/work/2012-06_ateatele_01_lg.jpg"
+      - small: "/img/work/2012-06_ateatele_02.jpg"
+        large: "/img/work/2012-06_ateatele_02_lg.jpg"
+      - small: "/img/work/2012-06_ateatele_03.jpg"
+        large: "/img/work/2012-06_ateatele_03_lg.jpg"
+
+  - title: "Briza Maxima"
+    period: "2012/02 - 2012/03"
+    description: |
+      <p>In this project I designed an online identity for the Briza Maxima girls. Working closely together with Briza Maxima, doing mindmaps and trying my best to get all the girls ideas down on paper, I managed to come up with a design that would represent the girls and their process of working.</p>
+    resposibility: |
+        <ul>
+          <li>Interviewing Briza Maxima and creating sketches based on their many ideas.</li>
+          <li>Creating final designs and illustrations based on the sketches.</li>
+        </ul>
+    technology: "Photoshop, Ruby Jekyll, GitHub"
+    role: "Webdesigner"
+    contact: "Founders Theis Søndergaard and Heine Zachariassen"
+    images:
+      - small: "/img/work/2012-03-28-briza-1.jpg"
+        large: "/img/work/2012-03-28-briza-1-lg.jpg"
+      - small: "/img/work/2012-03-28-briza-2.jpg"
+        large: "/img/work/2012-03-28-briza-1-lg.jpg"
+      - small: "/img/work/2012-03-28-briza-3.jpg"
+        large: "/img/work/2012-03-28-briza-3-lg.jpg"

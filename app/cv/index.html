@@ -113,75 +113,45 @@ bodyclass: page-cv
 		<h1 class="section-heading">Project experience</h1>
 
 		<div id="showcases" class="showcases" data-columns>
-			<div class="showcase">
-				<h2 class="showcase-heading">Vivino</h2>
-				<p class="showcase-date text-muted">2013/12 - 2014/05</p>
-				<div class="body">
-					<p>During the first part of 2014 I was lucky enough to help Vivino implement their brand new website for <a href="http://vivino.com">Vivino.com</a>. I was responsible for the markup, styling and basic scripting of the new site, working in Bootstrap 3 prototypes and releasing modular segments of the design into the main Rails project, tying the modules together with the Vivino API and base logic.</p>
+			{% for project in site.data.cv.projects %}
+				<div class="showcase">
+					<h2 class="showcase-heading">{{ project.title }}</h2>
+					<p class="showcase-date text-muted">{{ project.period }}</p>
+					<div class="body">
+						{{ project.description }}
+					</div>
+					{% if project.images %}
+						{% assign project_id = forloop.index %}
+						<ul class="showcase-images">
+							{% for image_set in project.images %}
+								<li>
+									<a class="fancybox" href="{{ image_set.large }}" rel="project-{{ project_id }}"><img src="{{ image_set.small }}" alt="" /></a>
+								</li>								
+							{% endfor %}
+						</ul>
+					{% endif %}
+					{% if project.responsibility %}
+						<h4>Responsibility</h4>
+						{{ project.technology }}
+					{% endif %}
+					<h4>Technologies used</h4>
+					<p>{{ project.technology }}</p>
+					<h4>Role in project</h4>
+					<p>{{ project.role }}</p>
+					{% if project.contact %}
+						<h4>Contact</h4>
+						<p>{{ project.contact }}</p>
+					{% endif %}
+					{% if project.recommendation %}
+						<div class="showcase-recommendation">
+							<blockquote class="compact text-center">
+								{{ project.recommendation.text }}
+								<footer>{{ project.recommendation.footer }}</footer>
+							</blockquote>
+						</div>
+					{% endif %}
 				</div>
-				<ul class="showcase-images">
-					<li><a class="fancybox" href="/img/work/2013-12-01_vivino_01_lg.jpg" rel="vivino"><img src="/img/work/2013-12-01_vivino_01.jpg" alt="" /></a></li>
-					<li><a class="fancybox" href="/img/work/2013-12-01_vivino_02_lg.jpg" rel="vivino"><img src="/img/work/2013-12-01_vivino_02.jpg" alt="" /></a></li>
-					<li><a class="fancybox" href="/img/work/2013-12-01_vivino_03_lg.jpg" rel="vivino"><img src="/img/work/2013-12-01_vivino_03.jpg" alt="" /></a></li>
-					<li><a class="fancybox" href="/img/work/2013-12-01_vivino_04_lg.jpg" rel="vivino"><img src="/img/work/2013-12-01_vivino_04.jpg" alt="" /></a></li>
-				</ul>
-				<h4>Technologies used</h4>
-				<p>HTML5, CSS, CSS3, Jekyll, Twitter Bootstrap, RoR, JS, SASS, Github</p>
-				<h4>Role in project</h4>
-				<p>Front-end developer, UI Specialist</p>
-				<h4>Contact</h4>
-				<p>Founders Theis Søndergaard and Heine Zachariassen</p>
-
-				<div class="showcase-recommendation">
-					<blockquote class="compact text-center">
-						<p>Daniel helped us out implementing our brand new website for Vivino.com. He was responsible for the markup, styling and basic scripting of the new site, working in Bootstrap 3 prototypes and releasing modular segments of the design into the main Rails project. </p>
-						<p>Daniel did an amazing job, delivering high quality, while communicating clearly on his deliverables. Will use again!</p>
-						<footer>Theis Søndergaard - COO & Co-founder, Vivino</footer>
-					</blockquote>
-				</div>
-			</div>
-
-			<div class="showcase">
-				<h2 class="showcase-heading">Atea Denmark</h2>
-				<p class="showcase-date text-muted">2012/06 - 2013/04</p>
-				<div class="body">
-					<p>I was hired to design and implement multiple webinterfaces for Atea's tele project.</p>
-				</div>
-				<ul class="showcase-images">
-					<li><a class="fancybox" href="/img/work/2012-06_ateatele_01_lg.jpg" rel="ateatele"><img src="/img/work/2012-06_ateatele_01.jpg" alt="" /></a></li>
-					<li><a class="fancybox" href="/img/work/2012-06_ateatele_02_lg.jpg" rel="ateatele"><img src="/img/work/2012-06_ateatele_02.jpg" alt="" /></a></li>
-					<li><a class="fancybox" href="/img/work/2012-06_ateatele_03_lg.jpg" rel="ateatele"><img src="/img/work/2012-06_ateatele_03.jpg" alt="" /></a></li>
-				</ul>
-				<h4>Technologies used</h4>
-				<p>Photoshop, Jekyll (for prototyping), LESS, CSS, JS, Twitter Bootstrap, jQuery, MVC, Github, Subversion</p>
-				<h4>Role in project</h4>
-				<p>Front-end developer, UI Specialist</p>
-				<h4>Contact</h4>
-				<p>Sara Amini, Martin Bo, Asbjørn Johansen</p>
-			</div>
-
-			<div class="showcase">
-				<h2 class="showcase-heading">Briza Maxima</h2>
-				<p class="showcase-date text-muted">2012/02 - 2012/03</p>
-				<ul class="showcase-images">
-					<li><a class="fancybox" href="/img/work/2012-03-28-briza-1-lg.jpg" rel="briza"><img src="/img/work/2012-03-28-briza-1.jpg" alt="" /></a></li>
-					<li><a class="fancybox" href="/img/work/2012-03-28-briza-2-lg.jpg" rel="briza"><img src="/img/work/2012-03-28-briza-2.jpg" alt="" /></a></li>
-					<li><a class="fancybox" href="/img/work/2012-03-28-briza-3-lg.jpg" rel="briza"><img src="/img/work/2012-03-28-briza-3.jpg" alt="" /></a></li>
-				</ul>
-				<div class="body">
-					<p>In this project I designed an online identity for the Briza Maxima girls. Working closely together with Briza Maxima, doing mindmaps and trying my best to get all the girls ideas down on paper, I managed to come up with a design that would represent the girls and their process of working.</p>
-				</div>
-
-				<h4>Technologies used</h4>
-				<p>Photoshop, Ruby Jekyll, GitHub</p>
-				<h4>Role in project</h4>
-				<p>Webdesigner</p>
-				<h4>Responsibility</h4>
-				<ul>
-					<li>Interviewing Briza Maxima and creating sketches based on their many ideas.</li>
-					<li>Creating final designs and illustrations based on the sketches.</li>
-				</ul>
-			</div>
+			{% endfor %}
 
 			<div class="showcase">
 				<h2 class="showcase-heading">Volkswagen Denmark</h2>

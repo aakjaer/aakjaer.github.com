@@ -197,6 +197,12 @@ th {
 
 #showcases[data-columns]::before {
 	@media (min-width: $screen-sm-min){
+		content: '1 .col-sm-12';
+	}	
+}
+
+#showcases[data-columns]::before {
+	@media (min-width: $screen-sm-min){
 		content: '2 .col-sm-6';
 	}	
 }
