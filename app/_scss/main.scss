@@ -13,6 +13,7 @@ $headings-font-family: "Raleway", "Helvetica Neue", Helvetica, Arial, sans-serif
 
 // import Bootstrap files
 @import '../_bower_components/bootstrap-sass/vendor/assets/stylesheets/bootstrap.scss';
+@import 'type';
 @import 'utilities';
 @import 'fancybox';
 
@@ -107,6 +108,7 @@ img {
 
 .section-dark {
 	background: $brand-primary;
+	color: $white-accent;
 	
 	.section-heading,
 	.showcase-heading {
@@ -150,10 +152,6 @@ blockquote {
 
 .lead {
 	font-size: 22px;
-}
-
-.text-light {
-	color: rgb(240, 240, 240);
 }
 
 h1 {
@@ -254,12 +252,14 @@ th {
 .showcase-images {
 	@include make-row(15px);
 	@extend .list-unstyled;
-	margin-top: 10px;
+	margin-top: 15px;
+	margin-bottom: 15px;
 	padding: 20px 0;
 
 	li {
 		@include make-xs-column(4);
 		@include make-sm-column(3, 15px);
+		margin-bottom: 15px;
 	}
 
 	img {
