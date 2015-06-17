@@ -36,7 +36,6 @@ projects:
         <li>Building Jekyll prototypes inside the .NET project, to allow the programmers to access the design assets (images, CSS, JS) directly without having to move things everytime changes were made.</li>
         <li>Building a responsive menu structure to support the 3 levels of pages.</li>
         <li>Updating form designs by consolidating and cleaning up the old ones, with the main purpose of having better conversion rates on key services.</li>
-        <li></li>
       </ul>
     technology: "HTML5, JS, LESS, Autoprefixer, CSS3, Jekyll, Twitter Bootstrap, C#, Github, Teamcity"
     role: "Front-end developer, Webdesigner, UX Specialist, UI Specialist"

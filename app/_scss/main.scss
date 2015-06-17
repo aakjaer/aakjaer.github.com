@@ -182,7 +182,7 @@ th {
 }
 
 .section-heading {
-	margin: 20px 0;
+	margin: 50px 0 35px;
 	font-size: 25px;
 }
 
@@ -199,14 +199,15 @@ th {
 
 .showcases {
 	@include make-row();
+
+	@media (max-width: $screen-xs-max) {
+		margin-left: 0;
+		margin-right: 0;
+	}
 }
 
 
 #showcases[data-columns]::before {
-	@media (min-width: $screen-xs-min){
-		content: '1 .col-xs-12';
-	}	
-
 	@media (min-width: $screen-sm-min){
 		content: '2 .col-sm-6';
 	}	

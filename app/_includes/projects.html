@@ -2,7 +2,7 @@
 {% for project in site.data.cv.projects %}
 	<div class="showcase">
 		<h2 class="showcase-heading">{{ project.title }}</h2>
-		<p class="showcase-date text-muted">{{ project.period }}</p>
+		<p class="showcase-date text-muted"><time>{{ project.period }}</time></p>
 		<div class="body">
 			{{ project.description }}
 		</div>
