@@ -343,7 +343,7 @@ module.exports = function (grunt) {
     'concat',
     'cssmin',
     'uglify',
-    // 'imagemin',
+    'imagemin',
     'svgmin',
     'filerev',
     'usemin',
