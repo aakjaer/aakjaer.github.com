@@ -46,7 +46,7 @@ projects:
   - title: "SEAT.dk - Front-end development tutoring"
     period: "2014/07 - 2014-08"
     description: |
-      <p>Teaching fundamental front-end development skills for building a Bootstrap based SEAT.dk from scratch, including understanding HTML semantics, my thoughts on patterns to look for in a design, planning responsive behavior, CSS naming strategies, CSS pre-processor techniques, typography, tips and tricks for styling etc.</p>
+      <p>Teaching fundamental front-end development skills for building a Bootstrap based <a href="http://seat.dk/">SEAT.dk</a> from scratch, including understanding HTML semantics, my thoughts on patterns to look for in a design, planning responsive behavior, CSS naming strategies, CSS pre-processor techniques, typography, tips and tricks for styling etc.</p>
     technology: "HTML5, Twitter Bootstrap, CSS3, JS, jQuery, SASS, Github"
     role: "Tutor"
     contact: "Project manager Semler Services, Kenneth Bang"
