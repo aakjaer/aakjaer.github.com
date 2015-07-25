@@ -1,45 +1,610 @@
 ---
 layout: default
+bodyclass: page-cv
 ---
 
-<section class="stage section-narrow">
+<section class="content-section">
     <div class="container">
-        <img class="stage-img img-responsive" src="/img/time-for-change.png" alt="Time for change" />
-		<p class="stage-lead">Want to improve your front-end development workflow? Well... maybe I can help.</p>
+        <h1 class="page-title text-center">Daniel Aakjær Sørensen</h1>
+        <img class="cv-profile-img" src="/img/me.jpg" alt="Profile image" />
+
+        <address class="text-center">
+            <p>
+                Vesterbrogade 31, 2. th<br />
+                1620 Copenhagen V<br />
+                Denmark<br/>
+            </p>
+
+            <p>
+                Mobile: +45 2533 7548<br/>
+                E-mail: contact@hamsterboy.dk
+            </p>
+        </address>
+    </div>  
+</section>
+
+<section class="section-screenshots">
+    <div class="row">
+        {% for screenshot in site.data.screenshots  %}
+            <div class="col">
+                <img src="{{ site.baseurl }}/img/work/{{ screenshot }}" alt="" />
+            </div>
+        {% endfor %}        
     </div>
 </section>
 
-<section class="teasers container">
-	<div class="row">
-		<div class="teaser col-sm-8">
-			<h2 class="teaser-header">My approach</h2>
-
-			<div class="teaser-text">
-				<p>Throughout the last couple of years, I have been working intensively on perfecting the process of  delivering front-end prototypes, ready to hand on to the programmers/coders. Almost anyone who has ever experienced a web related project, knows the headaches and frustrations of dealing with the countless requirement and design changes, that are inevitable even with a fine-tuned workflow in a development team. My approach has been to build working prototypes reaping the following benefits:
-
-				<ol>
-					<li>A navigable static site where the client can get a real sense of the final look and feel, long before the actual site is implemented. This minimizes some of the misunderstadings between the projects participants (client/project manager, project manager/designer/developer etc.) and makes the UI/UX cycles much shorter.</li>
-					<li>Instead of handing the programmers a set of PSD files or even simple HTML/CSS files for them to interpret, a working prototype provides a blueprint for the entire functionality of the website. Navigation, responsive behavior, reuse of code blocks, form feedback and messages, sets and combinations of content etc., working as building blocks for the programmers to merge their data into.</li>
-					<li>Designers/front-enders need a playground/sandbox, to come up with new ideas, add new elements and modules and at the same time test that they are not breaking any existing features.</li>
-				</ol>
-			</div>
-
-
-<!-- 			 to optimize the process of taking a project from the initial design phase, building the front-end with all its many challenges, to the many iterations of connecting the front-end/back-end puzzle. --></p>
-
-
-
-
-
-			 </p>
-
-			<p class="teaser-text">Recently I've been working on different Wordpress related projects getting my hands dirty with a mix of <a href="http://yeoman.io">Yeoman</a>, <a href="http://bower.io/">Bower</a>, <a href="">Foundation 5</a>, <a href="http://susy.oddbird.net/">Susy</a>, <a href="http://gruntjs.com/">Grunt</a> and much much more.</p>
-
-			
-		</div>
-		<div class="teaser col-sm-4">
-			<h2 class="teaser-header">Get in touch</h2>
-			<p class="teaser-text">While I finish my new website please <a href="http://dk.linkedin.com/in/hamsterboy/">look me up on LinkedIn</a> or if you have questions or suggestions regarding a new exciting project or just dropped by and wanted to say hello, <a href="mailto:contact@hamsterboy.dk">feel free to drop me an email</a>. Either way - thanks for stopping by.</p>
-		</div>
-	</div>
+<section class="content-section section-narrow section-dark">
+    <div class="container">
+        <blockquote class="quote-lg text-center text-light">
+            <p>I am a senior front-end developer and webdesigner, with more than 10 years of professional experience in front-end development, prototypes, user interfaces and usability.</p>
+            <p>In my sparetime I am a passionate traveler and kitesurfer, enjoying the simple things in life.</p>
+        </blockquote>
+    </div>
 </section>
+
+<section class="content-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <h2 class="section-heading text-center">Past work</h2>
+
+                <div class="row">
+                    <div class="timeline-when col-sm-4">2009-2015</div>
+                    <div class="timeline-what col-sm-8">Owner, Hamsterboy - freelance consultant</div>
+                </div>
+                <div class="row">
+                    <div class="timeline-when col-sm-4">2008-2009</div>
+                    <div class="timeline-what col-sm-8">Partner, Gazebo (RoR studio)</div>
+                </div>
+                <div class="row">
+                    <div class="timeline-when col-sm-4">2007-2008</div>
+                    <div class="timeline-what col-sm-8">Webdesigner/webdeveloper, <a href="http://semler-it.dk">Skandinavisk Motor Co.</a></div>
+                </div>
+                <div class="row">
+                    <div class="timeline-when col-sm-4">2006-2007</div>
+                    <div class="timeline-what col-sm-8">Webdesigner/webdeveloper, <a href="http://vertic.com">Vertic</a></div>
+                </div>
+                <div class="row">
+                    <div class="timeline-when col-sm-4">2003-2006</div>
+                    <div class="timeline-what col-sm-8">Webdesigner, <a href="http://semler-it.dk">Skandinavisk Motor Co.</a></div>
+                </div>
+            </div>
+
+            <div class="col-sm-6">
+                <h2 class="section-heading text-center">Education</h2>
+                
+                <div class="row">
+                    <div class="timeline-when col-sm-4">2001-2003</div>
+                    <div class="timeline-what col-sm-8">Multimediedesigner – Køge Erhvervsakademi</div>
+                </div>
+                <div class="row">
+                    <div class="timeline-when col-sm-4">1997-2000</div>
+                    <div class="timeline-what col-sm-8">High School graduate - Roskilde Tekniske Gymnasium HTX</div>
+                </div>
+                <div class="row">
+                    <div class="timeline-when col-sm-4">1986-1997</div>
+                    <div class="timeline-what col-sm-8">Primary exame - Tune Skole</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                <h2 class="section-heading text-center">Languages</h2>
+
+                <div class="row">
+                    <div class="timeline-when col-sm-4">Danish (native tongue)</div>
+                    <div class="timeline-what col-sm-8">Speaks, reads and writes Danish fluently.</div>
+                </div>
+                <div class="row">
+                    <div class="timeline-when col-sm-4">English</div>
+                    <div class="timeline-what col-sm-8">Speaks, reads and writes English fluently.</div>
+                </div>
+                <div class="row">
+                    <div class="timeline-when col-sm-4">Swedish and Norwegian</div>
+                    <div class="timeline-what col-sm-8">Understands Swedish and Norwegian.</div>
+                </div>
+                <div class="row">
+                    <div class="timeline-when col-sm-4">German</div>
+                    <div class="timeline-what col-sm-8">Understands basic German.</div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <h2 class="section-heading text-center">Whereabouts</h2>
+                <p>I currently live in Copenhagen, Denmark, but I have been fortunate enough to spend 2 1/2 years of the last 5 outside Denmark, combining traveling and working, exploring cities and places all around the world.</p>
+                <p>I lived in Chiang Mai, Thailand on an off for almost a year... working online and studying bodywork and buddhism. 4-5 months of 2014 was spend in the inspirational bay area by San Francisco, and in 2015 I worked from Bangkok, Thailand and Cape Town, South Africa.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="content-section section-gray">
+    <div class="container">
+        <h1 class="section-heading-lg text-center">Project experience</h1>
+
+            {% include projects.html %}
+
+            <div class="showcase">
+                <h2 class="showcase-heading">Volkswagen Denmark</h2>
+                <p class="showcase-date text-muted"><time>2011/11 - 2011/12</time></p>
+                <div class="body">
+                    <p>Designing and implementing a web application for an infostand, that would allow customers to sign up for a competition and order a demoride and brochures</p>
+                    <p>The main goal was to keep everything web based to keep the cost of the application down.</p>
+                </div>
+
+                <ul class="showcase-images">
+                    <li><a class="fancybox" href="/img/work/2011-11-15_volkswagen_infostand.jpg"><img src="/img/work/vw-infostand-thumb.jpg" alt="" /></a></li>
+                </ul>
+                <h4>Responsibility</h4>
+                <ul>
+                    <li>Designing a layout to fit an iPad in portrait mode.</li>
+                    <li>Implementing the design into JQuery Mobile templates.</li>
+                    <li>Adding gesture based navigation (swiping left and right).</li>
+                    <li>Creating a toggle effect and a switch functionality to hide some of the form fields until needed.</li>
+                </ul>
+                <h4>Technologies used</h4>
+                <p>JQuery Mobile, HTML, CSS, JavaScript, Photoshop</p>
+                <h4>Role in project</h4>
+                <p>HTML Developer, front-ender, Webdesigner</p>
+            </div>
+
+
+            <div class="showcase">
+                <h2 class="showcase-heading">Audi Denmark</h2>
+                <p class="showcase-date text-muted"><time>2011/10 - 2011/11</p></p>
+                <div class="body">
+                    <p>Creating a iPad based version of a info-stand for an annual danish auto show. The stand allowed customers to view car specs, price and order a demoride and brochures.</p>
+                    <p>The primary goal was to keep everything web based.</p>
+                </div>
+
+                <ul class="showcase-images">
+                    <li><a class="fancybox" href="/img/work/2011-11-03_audi_infostand.jpg"><img src="/img/work/audi-infostand-thumb.jpg" alt="" /></a></li>
+                </ul>
+
+                <h4>Responsibility</h4>
+                <ul>
+                    <li>Designing a basic layout for a portrait positioned iPad.</li>
+                    <li>Testing different webbased mobile frameworks that would shorten the development time (JQuery Mobile, Sencha, JTouch, etc.).</li>
+                    <li>Implementing the design into JQuery Mobile templates. Creating a stylesheet for overwriting the standard styles.</li>
+                    <li>Adding gesture based navigation</li>
+                </ul>
+                <h4>Technologies used</h4>
+                <p>JQuery Mobile, HTML, CSS, JavaScript, Photoshop</p>
+                <h4>Role in project</h4>
+                <p>Front-end developer, webdesigner</p>
+            </div>
+
+            <div class="showcase">
+                <h2 class="showcase-heading">Skoda Denmark</h2>
+                <p class="showcase-date text-muted"><time>2011/04 - 2011/05</time></p>
+                <div class="body">
+                    <p>Skoda made a quick 'n' dirty implementation of the new CI on skoda.dk because of a tight deadline and hired me to make a thorough review and re-implementation of the the HTML, CSS and JavaScript and give advice on how to optimize certain areas of the site. </p>        
+                </div>
+                <h4>Responsibility</h4>
+                <ul>
+                    <li>Reviewing/testing the old implementation.</li>
+                    <li>Advising the client on the solutions and estimating the tasks.</li>
+                    <li>Re-writing and optimizing the HTML and CSS.</li>
+                    <li>Fixing menu compatibility issues with Internet Explorer.</li>
+                    <li>Migrating from Prototype JS framework to JQuery, rewriting the old functionality.</li>
+                    <li>Implementing a JQuery carousel</li>
+                </ul>
+
+                <h4>Technologies used</h4>
+                <p>HTML, CSS, JavaScript, Photoshop, Flash, JQuery, Prototype</p>
+                <h4>Role in project</h4>
+                <p></p>
+                <h4>Contact</h4>
+                <p></p>
+            </div>
+
+            <div class="showcase">
+                <h2 class="showcase-heading">Semler Group (Scandinavian Motor Co.)</h2>
+                <p class="showcase-date text-muted"><time>2009/04 - 2010/08</time></p>
+                <div class="body">
+                    <p>The project was a ground up redesign of an old web based application maintaining the websites of the 250+ car dealers associated to Semler Group (VW).</p>
+
+                    <p>I was responsible for designing portal- and public brand sites for 13 car brands, and implementing 25 HTML based templates pr. brand. Furthermore a new CMS/admin system was designed and implemented specially for this project. </p>
+                    <p>Scrum and Agile methods were used in this project. The development team consisted of 2 developers and 1 designer (DAS). </p>
+                </div>
+
+                <ul class="showcase-images">
+                    <li><a class="fancybox" href="/img/work/2010-07-29_ifha_screenshot_1.jpg" rel="ifha"><img src="/img/work/2010-07-29_ifha_screenshot_1.jpg" alt="" /></a></li>
+                    <li><a class="fancybox" href="/img/work/2010-07-29_ifha_screenshot_2.jpg" rel="ifha"><img src="/img/work/2010-07-29_ifha_screenshot_2.jpg" alt="" /></a></li>
+                    <li><a class="fancybox" href="/img/work/2010-07-29_ifha_screenshot_3.jpg" rel="ifha"><img src="/img/work/2010-07-29_ifha_screenshot_3.jpg" alt="" /></a></li>
+                    <li><a class="fancybox" href="/img/work/2010-07-29_ifha_screenshot_4.jpg" rel="ifha"><img src="/img/work/2010-07-29_ifha_screenshot_4.jpg" alt="" /></a></li>
+                    <li><a class="fancybox" href="/img/work/2010-07-29_ifha_screenshot_4.jpg" rel="ifha"><img src="/img/work/2010-07-29_ifha_screenshot_4.jpg" alt="" /></a></li>
+                    <li><a class="fancybox" href="/img/work/2010-07-29_ifha_screenshot_6.jpg" rel="ifha"><img src="/img/work/2010-07-29_ifha_screenshot_6.jpg" alt="" /></a></li>
+                    <li><a class="fancybox" href="/img/work/2010-07-29_ifha_screenshot_7.jpg" rel="ifha"><img src="/img/work/2010-07-29_ifha_screenshot_7.jpg" alt="" /></a></li>
+                    <li><a class="fancybox" href="/img/work/2010-07-29_ifha_screenshot_8.jpg" rel="ifha"><img src="/img/work/2010-07-29_ifha_screenshot_8.jpg" alt="" /></a></li>
+                    <li><a class="fancybox" href="/img/work/2010-07-29_ifha_screenshot_9.jpg" rel="ifha"><img src="/img/work/2010-07-29_ifha_screenshot_9.jpg" alt="" /></a></li>
+                    <li><a class="fancybox" href="/img/work/2010-07-29_ifha_screenshot_8.jpg" rel="ifha"><img src="/img/work/2010-07-29_ifha_screenshot_7.jpg" alt="" /></a></li>
+                    <li><a class="fancybox" href="/img/work/2010-07-29_ifha_screenshot_10.jpg" rel="ifha"><img src="/img/work/2010-07-29_ifha_screenshot_10.jpg" alt="" /></a></li>
+                    <li><a class="fancybox" href="/img/work/2010-08-02_ifha_screenshot_11.jpg" rel="ifha"><img src="/img/work/2010-08-02_ifha_screenshot_11.jpg" alt="" /></a></li>
+                    <li><a class="fancybox" href="/img/work/2010-08-02_administration_site_tree_design.jpg" rel="ifha"><img src="/img/work/2010-08-02_administration_site_tree_design.jpg" alt="" /></a></li>
+                </ul>
+                <h4>Responsibility</h4>
+                <ul>
+                    <li>Planning the initial site maps for the admin site and public sites.</li>
+                    <li>Planning the functionality of the public sites and creating the requirements for the admin system based on this knowledge.</li>
+                    <li>Analyzing and planning how to mold the 13 designs to run on identical markup.</li>
+                    <li>Wire frames/mock-ups - planning/designing the admin workflow and wizards.</li>
+                    <li>Designing UI for the admin system and converting the designs into templates using HTML, CSS and JavaScript.</li>
+                    <li>Designing UI for public pages and converting the designs into templates using HTML, CSS and JavaScript.</li>
+                    <li>Optimizing the markup for SEO and printing.</li>
+                    <li>Optimizing front-end load time using Cache Right (GZip), YSlow and Firebug.</li>
+                    <li>Implementing dynamic XML based Flash loader to handle campaigns including videos and animation from the admin system.</li>
+                    <li>Implementing an image cropper for the admin section.</li>
+                    <li>Debugging. Bug reporting in FogBugz.</li>
+                </ul>
+                <h4>Technologies used</h4>
+                <p>Adobe Photoshop, HTML, CSS, JavaScript, AJAX, Prototype JS, Subversion, FogBugz, Flash</p> 
+                <h4>Role in project</h4>
+                <p>Webdesigner, front-end developer</p>
+                <h4>Contact person</h4>
+                <p>Head of the Internet department, Semler Services A/S Thomas Hansen</p>
+            </div>
+
+            <div class="showcase">
+                <h2 class="showcase-heading">CBS Students</h2>
+                <p class="showcase-date text-muted"><time>2009/03 - 2009/04</time></p>
+                <div class="body">
+                    <p>Designing a new website/web identity for CBS Students, and preparing the design for a Drupal implementation later on.</p>
+                    
+                    <p>Working closely together with the CBS student board of 8 people, using short release cycles to ensure client satisfaction and prevent any misunderstandings.</p>
+                </div>
+                <ul class="showcase-images">
+                    <li><a class="fancybox" href="/img/work/2010-06-22_cbs_students_1.jpg" rel="cbs-students"><img src="/img/work/2010-06-22_cbs_students_1.jpg" alt="" /></a></li>
+                    <li><a class="fancybox" href="/img/work/2010-06-22_cbs_students_2.jpg" rel="cbs-students"><img src="/img/work/2010-06-22_cbs_students_2.jpg" alt="" /></a></li>
+                </ul>
+                <h4>Responsibility</h4>
+                <ul>
+                    <li>Identifying the requirements of the site (purpose, style and functionality), acting as an advisor on the structuring of the site</li>
+                    <li>Designing the UI based on the requirements and preparing the site elements for the Drupal implementation</li>
+                    <li>Collaborating with Drupal developer on implementing the final website</li>
+                </ul>
+                <h4>Technologies used</h4>
+                <p>Adobe Photoshop, CMS, HTML, CSS, Drupal.</p>
+                <h4>Role in project</h4>
+                <p>UI Specialist, WebDesigner, HTML Developer.</p>
+                <h4>Contact</h4>
+                <p>Partner Henrik Thorn - IT Kartellet</p>
+            </div>
+
+
+            <div class="showcase">
+                <h2 class="showcase-heading">Telefaction / Danske Bank</h2>
+                <p class="showcase-date text-muted"><time>2009/01 - 2009/01</time></p>
+                <div class="body">
+                    <p>The project involved redesigning/skinning Telefaction's telemarketing web application UI for Danske Bank, with a design resembling the Danske Bank CI. </p>
+                </div>
+
+                <ul class="showcase-images">
+                    <li>
+                        <a class="fancybox" href="/img/work/2010-06-22_telefaction_1.jpg" rel="telefaction"><img src="/img/work/2010-06-22_telefaction_1.jpg" alt="" /></a>
+                    </li>
+                    <li>
+                        <a class="fancybox" href="/img/work/2010-06-22_telefaction_2.jpg" rel="telefaction"><img src="/img/work/2010-06-22_telefaction_2.jpg" alt="" /></a>
+                    </li>
+                    <li>
+                        <a class="fancybox" href="/img/work/2010-06-22_telefaction_3.jpg" rel="telefaction"><img src="/img/work/2010-06-22_telefaction_3.jpg" alt="" /></a>
+                    </li>
+                </ul>
+                
+                <h4>Responsibility</h4>
+                <ul>
+                    <li>Interpreting the Danske Bank CI</li>
+                    <li>Designing UI for 6 pages/subpages based on the ideas of Telefaction and the Danske Bank CI</li>
+                    <li>Advising on the template implementation into the existing Telefaction web app.</li>
+                </ul>
+                <h4>Technologies used</h4>
+                <p>Adobe Photoshop</p>
+                <h4>Role in project</h4>
+                <p>Webdesigner, front-end specialist</p>
+            </div>
+
+            <div class="showcase">
+                <h2 class="showcase-heading">Rojabo</h2>
+                <p class="showcase-date text-muted"><time>2008/08 - 2008/12</time></p>
+                <div class="body">
+                    <p>The purpose of the project was to develop an online web application for creating personalized training programs for ordinary and enthusiastic rowers, based on the Rojabo fitness models and methods used by the Danish national rowing team, including fitness progress tests and training plans based on goal setting.</p>
+                    
+                    <p>The development team consisted of 3 developers and 1 designer (DAS). Scrum and Agile methods were used during the project. 
+                    </p>
+                </div>
+                <ul class="showcase-images">
+                    <li>
+                        <a class="fancybox" href="/img/work/2010-06-22_rojabo_1.jpg" rel="rojabo"><img src="/img/work/2010-06-22_rojabo_1.jpg" alt="" /></a>
+                    </li>
+                    <li>
+                        <a class="fancybox" href="/img/work/2010-06-22_rojabo_pricing.jpg" rel="rojabo"><img src="/img/work/2010-06-22_rojabo_pricing.jpg" alt="" /></a>
+                    </li>
+                    <li>
+                        <a class="fancybox" href="/img/work/2010-06-22_rojabo_2.jpg" rel="rojabo"><img src="/img/work/2010-06-22_rojabo_2.jpg" alt="" /></a>
+                    </li>
+                </ul>
+                <h4>Responsibility</h4>
+                <ul>
+                    <li>Concept developing/prototyping the outline of the initial application.</li>
+                    <li>Wire frames/mock-ups/sitemap.</li>
+                    <li>Designing UI for public pages.</li>
+                    <li>Designing UI for private part of the web app (20+ templates), together with the client using Agile methods.</li>
+                    <li>Implementing HTML templates for public and private part of the web app.</li>
+                    <li>Debugging.</li>
+                </ul>
+                <h4>Technologies used</h4>
+                <p></p>
+                <h4>Role in project</h4>
+                <p>UI Specialist, Web Designer, HTML Developer, Web Usability Specialist, Information Architect.</p>
+                <h4>Contact</h4>
+                <p>Owner Jacob Øjvind, Rojabo.com</p>
+            </div>
+
+            <div class="showcase">
+                <h2 class="showcase-heading">Progressive IT</h2>
+                <p class="showcase-date text-muted"><time>2008/08 - 2008/09</time></p>
+                <div class="body">
+                    <p>Creating a new website for Progressive IT's based on their new offline CI. </p>
+                </div>
+
+                <ul class="showcase-images">
+                    <li>
+                        <a class="fancybox" href="/img/work/2010-06-15_progressive_1.jpg" rel="progressive"><img src="/img/work/2010-06-15_progressive_1.jpg" alt="" /></a>
+                    </li>
+                    <li>
+                        <a class="fancybox" href="/img/work/2010-06-15_progressive_2.jpg" rel="progressive"><img src="/img/work/2010-06-15_progressive_2.jpg" alt="" /></a>
+                    </li>
+                    <li>
+                        <a class="fancybox" href="/img/work/2010-06-15_progressive_3.jpg" rel="progressive"><img src="/img/work/2010-06-15_progressive_3.jpg" alt="" /></a>
+                    </li>
+                    <li>
+                        <a class="fancybox" href="/img/work/2010-06-15_progressive_4.jpg" rel="progressive"><img src="/img/work/2010-06-15_progressive_4.jpg" alt="" /></a>
+                    </li>
+                    <li>
+                        <a class="fancybox" href="/img/work/2010-06-15_progressive_5.jpg" rel="progressive"><img src="/img/work/2010-06-15_progressive_5.jpg" alt="" /></a>
+                    </li>
+                </ul>
+
+                <h4>Responsibility</h4>
+                <ul>
+                    <li>Planning the sitemap and structure of the site.</li>
+                    <li>Designing the new UI based on interviews with Progressive IT and the offline CI.</li>
+                    <li>Creating the HTML templates with SEO and printing in mind.</li>
+                    <li>Icons design.</li>
+                    <li>Debugging.</li>
+                </ul>
+                <h4>Technologies used</h4>
+                <p>Photoshop, HTML, CSS, JavaScript, Ruby on Rails, Textile.</p>
+                <h4>Role in project</h4>
+                <p>Webdesigner, HTML/CSS</p>
+                <h4>Contact</h4>
+                <p>Managing Partner Jonas Buhl Gregersen from Progressive IT</p>
+            </div>
+
+            <div class="showcase">
+                <h2 class="showcase-heading">CBS Casecompetition</h2>
+                <p class="showcase-date text-muted"><time>2008/07 - 2008/07</time></p>
+                <div class="body">
+                    <p>Designing a new website for the annual CBS Casecompetiton event, and preparing the design files for the online template service "PSD2HTML".</p>
+                </div>
+                <ul class="showcase-images">
+                    <li>
+                        <a class="fancybox" href="/img/work/2010-06-22_cbs_casecompetition_1.jpg" rel="cbs-cc"><img src="/img/work/2010-06-22_cbs_casecompetition_1.jpg" alt="" /></a>
+                    </li>
+                    <li>
+                        <a class="fancybox" href="/img/work/2010-06-22_cbs_casecompetition_2.jpg" rel="cbs-cc"><img src="/img/work/2010-06-22_cbs_casecompetition_2.jpg" alt="" /></a>
+                    </li>
+                    <li>
+                        <a class="fancybox" href="/img/work/2010-06-22_cbs_casecompetition_3.jpg" rel="cbs-cc"><img src="/img/work/2010-06-22_cbs_casecompetition_3.jpg" alt="" /></a>
+                    </li>
+                </ul>
+                <h4>Responsibility</h4>
+                <ul>
+                    <li>Designing 4 templates, preparing the files for both Drupal content and PSD2HTML service.</li>
+                    <li>Reviewing the files from PDS2HTML collaborating with a Drupal developer on implementing the final website.</li>
+                </ul>
+                <h4>Technologies used</h4>
+                <p>Photoshop, HTML, CSS, CMS, Drupal.</p>
+                <h4>Role in project</h4>
+                <p>UI Specialist, Web Designer, HTML Developer</p>
+                <h4>Contact</h4>
+                <p>Partner Troels Liebe Bentsen from IT Kartellet  </p>
+            </div>
+
+
+
+            <div class="showcase">
+                <h2 class="showcase-heading">Beautiful People</h2>
+                <p class="showcase-date text-muted"><time>2008/04 - 2008/04</time></p>
+                <div class="body">
+                    <p>When BP was redesigning their website, I was hired to give advice on how to convert the new design to HTML based templates, including simplifying the design and doing the initial conversion, making example files and the CSS foundation. </p>
+                </div>
+                <h4>Responsibility</h4>
+                <ul>
+                    <li>Recommending ways to optimize the design and how to implement certain problematic parts of the site.</li>
+                    <li>Simplifying the design, markup and CSS to prevent massive server load in the final website.</li>
+                    <li>Creating templates example markup for the developers based on design files from BP designer.</li>
+                </ul>
+
+                <h4>Technologies used</h4>
+                <p>HTML, CSS, JavaScript, Adobe Photoshop</p>
+                <h4>Role in project</h4>
+                <p>Webdesigner, HTML Developer</p>
+                <h4>Contact person</h4>
+                <p>Lead developer at Beautiful People, Rasmus Gottschau</p>
+            </div>
+
+            <div class="showcase">
+                <h2 class="showcase-heading">Volkswagen Denmark</h2>
+                <p class="showcase-date text-muted"><time>2007/05 - 2007/07</time></p>
+                <div class="body">
+                    <p>When "face-lifting" volkswagen.dk the old Flash based dealer-map was completely redesigned and implemented on top of Google Maps, ensuring cross device compatibility, and having the flexibility of standardized web formats and technologies. </p>
+                </div>
+
+                <ul class="showcase-images">
+                    <li>
+                        <a class="fancybox" href="/img/work/2010-06-23_vw_dealermap_1.jpg" rel="vw-dealermap"><img src="/img/work/2010-06-23_vw_dealermap_1.jpg" alt="" /></a>
+                    </li>
+                    <li>
+                        <a class="fancybox" href="/img/work/2010-06-23_vw_dealermap_2.jpg" rel="vw-dealermap"><img src="/img/work/2010-06-23_vw_dealermap_2.jpg" alt="" /></a>
+                    </li>
+                </ul>
+                <h4>Responsibility</h4>
+                <ul>
+                    <li>Requirements specification.</li>
+                    <li>Planning a prototype based on the initial idea.</li>
+                    <li>Wire frames/mock-ups.</li>
+                    <li>Designing the UI.</li>
+                    <li>Converting the design to templates (HTML and CSS).</li>
+                    <li>Debugging.</li>
+                </ul>
+
+                <h4>Technologies used</h4>
+                <p>Adobe Photoshop, HTML, JavaScript, CSS, JSON, Prototype JS, Google Maps API.</p>
+                <h4>Role in project</h4>
+                <p>Webdesigner, HTML Developer</p>
+                <h4>Contact</h4>
+                <p>Project Leader at Semler Services A/S, Internet Department, Kenneth Bang</p>
+            </div>
+
+            <div class="showcase">
+                <h2 class="showcase-heading">Volkswagen Denmark</h2>
+                <p class="showcase-date text-muted"><time>2007/03 - 2007/07</time></p>
+                <div class="body">
+                    <p>Big project redesigning Volkswagen from ground up based on the new German corporate identity, and migrating from an old VB.ASP implementation to EPiServer CMS.</p>
+
+                    <p>The development team consisted of 2 back-end programmers and 1 web designer (DAS).</p>
+                </div>
+
+                <ul class="showcase-images">
+                    <li>
+                        <a class="fancybox" href="/img/work/2010-06-23_vw_facelift_1.jpg" rel="vw-facelift"><img src="/img/work/2010-06-23_vw_facelift_1.jpg" alt="" /></a>
+                    </li>
+                    <li>
+                        <a class="fancybox" href="/img/work/2010-06-23_vw_facelift_2.jpg" rel="vw-facelift"><img src="/img/work/2010-06-23_vw_facelift_2.jpg" alt="" /></a>
+                    </li>
+                </ul>
+
+                <h4>Responsibility</h4>
+                <ul>
+                    <li>Designing 40+ Photoshop designs based on the VW CI working with VW marketing for gradual corrections and approval.</li>
+                    <li>Converting designs to HTML and CSS based templates, and preparing dynamic sections for the developers.</li>
+                    <li>Optimizing the markup for SEO and printing.</li>
+                    <li>Implementing a XML based Flash loader to handle campaigns with streaming/animated content.</li>
+                    <li>Debugging - checking and testing the markup created by the developers.</li>
+                </ul>
+                <h4>Technologies used</h4>
+                <p>Adobe Photoshop, HTML, CSS, JavaScript</p>
+                <h4>Role in project</h4>
+                <p>Webdesigner, front-end developer</p>
+                <h4>Contact</h4>
+                <p>Project manager at Semler Services A/S, Internet Department, Kenneth Bang</p>
+            </div>
+
+            <div class="showcase">
+                <h2 class="showcase-heading">Vertic Portals</h2>
+                <p class="showcase-date text-muted"><time>2006/10 - 2007/02</time></p>
+                <div class="body">
+                    <p>I worked for Vertic Portals on various projects, including netdating.dk, alinea.dk and BRF Kredit Christmas Calendar.</p>
+                </div>
+                <h4>Responsibility</h4>
+                <ul>
+                    <li>Designing UI for campaign sites.</li>
+                    <li>Implementing standard compliant HTML templates.</li>
+                    <li>Basic Flash functionality like carousels, character animations and gallery functionality.</li>
+                    <li>Advising in the use of web standards in a Flash focused environment (SEO, printing, portable devices).</li>
+                </ul>
+                <h4>Technologies used</h4>
+                <p>HTML, CSS, JavaScript, Photoshop, Flash</p>
+                <h4>Role in project</h4>
+                <p>HTML Developer, Web Designer, GUI Specialist.</p>
+            </div>
+
+            <div class="showcase">
+                <h2 class="showcase-heading">Sikkerhedsstyrelsen</h2>
+                <p class="showcase-date text-muted"><time>2006/09 - 2006/10</time></p>
+                <div class="body">
+                    <p>Sikkerhedsstyrelsen wanted a new design for their new year campaign site about fireworks and prevention of accidents, fyrvaerkeri.dk.</p>
+                </div>
+                <h4>Responsibility</h4>
+                <ul>
+                    <li>Identifying the style of the UI and the structuring the content.</li>
+                    <li>Designing UI mock-ups.</li>
+                    <li>Implementing and preparing the HTML templates for the programmers.</li>
+                    <li>Implementing a Flash carousel.</li>
+                </ul>
+                <h4>Technologies used</h4>
+                <p></p>
+                <h4>Role in project</h4>
+                <p>Photoshop, Flash/Actionscript, HTML, CSS</p>
+                <h4>Contact</h4>
+                <p>Web Designer, HTML Developer, Flash developer</p>
+            </div>
+
+            <div class="showcase">
+                <h2 class="showcase-heading">Audi Denmark</h2>
+                <p class="showcase-date text-muted"><time>2006/01 - 2006/04</time></p>
+                <div class="body">
+                    <p>Designing and building a webshop for Audi.dk and a admin system for maintaining the shop. </p>
+                    <p>The development team consisted of 1 back-end programmer (consultant) and 1 web designer (DAS). </p>
+                </div>
+                <h4>Responsibility</h4>
+                <ul>
+                    <li>Creating the sitemap for the shop and the admin system.</li>
+                    <li>Planning/structuring the flow of buying products.</li>
+                    <li>Planning/structuring the use and flow of the admin system.</li>
+                    <li>Identifying the design requirements.</li>
+                    <li>Designing 20+ mock-ups and building the HTML templates for both admin and public site.</li>
+                    <li>Implementing a XML based Flash product gallery.</li>
+                    <li>Assisting the developer in implementing the templates.</li>
+                </ul>
+                <h4>Technologies used</h4>
+                <p>Photoshop, HTML, CSS, Flash, JavaScript, AJAX</p>
+                <h4>Role in project</h4>
+                <p>UI specialist, Web Designer, HTML Developer, Web Usability Specialist.</p>
+            </div>
+
+            <div class="showcase">
+                <h2 class="showcase-heading">Audi Denmark</h2>
+                <p class="showcase-date text-muted"><time>2005/10 - 2005/12</time></p>
+                <div class="body">
+                    <p>The purpose of the project was to migrate Audi's Partner-net, to an IBM Lotus Quickplace solution, and updating the UI with the Audi CI.</p>
+                </div>
+                <h4>Responsibility</h4>
+                <ul>
+                    <li>Identification of UI requirements.</li>
+                    <li>Designing photoshop mock-ups.</li>
+                    <li>Implementing the mock-ups as HTML templates.</li>
+                    <li>Assisting a Lotus Developer in the implementation into the final Quickplace.</li>
+                </ul>
+
+                <h4>Technologies used</h4>
+                <p>Photoshop, HTML, CSS, JavaScript, Lotus Quickplace.</p>
+                <h4>Role in project</h4>
+                <p>Webdesigner, HTML Developer</p>
+            </div>
+
+            <div class="showcase">
+                <h2 class="showcase-heading">Seat Denmark</h2>
+                <p class="showcase-date text-muted"><time>2005/05 - 2005/09</time></p>
+                <div class="body">
+                    <p>Implementing a new seat.dk website inspired by the international seat.com site's CI combined with the Danish content, migrating the website from and old back-end setup to a new one running .NET.</p>
+                    <p>The development team consisted of 1 back-end programmer and 1 web designer (DAS). </p>
+                </div>
+                <h4>Responsibility</h4>
+                <ul>
+                    <li>Designing new UI based on the seat.com design.</li>
+                    <li>Implementing HTML templates.</li>
+                    <li>Implementing a XML based Flash loader to handle campaigns with streaming/animated content.</li>
+                </ul>
+
+                <h4>Technologies used</h4>
+                <p>Photoshop, CSS, JavaScript, Flash</p>
+                <h4>Role in project</h4>
+                <p>Webdesigner, HTML Developer</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+

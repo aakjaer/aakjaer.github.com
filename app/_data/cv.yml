@@ -1,5 +1,21 @@
 projects:
-
+  - title: "Semler Retail"
+    period: "2014/12 - 2015-07"
+    description: |
+      <p>I was hired to design and implement the front-end for Volkswagen Retail, a concept combining 13 Volkswagen Retail dealers into a single website.</p>
+      <p>Website: <a href="http://volkswagen.semlerretail.dk/">Volkswagen Semler Retail</a></p>
+    technology: "HTML5, JS, LESS, Autoprefixer, CSS3, Jekyll, Twitter Bootstrap, Github"
+    role: "Front-end developer, Webdesigner, UX Specialist, UI Specialist"
+    contact: "Head of the Internet department, Semler Services A/S Thomas Hansen"
+    images:
+      - small: "/img/work/2014-12_vw_retail_01.jpg"
+        large: "/img/work/2014-12_vw_retail_01_lg.jpg"
+      - small: "/img/work/2014-12_vw_retail_02.jpg"
+        large: "/img/work/2014-12_vw_retail_02_lg.jpg"
+      - small: "/img/work/2014-12_vw_retail_03.jpg"
+        large: "/img/work/2014-12_vw_retail_03_lg.jpg"
+      - small: "/img/work/2014-12_vw_retail_04.jpg"
+        large: "/img/work/2014-12_vw_retail_04_lg.jpg"
 
   - title: "Volkswagen Service booking"
     period: "2015/04 - 2015-06"
@@ -13,7 +29,7 @@ projects:
         large: "/img/work/2015-04-vw-servicebook-02-lg.jpg"
       - small: "/img/work/2015-04-vw-servicebook-03.jpg"
         large: "/img/work/2015-04-vw-servicebook-03-lg.jpg"
-    technology: "HTML5, JS, jQuery SASS, Autoprefixer, CSS3, Twitter Bootstrap, Github"
+    technology: "HTML5, CSS3, SASS, Twitter Bootstrap, JS, jQuery, Github"
     role: "Front-end developer"
     contact: "Project manager Semler Services, Dan Andersen"
 
@@ -39,7 +55,7 @@ projects:
         <li>Building a responsive menu structure to support the 3 levels of pages.</li>
         <li>Updating form designs by consolidating and cleaning up the old ones, with the main purpose of having better conversion rates on key services.</li>
       </ul>
-    technology: "HTML5, JS, LESS, Autoprefixer, CSS3, Jekyll, Twitter Bootstrap, C#, Github, Teamcity"
+    technology: "HTML5, JS, LESS, Autoprefixer, CSS3, Jekyll, Twitter Bootstrap, Github"
     role: "Front-end developer, Webdesigner, UX Specialist, UI Specialist"
     contact: "Head of the Internet department, Semler Services Thomas Hansen"
 
@@ -59,32 +75,10 @@ projects:
     technology: "HTML5, JS, jQuery, SASS, Autoprefixer, CSS3, Twitter Bootstrap, Github"
     role: "Front-end developer"
 
-  - title: "Semler Retail"
-    period: "2014/12 - 2015-06"
-    description: |
-      <p>URL: <a href="http://vw-amager.dk">Volkswagen Amager</a></p>
-    responsibility: |
-      <ul>
-        <li>Updating designs for 13 selected VW retail dealers</li>
-        <li>Making a complete front-end prototype to act as a blueprint for the .NET developers and a styleguide later on.</li>
-      </ul>
-    technology: "HTML5, JS, LESS, Autoprefixer, CSS3, Jekyll, Twitter Bootstrap, C#, EpiServer, Github"
-    role: "Front-end developer, Webdesigner, UX Specialist, UI Specialist"
-    contact: "Head of the Internet department, Semler Services A/S Thomas Hansen"
-    images:
-      - small: "/img/work/2014-12_vw_retail_01.jpg"
-        large: "/img/work/2014-12_vw_retail_01_lg.jpg"
-      - small: "/img/work/2014-12_vw_retail_02.jpg"
-        large: "/img/work/2014-12_vw_retail_02_lg.jpg"
-      - small: "/img/work/2014-12_vw_retail_03.jpg"
-        large: "/img/work/2014-12_vw_retail_03_lg.jpg"
-      - small: "/img/work/2014-12_vw_retail_04.jpg"
-        large: "/img/work/2014-12_vw_retail_04_lg.jpg"
-
   - title: "Vivino"
     period: "2013/12 - 2014/05"
     description: |
-      <p>During the first part of 2014 I was lucky enough to help Vivino implement their brand new website for <a href="http://vivino.com">Vivino.com</a>. I was responsible for the markup, styling and basic scripting of the new site, working in Bootstrap 3 prototypes and releasing modular segments of the design into the main Rails project, tying the modules together with the Vivino API and base logic.</p>
+      <p>During the first part of 2014 I was lucky enough to help Vivino implement their brand new website for <a href="http://vivino.com">Vivino.com</a>. I was in charge of writing the front-end templates from scratch, working closely with the design team and programmers, tying the front-end and back-end functionality together.</p>
     technology: "HTML5, CSS, CSS3, Jekyll, Twitter Bootstrap, RoR, JS, SASS, Github"
     role: "Front-end developer, UI Specialist"
     contact: "Founders Theis Søndergaard and Heine Zachariassen"
@@ -106,8 +100,8 @@ projects:
   - title: "Atea Denmark"
     period: "2012/06 - 2013/04"
     description: |
-      <p>I was hired to design and implement multiple webinterfaces for Atea's tele project.</p>
-    technology: "Photoshop, Jekyll (for prototyping), LESS, CSS, JS, Twitter Bootstrap, jQuery, MVC, Github, Subversion"
+      <p>I was hired to design and implement a public and two administrative webinterfaces for Atea's tele project.</p>
+    technology: "Photoshop, Jekyll (for prototyping), LESS, CSS, Grunt, JS, Twitter Bootstrap, jQuery, Github, Subversion"
     role: "Front-end developer, UI Specialist"
     contact: "Sara Amini, Martin Bo, Asbjørn Johansen"
     images:
@@ -127,9 +121,8 @@ projects:
           <li>Interviewing Briza Maxima and creating sketches based on their many ideas.</li>
           <li>Creating final designs and illustrations based on the sketches.</li>
         </ul>
-    technology: "Photoshop, Ruby Jekyll, GitHub"
+    technology: "Photoshop, Jekyll, GitHub"
     role: "Webdesigner"
-    contact: "Founders Theis Søndergaard and Heine Zachariassen"
     images:
       - small: "/img/work/2012-03-28-briza-1.jpg"
         large: "/img/work/2012-03-28-briza-1-lg.jpg"

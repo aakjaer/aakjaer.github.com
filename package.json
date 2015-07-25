@@ -7,7 +7,7 @@
   "devDependencies": {
     "grunt": "^0.4.4",
     "grunt-build-control": "~0.1.2",
-    "grunt-concurrent": "~0.4.3",
+    "grunt-concurrent": "^2.0.0",
     "grunt-contrib-clean": "~0.5.0",
     "grunt-contrib-compass": "^1.0.3",
     "grunt-contrib-concat": "~0.3.0",

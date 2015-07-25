@@ -120,6 +120,21 @@ img {
 	max-width: 45em;
 }
 
+.section-screenshots {
+	.row {
+		margin: 0;
+	}
+
+	.col {
+		@include make-xs-column(2, 0);
+		@include make-sm-column(2, 0);
+		@include make-md-column(1, 0);
+	}
+
+}
+
+
+
 blockquote {
 	border: 0;
 
@@ -195,6 +210,7 @@ th {
 .cv-profile-img {
 	margin: 40px auto;
 	max-width: 200px;
+	border-radius: 50%;
 }
 
 .showcases {
