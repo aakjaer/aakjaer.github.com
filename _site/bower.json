@@ -1,0 +1,7 @@
+{
+  "name": "hamsterboydk",
+  "version": "0.0.0",
+  "dependencies": {
+    "bootstrap-sass": "git://github.com/twbs/bootstrap-sass.git#v3.1.0"
+  }
+}
