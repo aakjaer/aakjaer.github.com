@@ -1,85 +1,81 @@
 jQuery(document).ready(function($){
-	var overlayNav = $('.cd-overlay-nav'),
-		overlayContent = $('.cd-overlay-content'),
-		navigation = $('.cd-primary-nav'),
-		toggleNav = $('.cd-nav-trigger');
-
-	//inizialize navigation and content layers
-	layerInit();
-	$(window).on('resize', function(){
-		window.requestAnimationFrame(layerInit);
+	//open/close mega-navigation
+	$('.cd-nav-trigger').on('click', function(event){
+		event.preventDefault();
+		toggleNav();
 	});
 
-	//open/close the menu and cover layers
-	toggleNav.on('click', function(){
-		if(!toggleNav.hasClass('close-nav')) {
-			//it means navigation is not visible yet - open it and animate navigation layer
-			toggleNav.addClass('close-nav');
-			
-			overlayNav.children('span').velocity({
-				translateZ: 0,
-				scaleX: 1,
-				scaleY: 1,
-			}, 500, 'easeInCubic', function(){
-				navigation.addClass('fade-in');
-			});
-		} else {
-			//navigation is open - close it and remove navigation layer
-			toggleNav.removeClass('close-nav');
-			
-			overlayContent.children('span').velocity({
-				translateZ: 0,
-				scaleX: 1,
-				scaleY: 1,
-			}, 500, 'easeInCubic', function(){
-				navigation.removeClass('fade-in');
-				
-				overlayNav.children('span').velocity({
-					translateZ: 0,
-					scaleX: 0,
-					scaleY: 0,
-				}, 0);
-				
-				overlayContent.addClass('is-hidden').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend', function(){
-					overlayContent.children('span').velocity({
-						translateZ: 0,
-						scaleX: 0,
-						scaleY: 0,
-					}, 0, function(){overlayContent.removeClass('is-hidden')});
-				});
-				if($('html').hasClass('no-csstransitions')) {
-					overlayContent.children('span').velocity({
-						translateZ: 0,
-						scaleX: 0,
-						scaleY: 0,
-					}, 0, function(){overlayContent.removeClass('is-hidden')});
-				}
+
+	//on mobile - open submenu
+	$('.has-children').children('a').on('click', function(event){
+		//prevent default clicking on direct children of .has-children
+		event.preventDefault();
+		var selected = $(this);
+		selected.next('ul').removeClass('is-hidden').end().parent('.has-children').parent('ul').addClass('move-out');
+	});
+
+	//on desktop - differentiate between a user trying to hover over a dropdown item vs trying to navigate into a submenu's contents
+	var submenuDirection = ( !$('.cd-dropdown-wrapper').hasClass('open-to-left') ) ? 'right' : 'left';
+	$('.cd-dropdown-content').menuAim({
+        activate: function(row) {
+        	$(row).children().addClass('is-active').removeClass('fade-out');
+        	if( $('.cd-dropdown-content .fade-in').length == 0 ) $(row).children('ul').addClass('fade-in');
+        },
+        deactivate: function(row) {
+        	$(row).children().removeClass('is-active');
+        	if( $('li.has-children:hover').length == 0 || $('li.has-children:hover').is($(row)) ) {
+        		$('.cd-dropdown-content').find('.fade-in').removeClass('fade-in');
+        		$(row).children('ul').addClass('fade-out')
+        	}
+        },
+        exitMenu: function() {
+        	$('.cd-dropdown-content').find('.is-active').removeClass('is-active');
+        	return true;
+        },
+        submenuDirection: submenuDirection,
+    });
+
+	//submenu items - go back link
+	$('.go-back').on('click', function(){
+		var selected = $(this),
+			visibleNav = $(this).parent('ul').parent('.has-children').parent('ul');
+		selected.parent('ul').addClass('is-hidden').parent('.has-children').parent('ul').removeClass('move-out');
+	});
+
+	function toggleNav(){
+		var navIsVisible = ( !$('.cd-dropdown').hasClass('dropdown-is-active') ) ? true : false;
+		$('.cd-dropdown').toggleClass('dropdown-is-active', navIsVisible);
+		$('.cd-nav-trigger').toggleClass('dropdown-is-active', navIsVisible);
+		if( !navIsVisible ) {
+			$('.cd-dropdown').one('webkitTransitionEnd otransitionend oTransitionEnd msTransitionEnd transitionend',function(){
+				$('.has-children ul').addClass('is-hidden');
+				$('.move-out').removeClass('move-out');
+				$('.is-active').removeClass('is-active');
 			});
 		}
-	});
+	}
 
-	function layerInit(){
-		var diameterValue = (Math.sqrt( Math.pow($(window).height(), 2) + Math.pow($(window).width(), 2))*2);
-		overlayNav.children('span').velocity({
-			scaleX: 0,
-			scaleY: 0,
-			translateZ: 0,
-		}, 50).velocity({
-			height : diameterValue+'px',
-			width : diameterValue+'px',
-			top : -(diameterValue/2)+'px',
-			left : -(diameterValue/2)+'px',
-		}, 0);
-
-		overlayContent.children('span').velocity({
-			scaleX: 0,
-			scaleY: 0,
-			translateZ: 0,
-		}, 50).velocity({
-			height : diameterValue+'px',
-			width : diameterValue+'px',
-			top : -(diameterValue/2)+'px',
-			left : -(diameterValue/2)+'px',
-		}, 0);
+	//IE9 placeholder fallback
+	//credits http://www.hagenburger.net/BLOG/HTML5-Input-Placeholder-Fix-With-jQuery.html
+	if(!Modernizr.input.placeholder){
+		$('[placeholder]').focus(function() {
+			var input = $(this);
+			if (input.val() == input.attr('placeholder')) {
+				input.val('');
+		  	}
+		}).blur(function() {
+		 	var input = $(this);
+		  	if (input.val() == '' || input.val() == input.attr('placeholder')) {
+				input.val(input.attr('placeholder'));
+		  	}
+		}).blur();
+		$('[placeholder]').parents('form').submit(function() {
+		  	$(this).find('[placeholder]').each(function() {
+				var input = $(this);
+				if (input.val() == input.attr('placeholder')) {
+			 		input.val('');
+				}
+		  	})
+		});
 	}
 });

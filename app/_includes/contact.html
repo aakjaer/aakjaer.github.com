@@ -1,0 +1,18 @@
+<!-- Contact -->
+<section class="section">
+    <div class="container">
+        <h2 class="section-heading">Contact</h2>
+        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore dolorum autem quos quis reprehenderit ab cupiditate fuga illo provident, aspernatur repudiandae eius accusamus accusantium laborum. Ducimus earum, reprehenderit magnam veritatis.</p>
+        <hr class="separator-blue separator-left" />
+    </div>
+</div>
+
+<section class="section-screenshots hidden">
+    <div class="row">
+        {% for screenshot in site.data.screenshots  %}
+            <div class="col">
+                <img src="{{ site.baseurl }}/img/work/{{ screenshot }}" alt="" />
+            </div>
+        {% endfor %}
+    </div>
+</section>

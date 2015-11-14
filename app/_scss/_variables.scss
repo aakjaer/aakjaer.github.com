@@ -9,4 +9,22 @@ $brand-dark-blue: #293B50;
 $brand-light-blue: #A1DDF9;
 $brand-yellow: #FAE273;
 $brand-purple: #765174;
+$brand-light-gray: #bbb;
 $white-accent: rgb(240, 240, 240);
+
+
+
+$color-1: $brand-red; // Black
+$color-2: $body-bg; // San Juan
+$color-3: white; // White
+$color-4: #fb5e58; // Carnation
+
+
+// stack order
+$below-content: 1;
+$content: 2;
+$above-content: 3;
+
+// fonts
+
+$primary-font: sans-serif;

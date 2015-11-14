@@ -1,0 +1,95 @@
+// Content sections
+.section {
+    position: relative;
+    background-repeat: no-repeat;
+
+    > .container > :first-child {
+        margin-top: 0;
+    }
+}
+
+.section-content {
+    @extend .container;
+    padding-top: 4em;
+    padding-bottom: 4em;
+
+    @media (min-width: $screen-sm-min) {
+        padding-top: 6em;
+        padding-bottom: 6em;
+    }
+}
+
+.section-heading {
+    margin: 50px 0 1em;
+	font-size: 1.4em;
+	letter-spacing: .2em;
+	text-transform: uppercase;
+    font-weight: 700;
+}
+
+.section-image {
+    display: block;
+    max-width: 500px;
+    background-repeat: no-repeat;
+}
+
+.section-image-center {
+    @include center-block();
+}
+
+.section-sm > .container {
+    @media (min-width: $screen-md-min) {
+        max-width: 70%;
+    }
+}
+
+.section-white {
+    background: white;
+    color: $gray;
+}
+
+.section-light-blue {
+    background: $brand-light-blue;
+}
+
+.section-blue {
+    color: rgba(white, 0.9);
+    background-color: $brand-blue;
+
+    .section-heading {
+        color: white;
+    }
+}
+
+.section-dark-blue {
+    color: rgba(white, 0.9);
+    background-color: $brand-dark-blue;
+}
+
+.section-red {
+    color: rgba(white, 0.9);
+    background-color: $brand-red;
+
+    .section-heading {
+        color: white;
+    }
+}
+
+.section-yellow {
+    background-color: $brand-yellow;
+}
+
+.section-purple {
+    color: rgba(white, 0.9);
+    background-color: $brand-purple;
+}
+
+.section-light-gray {
+    background-color: #f2f2f2;
+}
+
+
+
+
+
+////////////////////////////////////////////////////

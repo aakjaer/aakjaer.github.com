@@ -3,11 +3,6 @@ layout: default
 bodyclass: page-projects
 ---
 
+{% include latest-projects.html %}
 
-<div class="container">
-    <a href="{{ site.baseurl }}/" class="btn btn-primary">Close</a>
-</div>
-
-<div class="scene scene--fadein">
-    {% include experience.html %}
-</div>
+{% include experience.html %}

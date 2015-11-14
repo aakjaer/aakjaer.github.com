@@ -1,7 +1,9 @@
-<nav>
-	<ul class="cd-primary-nav">
-		<li><a href="{{ site.baseurl }}/"><i class="icon-home"></i> Home</a></li>
-		<li><a href="{{ site.baseurl }}/projects/"><i class="icon-newspaper"></i> Projects</a></li>
-	</ul>
-</nav>
-<a href="#0" class="cd-nav-trigger">Menu<span class="cd-icon"></span></a>
+<div class="cd-dropdown-wrapper open-to-left">
+	<a class="cd-nav-trigger" href="#cd-primary-nav"><span></span></a>
+	<nav class="cd-dropdown">
+		<ul class="cd-dropdown-content">
+			<li><a href="{{ site.baseurl }}/">Home</a></li>
+			<li><a href="{{ site.baseurl }}/projects/">Project experience</a></li>
+		</ul> <!-- .cd-dropdown-content -->
+	</nav> <!-- .cd-dropdown -->
+</div> <!-- .cd-dropdown-wrapper -->
