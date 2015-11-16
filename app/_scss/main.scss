@@ -18,6 +18,8 @@
 
 //.......................................
 
+html, body { height: 100%; }
+
 body {
 	margin: 0;
 	font-weight: 300;
@@ -211,18 +213,19 @@ th {
 .project-brow {
 	display: block;
 	text-align: center;
-	margin-bottom: -0.5em;
 	text-transform: uppercase;
 	@extend .heavy;
-	color: $brand-light-gray;
+
+	margin-bottom: -5px;
 
 	@media (min-width: $screen-md-min) {
+		margin-bottom: -10px;
 		font-size: 1.5em;
 	}
 }
 
 .project-details {
-	margin-top: 2em;
+	margin: 2em 0 4em;
 	@extend .list-unstyled;
 	text-align: center;
 }
@@ -231,7 +234,6 @@ th {
 	font-size: 0.9em;
 	text-transform: uppercase;
 	@extend .heavy;
-	color: $brand-red;
 
 	@media (min-width: $screen-md-min) {
 		font-size: 1.2em;
@@ -245,8 +247,22 @@ th {
 }
 
 .project-image {
-	@extend .img-rounded;
-	margin-bottom: $grid-gutter-width;
+
+	figure {}
+	figcaption {
+		@extend .h3;
+	}
+}
+
+// .project-image img,
+// img.project-image {
+// 	@extend .img-rounded;
+// 	margin-bottom: $grid-gutter-width;
+// }
+
+
+.project-image-caption {
+
 }
 
 .project-preview {
@@ -271,6 +287,28 @@ th {
 		}
 	}
 }
+
+// browser top for project images
+.browser {
+	border-radius: 4px;
+
+	img {
+		@include border-bottom-radius(4px);
+	}
+}
+
+.browser-top {
+	display: block;
+	@include border-top-radius(4px);
+}
+.browser-bg {
+	fill: rgb(215, 215, 215);
+}
+.browser-url,
+.browser-buttons {
+	fill: white;
+}
+
 
 
 .showcases {
@@ -368,14 +406,14 @@ footer[role="contentinfo"] {
 	&.fadein-up-big { @include fadeInUpBig; }
 	&.fadein-down { @include fadeInDown; }
 
-	&[data-delay="100"] { @include delay(0.1s); }
-	&[data-delay="200"] { @include delay(0.2s); }
-	&[data-delay="300"] { @include delay(0.3s); }
-	&[data-delay="400"] { @include delay(0.4s); }
-	&[data-delay="500"] { @include delay(0.5s); }
-	&[data-delay="600"] { @include delay(0.6s); }
-	&[data-delay="700"] { @include delay(0.7s); }
-	&[data-delay="800"] { @include delay(0.8s); }
-	&[data-delay="900"] { @include delay(0.9s); }
-	&[data-delay="1000"] { @include delay(1s); }
+	// &[data-delay="100"] { @include delay(0.1s); }
+	// &[data-delay="200"] { @include delay(0.2s); }
+	// &[data-delay="300"] { @include delay(0.3s); }
+	// &[data-delay="400"] { @include delay(0.4s); }
+	// &[data-delay="500"] { @include delay(0.5s); }
+	// &[data-delay="600"] { @include delay(0.6s); }
+	// &[data-delay="700"] { @include delay(0.7s); }
+	// &[data-delay="800"] { @include delay(0.8s); }
+	// &[data-delay="900"] { @include delay(0.9s); }
+	// &[data-delay="1000"] { @include delay(1s); }
 }

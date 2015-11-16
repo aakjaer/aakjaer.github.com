@@ -6,10 +6,10 @@ client: Vivino
 
 
 
-<div class="section section-white">
+<div class="section">
     <div class="section-content">
         <p class="project-brow heavy">Case</p>
-        <h1 class="hero-heading text-red text-center animating fadein-up">{{ page.title }}</h1>
+        <h1 class="hero-heading text-center">{{ page.title }}</h1>
 
         <ul class="project-details row">
             <li class="project-detail col-sm-3 col-sm-offset-3">
@@ -21,40 +21,53 @@ client: Vivino
                 Build templates
             </li>
         </ul>
-    </div>
-</div>
 
 
-<section class="section">
-    <div class="section-content">
-        <h2 class="section-heading text-center">Lorem ipsum dolor sit amet</h2>
-        <p class="lead text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima numquam illo saepe, quas sed! Aspernatur autem modi veritatis fugiat aliquid inventore voluptatibus et doloribus numquam nostrum ipsam nam, temporibus tempore!</p>
+        <p class="lead text-center">I had the privilege of working for Vivino, a danish start-up company situated in Copenhagen and San Francisco, specialised in delivering wine ratings, reviews and prices to the biggest wine community in the world, currently counting more than 11 mio. users.</p>
+        <!-- <p class="lead text-center">During the first part of 2014 I was lucky enough to help Vivino implement their brand new website for <a href="http://vivino.com">Vivino.com</a>. I was in charge of writing the front-end templates from scratch, working closely with the design team and programmers, tying the front-end and back-end functionality together.</p> -->
         <hr class="separator-red" />
 
-        <div class="row">
-            <div class="col-sm-9">
-                <img class="project-image" src="{{ site.baseurl }}/img/projects/vivino/grapes-full.jpg" alt="" />
-            </div>
-            <div class="col-sm-3">
-                <img class="project-image" src="{{ site.baseurl }}/img/projects/vivino/detail-shot2.png" alt="" />
 
-                <img class="project-image" src="{{ site.baseurl }}/img/projects/vivino/detail-shot1.png" alt="" />
 
-                <img class="project-image" src="{{ site.baseurl }}/img/projects/vivino/detail-shot3.jpg" alt="" />
+        <figure class="project-image" class="row">
+            <div class="col-sm-4">
+                <figcaption>Winery page</figcaption>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima numquam illo saepe, quas sed! Aspernatur autem modi veritatis fugiat aliquid inventore voluptatibus et doloribus numquam nostrum ipsam nam, temporibus tempore!</p>
             </div>
-        </div>
+            <div class="col-sm-8">
+                {% include svg/browser-top.html %}
+                <img src="{{ site.baseurl }}/img/projects/vivino/winery-full.jpg" alt="" />
+            </div>
+        </figure>
+
     </div>
 </section>
 
+<!-- Winery section -->
 <section class="section">
     <div class="container">
-        <h2 class="section-heading text-center">New section</h2>
-        <p class="lead text-center">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima numquam illo saepe, quas sed! Aspernatur autem modi veritatis fugiat aliquid inventore voluptatibus et doloribus numquam nostrum ipsam nam, temporibus tempore!</p>
-        <hr class="separator-red" />
+        <figure class="project-image row">
+            <div class="col-sm-8">
+                <div class="browser">
+                    {% include svg/browser-top.html %}
+                    <img src="{{ site.baseurl }}/img/projects/vivino/grapes-full.jpg" alt="" />
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <figcaption class="project-image-caption">Winery page</figcaption>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima numquam illo saepe, quas sed! Aspernatur autem modi veritatis fugiat aliquid inventore voluptatibus et doloribus numquam nostrum ipsam nam, temporibus tempore!</p>
+            </div>
+        </figure>
 
-        <div class="row">
-            <div class="col-sm-8 col-sm-offset-2">
-                <img class="project-image" src="{{ site.baseurl }}/img/projects/vivino/winery-full.jpg" alt="" />
+        <div class="row hidden">
+            <div class="col-sm-4">
+                <img class="project-image" src="{{ site.baseurl }}/img/projects/vivino/detail-shot2.png" alt="" />
+            </div>
+            <div class="col-sm-4">
+                <img class="project-image" src="{{ site.baseurl }}/img/projects/vivino/detail-shot1.png" alt="" />
+            </div>
+            <div class="col-sm-4">
+                <img class="project-image" src="{{ site.baseurl }}/img/projects/vivino/detail-shot3.jpg" alt="" />
             </div>
         </div>
     </div>
