@@ -5,11 +5,11 @@ client: Vivino
 ---
 
 
-
-<div class="section">
+<div class="section section-white">
     <div class="section-content">
         <p class="project-brow heavy">Case</p>
-        <h1 class="hero-heading text-center">{{ page.title }}</h1>
+        <h1 class="hero-heading text-red text-center">{{ page.title }}</h1>
+        <hr class="separator-red separator-lg" />
 
         <ul class="project-details row">
             <li class="project-detail col-sm-3 col-sm-offset-3">
@@ -22,52 +22,79 @@ client: Vivino
             </li>
         </ul>
 
-
         <p class="lead text-center">I had the privilege of working for Vivino, a danish start-up company situated in Copenhagen and San Francisco, specialised in delivering wine ratings, reviews and prices to the biggest wine community in the world, currently counting more than 11 mio. users.</p>
-        <!-- <p class="lead text-center">During the first part of 2014 I was lucky enough to help Vivino implement their brand new website for <a href="http://vivino.com">Vivino.com</a>. I was in charge of writing the front-end templates from scratch, working closely with the design team and programmers, tying the front-end and back-end functionality together.</p> -->
-        <hr class="separator-red" />
+
+    </div>
+</div>
 
 
+<div class="section">
+    <div class="section-content">
 
-        <figure class="project-image" class="row">
-            <div class="col-sm-4">
-                <figcaption>Winery page</figcaption>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima numquam illo saepe, quas sed! Aspernatur autem modi veritatis fugiat aliquid inventore voluptatibus et doloribus numquam nostrum ipsam nam, temporibus tempore!</p>
+        <figure class="project-image row">
+            <div class="col-md-4">
+                <div class="project-image-text">
+                    <figcaption class="text-center">Getting started</figcaption>
+                    <p>I was hired to help the Copenhagen based Vivino team build a new front-end for <a href="http://vivino.com">Vivino.com</a>. Back then their Android and iOS apps were generating a lot of traffic and new users (around 3 mio.), but the website had been down prioritised for quite a while, and needed a serious overhaul.</p>
+
+                    <p>The in-house designer, <a href="http://www.beak.dk/">Andreas Weiland</a>, had already begun the process of designing the many pages and elements when I got on the team, so my role started out with guiding and tweaking the designs in a direciton suited for web, by identifying reusable elements, streamlining typography, planning responsive behavior etc.</p>
+                </div>
             </div>
-            <div class="col-sm-8">
-                {% include svg/browser-top.html %}
-                <img src="{{ site.baseurl }}/img/projects/vivino/winery-full.jpg" alt="" />
+            <div class="col-md-8">
+                <div class="browser">
+                    {% include svg/browser-top.html %}
+                    <img src="{{ site.baseurl }}/img/projects/vivino/winery-full.jpg" alt="" />
+                </div>
             </div>
         </figure>
-
     </div>
 </section>
 
 <!-- Winery section -->
 <section class="section">
-    <div class="container">
+    <div class="section-content">
         <figure class="project-image row">
-            <div class="col-sm-8">
+            <div class="col-md-4 col-md-push-8">
+                <div class="project-image-text">
+                    <figcaption class="text-center">Templates galore</figcaption>
+                    <p>To isolate my efforts and keep things simple, I started out by building the front-end as a static <a href="http://jekyllrb.com">Jekyll</a> website. This made it faster to prototype and implement changes with the designer, without constantly having the complexity of the main Rails project to create noise.</p>
+
+                    <small>(Note that the design details have been changed since I was on the project, causing some differences in the screenshots.)</small>
+                </div>
+            </div>
+            <div class="col-md-8 col-md-pull-4">
                 <div class="browser">
                     {% include svg/browser-top.html %}
                     <img src="{{ site.baseurl }}/img/projects/vivino/grapes-full.jpg" alt="" />
                 </div>
             </div>
-            <div class="col-sm-4">
-                <figcaption class="project-image-caption">Winery page</figcaption>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima numquam illo saepe, quas sed! Aspernatur autem modi veritatis fugiat aliquid inventore voluptatibus et doloribus numquam nostrum ipsam nam, temporibus tempore!</p>
-            </div>
         </figure>
+    </div>
+</section>
 
-        <div class="row hidden">
-            <div class="col-sm-4">
-                <img class="project-image" src="{{ site.baseurl }}/img/projects/vivino/detail-shot2.png" alt="" />
-            </div>
-            <div class="col-sm-4">
-                <img class="project-image" src="{{ site.baseurl }}/img/projects/vivino/detail-shot1.png" alt="" />
-            </div>
-            <div class="col-sm-4">
-                <img class="project-image" src="{{ site.baseurl }}/img/projects/vivino/detail-shot3.jpg" alt="" />
+<!-- Country section -->
+<section class="section">
+    <div class="section-content">
+        <h3 class="section-heading text-center">Content elements</h3>
+        <hr class="separator-red" />
+        <div class="row">
+            <figure class="project-image col-md-8">
+                <div class="browser">
+                    {% include svg/browser-top.html %}
+                    <img src="{{ site.baseurl }}/img/projects/vivino/country-full.jpg" alt="" />
+                </div>
+            </figure>
+
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-sm-6 col-md-12">
+                        <img class="project-image" src="{{ site.baseurl }}/img/projects/vivino/detail-shot1.png" alt="" />
+                    </div>
+                    <div class="col-sm-6 col-md-12">
+                        <img class="project-image" src="{{ site.baseurl }}/img/projects/vivino/detail-shot2.png" alt="" />
+                        <img class="project-image" src="{{ site.baseurl }}/img/projects/vivino/detail-shot3.jpg" alt="" />
+                    </div>
+                </div>
             </div>
         </div>
     </div>

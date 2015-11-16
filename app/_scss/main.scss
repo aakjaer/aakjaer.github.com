@@ -251,15 +251,24 @@ th {
 	figure {}
 	figcaption {
 		@extend .h3;
+		margin-bottom: 1.5em;
 	}
 }
 
 // .project-image img,
-// img.project-image {
-// 	@extend .img-rounded;
-// 	margin-bottom: $grid-gutter-width;
-// }
+.project-image {
+	@extend .img-rounded;
+	margin-bottom: $grid-gutter-width;
+}
 
+.project-image-text {
+	@include center-block();
+	margin-bottom: 3em;
+
+	@media (min-width: $screen-md-min) {
+		width: 90%;
+	}
+}
 
 .project-image-caption {
 
