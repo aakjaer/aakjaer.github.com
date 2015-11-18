@@ -120,31 +120,6 @@ img {
 	will-change: opacity, transform;
 }
 
-.section-gray {
-	background: #f4f4f4;
-}
-
-.section-dark {
-	background: $brand-primary;
-	color: $white-accent;
-}
-
-.section-narrow > .container {
-	max-width: 45em;
-}
-
-.section-screenshots {
-	.row {
-		margin: 0;
-	}
-
-	.col {
-		@include make-xs-column(2, 0);
-		@include make-sm-column(2, 0);
-		@include make-md-column(1, 0);
-	}
-}
-
 blockquote {
 	border: 0;
 
@@ -225,12 +200,13 @@ th {
 }
 
 .project-details {
-	margin: 2em 0 4em;
+	margin: 2em 0 0;
 	@extend .list-unstyled;
 	text-align: center;
 }
 
 .project-detail {
+	margin-bottom: 1.5em;
 	font-size: 0.9em;
 	text-transform: uppercase;
 	@extend .heavy;
@@ -244,14 +220,24 @@ th {
 		color: $brand-light-gray;
 		font-size: 0.7em;
 	}
+
+	&.project-technology {
+		font-size: 0.85em;
+	}
 }
+
+
 
 .project-image {
 
 	figure {}
 	figcaption {
-		@extend .h3;
+		font-size: 1.1em;
+		font-weight: 700;
 		margin-bottom: 1.5em;
+		text-transform: uppercase;
+		color: white;
+		letter-spacing: 0.1em;
 	}
 }
 
@@ -299,12 +285,16 @@ th {
 
 // browser top for project images
 .browser {
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
 	border-radius: 4px;
 
 	img {
 		@include border-bottom-radius(4px);
 	}
 }
+
+
 
 .browser-top {
 	display: block;

@@ -41,9 +41,13 @@
 
 .hero-heading {
     margin-top: 0;
-    font-size: 8vw; // has backup size from headers
+    font-size: 11vw; // has backup size from headers
     text-transform: uppercase;
     font-weight: 900;
+
+    @media (min-width: $screen-md-min) {
+        font-size: 8vw;
+    }
 }
 
 

@@ -5,10 +5,16 @@ client: Vivino
 ---
 
 
-<div class="section section-white">
+
+<div class="section section-more">
     <div class="section-content">
-        <p class="project-brow heavy">Case</p>
-        <h1 class="hero-heading text-red text-center">{{ page.title }}</h1>
+        <nav class="page-nav">
+            <a href="{{ site.baseurl }}/projects/">All projects</a>
+        </nav>
+
+        <p class="project-brow heavy text-faded">Case</p>
+        <h1 class="hero-heading text-center">{{ page.title }}</h1>
+
         <hr class="separator-red separator-lg" />
 
         <ul class="project-details row">
@@ -20,10 +26,17 @@ client: Vivino
                 <span>Responsibility</span>
                 Build templates
             </li>
+            <li class="project-detail project-technology col-sm-8 col-sm-offset-2">
+                <span>Technology used</span>
+                HTML5 / CSS3 / SASS / JS / Github Jekyll / Twitter Bootstrap / RoR
+            </li>
         </ul>
+    </div>
+</div>
 
+<div class="section section-white">
+    <div class="section-content">
         <p class="lead text-center">I had the privilege of working for Vivino, a danish start-up company situated in Copenhagen and San Francisco, specialised in delivering wine ratings, reviews and prices to the biggest wine community in the world, currently counting more than 11 mio. users.</p>
-
     </div>
 </div>
 
@@ -57,7 +70,9 @@ client: Vivino
             <div class="col-md-4 col-md-push-8">
                 <div class="project-image-text">
                     <figcaption class="text-center">Templates galore</figcaption>
-                    <p>To isolate my efforts and keep things simple, I started out by building the front-end as a static <a href="http://jekyllrb.com">Jekyll</a> website. This made it faster to prototype and implement changes with the designer, without constantly having the complexity of the main Rails project to create noise.</p>
+                    <p>To isolate my efforts and keep things simple, I started out by building the front-end as a static <a href="http://jekyllrb.com">Jekyll</a> website. This made it faster to prototype and implement the many changes with the designer, without constantly having the complexity of the backend code to deal with.</p>
+
+                    <p></p>
 
                     <small>(Note that the design details have been changed since I was on the project, causing some differences in the screenshots.)</small>
                 </div>
@@ -69,14 +84,7 @@ client: Vivino
                 </div>
             </div>
         </figure>
-    </div>
-</section>
 
-<!-- Country section -->
-<section class="section">
-    <div class="section-content">
-        <h3 class="section-heading text-center">Content elements</h3>
-        <hr class="separator-red" />
         <div class="row">
             <figure class="project-image col-md-8">
                 <div class="browser">

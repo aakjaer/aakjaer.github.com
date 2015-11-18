@@ -957,3 +957,53 @@ Main Components
 .no-js .cd-dropdown-wrapper .cd-close {
 	display: none;
 }
+
+
+
+//............................................
+
+// in page navigation
+
+
+.page-nav {
+	margin: 0 0 1.5em;
+	text-align: center;
+
+	@media (min-width: $screen-md-min) {
+		text-align: left;
+	}
+
+	a {
+		position: relative;
+		display: inline-block;
+		color: $gray;
+		text-transform: uppercase;
+		font-weight: 700;
+		font-size: 0.8em;
+
+		&::before {
+			position: relative;
+		    top: 0;
+		    content: "";
+		    display: inline-block;
+		    /* By using an em scale, the arrows will size with the font */
+		    width: 0.8em;
+		    height: 0.8em;
+		    border-left: 0.15em solid black;
+		    border-top: 0.15em solid black;
+		    transform: rotate(-45deg);
+		    margin-right: 0.5em;
+			border-color: $brand-red;
+			@include backface-visibility(hidden);
+			@include transition(transform .2s);
+		}
+
+		&:hover {
+			color: $brand-red;
+		}
+
+		&:hover::before {
+			@include transform(translateX(-5px) rotate(-45deg));
+		}
+	}
+}
