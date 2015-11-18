@@ -3,7 +3,7 @@ layout: default
 bodyclass: page-view-project
 ---
 
-<div class="section section-more">
+<div class="project-intro section section-more">
     <div class="section-content">
         <nav class="page-nav">
             <a href="{{ site.baseurl }}/projects/">All projects</a>
@@ -16,12 +16,12 @@ bodyclass: page-view-project
 
         <ul class="project-details row">
             <li class="project-detail col-sm-3 col-sm-offset-3">
-                <span>Website</span>
-                {% if page.demo_url %}<a href="{{ page.demo_url }}">{{ page.demo_url_text }}</a>{% else %}-{% endif %}
+                <span>Client</span>
+                {{ page.client }}
             </li>
             <li class="project-detail col-sm-3">
-                <span>Responsibility</span>
-                {{ page.responsibility }}
+                <span>Date</span>
+
             </li>
             <li class="project-detail project-technology col-sm-8 col-sm-offset-2">
                 <span>Technology used</span>
@@ -33,6 +33,14 @@ bodyclass: page-view-project
         </ul>
     </div>
 </div>
+
+{% if page.demo_url %}
+    <div class="project-bar">
+        <div class="container">
+            <a class="btn btn-primary" href="{{ page.demo_url }}">Demo</a>
+        </div>
+    </div>
+{% endif %}
 
 
 {{ content }}

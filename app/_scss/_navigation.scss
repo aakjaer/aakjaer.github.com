@@ -976,7 +976,7 @@ Main Components
 	a {
 		position: relative;
 		display: inline-block;
-		color: $gray;
+		color: $gray-light;
 		text-transform: uppercase;
 		font-weight: 700;
 		font-size: 0.8em;
@@ -999,7 +999,7 @@ Main Components
 		}
 
 		&:hover {
-			color: $brand-red;
+			color: white;
 		}
 
 		&:hover::before {

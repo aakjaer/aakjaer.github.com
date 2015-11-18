@@ -131,11 +131,8 @@ blockquote {
 		line-height: 0;
 		display: block;
 		margin: 40px 0 20px;
+		color: $brand-red;
 	}
-}
-
-.page-cv .container {
-	//max-width: 45em;
 }
 
 .timeline-when,
@@ -163,6 +160,10 @@ blockquote {
     font-weight: 500;
 }
 
+.btn-secondary {
+	@include button-variant(white, $brand-blue, transparent);
+}
+
 .narrow {
 	max-width: 50em;
     @include center-block();
@@ -187,7 +188,22 @@ th {
 
 
 // projects
+
 .project-teasers {}
+
+.project-bar {
+	padding: 1em 0;
+	background: white;
+	text-align: center;
+	border-bottom: 1px solid $gray-lighter;
+
+	.btn {
+		padding: 10px 35px;
+	    text-transform: uppercase;
+	    font-size: 1.3rem;
+	    font-weight: 500;
+	}
+}
 
 .project-brow {
 	display: block;
@@ -332,13 +348,19 @@ th {
 	margin-bottom: 30px;
 	padding: 30px;
 	background: white;
+
+	time {
+		display: block;
+		font-size: 0.9em;
+	}
 }
 
 .showcase-heading {
-	margin: 0 0 1em;
+	margin: 1em 0 1.5em;
 	font-size: 1.2em;
 	color: $gray;
 	font-weight: 700;
+	text-align: center;
 }
 
 .showcase h4 {
@@ -359,7 +381,7 @@ th {
 	padding: 30px 30px 50px;
 	font-size: 1.1em;
 	border: 0;
-	background: $brand-blue;
+	background: $brand-red;
 	color: $white-accent;
 
 	&::before {
@@ -373,21 +395,20 @@ th {
 }
 
 .showcase-images {
-	@include make-row(15px);
+	@include make-row(6px);
 	@extend .list-unstyled;
 	margin-top: 15px;
 	margin-bottom: 15px;
-	padding: 20px 0;
 
 	li {
-		@include make-xs-column(4);
-		@include make-sm-column(3, 15px);
+		float: left;
+		width: 70px;
+		padding: 3px;
 		margin-bottom: 15px;
 	}
 
 	img {
-		padding: 5px;
-		background: rgba(0,0,0,0.08);
+		box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.2);
 	}
 }
 
