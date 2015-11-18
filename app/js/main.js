@@ -6,6 +6,6 @@ $(function(){
         handler: function(direction) {
             $(this.element).addClass('animating').removeClass('animate');
         },
-        offset: '100%'
+        offset: '90%'
   });
 });

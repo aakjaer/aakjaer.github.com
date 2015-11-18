@@ -20,14 +20,16 @@
 	@include font-smoothing;
 
 	h1 {
-		font-size: 3em;
+		@extend .hero-heading;
 		color: $color-3;
 	}
 
 	p {
-		font-size: 1.7em;
-		font-weight: 300;
 		margin: 1em 0;
+
+		@media (min-width: $screen-md-min) {
+			font-size: 1.7em;
+		}
 	}
 
 	.action-wrapper {

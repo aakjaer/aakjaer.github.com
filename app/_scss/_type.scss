@@ -8,6 +8,7 @@
 
 .lead {
     max-width: 30em;
+    margin-bottom: 2em;
     font-weight: 300;
     line-height: 1.6em;
 
@@ -27,6 +28,7 @@
 .text-light-blue { color: $brand-light-blue; }
 .text-red { color: $brand-red; }
 .text-yellow { color: $brand-yellow; }
+.text-gray { color: #777; }
 .text-light-gray { color: #bbb; }
 
 .all-caps {
@@ -55,7 +57,7 @@
 
 
 hr {
-    margin-bottom: 5em;
+    margin-bottom: 3em;
     border-width: 3px;
     max-width: 30px;
     border-color: rgba(black, 0.2);

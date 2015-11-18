@@ -1,42 +1,33 @@
 ---
-layout: default
+layout: view-project
 title: Vivino
 client: Vivino
+responsibility: Build Templates
+demo_url_text: vivino.com
+demo_url: http://vivino.com
+technology:
+  - HTML5
+  - CSS3
+  - SASS
+  - JS
+  - Github
+  - Jekyll
+  - Twitter Bootstrap
+  - RoR
 ---
 
 
-
-<div class="section section-more">
-    <div class="section-content">
-        <nav class="page-nav">
-            <a href="{{ site.baseurl }}/projects/">All projects</a>
-        </nav>
-
-        <p class="project-brow heavy text-faded">Case</p>
-        <h1 class="hero-heading text-center">{{ page.title }}</h1>
-
-        <hr class="separator-red separator-lg" />
-
-        <ul class="project-details row">
-            <li class="project-detail col-sm-3 col-sm-offset-3">
-                <span>Website</span>
-                <a href="http://vivino.com">Vivino.com</a>
-            </li>
-            <li class="project-detail col-sm-3">
-                <span>Responsibility</span>
-                Build templates
-            </li>
-            <li class="project-detail project-technology col-sm-8 col-sm-offset-2">
-                <span>Technology used</span>
-                HTML5 / CSS3 / SASS / JS / Github Jekyll / Twitter Bootstrap / RoR
-            </li>
-        </ul>
-    </div>
-</div>
-
 <div class="section section-white">
     <div class="section-content">
-        <p class="lead text-center">I had the privilege of working for Vivino, a danish start-up company situated in Copenhagen and San Francisco, specialised in delivering wine ratings, reviews and prices to the biggest wine community in the world, currently counting more than 11 mio. users.</p>
+        <h3 class="section-heading text-red text-center">Project details</h3>
+        <hr class="separator-blue">
+        <p class="lead text-center">I had the privilege of working for Vivino, a danish start-up company situated in Copenhagen and San Francisco, specializing in delivering wine ratings, reviews and prices to the biggest wine community in the world, currently counting more than 11 mio. users.</p>
+
+        <div class="narrow">
+            <p>I was hired to help the Copenhagen based Vivino team build a new front-end for <a href="http://vivino.com">Vivino.com</a>. Back then their Android and iOS apps were generating a lot of traffic and new users (around 3 mio.), but the website had been down prioritised for quite a while, and needed a serious overhaul.</p>
+            <p>The in-house designer, <a href="http://www.beak.dk/">Andreas Weiland</a>, had already begun the process of designing the many pages and elements when I got on the team, so my role started out with guiding and tweaking the designs in a direciton suited for web, by identifying reusable elements, streamlining typography, planning responsive behavior etc.</p>
+        </div>
+
     </div>
 </div>
 
@@ -44,22 +35,12 @@ client: Vivino
 <div class="section">
     <div class="section-content">
 
-        <figure class="project-image row">
-            <div class="col-md-4">
-                <div class="project-image-text">
-                    <figcaption class="text-center">Getting started</figcaption>
-                    <p>I was hired to help the Copenhagen based Vivino team build a new front-end for <a href="http://vivino.com">Vivino.com</a>. Back then their Android and iOS apps were generating a lot of traffic and new users (around 3 mio.), but the website had been down prioritised for quite a while, and needed a serious overhaul.</p>
 
-                    <p>The in-house designer, <a href="http://www.beak.dk/">Andreas Weiland</a>, had already begun the process of designing the many pages and elements when I got on the team, so my role started out with guiding and tweaking the designs in a direciton suited for web, by identifying reusable elements, streamlining typography, planning responsive behavior etc.</p>
-                </div>
-            </div>
-            <div class="col-md-8">
-                <div class="browser">
-                    {% include svg/browser-top.html %}
-                    <img src="{{ site.baseurl }}/img/projects/vivino/winery-full.jpg" alt="" />
-                </div>
-            </div>
-        </figure>
+
+        <div class="browser col-sm-8 col-sm-offset-2">
+            {% include svg/browser-top.html %}
+            <img src="{{ site.baseurl }}/img/projects/vivino/winery-full.jpg" alt="" />
+        </div>
     </div>
 </section>
 
@@ -86,13 +67,6 @@ client: Vivino
         </figure>
 
         <div class="row">
-            <figure class="project-image col-md-8">
-                <div class="browser">
-                    {% include svg/browser-top.html %}
-                    <img src="{{ site.baseurl }}/img/projects/vivino/country-full.jpg" alt="" />
-                </div>
-            </figure>
-
             <div class="col-md-4">
                 <div class="row">
                     <div class="col-sm-6 col-md-12">
@@ -104,6 +78,13 @@ client: Vivino
                     </div>
                 </div>
             </div>
+
+            <figure class="project-image col-md-8">
+                <div class="browser">
+                    {% include svg/browser-top.html %}
+                    <img src="{{ site.baseurl }}/img/projects/vivino/country-full.jpg" alt="" />
+                </div>
+            </figure>
         </div>
     </div>
 </section>

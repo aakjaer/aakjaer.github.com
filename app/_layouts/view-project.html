@@ -17,7 +17,7 @@ bodyclass: page-view-project
         <ul class="project-details row">
             <li class="project-detail col-sm-3 col-sm-offset-3">
                 <span>Website</span>
-                {% if page.project-url %}{{ page.project-url }}{% else %}-{% endif %}
+                {% if page.demo_url %}<a href="{{ page.demo_url }}">{{ page.demo_url_text }}</a>{% else %}-{% endif %}
             </li>
             <li class="project-detail col-sm-3">
                 <span>Responsibility</span>

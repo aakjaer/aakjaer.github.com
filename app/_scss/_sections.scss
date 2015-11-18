@@ -6,21 +6,21 @@
 
 .section-content {
     @extend .container;
-    padding-top: 4em;
-    padding-bottom: 4em;
+    padding-top: 2em;
+    padding-bottom: 2em;
 
     @media (min-width: $screen-sm-min) {
-        padding-top: 6em;
-        padding-bottom: 6em;
+        padding-top: 5em;
+        padding-bottom: 4em;
     }
 }
 
 .section-heading {
     margin: 0 0 1em;
 	font-size: 1.4em;
-	letter-spacing: .2em;
+	letter-spacing: .1em;
 	text-transform: uppercase;
-    font-weight: 700;
+    font-weight: 900;
 }
 
 .section-image {
@@ -59,10 +59,12 @@
         @include backface-visibility(hidden);
         @include transition(transform .2s);
         @include transform(translateX(-50%) rotate(-135deg));
+        @include fadeIn;
+        @include delay(2s);
     }
 }
 
-.section-narrow > .section-content {
+ .section-narrow .section-content {
     max-width: 50em;
 }
 
