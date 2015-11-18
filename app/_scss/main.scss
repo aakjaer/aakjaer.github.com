@@ -3,8 +3,11 @@
 		'layout',
 		'custom-bootstrap',
 		'../_bower_components/bourbon/bourbon',
+
+		// animations
 		'../_bower_components/animatewithsass/_properties',
 		'../_bower_components/animatewithsass/_fading-entrances/fading-entrances',
+
 		'type',
 		'utilities',
 		'navigation',
@@ -13,6 +16,18 @@
 		// 'morph-button'
 ;
 
+
+/*
+&.fadein { @include fadeIn; }
+&.fadein-left { @include fadeInLeft; }
+&.fadein-left-big { @include fadeInLeftBig; }
+&.fadein-right { @include fadeInRight; }
+&.fadein-up { @include fadeInUp; }
+//&.fadein-up-big { @include fadeInUpBig; }
+&.fadein-down { @include fadeInDown; }
+
+
+*/
 
 
 
@@ -187,14 +202,12 @@ th {
 
 .project-brow {
 	display: block;
+	margin-bottom: 0;
 	text-align: center;
 	text-transform: uppercase;
 	@extend .heavy;
 
-	margin-bottom: -5px;
-
 	@media (min-width: $screen-md-min) {
-		margin-bottom: -10px;
 		font-size: 1.5em;
 	}
 }
@@ -209,6 +222,7 @@ th {
 	margin-bottom: 1.5em;
 	font-size: 0.9em;
 	text-transform: uppercase;
+	color: white;
 	@extend .heavy;
 
 	@media (min-width: $screen-md-min) {
@@ -287,26 +301,25 @@ th {
 .browser {
 	margin-top: 1.5em;
 	margin-bottom: 1.5em;
-	border-radius: 4px;
+	// border-radius: 4px;
 
 	img {
 		@include border-bottom-radius(4px);
 	}
 }
 
+	.browser-top {
+		display: block;
+	}
 
+	.browser-bg {
+		fill: rgb(215, 215, 215);
+	}
 
-.browser-top {
-	display: block;
-	@include border-top-radius(4px);
-}
-.browser-bg {
-	fill: rgb(215, 215, 215);
-}
-.browser-url,
-.browser-buttons {
-	fill: white;
-}
+	.browser-url,
+	.browser-buttons {
+		fill: white;
+	}
 
 
 
@@ -402,17 +415,17 @@ footer[role="contentinfo"] {
 	&.fadein-left-big { @include fadeInLeftBig; }
 	&.fadein-right { @include fadeInRight; }
 	&.fadein-up { @include fadeInUp; }
-	&.fadein-up-big { @include fadeInUpBig; }
+	//&.fadein-up-big { @include fadeInUpBig; }
 	&.fadein-down { @include fadeInDown; }
 
-	// &[data-delay="100"] { @include delay(0.1s); }
-	// &[data-delay="200"] { @include delay(0.2s); }
-	// &[data-delay="300"] { @include delay(0.3s); }
-	// &[data-delay="400"] { @include delay(0.4s); }
-	// &[data-delay="500"] { @include delay(0.5s); }
-	// &[data-delay="600"] { @include delay(0.6s); }
-	// &[data-delay="700"] { @include delay(0.7s); }
-	// &[data-delay="800"] { @include delay(0.8s); }
-	// &[data-delay="900"] { @include delay(0.9s); }
-	// &[data-delay="1000"] { @include delay(1s); }
+	&[data-delay="100"] { @include delay(0.1s); }
+	&[data-delay="200"] { @include delay(0.2s); }
+	&[data-delay="300"] { @include delay(0.3s); }
+	&[data-delay="400"] { @include delay(0.4s); }
+	&[data-delay="500"] { @include delay(0.5s); }
+	&[data-delay="600"] { @include delay(0.6s); }
+	&[data-delay="700"] { @include delay(0.7s); }
+	&[data-delay="800"] { @include delay(0.8s); }
+	&[data-delay="900"] { @include delay(0.9s); }
+	&[data-delay="1000"] { @include delay(1s); }
 }

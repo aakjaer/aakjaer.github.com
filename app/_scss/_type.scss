@@ -40,13 +40,16 @@
 }
 
 .hero-heading {
+    max-width: 15em;
     margin-top: 0;
-    font-size: 11vw; // has backup size from headers
+    font-size: 10vw; // has backup size from headers
     text-transform: uppercase;
     font-weight: 900;
+    text-align: center;
+    @include center-block();
 
     @media (min-width: $screen-md-min) {
-        font-size: 8vw;
+        font-size: 6vw;
     }
 }
 
