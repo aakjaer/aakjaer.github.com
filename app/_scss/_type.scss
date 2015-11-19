@@ -61,6 +61,10 @@ hr {
     border-width: 3px;
     max-width: 30px;
     border-color: rgba(black, 0.2);
+
+    &:last-child {
+        margin-bottom: 0;
+    }
 }
 
 .separator-lg {
