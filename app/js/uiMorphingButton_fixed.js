@@ -4,12 +4,12 @@
  *
  * Licensed under the MIT license.
  * http://www.opensource.org/licenses/mit-license.php
- *
+ * 
  * Copyright 2014, Codrops
  * http://www.codrops.com
  */
 ;( function( window ) {
-
+	
 	'use strict';
 
 	var transEndEventNames = {
@@ -23,7 +23,7 @@
 		support = { transitions : Modernizr.csstransitions };
 
 	function extend( a, b ) {
-		for( var key in b ) {
+		for( var key in b ) { 
 			if( b.hasOwnProperty( key ) ) {
 				a[key] = b[key];
 			}
@@ -48,8 +48,7 @@
 
 	UIMorphingButton.prototype._init = function() {
 		// the button
-		console.log(this.el.querySelector( 'a' ))
-		this.button = this.el.querySelector( 'a' );
+		this.button = this.el.querySelector( 'button' );
 		// state
 		this.expanded = false;
 		// content el
@@ -99,7 +98,7 @@
 					this.removeEventListener( transEndEventName, onEndTransitionFn );
 				}
 				self.isAnimating = false;
-
+				
 				// callback
 				if( self.expanded ) {
 					// remove class active (after closing)
@@ -119,27 +118,27 @@
 		else {
 			onEndTransitionFn();
 		}
-
+			
 		// set the left and top values of the contentEl (same like the button)
 		var buttonPos = this.button.getBoundingClientRect();
 		// need to reset
 		classie.addClass( this.contentEl, 'no-transition' );
 		this.contentEl.style.left = 'auto';
 		this.contentEl.style.top = 'auto';
-
+		
 		// add/remove class "open" to the button wraper
-		setTimeout( function() {
+		setTimeout( function() { 
 			self.contentEl.style.left = buttonPos.left + 'px';
 			self.contentEl.style.top = buttonPos.top + 'px';
-
+			
 			if( self.expanded ) {
 				classie.removeClass( self.contentEl, 'no-transition' );
 				classie.removeClass( self.el, 'open' );
 			}
 			else {
-				setTimeout( function() {
+				setTimeout( function() { 
 					classie.removeClass( self.contentEl, 'no-transition' );
-					classie.addClass( self.el, 'open' );
+					classie.addClass( self.el, 'open' ); 
 				}, 25 );
 			}
 		}, 25 );
