@@ -164,6 +164,10 @@ blockquote {
     font-weight: 500;
 }
 
+.btn-group.open .dropdown-toggle {
+	box-shadow: none;
+}
+
 .btn-secondary {
 	@include button-variant(white, $brand-blue, transparent);
 }
@@ -220,6 +224,11 @@ th {
 	    text-transform: uppercase;
 	    font-size: 1.3rem;
 	    font-weight: 500;
+	}
+
+	.dropdown-menu {
+		text-align: left;
+		font-size: 0.8em;
 	}
 }
 
