@@ -376,11 +376,12 @@ th {
 
 // mobile device to display screenshots inside
 .device {
-	max-width: 400px;
 	position: relative;
+	max-width: 400px;
+	@include center-block();
+	margin-bottom: 1.5em;
 }
 .device__bg {
-	width: 100%;
 }
 
 // show mobile device on svg devices
