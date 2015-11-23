@@ -13,9 +13,9 @@
 .section-heading {
     padding: 1em 0 2em;
     font-size: 1.2em;
-	letter-spacing: .1em;
+	letter-spacing: .2em;
 	text-transform: uppercase;
-    font-weight: 900;
+    font-weight: 700;
 
     &:first-child {
         margin-top: 0;
@@ -27,7 +27,7 @@
     }
 
     @media (min-width: $screen-sm) {
-        font-size: 1.6em;
+        font-size: 1.4em;
     }
 }
 
