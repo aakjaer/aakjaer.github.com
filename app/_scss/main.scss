@@ -379,10 +379,12 @@ th {
 	max-width: 400px;
 	position: relative;
 }
-.device__bg {}
+.device__bg {
+	width: 100%;
+}
 
 // show mobile device on svg devices
-.svg .device__screen {
+.device__screen {
 	position: absolute;
 	z-index: 2;
 	top: 8.6663669%;
@@ -392,9 +394,6 @@ th {
 	height: 79%;
 	margin: 0 auto;
 	background: rgba(white, 0.1);
-}
-.no-svg .device__bg {
-	display: none;
 }
 
 
