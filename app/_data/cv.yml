@@ -37,7 +37,7 @@ projects:
     period: "2014/08 - 2015-04"
     description: |
       <p>The massive custom build car dealer project, involving more than 300 websites, 17 car brands and multiple portal designs, I helped design and build in 2009, needed a design and functionality overhaul. Focusing on making all websites responsive, Bootstrap was chosen as the front-end framework.</p>
-      
+
       <p>Examples:</p>
       <ul class="list-unstyled">
         <li><a href="http://amager.audi.dk/">Audi</a></li>
@@ -91,7 +91,7 @@ projects:
         large: "/img/work/2013-12-01_vivino_03_lg.jpg"
       - small: "/img/work/2013-12-01_vivino_04.jpg"
         large: "/img/work/2013-12-01_vivino_04_lg.jpg"
-    recommendation: 
+    recommendation:
       text: |
         <p>Daniel helped us out implementing our brand new website for Vivino.com. He was responsible for the markup, styling and basic scripting of the new site, working in Bootstrap 3 prototypes and releasing modular segments of the design into the main Rails project. </p>
         <p>Daniel did an amazing job, delivering high quality, while communicating clearly on his deliverables. Will use again!</p>
@@ -130,3 +130,108 @@ projects:
         large: "/img/work/2012-03-28-briza-2-lg.jpg"
       - small: "/img/work/2012-03-28-briza-3.jpg"
         large: "/img/work/2012-03-28-briza-3-lg.jpg"
+
+
+  - title: "Volkswagen Denmark"
+    period: "2011/11 - 2011/12"
+    description: |
+        <p>Designing and implementing a web application for an infostand, that would allow customers to sign up for a competition and order a demoride and brochures</p>
+        <p>The main goal was to keep everything web based to keep the cost of the application down.</p>
+    resposibility: |
+        <ul>
+            <li>Designing a layout to fit an iPad in portrait mode.</li>
+            <li>Implementing the design into JQuery Mobile templates.</li>
+            <li>Adding gesture based navigation (swiping left and right).</li>
+            <li>Creating a toggle effect and a switch functionality to hide some of the form fields until needed.</li>
+        </ul>
+    technology: "JQuery Mobile, HTML, CSS, JavaScript, Photoshop"
+    role: "HTML Developer, Front-end dude, Webdesigner"
+    images:
+      - small: "/img/work/vw-infostand-thumb.jpg"
+        large: "/img/work/2011-11-15_volkswagen_infostand.jpg"
+
+
+  - title: "Audi Denmark"
+    period: "2011/10 - 2011/11"
+    description: |
+        <p>Creating a iPad based version of a info-stand for an annual danish auto show. The stand allowed customers to view car specs, price and order a demoride and brochures.</p>
+        <p>The primary goal was to keep everything web based.</p>
+    resposibility: |
+        <ul>
+            <li>Designing a basic layout for a portrait positioned iPad.</li>
+            <li>Testing different webbased mobile frameworks that would shorten the development time (JQuery Mobile, Sencha, JTouch, etc.).</li>
+            <li>Implementing the design into JQuery Mobile templates. Creating a stylesheet for overwriting the standard styles.</li>
+            <li>Adding gesture based navigation</li>
+        </ul>
+    technology: "JQuery Mobile, HTML, CSS, JavaScript, Photoshop"
+    role: "Front-end developer, webdesigner"
+    images:
+      - small: "/img/work/audi-infostand-thumb.jpg"
+        large: "/img/work/2011-11-03_audi_infostand.jpg"
+
+  - title: "Skoda Denmark"
+    period: "2011/04 - 2011/05"
+    description: |
+      <p>Skoda made a quick 'n' dirty implementation of the new CI on skoda.dk because of a tight deadline and hired me to make a thorough review and re-implementation of the the HTML, CSS and JavaScript and give advice on how to optimize certain areas of the site. </p>
+    resposibility: |
+        <ul>
+        <li>Reviewing/testing the old implementation.</li>
+        <li>Advising the client on the solutions and estimating the tasks.</li>
+        <li>Re-writing and optimizing the HTML and CSS.</li>
+        <li>Fixing menu compatibility issues with Internet Explorer.</li>
+        <li>Migrating from Prototype JS framework to JQuery, rewriting the old functionality.</li>
+        <li>Implementing a JQuery carousel</li>
+        </ul>
+    technology: "HTML, CSS, JavaScript, Photoshop, Flash, JQuery, Prototype"
+    role: ""
+    # images:
+
+  - title: "Semler Group (Scandinavian Motor Co.)"
+    period: "2009/04 - 2010/08"
+    description: |
+      <p>The project was a ground up redesign of an old web based application maintaining the websites of the 250+ car dealers associated to Semler Group (VW).</p>
+      <p>I was responsible for designing portal- and public brand sites for 13 car brands, and implementing 25 HTML based templates pr. brand. Furthermore a new CMS/admin system was designed and implemented specially for this project. </p>
+      <p>Scrum and Agile methods were used in this project. The development team consisted of 2 developers and 1 designer (DAS). </p>
+    resposibility: |
+        <h4>Responsibility</h4>
+        <ul>
+            <li>Planning the initial site maps for the admin site and public sites.</li>
+            <li>Planning the functionality of the public sites and creating the requirements for the admin system based on this knowledge.</li>
+            <li>Analyzing and planning how to mold the 13 designs to run on identical markup.</li>
+            <li>Wire frames/mock-ups - planning/designing the admin workflow and wizards.</li>
+            <li>Designing UI for the admin system and converting the designs into templates using HTML, CSS and JavaScript.</li>
+            <li>Designing UI for public pages and converting the designs into templates using HTML, CSS and JavaScript.</li>
+            <li>Optimizing the markup for SEO and printing.</li>
+            <li>Optimizing front-end load time using Cache Right (GZip), YSlow and Firebug.</li>
+            <li>Implementing dynamic XML based Flash loader to handle campaigns including videos and animation from the admin system.</li>
+            <li>Implementing an image cropper for the admin section.</li>
+            <li>Debugging. Bug reporting in FogBugz.</li>
+        </ul>
+    technology: "Adobe Photoshop, HTML, CSS, JavaScript, AJAX, Prototype JS, Subversion, FogBugz, Flash"
+    role: "Webdesigner, front-end developer"
+    images:
+      - small: "/img/work/2010-07-29_ifha_screenshot_1.jpg"
+        large: "/img/work/2010-07-29_ifha_screenshot_1.jpg"
+      - small: "/img/work/2010-07-29_ifha_screenshot_2.jpg"
+        large: "/img/work/2010-07-29_ifha_screenshot_2.jpg"
+      - small: "/img/work/2010-07-29_ifha_screenshot_3.jpg"
+        large: "/img/work/2010-07-29_ifha_screenshot_3.jpg"
+      - small: "/img/work/2010-07-29_ifha_screenshot_4.jpg"
+        large: "/img/work/2010-07-29_ifha_screenshot_4.jpg"
+      - small: "/img/work/2010-07-29_ifha_screenshot_5.jpg"
+        large: "/img/work/2010-07-29_ifha_screenshot_5.jpg"
+      - small: "/img/work/2010-07-29_ifha_screenshot_6.jpg"
+        large: "/img/work/2010-07-29_ifha_screenshot_6.jpg"
+      - small: "/img/work/2010-07-29_ifha_screenshot_7.jpg"
+        large: "/img/work/2010-07-29_ifha_screenshot_7.jpg"
+      - small: "/img/work/2010-07-29_ifha_screenshot_8.jpg"
+        large: "/img/work/2010-07-29_ifha_screenshot_8.jpg"
+      - small: "/img/work/2010-07-29_ifha_screenshot_9.jpg"
+        large: "/img/work/2010-07-29_ifha_screenshot_9.jpg"
+      - small: "/img/work/2010-07-29_ifha_screenshot_10.jpg"
+        large: "/img/work/2010-07-29_ifha_screenshot_10.jpg"
+      - small: "/img/work/2010-07-29_ifha_screenshot_11.jpg"
+        large: "/img/work/2010-07-29_ifha_screenshot_11.jpg"
+      - small: "/img/work/2010-08-02_administration_site_tree_design.jpg"
+        large: "/img/work/2010-08-02_administration_site_tree_design.jpg"
+    contact: "Head of the Internet department, Semler Services A/S Thomas Hansen"

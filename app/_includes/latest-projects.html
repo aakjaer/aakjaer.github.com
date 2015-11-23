@@ -1,12 +1,11 @@
 <!-- Project experience -->
 
-<section class="section">
+<div class="section section-white">
     <div class="section-content">
-        <h2 class="section-heading text-center animate fadein-up">Recent projects</h2>
-        <hr class="separator-red animate fadein-up" />
+        <h2 class="section-heading text-red text-center animate fadein-up">Recent projects</h2>
 
         <div class="latest-projects">
-            <div class="project animate" data-delay="300">
+            <div class="project animate" data-delay="100">
                 <a href="{{ site.baseurl }}/projects/vw-retail/">
                     <img src="{{ site.baseurl }}/img/projects/vw-retail/thumb.jpg" alt="" />
                 </a>
@@ -16,20 +15,22 @@
                     <img src="{{ site.baseurl }}/img/projects/vw-service-booking/thumb.jpg" alt="" />
                 </a>
             </div>
-            <div class="project animate" data-delay="100">
+            <div class="project animate" data-delay="300">
                 <a href="{{ site.baseurl }}/projects/vivino/">
                     <img src="{{ site.baseurl }}/img/projects/vivino/thumb.jpg" alt="" />
                 </a>
             </div>
-            <div class="project animate">
+            <div class="project animate" data-delay="400">
                 <a href="{{ site.baseurl }}/projects/semler-car-dealers/">
                     <img src="{{ site.baseurl }}/img/projects/semler-car-dealers/thumb.jpg" alt="" />
                 </a>
             </div>
         </div>
 
-        <!-- <div class="cta text-center">
-        <a href="{{ site.baseurl }}/projects/" class="btn btn-cta btn-primary">More projects</a>
-    </div> -->
+        {% if include.show-button == "true" %}
+            <div class="cta text-center">
+                <a href="{{ site.baseurl }}/projects/" class="btn btn-cta">More projects</a>
+            </div>
+        {% endif %}
+    </div>
 </div>
-</section>

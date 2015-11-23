@@ -6,24 +6,28 @@
 
 .section-content {
     @extend .container;
-    padding-top: 2em;
-    padding-bottom: 2em;
-
-    @media (min-width: $screen-sm-min) {
-        padding-top: 4em;
-        padding-bottom: 4em;
-    }
+    padding-top: 4em;
+    padding-bottom: 4em;
 }
 
 .section-heading {
-    margin: 1em 0;
-	font-size: 1.4em;
+    padding: 1em 0 2em;
+    font-size: 1.2em;
 	letter-spacing: .1em;
 	text-transform: uppercase;
     font-weight: 900;
 
     &:first-child {
         margin-top: 0;
+    }
+
+    + .lead,
+    + hr {
+        margin-top: -2em;
+    }
+
+    @media (min-width: $screen-sm) {
+        font-size: 1.6em;
     }
 }
 
@@ -63,10 +67,10 @@
         @include backface-visibility(hidden);
         @include transition(transform .2s);
         @include transform(translateX(-50%) rotate(-135deg));
-        @include fadeIn;
         @include delay(2s);
     }
 }
+
 
  .section-narrow .section-content {
     max-width: 50em;

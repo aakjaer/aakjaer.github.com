@@ -6,4 +6,14 @@ $(function(){
         },
         offset: '90%'
   });
+
+
+  $(".fancybox").fancybox({
+      helpers: {
+          overlay: {
+            locked: false
+          }
+        }
+
+  });
 });
