@@ -331,19 +331,18 @@ th {
 
 	.project {
 		margin-bottom: $grid-gutter-width;
-		@include make-xs-column(6);
+		max-width: 350px;
+		@include center-block();
+		@include make-sm-column(6);
 		@include make-md-column(3, $grid-gutter-width);
 		text-align: center;
 		@include fadeInUp;
-
-		@media (min-width: $screen-sm-min) and (max-width: $screen-sm-max) {
-			//min-height: 430px;
-		}
 	}
 
 	.project-heading {
 		margin: 2em 0 1em;
-		font-size: 1em;
+		min-height: 80px;
+		font-size: 0.9em;
 		font-weight: 700;
 		line-height: 1.2;
 		color: $gray;
@@ -375,9 +374,27 @@ th {
 	}
 
 
-.mobile-mockup {
+// mobile device to display screenshots inside
+.device {
 	max-width: 400px;
-	margin-bottom: 1.5em;
+	position: relative;
+}
+.device__bg {}
+
+// show mobile device on svg devices
+.svg .device__screen {
+	position: absolute;
+	z-index: 2;
+	top: 8.6663669%;
+	left: 0;
+	right: 0;
+	width: 91.575092%;
+	height: 79%;
+	margin: 0 auto;
+	background: rgba(white, 0.1);
+}
+.no-svg .device__bg {
+	display: none;
 }
 
 
