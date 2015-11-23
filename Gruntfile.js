@@ -274,6 +274,13 @@ module.exports = function (grunt) {
         '<%= yeoman.app %>/js/**/*.js',
         '!<%= yeoman.app %>/js/salvattore.min.js',
         '!<%= yeoman.app %>/js/jquery.fancybox.js',
+        '!<%= yeoman.app %>/js/jquery.smoothstate.min.js',
+        '!<%= yeoman.app %>/js/jquery.menu-aim.js',
+        '!<%= yeoman.app %>/js/jquery.waypoints.min.js',
+        '!<%= yeoman.app %>/js/modernizr.min.js',
+        '!<%= yeoman.app %>/js/site-nav.js',
+        '!<%= yeoman.app %>/js/uiMorphingButton_fixed.js',
+        '!<%= yeoman.app %>/js/velocity-1.2.3.min.js',
         'test/spec/**/*.js'
       ]
     },
