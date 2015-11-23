@@ -340,6 +340,14 @@ th {
 			//min-height: 430px;
 		}
 	}
+
+	.project-heading {
+		margin: 2em 0 1em;
+		font-size: 0.9em;
+		font-weight: 900;
+		color: $gray;
+		text-transform: uppercase;
+	}
 }
 
 // browser top for project images

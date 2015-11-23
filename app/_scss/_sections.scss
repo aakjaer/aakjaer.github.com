@@ -142,7 +142,6 @@
 
 	.col {
 		@include make-xs-column(2, 0);
-		@include make-sm-column(2, 0);
-		@include make-md-column(1, 0);
+		@include make-sm-column(1, 0);
 	}
 }
