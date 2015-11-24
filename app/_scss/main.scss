@@ -140,6 +140,18 @@ blockquote {
 		line-height: 1em;
 		color: $brand-red;
 	}
+
+	footer::before {
+		content: "";
+	}
+}
+
+.quote-image {
+	@include center-block;
+	max-width: 5em;
+	margin-top: 2em;
+	margin-bottom: 1em;
+	border-radius: 50%;
 }
 
 .timeline-when,
