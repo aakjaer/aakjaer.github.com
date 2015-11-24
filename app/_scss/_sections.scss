@@ -6,12 +6,12 @@
 
 .section-content {
     @extend .container;
-    padding-top: 4em;
-    padding-bottom: 4em;
+    padding-top: 6em;
+    padding-bottom: 6em;
 }
 
 .section-heading {
-    padding: 1em 0 2em;
+    padding: 2em 0;
     font-size: 1.2em;
 	letter-spacing: .2em;
 	text-transform: uppercase;

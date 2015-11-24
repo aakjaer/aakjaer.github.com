@@ -2,11 +2,10 @@
 
 .cd-intro {
 	position: relative;
-	height: 100vh;
+	min-height: 100vh;
 	width: 100%;
 	/* vertically align its content */
 	display: table;
-	//background: $color-2;
 	overflow: hidden;
 }
 
@@ -21,14 +20,14 @@
 
 	h1 {
 		@extend .hero-heading;
-		color: $color-3;
+		color: $gray-dark;
 	}
 
 	p {
 		margin: 1em 0;
 
 		@media (min-width: $screen-md-min) {
-			font-size: 1.7em;
+			font-size: 1.6em;
 		}
 	}
 
