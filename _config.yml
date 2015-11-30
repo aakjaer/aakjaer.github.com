@@ -1,27 +1,13 @@
-# Jekyll configuration precedence:
-# 1. Gruntfile task
-# 2. config.build.yml
-# 3. config.yml
-
-name: hamsterboy.dk
-description: Hamsterboy website
+name: aakjaer.co
+description: Private website for Daniel Aakjær Sørensen
 author:
   name: Daniel Aakjær Sørensen
-  email: contact@hamsterboy.dk
+  email: contact@aakjaer.co
 
-# Grunt handles images and assets.
-exclude: ['img', 'css', 'js', 'fonts',
-          '**.png', '**.jpg', '**.jpeg', '**.gif', '**.webp', '**.svg', '**.ico']
-
-include: ['.htaccess']
-
-# _config.build.yml sets future and show_drafts to false on `grunt build`
-future: true
-show_drafts: true
-
+sass:
+  sass_dir: _scss
+  
 permalink: date
-paginate: 8
-paginate_path: 'page:num'
 
 # Markdown library
 markdown: redcarpet

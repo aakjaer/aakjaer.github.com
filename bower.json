@@ -1,7 +1,17 @@
 {
-  "name": "hamsterboydk",
-  "version": "0.0.0",
-  "dependencies": {
-    "bootstrap-sass": "git://github.com/twbs/bootstrap-sass.git#v3.1.0"
-  }
+  "name": "aakjaer.co",
+  "homepage": "https://github.com/aakjaer/aakjaer.co",
+  "authors": [
+    "Daniel Aakjær Sørensen <daniel@hamsterboy.dk>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "test",
+    "tests"
+  ]
 }
