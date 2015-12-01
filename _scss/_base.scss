@@ -313,7 +313,7 @@ th {
 		@include make-sm-column(6);
 		@include make-md-column(3, $grid-gutter-width);
 		text-align: center;
-		//@include fadeInUp;
+		@include fadeIn;
 	}
 
 	.project-heading {
