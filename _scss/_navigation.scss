@@ -7,9 +7,9 @@ Main Components
 
 .cd-dropdown-wrapper {
 	display: block;
-	position: fixed; //relative;
+	position: relative; //relative;
     top: 0;
-    left: 0;
+    left: auto;
     right: 0;
 	height: 40px;
     z-index: $above-content;
@@ -38,9 +38,6 @@ Main Components
 		height: 3px;
 		width: 24px;
 	    background: $color-3;
-
-        @include MQ(L) {
-        }
 	}
 
 	span {
@@ -310,21 +307,23 @@ Main Components
 	overflow-x: hidden;
 	overflow-y: auto;
 	@include transition(transform 0.3s);
-	padding-top: 50px;
+	padding-top: 100px;
 
 	a {
 		display: block;
 		color: $color-3;
-        border: 0;
-        font-weight: 500;
+        font-weight: 300;
 
 		/* truncate text with ellipsis if too long */
 		overflow: hidden;
 		text-overflow: ellipsis;
 		white-space: nowrap;
-		border-top-width: 1px;
-		border-color: tint($color-1, 8%);
-		border-style: solid;
+
+		// reset on desktop version
+		height: auto;
+		font-size: 1.2em;
+		line-height: 2em;
+		text-transform: uppercase;
 	}
 
 	li:first-of-type > a {
@@ -358,39 +357,6 @@ Main Components
 		@include transition(opacity .3s, transform .3s);
 	}
 
-	&.is-hidden {
-		/* push the secondary dropdown items to the right */
-		@include transform(translateX(100%));
-	}
-
-	&.is-hidden > li > a,
-	&.is-hidden > li > .cd-search,
-	&.is-hidden > .cd-divider,
-	&.move-out > li > a,
-	&.move-out > li > .cd-search,
-	&.move-out > .cd-divider {
-		/* lower down the dropdown items opacity - when secondary dropdown slides in or for dropdown items hidden on the right */
-		opacity: 0;
-	}
-
-	&.move-out > li > a,
-	&.move-out > li > .cd-search,
-	&.move-out > .cd-divider {
-		/* push the dropdown items to the left when secondary dropdown slides in */
-		@include transform(translateX(-100%));
-	}
-
-	.dropdown-is-active & {
-		-webkit-overflow-scrolling: touch;
-	}
-
-	@include MQ(M) {
-		padding-top: 60px;
-
-		a {
-			font-size: 1.8rem;
-		}
-	}
 
 	@include MQ(L) {
 		padding-top: 0;
@@ -400,7 +366,10 @@ Main Components
 			color: $color-1;
 			height: 50px;
 			line-height: 50px;
-			border-color: darken($color-3, 8%);
+			font-size: 0.85em;
+			font-weight: 500;
+			border-top: 1px solid darken($color-3, 8%);
+			color: $gray;
 		}
 
 		.cd-divider {
@@ -412,16 +381,6 @@ Main Components
 		.cd-divider + li > a {
 			border-top-width: 1px;
 		}
-
-		&.is-hidden > li > a,
-		&.is-hidden > li > .cd-search,
-		&.is-hidden > .cd-divider,
-		&.move-out > li > a,
-		&.move-out > li > .cd-search,
-		&.move-out > .cd-divider {
-			/* reset mobile style */
-			opacity: 1;
-		}
 	}
 }
 
@@ -431,108 +390,6 @@ Main Components
 	.see-all a {
 		/* different style for the See all links */
 		color: $color-2;
-	}
-
-	.cd-dropdown-gallery .cd-dropdown-item, .cd-dropdown-icons .cd-dropdown-item {
-		/* items with picture (or icon) and title */
-		height: 80px;
-		line-height: 80px;
-
-		h3 {
-			/* truncate text with ellipsis if too long */
-			overflow: hidden;
-			text-overflow: ellipsis;
-			white-space: nowrap;
-		}
-	}
-
-	.cd-dropdown-gallery .cd-dropdown-item {
-		padding-left: 90px;
-	}
-
-	.cd-dropdown-gallery img {
-		position: absolute;
-		display: block;
-		height: 40px;
-		width: auto;
-		left: 20px;
-		top: 50%;
-		margin-top: -20px;
-	}
-
-	.cd-dropdown-icons .cd-dropdown-item {
-		padding-left: 75px;
-		position: relative;
-
-		p {
-			color: $color-1;
-			font-size: 1.3rem;
-			/* hide description on small devices */
-			display: none;
-		}
-
-		&::before {
-			/* item icon */
-			content:'';
-			display: block;
-			position: absolute;
-			left: 20px;
-			top: 50%;
-			margin-top: -20px;
-			width: 40px;
-			height: 40px;
-			background-repeat: no-repeat;
-			background-position: center center;
-			background-size: 40px 40px;
-		}
-
-		&.item-1::before {
-			background-image: url('../img/nucleo-icon-1.svg');
-		}
-
-		&.item-2::before {
-			background-image: url('../img/nucleo-icon-2.svg');
-		}
-
-		&.item-3::before {
-			background-image: url('../img/nucleo-icon-3.svg');
-		}
-
-		&.item-4::before {
-			background-image: url('../img/nucleo-icon-4.svg');
-		}
-
-		&.item-5::before {
-			background-image: url('../img/nucleo-icon-5.svg');
-		}
-
-		&.item-6::before {
-			background-image: url('../img/nucleo-icon-6.svg');
-		}
-
-		&.item-7::before {
-			background-image: url('../img/nucleo-icon-7.svg');
-		}
-
-		&.item-8::before {
-			background-image: url('../img/nucleo-icon-8.svg');
-		}
-
-		&.item-9::before {
-			background-image: url('../img/nucleo-icon-9.svg');
-		}
-
-		&.item-10::before {
-			background-image: url('../img/nucleo-icon-10.svg');
-		}
-
-		&.item-11::before {
-			background-image: url('../img/nucleo-icon-11.svg');
-		}
-
-		&.item-12::before {
-			background-image: url('../img/nucleo-icon-12.svg');
-		}
 	}
 
 	@include MQ(L) {
@@ -613,14 +470,6 @@ Main Components
 
 			.cd-dropdown-item, a {
 				border: none;
-			}
-		}
-
-		.cd-dropdown-gallery, .cd-dropdown-icons {
-			padding: 20px 30px 100px;
-
-			> .see-all {
-				width: calc(100% - 60px);
 			}
 		}
 
@@ -725,67 +574,6 @@ Main Components
 			}
 		}
 
-		.cd-dropdown-gallery {
-			width: 600px;
-			padding-bottom: 100px;
-
-			> li {
-				@include column(0.48);
-				margin-right: 4%;
-
-				&:nth-of-type(2n) {
-					margin-right: 0;
-				}
-			}
-
-			.cd-dropdown-item {
-				padding: 0;
-				height: auto;
-				line-height: normal;
-				color: $color-2;
-				margin-bottom: 2em;
-			}
-
-			> li:nth-last-of-type(2) a,
-			> li:last-of-type a {
-				margin-bottom: 0;
-			}
-
-			img {
-				position: static;
-				height: auto;
-				width: 100%;
-				margin: 0 0 0.6em;
-			}
-		}
-
-		.cd-dropdown-icons {
-			width: 600px;
-
-			.cd-dropdown-item {
-				height: 80px;
-				line-height: 1.2;
-				padding: 24px 0 0 85px;
-
-				&:hover {
-					background: darken($color-3, 8%);
-				}
-
-				h3 {
-					color: $color-2;
-					font-weight: bold;
-				}
-
-				p {
-					display: block;
-					font-size: 1.2rem;
-				}
-
-				&::before {
-					left: 25px;
-				}
-			}
-		}
 
 		> .has-children > ul {
 			visibility: hidden;
@@ -875,48 +663,6 @@ Main Components
 	}
 }
 
-.has-children > a, .go-back a {
-	position: relative;
-
-	&::before, &::after {
-		/* arrow icon in CSS - for element with nested unordered lists */
-		content: '';
-		position: absolute;
-		top: 50%;
-		margin-top: -1px;
-		display: inline-block;
-		height: 2px;
-		width: 10px;
-		background: $color-3;
-		@include backface-visibility(hidden);
-	}
-
-	&::before {
-		@include transform(rotate(45deg));
-	}
-
-	&::after {
-		@include transform(rotate(-45deg));
-	}
-
-	@include MQ(L) {
-
-		&::before, &::after {
-			background: darken($color-3, 30%);
-		}
-	}
-}
-
-.has-children > a {
-	padding-right: 40px;
-
-	&::before, &::after {
-		/* arrow goes on the right side - children navigation */
-		right: 20px;
-		@include transform-origin(9px 50%);
-	}
-}
-
 @include MQ(L) {
 
 	.open-to-left .cd-dropdown-content > .has-children > a {
@@ -928,16 +674,6 @@ Main Components
 			left: 20px;
 			@include transform-origin(1px 50%);
 		}
-	}
-}
-
-.cd-dropdown-content .go-back a {
-	padding-left: 40px;
-
-	&::before, &::after {
-		/* arrow goes on the left side - go back button */
-		left: 20px;
-		@include transform-origin(1px 50%);
 	}
 }
 
@@ -964,6 +700,7 @@ Main Components
 
 // in page navigation
 
+//............................................
 
 .page-nav {
 	margin: 0 0 1.5em;
