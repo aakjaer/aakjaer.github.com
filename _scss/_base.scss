@@ -313,7 +313,7 @@ th {
 		@include make-sm-column(6);
 		@include make-md-column(3, $grid-gutter-width);
 		text-align: center;
-		@include fadeInUp;
+		//@include fadeInUp;
 	}
 
 	.project-heading {
@@ -471,12 +471,12 @@ footer[role="contentinfo"] {
 
 .animating {
 	&.fadein { @include fadeIn; }
-	&.fadein-left { @include fadeInLeft; }
-	&.fadein-left-big { @include fadeInLeftBig; }
-	&.fadein-right { @include fadeInRight; }
-	&.fadein-up { @include fadeInUp; }
-	&.fadein-up-big { @include fadeInUpBig; }
-	&.fadein-down { @include fadeInDown; }
+	// &.fadein-left { @include fadeInLeft; }
+	// &.fadein-left-big { @include fadeInLeftBig; }
+	// &.fadein-right { @include fadeInRight; }
+	// &.fadein-up { @include fadeInUp; }
+	// &.fadein-up-big { @include fadeInUpBig; }
+	// &.fadein-down { @include fadeInDown; }
 
 	&[data-delay="100"] { @include delay(0.1s); }
 	&[data-delay="200"] { @include delay(0.2s); }
