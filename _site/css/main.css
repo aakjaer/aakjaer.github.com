@@ -7258,6 +7258,18 @@ a:focus {
 header[role="banner"] {
   text-align: right; }
 
+.logo {
+  position: relative;
+  display: inline-block;
+  height: 55px;
+  width: 200px;
+  z-index: 4;
+  margin: 30px 0 0 5%;
+  background: url(../img/logo.svg) 0 0 no-repeat;
+  overflow: hidden;
+  text-indent: 101%;
+  white-space: nowrap; }
+
 .stage {
   padding: 50px 0; }
   .stage .stage-img {

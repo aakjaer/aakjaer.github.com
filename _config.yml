@@ -6,7 +6,7 @@ author:
 
 sass:
   sass_dir: _scss
-  
+
 permalink: date
 
 # Markdown library
