@@ -9,7 +9,18 @@
 
         // animations
 		'../bower_components/animatewithsass/_properties',
-		'../bower_components/animatewithsass/_fading-entrances/fading-entrances',
+		//'../bower_components/animatewithsass/_fading-entrances/fading-entrances',
+
+		"../bower_components/animatewithsass/_fading-entrances/_fadeIn",
+	    "../bower_components/animatewithsass/_fading-entrances/_fadeInDown",
+	    "../bower_components/animatewithsass/_fading-entrances/_fadeInDownBig",
+	    "../bower_components/animatewithsass/_fading-entrances/_fadeInLeft",
+	    "../bower_components/animatewithsass/_fading-entrances/_fadeInLeftBig",
+	    "../bower_components/animatewithsass/_fading-entrances/_fadeInRight",
+	    "../bower_components/animatewithsass/_fading-entrances/_fadeInRightBig",
+	    "../bower_components/animatewithsass/_fading-entrances/_fadeInUp",
+	    "../bower_components/animatewithsass/_fading-entrances/_fadeInUpBig",
+
 
 		// lightbox
 		'fancybox',
