@@ -8,17 +8,8 @@
 		'../bower_components/bourbon/app/assets/stylesheets/bourbon',
 
         // animations
-		'anim/properties',
-		'anim/_fading-entrances/fadeIn',
-	    'anim/_fading-entrances/fadeInDown',
-	    'anim/_fading-entrances/fadeInDownBig',
-	    'anim/_fading-entrances/fadeInLeft',
-	    'anim/_fading-entrances/fadeInLeftBig',
-	    'anim/_fading-entrances/fadeInRight',
-	    'anim/_fading-entrances/fadeInRightBig',
-	    'anim/_fading-entrances/fadeInUp',
-	    'anim/_fading-entrances/fadeInUpBig',
-
+		'../bower_components/animatewithsass/_properties',
+		'../bower_components/animatewithsass/_fading-entrances/fading-entrances',
 
 		// lightbox
 		'fancybox',
