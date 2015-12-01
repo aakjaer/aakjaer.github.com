@@ -35,3 +35,4 @@ Thumbs.db
 node_modules
 .tmp
 dist
+_site
