@@ -5,18 +5,13 @@
 		'mixins',
 		'layout',
 		'custom-bootstrap',
-		'../bower_components/bourbon/app/assets/stylesheets/bourbon',
-
-        // animations
-		'anim/_properties',
-		"anim/_fading-entrances/fadeIn",
 
 		// lightbox
+		'navigation',
+		'intro',
 		'fancybox',
 		'type',
 		'utilities',
-		'navigation',
-		'intro',
 		'sections',
 		'morph-button',
         'base'
