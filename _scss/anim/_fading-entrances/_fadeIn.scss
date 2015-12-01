@@ -4,7 +4,7 @@
 }
 
 @mixin fadeIn() {
-	// @include animation-name(fadeIn);
+	@include animation-name(fadeIn);
 	// @include count($count);
 	// @include duration($duration);
 	// @include delay($delay);
