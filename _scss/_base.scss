@@ -470,11 +470,11 @@ footer[role="contentinfo"] {
 }
 
 .animating {
-	//&.fadein { @include fadeInLeft; }
+	&.fadein { @include fadeIn; }
 	// &.fadein-left { @include fadeInLeft; }
 	// &.fadein-left-big { @include fadeInLeftBig; }
 	// &.fadein-right { @include fadeInRight; }
-	// &.fadein-up { @include fadeInUp; }
+	&.fadein-up { @include fadeIn; }
 	// &.fadein-up-big { @include fadeInUpBig; }
 	// &.fadein-down { @include fadeInDown; }
 

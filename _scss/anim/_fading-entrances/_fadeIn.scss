@@ -1,16 +1,17 @@
-// @include keyframes(fadeIn) {
-// 	//   0% {opacity: 0;}
-// 	// 100% {opacity: 1;}
-// }
+@import '../_properties';
 
 
+@include keyframes(fadeIn) {
+	  0% {opacity: 0;}
+	100% {opacity: 1;}
+}
 
-@mixin fade-in() {
-	//@include animation-name(fadeIn);
-	// @include count($count);
-	// @include duration($duration);
-	// @include delay($delay);
-	// @include function($function);
-	// @include fill-mode($fill);
-	// @include visibility($visibility);
+@mixin fadeIn($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+	@include animation-name(fadeIn);
+	@include count($count);
+	@include duration($duration);
+	@include delay($delay);
+	@include function($function);
+	@include fill-mode($fill);
+	@include visibility($visibility);
 }
