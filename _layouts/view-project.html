@@ -14,16 +14,12 @@ bodyclass: page-view-project
 
         <hr class="separator-red separator-lg" />
 
-        <ul class="project-details row">
-            <li class="project-detail col-sm-3 col-sm-offset-3">
+        <ul class="project-details text-center">
+            <li class="project-detail">
                 <span>Client</span>
                 {{ page.client }}
             </li>
-            <li class="project-detail col-sm-3">
-                <span>Date</span>
-
-            </li>
-            <li class="project-detail project-technology col-sm-8 col-sm-offset-2">
+            <li class="project-detail project-technology">
                 <span>Technology used</span>
 
                 {% for item in page.technology %}

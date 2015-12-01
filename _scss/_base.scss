@@ -263,7 +263,6 @@ th {
 .project-details {
 	margin: 2em 0 0;
 	@extend .list-unstyled;
-	text-align: center;
 }
 
 .project-detail {
@@ -280,7 +279,7 @@ th {
 	span {
 		display: block;
 		color: $brand-light-gray;
-		font-size: 0.7em;
+		font-size: 0.8em;
 	}
 
 	&.project-technology {
@@ -345,12 +344,11 @@ th {
 	}
 
 	.project-heading {
-		margin: 2em 0 1em;
-		min-height: 80px;
+		margin: 2em 0 0;
+		min-height: 50px;
 		font-size: 0.9em;
 		font-weight: 700;
 		line-height: 1.2;
-		color: $gray;
 		text-transform: uppercase;
 	}
 }
