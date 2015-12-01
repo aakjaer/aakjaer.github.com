@@ -471,21 +471,21 @@ footer[role="contentinfo"] {
 
 .animating {
 	&.fadein { @include fadeIn; }
-	// &.fadein-left { @include fadeInLeft; }
-	// &.fadein-left-big { @include fadeInLeftBig; }
-	// &.fadein-right { @include fadeInRight; }
-	&.fadein-up { @include fadeIn; }
-	// &.fadein-up-big { @include fadeInUpBig; }
-	// &.fadein-down { @include fadeInDown; }
+	&.fadein-left { @include fadeInLeft; }
+	&.fadein-left-big { @include fadeInLeftBig; }
+	&.fadein-right { @include fadeInRight; }
+	&.fadein-up { @include fadeInUp; }
+	&.fadein-up-big { @include fadeInUpBig; }
+	&.fadein-down { @include fadeInDown; }
 
-	// &[data-delay="100"] { @include delay(0.1s); }
-	// &[data-delay="200"] { @include delay(0.2s); }
-	// &[data-delay="300"] { @include delay(0.3s); }
-	// &[data-delay="400"] { @include delay(0.4s); }
-	// &[data-delay="500"] { @include delay(0.5s); }
-	// &[data-delay="600"] { @include delay(0.6s); }
-	// &[data-delay="700"] { @include delay(0.7s); }
-	// &[data-delay="800"] { @include delay(0.8s); }
-	// &[data-delay="900"] { @include delay(0.9s); }
-	// &[data-delay="1000"] { @include delay(1s); }
+	&[data-delay="100"] { @include delay(0.1s); }
+	&[data-delay="200"] { @include delay(0.2s); }
+	&[data-delay="300"] { @include delay(0.3s); }
+	&[data-delay="400"] { @include delay(0.4s); }
+	&[data-delay="500"] { @include delay(0.5s); }
+	&[data-delay="600"] { @include delay(0.6s); }
+	&[data-delay="700"] { @include delay(0.7s); }
+	&[data-delay="800"] { @include delay(0.8s); }
+	&[data-delay="900"] { @include delay(0.9s); }
+	&[data-delay="1000"] { @include delay(1s); }
 }
