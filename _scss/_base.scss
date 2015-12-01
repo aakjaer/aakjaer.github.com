@@ -98,19 +98,6 @@ img {
 	@extend .img-responsive;
 }
 
-.scene {
-	animation-duration: 0.45s;
-	transition-timing-function: ease-in;
-	animation-fill-mode: both;
-}
-
-.scene--fadein {
-	@include fadeIn;
-}
-
-.main-content.is-exiting .scene {
-  animation-direction: alternate-reverse;
-}
 
 .animate {
 	opacity: 0;
@@ -212,20 +199,6 @@ th {
 
 
 // projects
-
-// .project-intro {
-// 	display: table;
-// 	width: 100%;
-// 	min-height: 100vh;
-// 	overflow: hidden;
-//
-// 	.mask {
-// 		display: table-cell;
-// 		width: auto;
-// 		vertical-align: middle;
-// 	    padding: 0 5%;
-// 	}
-// }
 
 .project-teasers {}
 
@@ -340,7 +313,7 @@ th {
 		@include make-sm-column(6);
 		@include make-md-column(3, $grid-gutter-width);
 		text-align: center;
-		@include fadeInUp;
+		// @include fadeInUp;
 	}
 
 	.project-heading {
@@ -497,13 +470,13 @@ footer[role="contentinfo"] {
 }
 
 .animating {
-	&.fadein { @include fadeIn; }
-	&.fadein-left { @include fadeInLeft; }
-	&.fadein-left-big { @include fadeInLeftBig; }
-	&.fadein-right { @include fadeInRight; }
-	&.fadein-up { @include fadeInUp; }
-	&.fadein-up-big { @include fadeInUpBig; }
-	&.fadein-down { @include fadeInDown; }
+	// &.fadein { @include fadeIn; }
+	// &.fadein-left { @include fadeInLeft; }
+	// &.fadein-left-big { @include fadeInLeftBig; }
+	// &.fadein-right { @include fadeInRight; }
+	// &.fadein-up { @include fadeInUp; }
+	// &.fadein-up-big { @include fadeInUpBig; }
+	// &.fadein-down { @include fadeInDown; }
 
 	&[data-delay="100"] { @include delay(0.1s); }
 	&[data-delay="200"] { @include delay(0.2s); }

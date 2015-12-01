@@ -103,53 +103,53 @@ Bouncy
 
 -------------------------------- */
 
-.bouncy.cd-intro-content h1 {
-	@include animation-name(cd-bounce-right);
-}
-
-.bouncy.cd-intro-content p {
-	@include animation-name(cd-bounce-left);
-}
-
-.bouncy.cd-intro-content h1,
-.bouncy.cd-intro-content p {
-	@include animation-duration(.6s);
-}
-
-.bouncy.cd-intro-content .cd-btn {
-	@include animation-name(cd-bounce-rotate);
-}
-
-.bouncy.cd-intro-content .cd-btn {
-	@include animation-duration(.5s);
-}
-
-.bouncy.cd-intro-content .cd-btn.main-action {
-	@include animation-delay(.4s);
-}
-
-@include bounce(cd-bounce-right, -200px, 15px); // mixin inside partials > mixins.scss
-@include bounce(cd-bounce-left, 200px, -15px);
-
-@include keyframes(cd-bounce-rotate) {
-	0% {
-		opacity: .2;
-		@include transform(perspective(800px) rotateX(-80deg));
-	}
-
-	20% {
-		opacity: 1;
-	}
-
-	60% {
-		@include transform(perspective(800px) rotateX(20deg));
-	}
-
-	100% {
-		opacity: 1;
-		@include transform(perspective(800px) rotateX(0));
-	}
-}
+// .bouncy.cd-intro-content h1 {
+// 	@include animation-name(cd-bounce-right);
+// }
+//
+// .bouncy.cd-intro-content p {
+// 	@include animation-name(cd-bounce-left);
+// }
+//
+// .bouncy.cd-intro-content h1,
+// .bouncy.cd-intro-content p {
+// 	@include animation-duration(.6s);
+// }
+//
+// .bouncy.cd-intro-content .cd-btn {
+// 	@include animation-name(cd-bounce-rotate);
+// }
+//
+// .bouncy.cd-intro-content .cd-btn {
+// 	@include animation-duration(.5s);
+// }
+//
+// .bouncy.cd-intro-content .cd-btn.main-action {
+// 	@include animation-delay(.4s);
+// }
+//
+// @include bounce(cd-bounce-right, -200px, 15px); // mixin inside partials > mixins.scss
+// @include bounce(cd-bounce-left, 200px, -15px);
+//
+// @include keyframes(cd-bounce-rotate) {
+// 	0% {
+// 		opacity: .2;
+// 		@include transform(perspective(800px) rotateX(-80deg));
+// 	}
+//
+// 	20% {
+// 		opacity: 1;
+// 	}
+//
+// 	60% {
+// 		@include transform(perspective(800px) rotateX(20deg));
+// 	}
+//
+// 	100% {
+// 		opacity: 1;
+// 		@include transform(perspective(800px) rotateX(0));
+// 	}
+// }
 
 /* --------------------------------
 

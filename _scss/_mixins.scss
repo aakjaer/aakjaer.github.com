@@ -27,6 +27,14 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+@mixin delay($delay: .2s) {
+  -webkit-animation-delay: $delay;
+     -moz-animation-delay: $delay;
+      -ms-animation-delay: $delay;
+       -o-animation-delay: $delay;
+          animation-delay: $delay;
+}
+
 // define a different bounce animation for h1 and p elements
 
 @mixin bounce($animation, $value1, $value2) {
