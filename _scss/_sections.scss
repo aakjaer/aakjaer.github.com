@@ -67,7 +67,7 @@
         @include backface-visibility(hidden);
         @include transition(transform .2s);
         @include transform(translateX(-50%) rotate(-135deg));
-        @include delay(2s);
+        @include animation-delay(2s);
     }
 }
 
