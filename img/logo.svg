@@ -21,7 +21,7 @@
                 <circle cx="101.271" cy="101.271" r="75.8922"/>
             </clipPath>
             <g clip-path="url(#tag1)">
-                <text x="50.9379px" y="135.652px" style="font-family:Ohmega Sans;font-size:137.523px;fill:white;">A</text>
+                <path d="M151.605,135.652L101.271,48.8751L50.9379,135.652L151.605,135.652ZM109.11,87.9316L88.8943,122.862L73.2167,122.862L101.271,74.4544L109.11,87.9316ZM116.536,100.859L129.326,122.862L103.747,122.862L116.536,100.859Z" style="fill:white;fill-rule:nonzero;"/>
             </g>
         </g>
     </g>
