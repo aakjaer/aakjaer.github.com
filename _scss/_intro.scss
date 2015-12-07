@@ -1,5 +1,5 @@
 // bourban dependent
-@import '../bower_components/bourbon/app/assets/stylesheets/bourbon';
+@import '../components/bourbon/app/assets/stylesheets/bourbon';
 
 
 .cd-intro {
@@ -18,11 +18,10 @@
 	text-align: center;
 	padding: 0 5%;
 	//background: $color-2; // transparent for now
-	@include font-smoothing;
+
 
 	h1 {
 		@extend .hero-heading;
-		color: $gray-dark;
 	}
 
 	p {
@@ -44,10 +43,10 @@
 
 	@include MQ(M) {
 
-		h1 {
-			font-size: 4em;
-			font-weight: 300;
-		}
+		// h1 {
+		// 	font-size: 4em;
+		// 	font-weight: 300;
+		// }
 
 		p {
 			max-width: 30em;
@@ -362,7 +361,7 @@ Mask
 		left: 0;
 		height: 100%;
 		width: 100%;
-		color: $color-3;
+		color: $headings-color;
 		@include animation-name(cd-reveal-up);
 		@include animation-fill-mode(backwards);
 	}
@@ -380,7 +379,7 @@ Mask
 			left: -1em;
 			height: 2px;
 			width: calc(100% + 2em);
-			background-color: $color-3;
+			background-color: lighten($color-3, 20%);
 			@include animation(cd-loading-mask 1s .3s both);
 		}
 	}

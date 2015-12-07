@@ -13,9 +13,9 @@
 .section-heading {
     padding: 2em 0;
     font-size: 1.2em;
-	letter-spacing: .2em;
+	letter-spacing: .1em;
 	text-transform: uppercase;
-    font-weight: 900;
+    font-weight: 700;
 
     &:first-child {
         margin-top: 0;
@@ -122,6 +122,11 @@
 .section-gray {
     background-color: #efefef;
     color: $gray-dark;
+}
+
+.section-dark-gray {
+    background: #222;
+    color: white;
 }
 
 .section-light-gray {

@@ -7,7 +7,19 @@ html, body { height: 100%; }
 body {
 	margin: 0;
 	font-weight: 300;
+	-webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
+    font-smoothing: antialiased;
 }
+
+@include selection {
+	background: $brand-green;
+	color: #fff;
+	opacity: 1;
+}
+
+
 
 a:hover,
 a:focus {
@@ -23,16 +35,22 @@ header[role="banner"] {
 }
 
 .logo {
-	position: absolute;
 	display: inline-block;
-	top: 0;
-	left: 0;
-	height: 55px;
-	width: 248px;
+	height: 75px;
+	width: 200px;
     z-index: $content;
-	margin: 25px 0 0 5%;
-	background: url(../img/logo.svg) 0 0 no-repeat;
+	margin: 50px 0;
+	background: url(../img/logo.svg) 50% 50% no-repeat;
 	@include text-hide();
+
+	@media (min-width: $screen-sm-min) {
+
+		html:not(.page-home) & {
+			height: 100px;
+			width: 300px;
+			margin: 70px;
+		}
+	}
 }
 
 // stage section
@@ -60,6 +78,28 @@ header[role="banner"] {
 		}
 	}
 }
+
+
+.content-wrapper {
+	z-index: 500;
+    background: white;
+    position: relative;
+    @include transition(0.5s);
+    @include transform(translate3d(0, 0, 0));
+    @include box-shadow(0 0 26px rgba(17,37,60,0.3));
+}
+
+.branding {
+	text-align: center;
+
+	.page-home & {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+	}
+}
+
 
 
 
@@ -153,14 +193,12 @@ blockquote {
 }
 
 .btn-cta {
-    padding: 0 60px;
-	line-height: 60px;
+    padding: 0 40px;
+	line-height: 70px;
     text-transform: uppercase;
-	font-size: 0.85em;
-	letter-spacing: 0.1em;
     font-weight: 700;
-
 	@include button-variant(white, $brand-red, transparent);
+	border-radius: 50px;
 
 	&:hover {
 		background: darken($brand-red, 5%);
@@ -226,11 +264,14 @@ th {
 	margin-bottom: 0;
 	text-align: center;
 	text-transform: uppercase;
-	@extend .heavy;
 
 	@media (min-width: $screen-md-min) {
-		font-size: 1.5em;
+		font-size: 1.2em;
 	}
+}
+
+.project-intro .section-content {
+	padding-top: 0;
 }
 
 .project-details {
@@ -305,28 +346,63 @@ th {
 
 .latest-projects {
 	@include make-row();
+	@include center-block();
+
+	a {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	    opacity: 0;
+		z-index: 100;
+	    text-indent: 200%;
+	    white-space: nowrap;
+	    font-size: 0;
+	}
 
 	.project {
-		margin-bottom: $grid-gutter-width;
-		max-width: 350px;
-		@include center-block();
-		@include make-sm-column(6);
-		@include make-md-column(3, $grid-gutter-width);
-		text-align: center;
-		@include fadeInUp;
+		overflow: hidden;
+		position: relative;
+		display: inline-block;
+		overflow: hidden;
+		@include make-sm-column(4);
+		@include fadeIn;
+	}
+
+	img {
+		border-radius: 8px;
+	}
+
+	.img-placeholder {
+		background: rgba(white, 0.05);
 	}
 
 	.project-heading {
-		margin: 2em 0 0;
-		min-height: 50px;
-		font-size: 0.9em;
+		margin: 0;
+		font-size: 1em;
 		font-weight: 700;
-		line-height: 1.2;
-		text-transform: uppercase;
+		color: $gray-lighter;
+	}
+
+	p {
+		font-size: 0.9em;
+		color: $gray-light;
+	}
+
+	figcaption {
+		padding: 2em 0;
+		min-height: 5em;
 	}
 }
 
+
+////////////////////////////////////////
+
 // browser top for project images
+
+////////////////////////////////////////
+
 .browser {
 	margin-bottom: 1.5em;
 
@@ -391,19 +467,26 @@ th {
 }
 
 .showcase {
+	overflow: hidden;
 	margin-bottom: 30px;
 	padding: 30px;
 	background: white;
+	border-radius: 12px;
+	@include box-shadow(0 1px 1px rgba(0, 0, 0, 0.1));
 
 	time {
 		display: block;
 		font-size: 0.9em;
 	}
+
+	.body {
+		font-size: 1.1em;
+	}
 }
 
 .showcase-heading {
 	margin: 1em 0 1.5em;
-	font-size: 1.2em;
+	font-size: 1.6em;
 	color: $gray;
 	font-weight: 700;
 	text-align: center;
@@ -441,15 +524,15 @@ th {
 }
 
 .showcase-images {
-	@include make-row(6px);
+	@include make-row(12px);
 	@extend .list-unstyled;
-	margin-top: 15px;
-	margin-bottom: 15px;
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
 
 	li {
 		float: left;
-		width: 70px;
-		padding: 3px;
+		width: 100px;
+		padding: 6px;
 		margin-bottom: 15px;
 	}
 

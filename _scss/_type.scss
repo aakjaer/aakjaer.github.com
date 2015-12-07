@@ -42,12 +42,12 @@
 }
 
 .hero-heading {
-    max-width: 15em;
-    margin-top: 0;
+    max-width: 12em;
+    margin: 0 auto;
     font-size: 10vw; // has backup size from headers
-    text-transform: uppercase;
-    font-weight: 900;
-    @include center-block();
+    font-weight: 700;
+    text-align: center;
+    font-family: "merriweather", "Helvetica Neue", Helvetica, sans-serif;
 
     @media (min-width: $screen-md-min) {
         font-size: 6vw;

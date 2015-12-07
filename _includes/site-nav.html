@@ -1,9 +1,15 @@
-<div class="cd-dropdown-wrapper open-to-left">
-	<a class="cd-nav-trigger" href="#cd-primary-nav"><span></span></a>
-	<nav class="cd-dropdown">
-		<ul class="cd-dropdown-content">
-			<li><a href="{{ site.baseurl }}/">Home</a></li>
-			<li><a href="{{ site.baseurl }}/projects/">Projects</a></li>
-		</ul> <!-- .cd-dropdown-content -->
-	</nav> <!-- .cd-dropdown -->
-</div> <!-- .cd-dropdown-wrapper -->
+<div class="sidebar-container">
+	<nav class="site-nav">
+		<ul class="primary-links">
+			<li{% if page.bodyclass contains "page-home" %} class="active"{% endif %}><a href="{{ site.baseurl }}/">Home</a></li>
+			<li{% if page.bodyclass contains "page-projects" %} class="active"{% endif %}><a href="{{ site.baseurl }}/projects/">Projects</a></li>
+			<li{% if page.bodyclass contains "page-contact" %} class="active"{% endif %}><a href="{{ site.baseurl }}/projects/">Contact</a></li>
+		</ul>
+
+		<ul class="secondary-links">
+			<li><a href="/submit/">Blog</a></li>
+			<li><a href="/faq/">Facebook</a></li>
+			<li><a href="/license/">LinkedIn</a></li>
+		</ul>
+	</nav>
+</div>
