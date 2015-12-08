@@ -10,7 +10,7 @@
 	width: 360px;
 	overflow-y: auto;
 	padding: 80px 60px 60px;
-	@include linear-gradient(to left, $brand-green, lighten($brand-green, 15%));
+	@include linear-gradient(to right, $brand-primary, adjust-hue($brand-primary, 10%));
 	color: #fff;
 	filter: none;
 	@include transform(translate3D(0,0,0));
@@ -42,35 +42,38 @@
 	@include transform(none);
 }
 
-// .sidebar:after,
-// .sidebar:before {
-// 	content: "";
-// 	opacity: 0;
-// 	position: fixed;
-// 	left: 0;
-// 	top: 10px;
-// 	bottom: 0;
-// 	height: 100vh;
-// 	width: 8px;
-// 	background-color: #DFEDF0;
-// 	@include box-shadow(0 0 16px rgba(17, 37, 60, 0.5));
-// 	@include transform(translateX(-8px));
-// 	@include transition(.5s);
-// }
-//
-// .sidebar:before {
-// 	bottom: 0;
-// 	top: 20px;
-// 	width: 16px;
-// 	@include transform(translateX(16px));
-// }
+.sidebar:after,
+.sidebar:before {
+	content: "";
+	position: fixed;
+	left: 0;
+	top: 10px;
+	bottom: 0;
+	height: 100vh;
+	width: 100px;
+	background-color: #DFEDF0;
+	@include box-shadow(0 0 16px rgba(17, 37, 60, 0.5));
+	@include transform(translateX(-100%));
+	@include transition(.5s);
+}
 
-// .menu-shown .sidebar:after,
-// .menu-shown .sidebar:before {
-// 	opacity: 1;
-// 	@include transform(translateX(0px));
-// 	@include transition(.7s);
-// }
+.sidebar:before {
+	bottom: 0;
+	top: 50px;
+}
+
+.menu-shown .sidebar:after,
+.menu-shown .sidebar:before {
+	@include transition(0.8s);
+}
+
+.menu-shown .sidebar:before {
+	@include transform(translateX(-98px) rotate(4deg));
+}
+
+.menu-shown .sidebar:after {
+	@include transform(translateX(-96px) rotate(2deg));
+}
 
 .sidebar .logo img.sidebar-logo,
 .sidebar .logo span {
@@ -210,12 +213,15 @@
 	}
 
 	.menu-shown .content-wrapper {
-		@include transform(translateX(100%));
+		@include transform(translateX(-100%));
 	}
 }
 
+/////////////////////////////////////
 
 // back/forward buttons
+
+/////////////////////////////////////
 
 .page-nav {
 	margin: 0 0 1.5em;

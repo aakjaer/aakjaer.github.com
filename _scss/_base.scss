@@ -81,6 +81,7 @@ header[role="banner"] {
 
 
 .content-wrapper {
+	min-height: 100vh;
 	z-index: 500;
     background: white;
     position: relative;
@@ -160,10 +161,6 @@ blockquote {
 		line-height: 1em;
 		color: $brand-red;
 	}
-
-	footer::before {
-		content: "";
-	}
 }
 
 .quote-image {
@@ -194,7 +191,7 @@ blockquote {
 
 .btn-cta {
     padding: 0 40px;
-	line-height: 70px;
+	line-height: 60px;
     text-transform: uppercase;
     font-weight: 700;
 	@include button-variant(white, $brand-red, transparent);
@@ -264,6 +261,7 @@ th {
 	margin-bottom: 0;
 	text-align: center;
 	text-transform: uppercase;
+	font-weight: 600;
 
 	@media (min-width: $screen-md-min) {
 		font-size: 1.2em;
@@ -283,7 +281,6 @@ th {
 	margin-bottom: 1.5em;
 	font-size: 0.9em;
 	text-transform: uppercase;
-	color: white;
 	@extend .heavy;
 
 	@media (min-width: $screen-md-min) {
@@ -365,24 +362,26 @@ th {
 		overflow: hidden;
 		position: relative;
 		display: inline-block;
-		overflow: hidden;
 		@include make-sm-column(4);
 		@include fadeIn;
 	}
 
-	img {
-		border-radius: 8px;
+	.project, img, .project-heading {
+		@include transition(0.3s);
 	}
 
+	img,
 	.img-placeholder {
-		background: rgba(white, 0.05);
+		border-radius: 8px;
+		@include box-shadow(0 1px 1px rgba(0, 0, 0, 0.1));
+		background: rgba(black, 0.05);
 	}
 
 	.project-heading {
 		margin: 0;
-		font-size: 1em;
+		font-size: 1.2em;
 		font-weight: 700;
-		color: $gray-lighter;
+		color: $gray;
 	}
 
 	p {
@@ -393,6 +392,18 @@ th {
 	figcaption {
 		padding: 2em 0;
 		min-height: 5em;
+	}
+
+	.project:hover {
+		@include transform(translateY(-3px));
+		
+		.project-heading {
+			color: $brand-primary;
+		}
+	
+		img {
+			@include box-shadow(0 5px 5px rgba(0, 0, 0, 0.2));
+		}
 	}
 }
 
@@ -405,6 +416,7 @@ th {
 
 .browser {
 	margin-bottom: 1.5em;
+	@include box-shadow(0 1px 1px rgba(0, 0, 0, 0.1));
 
 	img {
 		@include border-bottom-radius(4px);
