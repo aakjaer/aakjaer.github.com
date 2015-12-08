@@ -18,9 +18,9 @@ bodyclass: page-projects page-view-project
             <li class="project-detail project-technology">
                 <span>Technology used</span>
 
-                {% for item in page.technology %}
-                    {{ item }} /
-                {% endfor %}
+                <ul>
+                    {% for item in page.technology %}<li>{{ item }}</li>{% endfor %}
+                </ul>  
             </li>
         </ul>
     </div>
