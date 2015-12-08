@@ -18,9 +18,10 @@
 .section-heading {
     padding: 2em 0;
     font-size: 1.2em;
-	letter-spacing: .1em;
+	letter-spacing: .25em;
 	text-transform: uppercase;
-    font-weight: 700;
+    font-weight: 900;
+    text-align: center;
 
     &:first-child {
         margin-top: 0;
@@ -32,9 +33,20 @@
     }
 
     @media (min-width: $screen-sm) {
-        font-size: 1.4em;
+        font-size: 1.8em;
     }
 }
+
+.section-heading-sm {
+    padding: 1em 0;
+    font-size: 1em;
+    font-weight: 900;
+
+    @media (min-width: $screen-sm) {
+        font-size: 1.3em;
+    }
+}
+
 
 .section-image {
     display: block;

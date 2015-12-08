@@ -9,6 +9,7 @@
 	/* vertically align its content */
 	display: table;
 	overflow: hidden;
+	background: $gray-lighter; // transparent for now
 }
 
 .cd-intro-content {
@@ -17,7 +18,6 @@
 	vertical-align: middle;
 	text-align: center;
 	padding: 0 5%;
-	//background: $color-2; // transparent for now
 
 
 	h1 {
@@ -26,9 +26,10 @@
 
 	p {
 		margin: 1em 0;
+		font-weight: 400;
 
 		@media (min-width: $screen-md-min) {
-			font-size: 1.6em;
+			font-size: 1.5em;
 		}
 	}
 
@@ -348,7 +349,7 @@ Mask
 	padding-bottom: 10px;
 	/* overwrite default style */
 	opacity: 1;
-	font-weight: 700;
+
 	/* <h1> text is not visible - it is used only as a container for the ::after element */
 	color: transparent;
 	overflow: hidden;
