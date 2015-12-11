@@ -13,7 +13,7 @@ body {
 }
 
 @include selection {
-	background: $brand-green;
+	background: $brand-primary;
 	color: #fff;
 	opacity: 1;
 }
@@ -97,6 +97,7 @@ header[role="banner"] {
 		top: 0;
 		left: 0;
 		width: 100%;
+		z-index: $above-content;
 	}
 }
 
@@ -189,15 +190,18 @@ blockquote {
 }
 
 .btn-cta {
-    padding: 0 40px;
-	line-height: 60px;
+    padding: 0 50px;
+	line-height: 50px;
     text-transform: uppercase;
     font-weight: 700;
-	@include button-variant(white, $gray-dark, transparent);
-	border-radius: 50px;
+	@include button-variant($gray-dark, transparent, $gray-dark);
+	border-width: 3px;
+	border-radius: 0;
+	@include transition(background 0.2s, color 0.2s);
 
 	&:hover {
-		background: darken($brand-primary, 5%);
+		background: $gray-dark;
+		color: white;
 	}
 }
 
@@ -398,8 +402,8 @@ th {
 
 	.project-heading {
 		margin: 0;
-		font-size: 1.2em;
-		font-weight: 700;
+		font-size: 1em;
+		font-weight: 900;
 		color: $gray;
 	}
 
@@ -417,7 +421,7 @@ th {
 		@include transform(translateY(-3px));
 		
 		.project-heading {
-			color: $brand-primary;
+			color: $link-color;
 		}
 	
 		img {
@@ -518,15 +522,16 @@ th {
 
 .showcase-heading {
 	margin: 1em 0 1.5em;
-	font-size: 1.6em;
+	font-size: 1em;
 	color: $gray;
-	font-weight: 700;
+	font-weight: 900;
 	text-align: center;
+	letter-spacing: 0.1em;
 }
 
 .showcase h4 {
-	font-size: 1em;
-	font-weight: 700;
+	font-size: 0.9em;
+	font-weight: 900;
 	margin: 20px 0 5px;
 	color: $gray;
 }

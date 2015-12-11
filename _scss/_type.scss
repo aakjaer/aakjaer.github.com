@@ -1,4 +1,8 @@
 // typography
+h1, h2, h3, h4, h5 {
+    text-transform: uppercase;
+}
+
 
 .thin { font-weight: 100; }
 .light { font-weight: 300; }
@@ -13,7 +17,7 @@
     line-height: 1.6em;
 
     @media (min-width: $screen-sm-min) {
-        font-size: 1.6em;
+        font-size: 1.4em;
     }
 
     &.text-center {
@@ -30,15 +34,22 @@
 .text-yellow { color: $brand-yellow; }
 .text-gray { color: #777; }
 .text-light-gray { color: #bbb; }
+.text-purple { color: $brand-purple; }
 
 .all-caps {
     text-transform: uppercase;
 }
 
 .display-heading {
-    margin-bottom: 0.5em;
-    font-size: 60px;
+    margin-bottom: 2em;
+    font-size: 2.5em;
     text-transform: uppercase;
+    text-align: center;
+    font-weight: 900;
+
+    @media (min-width: $screen-md-min) {
+        font-size: 4vw;
+    }
 }
 
 .hero-heading {
@@ -49,7 +60,7 @@
     text-align: center;
     text-transform: uppercase;
     letter-spacing: -0.025em;
-    color: #07C4E6;
+    // color: $brand-primary;
 
     @media (min-width: $screen-md-min) {
         font-size: 5.5vw;
@@ -87,4 +98,5 @@ hr {
 .separator-blue { border-color: $brand-blue; }
 .separator-dark-blue { border-color: $brand-blue; }
 .separator-red { border-color: $brand-red; }
+.separator-purple { border-color: $brand-purple; }
 .separator-yellow { border-color: $brand-yellow; }
