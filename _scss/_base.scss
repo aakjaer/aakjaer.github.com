@@ -600,17 +600,16 @@ th {
 	margin: 0 -30px -30px;
 	padding: 30px 30px 50px;
 	font-size: 1.1em;
-	border: 0;
-	background: $brand-primary;
-	color: $white-accent;
+	background: $brand-green;
+	color: white;
 
 	&::before {
-		color: rgba(255, 255, 255, 0.5);
+		color: rgba(white, 0.4);
 	}
 
 	footer {
 		margin-top: 25px;
-		color: $white-accent;
+		color: rgba(white, 0.6);
 	}
 }
 
