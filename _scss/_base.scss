@@ -36,6 +36,20 @@ header[role="banner"] {
 	text-align: right;
 }
 
+.form-control {
+	@include box-shadow(none);
+}
+
+.form-actions {
+	margin-top: 2em;
+	text-align: right;
+}
+
+.contact-form {
+	@include center-block;
+	max-width: 30em;
+}
+
 .logo {
 	display: inline-block;
 	height: 75px;
@@ -162,7 +176,7 @@ blockquote {
 		font-family: serif;
 		font-size: 8em;
 		line-height: 1em;
-		color: $brand-red;
+		color: $brand-green;
 	}
 }
 
@@ -257,6 +271,25 @@ blockquote {
 
 	&:hover {
 		background: $brand-pink;
+		color: white;
+		border-color: transparent;
+	}
+}
+
+.btn-submit {
+    padding: 0 2em;
+	line-height: 3.5em;
+    text-transform: uppercase;
+    font-weight: 800;
+	border: 3px solid $brand-green;
+	background: transparent;
+	color: $brand-green;
+	border-width: 3px;
+	font-size: 1em;
+	@include transition(all 0.3s);
+
+	&:hover {
+		background: $brand-green;
 		color: white;
 		border-color: transparent;
 	}

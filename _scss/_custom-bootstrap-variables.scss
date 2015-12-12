@@ -100,7 +100,7 @@ $line-height-large:         1.33 !default;
 $line-height-small:         1.5 !default;
 
 $border-radius-base:        4px !default;
-$border-radius-large:       6px !default;
+$border-radius-large:       8px !default;
 $border-radius-small:       3px !default;
 
 //** Global color for active items (e.g., navs or dropdowns).
@@ -173,16 +173,16 @@ $btn-link-disabled-color:        $gray-light !default;
 //##
 
 //** `<input>` background color
-$input-bg:                       #fff !default;
+$input-bg:                       $gray-lighter !default;
 //** `<input disabled>` background color
 $input-bg-disabled:              $gray-lighter !default;
 
 //** Text color for `<input>`s
 $input-color:                    $gray !default;
 //** `<input>` border color
-$input-border:                   #ccc !default;
+$input-border:                   transparent !default;
 //** `<input>` border radius
-$input-border-radius:            $border-radius-base !default;
+$input-border-radius:            $border-radius-large !default;
 //** Border color for inputs on focus
 $input-border-focus:             #66afe9 !default;
 
