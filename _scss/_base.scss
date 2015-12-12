@@ -29,9 +29,8 @@ a:focus {
 	text-decoration: none;
 }
 
-.text-nowrap {
-	white-space: nowrap;
-}
+
+
 
 header[role="banner"] {
 	text-align: right;
@@ -661,6 +660,35 @@ footer[role="contentinfo"] {
 	&[data-delay="800"] { @include delay(0.8s); }
 	&[data-delay="900"] { @include delay(0.9s); }
 	&[data-delay="1000"] { @include delay(1s); }
+}
+
+// page animations
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation-name: fade-in;
+}
+
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
+.fade-out {
+  animation-name: fade-out;
 }
 
 .skills:first-of-type {

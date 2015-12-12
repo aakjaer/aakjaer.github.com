@@ -32,6 +32,10 @@ h6,.zeta    { }
     }
 }
 
+.text-nowrap {
+    white-space: nowrap;
+}
+
 .text-white { color: white; }
 .text-faded { color: $text-color; }
 .text-blue { color: $brand-blue; }
