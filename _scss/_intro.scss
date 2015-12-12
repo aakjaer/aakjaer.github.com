@@ -379,7 +379,7 @@ Mask
 			left: -1em;
 			height: 2px;
 			width: calc(100% + 2em);
-			background-color: lighten($color-3, 20%);
+			background-color: lighten($brand-green, 30%);
 			@include animation(cd-loading-mask 1s .3s both);
 		}
 	}

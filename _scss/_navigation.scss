@@ -35,12 +35,13 @@
 .sidebar-container {
 	opacity: 0;
 	@include transform(translateX(50px));
-	@include transition(0.5s);
+	@include transition(0.5s 0s);
 }
 
 .menu-shown .sidebar-container {
 	opacity: 1;
 	@include transform(none);
+	@include transition(0.5s 0.15s);
 }
 
 .sidebar:after,
@@ -127,9 +128,9 @@
 .sidebar .active a,
 .sidebar ul li a:active,
 .sidebar ul li a:focus {
-	color: rgba(0, 0, 0, 0.3);
+	color: rgba(0, 0, 0, 0.4);
 	opacity: 1;
-	text-shadow: 0 1px 0 rgba(255,255,255,0.06);
+	text-shadow: 0 1px 0 rgba(255,255,255,0.08);
 }
 .site-nav li {
 	padding: 10px 0;
@@ -168,12 +169,21 @@
 	z-index: 999;
 	background: rgba(0,0,0,0.4);
 	line-height: 1;
+	border-radius: 50%;
 	// @include box-shadow(0 0 0 1px rgba(255,255,255,0.1));
 	cursor: pointer;
 	-ms-touch-action: manipulation;
 	touch-action: manipulation;
 	@include transform(translate3d(0, 0, 0));
 	@include transition(transform 0.5s, background 0.35s, box-shadow 0.35s);
+
+	&:hover {
+		background: $brand-green;
+	}
+
+	.menu-shown & {
+		background: $brand-green;
+	}
 
 	.close {
 		opacity: 0

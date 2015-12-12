@@ -31,13 +31,15 @@
         margin-top: 0;
     }
 
-    + .lead,
-    + hr {
-        margin-top: -1.5em;
-    }
-
     @media (min-width: $screen-sm) {
         font-size: 1.6em;
+    }
+}
+
+.section-heading {
+    + .lead,
+    + hr {
+        margin-top: -2.5em;
     }
 }
 
@@ -179,4 +181,10 @@
 		@include make-xs-column(2, 0);
 		@include make-sm-column(1, 0);
 	}
+}
+
+.section-skills {
+    .display-heading {
+        color: white;
+    }
 }

@@ -13,12 +13,16 @@ body {
 }
 
 @include selection {
-	background: $brand-primary;
+	background: $brand-blue;
 	color: #fff;
 	opacity: 1;
 }
 
-
+.container {
+	@media (max-width: $screen-sm-max) {
+		width: 90%;
+	}
+}
 
 a:hover,
 a:focus {
@@ -184,24 +188,63 @@ blockquote {
 	}
 }
 
-
-.cta {
-    padding: 2em 0;
+.btn {
+	font-family: $headings-font-family;
+	border-radius: 100px;
 }
 
-.btn-cta {
-    padding: 0 50px;
-	line-height: 50px;
+.cta {
+    padding: 3em 0;
+}
+
+.btn-fancy {
+	position: relative;
+	overflow: hidden;
+
+	span {
+		display: inline-block;
+		width: 100%;
+		height: 100%;
+		color: $brand-pink;
+	}
+
+	&::before {
+		content: attr(data-hover-text);
+		position: absolute;
+		left: 0;
+    	top: -100%;
+		height: 100%;
+		width: 100%;
+		color: white;
+	}
+
+	span, &::before {
+    	@include transition(all 0.3s);
+    	@include backface-visibility(hidden);
+	}
+}
+
+.btn-fancy:hover::before {
+    top: 0;
+}
+.btn-fancy:hover span {
+    @include transform(translateY(300%));
+}
+
+.btn-lg {
+    padding: 0 2em;
+	line-height: 3.5em;
     text-transform: uppercase;
-    font-weight: 700;
-	@include button-variant($gray-dark, transparent, $gray-dark);
+    font-weight: 800;
+	@include button-variant($brand-pink, transparent, $brand-pink);
 	border-width: 3px;
-	border-radius: 0;
-	@include transition(background 0.2s, color 0.2s);
+	font-size: 1.2em;
+	@include transition(all 0.3s);
 
 	&:hover {
-		background: $gray-dark;
+		background: $brand-pink;
 		color: white;
+		border-color: transparent;
 	}
 }
 
@@ -358,7 +401,7 @@ th {
 
 .project-preview {
 	@include make-row();
-	margin-top: 2em;
+	margin-top: 5em;
 }
 
 
@@ -609,3 +652,19 @@ footer[role="contentinfo"] {
 	&[data-delay="900"] { @include delay(0.9s); }
 	&[data-delay="1000"] { @include delay(1s); }
 }
+
+.skills:first-of-type {
+	margin-top: 5em;
+}
+
+.skill {
+    margin-bottom: 50px;
+    @include make-sm-column(4);
+
+    @media (min-width: $screen-sm-min) {
+    	text-align: center;
+    }
+}
+
+
+
