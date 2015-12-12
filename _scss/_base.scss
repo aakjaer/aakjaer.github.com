@@ -189,8 +189,21 @@ blockquote {
 }
 
 .btn {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
 	font-family: $headings-font-family;
 	border-radius: 100px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 6px 12px;
+    font-size: 18px;
+    line-height: 1.6;
+    @include user-select(none);
 }
 
 .cta {
@@ -224,19 +237,21 @@ blockquote {
 	}
 }
 
-.btn-fancy:hover::before {
-    top: 0;
+.btn-fancy:hover::before { 
+	top: 0;
 }
 .btn-fancy:hover span {
     @include transform(translateY(300%));
 }
 
-.btn-lg {
+.btn-cta {
     padding: 0 2em;
 	line-height: 3.5em;
     text-transform: uppercase;
     font-weight: 800;
-	@include button-variant($brand-pink, transparent, $brand-pink);
+	border: 3px solid $brand-pink;
+	background: transparent;
+	color: $brand-pink;
 	border-width: 3px;
 	font-size: 1.2em;
 	@include transition(all 0.3s);
@@ -246,10 +261,6 @@ blockquote {
 		color: white;
 		border-color: transparent;
 	}
-}
-
-.btn-group.open .dropdown-toggle {
-	box-shadow: none;
 }
 
 .btn-secondary {
