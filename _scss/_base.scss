@@ -6,7 +6,22 @@ html, body { height: 100%; }
 
 body {
 	margin: 0;
-	font-weight: 300;
+	-webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
+    font-smoothing: antialiased;
+}
+
+@include selection {
+	background: $brand-blue;
+	color: #fff;
+	opacity: 1;
+}
+
+.container {
+	@media (max-width: $screen-sm-max) {
+		width: 90%;
+	}
 }
 
 a:hover,
@@ -14,25 +29,44 @@ a:focus {
 	text-decoration: none;
 }
 
-.text-nowrap {
-	white-space: nowrap;
-}
+
+
 
 header[role="banner"] {
 	text-align: right;
 }
 
+.form-control {
+	@include box-shadow(none);
+}
+
+.form-actions {
+	margin-top: 2em;
+	text-align: right;
+}
+
+.contact-form {
+	@include center-block;
+	max-width: 30em;
+}
+
 .logo {
-	position: absolute;
 	display: inline-block;
-	top: 0;
-	left: 0;
-	height: 55px;
-	width: 248px;
+	height: 75px;
+	width: 200px;
     z-index: $content;
-	margin: 25px 0 0 5%;
-	background: url(../img/logo.svg) 0 0 no-repeat;
+	margin: 50px 0;
+	background: url(../img/logo.svg) 50% 50% no-repeat;
 	@include text-hide();
+
+	@media (min-width: $screen-sm-min) {
+
+		html:not(.page-home) & {
+			height: 100px;
+			width: 300px;
+			margin: 70px;
+		}
+	}
 }
 
 // stage section
@@ -60,6 +94,30 @@ header[role="banner"] {
 		}
 	}
 }
+
+
+.content-wrapper {
+	min-height: 100vh;
+	z-index: 500;
+    background: white;
+    position: relative;
+    @include transition(0.5s);
+    @include transform(translate3d(0, 0, 0));
+    @include box-shadow(0 0 26px rgba(17,37,60,0.3));
+}
+
+.branding {
+	text-align: center;
+
+	.page-home & {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		z-index: $above-content;
+	}
+}
+
 
 
 
@@ -118,11 +176,7 @@ blockquote {
 		font-family: serif;
 		font-size: 8em;
 		line-height: 1em;
-		color: $brand-red;
-	}
-
-	footer::before {
-		content: "";
+		color: $brand-green;
 	}
 }
 
@@ -147,28 +201,98 @@ blockquote {
 	}
 }
 
-
-.cta {
-    padding-top: 4em;
+.btn {
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+	font-family: $headings-font-family;
+	border-radius: 100px;
+    cursor: pointer;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 6px 12px;
+    font-size: 18px;
+    line-height: 1.6;
+    @include user-select(none);
 }
 
-.btn-cta {
-    padding: 0 60px;
-	line-height: 60px;
-    text-transform: uppercase;
-	font-size: 0.85em;
-	letter-spacing: 0.1em;
-    font-weight: 700;
+.cta {
+    padding: 3em 0;
+}
 
-	@include button-variant(white, $brand-red, transparent);
+.btn-fancy {
+	position: relative;
+	overflow: hidden;
 
-	&:hover {
-		background: darken($brand-red, 5%);
+	span {
+		display: inline-block;
+		width: 100%;
+		height: 100%;
+		color: $brand-pink;
+	}
+
+	&::before {
+		content: attr(data-hover-text);
+		position: absolute;
+		left: 0;
+    	top: -100%;
+		height: 100%;
+		width: 100%;
+		color: white;
+	}
+
+	span, &::before {
+    	@include transition(all 0.3s);
+    	@include backface-visibility(hidden);
 	}
 }
 
-.btn-group.open .dropdown-toggle {
-	box-shadow: none;
+.btn-fancy:hover::before { 
+	top: 0;
+}
+.btn-fancy:hover span {
+    @include transform(translateY(300%));
+}
+
+.btn-cta {
+    padding: 0 2em;
+	line-height: 3.5em;
+    text-transform: uppercase;
+    font-weight: 800;
+	border: 3px solid $brand-pink;
+	background: transparent;
+	color: $brand-pink;
+	border-width: 3px;
+	font-size: 1.2em;
+	@include transition(all 0.3s);
+
+	&:hover {
+		background: $brand-pink;
+		color: white;
+		border-color: transparent;
+	}
+}
+
+.btn-submit {
+    padding: 0 2em;
+	line-height: 3.5em;
+    text-transform: uppercase;
+    font-weight: 800;
+	border: 3px solid $brand-green;
+	background: transparent;
+	color: $brand-green;
+	border-width: 3px;
+	font-size: 1em;
+	@include transition(all 0.3s);
+
+	&:hover {
+		background: $brand-green;
+		color: white;
+		border-color: transparent;
+	}
 }
 
 .btn-secondary {
@@ -226,11 +350,15 @@ th {
 	margin-bottom: 0;
 	text-align: center;
 	text-transform: uppercase;
-	@extend .heavy;
+	font-weight: 600;
 
 	@media (min-width: $screen-md-min) {
-		font-size: 1.5em;
+		font-size: 1.2em;
 	}
+}
+
+.project-intro .section-content {
+	padding-top: 0;
 }
 
 .project-details {
@@ -242,7 +370,6 @@ th {
 	margin-bottom: 1.5em;
 	font-size: 0.9em;
 	text-transform: uppercase;
-	color: white;
 	@extend .heavy;
 
 	@media (min-width: $screen-md-min) {
@@ -257,6 +384,26 @@ th {
 
 	&.project-technology {
 		font-size: 0.85em;
+
+		ul {
+			@extend .list-unstyled;
+			@include make-row();
+		}
+
+		li {
+			display: inline-block;
+		}
+
+		li::before {
+			content: "/";
+			display: inline-block;
+			padding: 0 2px;
+			color: lighten($text-color, 50%);
+		}
+
+		li:first-child::before {
+			content: "";
+		}
 	}
 }
 
@@ -297,7 +444,7 @@ th {
 
 .project-preview {
 	@include make-row();
-	margin-top: 2em;
+	margin-top: 5em;
 }
 
 
@@ -305,30 +452,81 @@ th {
 
 .latest-projects {
 	@include make-row();
+	@include center-block();
+
+	a {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	    opacity: 0;
+		z-index: 100;
+	    text-indent: 200%;
+	    white-space: nowrap;
+	    font-size: 0;
+	}
 
 	.project {
-		margin-bottom: $grid-gutter-width;
-		max-width: 350px;
-		@include center-block();
-		@include make-sm-column(6);
-		@include make-md-column(3, $grid-gutter-width);
-		text-align: center;
-		@include fadeInUp;
+		overflow: hidden;
+		position: relative;
+		display: inline-block;
+		@include make-sm-column(4);
+		@include fadeIn;
+	}
+
+	.project, img, .project-heading {
+		@include transition(0.3s);
+	}
+
+	img,
+	.img-placeholder {
+		border-radius: 8px;
+		@include box-shadow(0 1px 1px rgba(0, 0, 0, 0.1));
+		background: rgba(black, 0.05);
 	}
 
 	.project-heading {
-		margin: 2em 0 0;
-		min-height: 50px;
+		margin: 0;
+		font-size: 1em;
+		font-weight: 900;
+		color: $gray;
+	}
+
+	p {
 		font-size: 0.9em;
-		font-weight: 700;
-		line-height: 1.2;
-		text-transform: uppercase;
+		color: $gray-light;
+	}
+
+	figcaption {
+		padding: 2em 0;
+		min-height: 5em;
+	}
+
+	.project:hover {
+		@include transform(translateY(-3px));
+		
+		.project-heading {
+			color: $link-color;
+		}
+	
+		img {
+			@include box-shadow(0 5px 5px rgba(0, 0, 0, 0.2));
+
+		}
 	}
 }
 
+
+////////////////////////////////////////
+
 // browser top for project images
+
+////////////////////////////////////////
+
 .browser {
 	margin-bottom: 1.5em;
+	@include box-shadow(0 1px 1px rgba(0, 0, 0, 0.1));
 
 	img {
 		@include border-bottom-radius(4px);
@@ -391,27 +589,35 @@ th {
 }
 
 .showcase {
+	overflow: hidden;
 	margin-bottom: 30px;
 	padding: 30px;
 	background: white;
+	border-radius: 12px;
+	@include box-shadow(0 1px 1px rgba(0, 0, 0, 0.1));
 
 	time {
 		display: block;
 		font-size: 0.9em;
 	}
+
+	.body {
+		font-size: 1.1em;
+	}
 }
 
 .showcase-heading {
 	margin: 1em 0 1.5em;
-	font-size: 1.2em;
+	font-size: 1em;
 	color: $gray;
-	font-weight: 700;
+	font-weight: 900;
 	text-align: center;
+	letter-spacing: 0.1em;
 }
 
 .showcase h4 {
-	font-size: 1em;
-	font-weight: 700;
+	font-size: 0.9em;
+	font-weight: 900;
 	margin: 20px 0 5px;
 	color: $gray;
 }
@@ -426,30 +632,29 @@ th {
 	margin: 0 -30px -30px;
 	padding: 30px 30px 50px;
 	font-size: 1.1em;
-	border: 0;
-	background: $brand-red;
-	color: $white-accent;
+	background: $brand-green;
+	color: white;
 
 	&::before {
-		color: rgba(255, 255, 255, 0.5);
+		color: rgba(white, 0.4);
 	}
 
 	footer {
 		margin-top: 25px;
-		color: $white-accent;
+		color: rgba(white, 0.6);
 	}
 }
 
 .showcase-images {
-	@include make-row(6px);
+	@include make-row(12px);
 	@extend .list-unstyled;
-	margin-top: 15px;
-	margin-bottom: 15px;
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
 
 	li {
 		float: left;
-		width: 70px;
-		padding: 3px;
+		width: 100px;
+		padding: 6px;
 		margin-bottom: 15px;
 	}
 
@@ -489,3 +694,48 @@ footer[role="contentinfo"] {
 	&[data-delay="900"] { @include delay(0.9s); }
 	&[data-delay="1000"] { @include delay(1s); }
 }
+
+// page animations
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fade-in {
+  animation-name: fade-in;
+}
+
+
+@keyframes fade-out {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+
+.fade-out {
+  animation-name: fade-out;
+}
+
+.skills:first-of-type {
+	margin-top: 5em;
+}
+
+.skill {
+    margin-bottom: 50px;
+    @include make-sm-column(4);
+
+    @media (min-width: $screen-sm-min) {
+    	text-align: center;
+    }
+}
+
+
+

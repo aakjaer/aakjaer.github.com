@@ -1,710 +1,237 @@
 // bourban dependent
-@import '../bower_components/bourbon/app/assets/stylesheets/bourbon';
+@import '../components/bourbon/app/assets/stylesheets/bourbon';
 
 
-
-/* --------------------------------
-
-Main Components
-
--------------------------------- */
-
-.cd-dropdown-wrapper {
-	display: block;
-	position: absolute; //relative;
-    top: 0;
-    left: auto;
-    right: 0;
-	height: 40px;
-    z-index: $above-content;
-	margin: 30px 5% 0 5%;
-    text-align: right;
-	@include font-smoothing;
-}
-
-
-.cd-nav-trigger {
-    position: relative;
-    display: inline-block;
-    width: 44px;
-    height: 44px;
-    overflow: hidden;
-    white-space: nowrap;
-    /* hide text */
-    color: transparent;
-    z-index: $above-content;
-    background: $color-1;
-
-	span, span::before, span::after {
-		/* hamburger icon in CSS */
-		position: absolute;
-		display: inline-block;
-		height: 3px;
-		width: 24px;
-	    background: $color-3;
-	}
-
-	span {
-		/* line in the center */
-		position: absolute;
-		top: 50%;
-		right: 10px;
-		margin-top: -2px;
-		@include transition(background .3s .3s);
-	}
-
-	span::before, span::after {
-		/* other 2 lines */
-		content: '';
-		right: 0;
-		/* Force Hardware Acceleration in WebKit */
-		@include transform(translateZ(0));
-		-webkit-backface-visibility: hidden;
-		backface-visibility: hidden;
-		@include transform-origin(0% 50%);
-		@include transition(transform .3s .3s);
-	}
-
-	span::before {
-		/* menu icon top line */
-		top: -6px;
-	}
-
-	span::after {
-		/* menu icon bottom line */
-		top: 6px;
-	}
-
-	&.dropdown-is-active {
-		span {
-			/* hide line in the center */
-			background: rgba($color-3, 0);
-		}
-
-		span::before, span::after {
-			/* keep visible other 2 lines */
-			background: rgba($color-3, 1);
-		}
-
-		span::before {
-			@include transform(translateX(4px) translateY(-3px) rotate(45deg));
-		}
-
-		span::after {
-			@include transform(translateX(4px) translateY(2px) rotate(-45deg));
-		}
-	}
-}
-
-
-.cd-dropdown-trigger {
-	display: block;
-	position: relative;
-	padding: 0 36px 0 20px;
-	line-height: 40px;
-	background-color: $color-1;
-	color: $color-3;
-	border-radius: 3px;
-
-	.no-touch &:hover {
-		background-color: lighten($color-1, 5%);
-	}
-
-	&::before, &::after {
-		/* this is the arrow inside the dropdown trigger*/
-		content: '';
-		position: absolute;
-		top: 50%;
-		margin-top: -1px;
-		height: 2px;
-		width: 9px;
-		background: $color-3;
-		@include backface-visibility(hidden);
-
-		@include transition(width .3s, transform .3s);
-	}
-
-	&::before {
-		right: 22px;
-		@include transform(rotate(45deg));
-	}
-
-	&::after {
-		right: 17px;
-		@include transform(rotate(-45deg));
-	}
-
-	@include MQ(L) {
-		font-size: 1.5rem;
-
-		&.dropdown-is-active {
-			background-color: $color-2;
-
-			.no-touch &:hover {
-				background-color: lighten($color-2, 5%);
-			}
-
-			&::before, &::after {
-				/* transform the arrow into a 'X' */
-				width: 14px;
-			}
-
-			&::before {
-				/* transform the arrow into a 'X' */
-				@include transform(translateX(5px) rotate(-45deg));
-			}
-
-			&::after {
-				/* transform the arrow into a 'X' */
-				@include transform(rotate(45deg));
-			}
-		}
-	}
-}
-
-.cd-dropdown h2,
-.cd-dropdown-content a,
-.cd-dropdown-content ul a {
-	height: 50px;
-	line-height: 50px;
-
-	@include MQ(M) {
-		height: 60px;
-		line-height: 60px;
-	}
-
-	@include MQ(L) {
-		height: 50px;
-		line-height: 50px;
-	}
-}
-
-.cd-dropdown h2,
-.cd-dropdown-content a,
-.cd-dropdown-content ul a,
-.cd-dropdown-content .cd-divider {
-	padding: 0 20px;
-}
-
-.cd-dropdown ol, .cd-dropdown ul {
-    @extend .list-unstyled;
-}
-
-
-.cd-dropdown {
+.sidebar {
 	position: fixed;
-	z-index: 1;
 	top: 0;
-	left: 0;
-	width: 100%;
+	right: 0;
 	height: 100%;
-	background-color: $color-1;
-	color: $color-3;
-	visibility: hidden;
-    text-align: left;
-
-	/* Force Hardware Acceleration */
-	@include backface-visibility(hidden);
-	@include transform(translateZ(0));
-
-	@include transform(translateY(-100%));
-	@include transition(transform .5s 0s, visibility 0s .5s);
-
-	h2 {
-		/* dropdown title - mobile version only */
-		position: relative;
-		z-index: 1;
-        margin: 0;
-		color: tint($color-1, 30%);
-		background-color: $color-1;
-		border-bottom: 1px solid tint($color-1, 8%);
-	}
-
-	.cd-close {
-		/* 'X' close icon - mobile version only */
-		position: absolute;
-		z-index: 1;
-		right: 0;
-		top: 0;
-		height: 50px;
-		width: 50px;
-
-		/* image replacement */
-		overflow: hidden;
-		text-indent: 100%;
-		white-space: nowrap;
-		color: transparent;
-
-		&::after,
-		&::before {
-			/* this is the 'X' icon */
-			content: '';
-			position: absolute;
-			@include center;
-			height: 20px;
-			width: 2px;
-			background-color: $color-3;
-		}
-
-		&::after {
-			@include transform(translateX(-50%) translateY(-50%) rotate(45deg));
-		}
-
-		&::before {
-			@include transform(translateX(-50%) translateY(-50%) rotate(-45deg));
-		}
-
-	}
-
-	&.dropdown-is-active {
-		visibility: visible;
-		@include transform(translateY(0));
-		@include transition(transform .5s 0s, visibility 0s 0s);
-	}
-
-	@include MQ(M) {
-
-		.cd-close {
-			top: 5px;
-		}
-	}
-
-	@include MQ(L) {
-		position: absolute;
-		top: calc(100% + 4px);
-		/* reset style*/
-		height: auto;
-		width: auto;
-		@include transform(translateX(0));
-		background-color: $color-3;
-		color: $color-1;
-		box-shadow: 0 4px 12px rgba(#000, .1);
-		opacity: 0;
-		@include transform(translateY(30px));
-		@include transition(opacity 0.3s 0s, visibility 0s 0.3s, transform 0.3s 0s);
-
-		.open-to-left & {
-			/* use the .open-to-left class if you want to open the dropdown on the left */
-			right: 0;
-			left: auto;
-		}
-
-		h2, .cd-close {
-			/* on desktop - hide title and 'X' */
-			display: none;
-		}
-
-		&.dropdown-is-active {
-			opacity: 1;
-			@include transform(translateY(0));
-			@include transition(opacity 0.3s 0s, visibility 0.3s 0s, transform 0.3s 0s);
-		}
-	}
-}
-
-.cd-dropdown-content, .cd-dropdown-content ul {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	overflow-x: hidden;
+	width: 360px;
 	overflow-y: auto;
-	@include transition(transform 0.3s);
-	padding-top: 100px;
+	padding: 80px 60px 60px;
+	//background: $brand-primary;
+	@include linear-gradient(to right, #55A999, $brand-primary);
+	color: #fff;
+	filter: none;
+	@include transform(translate3D(0,0,0));
+	@include transition(all .35s, transform .5s);
 
-	a {
-		display: block;
-		color: $color-3;
-        font-weight: 300;
-
-		/* truncate text with ellipsis if too long */
-		overflow: hidden;
-		text-overflow: ellipsis;
-		white-space: nowrap;
-
-		// reset on desktop version
-		height: auto;
-		font-size: 1.2em;
-		line-height: 3em;
-		text-transform: uppercase;
-	}
-
-	li:first-of-type > a {
-		border-top-width: 0;
-	}
-
-	li:last-of-type > a {
-		border-bottom-width: 1px;
-	}
-
-	.cd-divider {
-		padding-top: 10px;
-		padding-bottom: 10px;
-		background-color: shade($color-1, 30%);
-		font-size: 1.1rem;
-		font-weight: bold;
-		letter-spacing: 1px;
-		color: tint($color-1, 30%);
-		text-transform: uppercase;
-	}
-
-	.cd-divider + li > a {
-		border-top-width: 0;
-	}
-
-	a, .cd-search, .cd-divider {
-		/* Force Hardware Acceleration */
-		@include transform(translateZ(0));
-		@include backface-visibility(hidden);
-
-		@include transition(opacity .3s, transform .3s);
-	}
-
-
-	@include MQ(L) {
-		padding-top: 0;
-		overflow: visible;
-
-		a {
-			color: $color-1;
-			height: 50px;
-			line-height: 50px;
-			font-size: 0.85em;
-			font-weight: 500;
-			border-top: 1px solid darken($color-3, 8%);
-			color: $gray;
-		}
-
-		.cd-divider {
-			background-color: transparent;
-			color: darken($color-3, 30%);
-			border-top: 1px solid darken($color-3, 8%);
-		}
-
-		.cd-divider + li > a {
-			border-top-width: 1px;
-		}
+	.safari & {
+		min-height: 100vh;
 	}
 }
 
-.cd-dropdown-content {
-    margin: 0;
-
-	.see-all a {
-		/* different style for the See all links */
-		color: $color-2;
-	}
-
-	@include MQ(L) {
-		/* reset mobile style */
-		position: static;
-		height: auto;
-		width: 280px;
-
-		> li:last-of-type a {
-			border-bottom: none;
-		}
-
-		.no-touch & > li:not(.has-children) a:hover {
-			color: $color-2;
-		}
-
-		&.move-out > li > a,
-		&.move-out > li > .cd-search,
-		&.move-out > .cd-divider {
-			/* reset mobile style */
-			@include transform(translateX(0));
-			opacity: 1;
-		}
-
-		.cd-secondary-dropdown, .cd-dropdown-gallery, .cd-dropdown-icons  {
-			@include clearfix;
-			@include transform(translateX(0));
-			left: 100%;
-			height: auto;
-			background-color: $color-3;
-			box-shadow: 0 2px 14px rgba(#000, .1);
-
-			.open-to-left & {
-				/* use the .open-to-left class if you want to open the dropdown on the left */
-				left: auto;
-				right: 100%;
-			}
-
-			&.is-hidden {
-				/* reset mobile style */
-				@include transform(translateX(0));
-			}
-
-			&.fade-in {
-				/* animate secondary dropdown items when hovering over of of the .cd-dropdown-content list items */
-				@include animation(cd-fade-in .2s);
-			}
-
-			&.fade-out {
-				/* animate secondary dropdown items when hovering over of of the .cd-dropdown-content list items */
-				@include animation(cd-fade-out .2s);
-			}
-
-			> .go-back {
-				display: none;
-			}
-
-			> .see-all {
-				position: absolute;
-				bottom: 20px;
-				height: 45px;
-				text-align: center;
-
-				a {
-					margin: 0;
-					height: 100%;
-					line-height: 45px;
-					background: darken($color-3, 8%);
-					pointer-events: auto;
-					@include transition(color .2s, background-color .2s);
-
-					.no-touch &:hover {
-						color: $color-3;
-						background-color: $color-1;
-					}
-				}
-			}
-
-			.cd-dropdown-item, a {
-				border: none;
-			}
-		}
-
-		.cd-dropdown-icons > li, .cd-secondary-dropdown > li {
-			@include column(0.5);
-		}
-
-		.cd-secondary-dropdown {
-			overflow: hidden;
-			width: 550px;
-			padding-bottom: 65px;
-
-			&::before {
-				/* this is the separation line in the middle of the .cd-secondary-dropdown element */
-				position: absolute;
-				content: '';
-				top: 290px;
-				left: 15px;
-				height: 1px;
-				width: 520px;
-				background-color: darken($color-3, 8%);
-			}
-
-			> li > a {
-				color: $color-2;
-				font-size: 1.6rem;
-				margin-bottom: 10px;
-				line-height: 30px;
-				height: 30px;
-				pointer-events: none;
-
-				&::after, &::before {
-					/* hide the arrow */
-					display: none;
-				}
-			}
-
-			&.move-out > li > a {
-				/* reset mobile style */
-				@include transform(translateX(0));
-			}
-
-			> li {
-				margin: 20px 0;
-				border-right-width: 1px;
-				border-color: darken($color-3, 8%);
-				border-style: solid;
-				padding: 0 30px;
-				height: 250px;
-			}
-
-			> li:nth-of-type(2n) {
-				border-right-width: 0;
-			}
-
-			> li > ul {
-				/* reset mobile style */
-				@include transform(translate(0));
-				position: relative;
-				height: auto;
-
-				> .go-back {
-					display: none;
-				}
-			}
-
-			a {
-				line-height: 25px;
-				height: 25px;
-				font-size: 1.3rem;
-				padding-left: 0;
-
-				.no-touch &:hover {
-					color: $color-2;
-				}
-			}
-
-			ul {
-				padding-bottom: 25px;
-				overflow: hidden;
-				height: auto;
-			}
-
-			.go-back a {
-				padding-left: 20px;
-				color: transparent;
-
-				.no-touch &:hover {
-					color: transparent;
-				}
-
-				&::before, &::after {
-					left: 0
-				}
-			}
-
-			.see-all {
-				position: absolute;
-				bottom: 0;
-				left: 0;
-				width: 100%;
-			}
-		}
-
-
-		> .has-children > ul {
-			visibility: hidden;
-		}
-
-		> .has-children > ul.is-active {
-			/* when hover over .cd-dropdown-content items - show subnavigation */
-			visibility: visible;
-		}
-
-		> .has-children > .cd-secondary-dropdown.is-active > li > ul {
-			/* if .cd-secondary-dropdown is visible - show also subnavigation */
-			visibility: visible;
-		}
-
-		> .has-children > a.is-active {
-			/* hover effect for .cd-dropdown-content items with subnavigation */
-			box-shadow: inset 2px 0 0 $color-2;
-			color: $color-2;
-
-			&::before,
-			&::after {
-				background: $color-2;
-			}
-		}
-
-		.open-to-left & > .has-children > a.is-active {
-			box-shadow: inset -2px 0 0 $color-2;
-		}
-	}
+.menu-shown .content-wrapper,
+.menu-shown .nav-trigger {
+	@include transform(translateX(-360px));
 }
 
-@include keyframes(cd-fade-in) {
-	0% {
-		opacity: 0;
-		visibility: visible;
-	}
-
-	100% {
-		opacity: 1;
-		visibility: visible;
-	}
+.menu-shown .sidebar {
+	@include transform(translateX(0));
+	webkit-overflow-scrolling: touch;
 }
 
-@include keyframes(cd-fade-out) {
-	0% {
-		opacity: 1;
-		visibility: visible;
-	}
-
-	100% {
-		opacity: 0;
-		visibility: visible;
-	}
+.sidebar-container {
+	opacity: 0;
+	@include transform(translateX(50px));
+	@include transition(0.5s 0s);
 }
 
-.cd-search input[type="search"] {
-	width: 100%;
-	height: 50px;
-	padding: 0 20px;
-	@include appearance(none);
-	background-color: tint($color-1, 8%);
-	color: $color-3;
-	border: none;
-	border-radius: 0;
-
-	@include placeholder {
-		color: $color-3;
-	}
-
-	&:focus {
-		background: $color-3;
-		color: $color-1;
-		outline: none;
-
-		@include placeholder {
-			color: rgba($color-1, .4);
-		}
-	}
-
-	@include MQ(L) {
-		background-color: darken($color-3, 8%);
-
-		@include placeholder {
-			color: darken($color-3, 30%);
-		}
-	}
-}
-
-@include MQ(L) {
-
-	.open-to-left .cd-dropdown-content > .has-children > a {
-		padding-left: 40px;
-		padding-right: 20px;
-
-		&::before, &::after {
-			right: auto;
-			left: 20px;
-			@include transform-origin(1px 50%);
-		}
-	}
-}
-
-.cd-main-content {
-	background-color: darken($color-3, 10%);
-	min-height: calc(100vh - 100px);
-	padding: 2em 5%;
-	line-height: 2;
-}
-
-.no-js .cd-dropdown-wrapper:hover .cd-dropdown {
-	visibility: visible;
+.menu-shown .sidebar-container {
 	opacity: 1;
-	@include transform(translateY(0));
+	@include transform(none);
+	@include transition(0.5s 0.15s);
 }
 
-.no-js .cd-dropdown-wrapper .cd-close {
-	display: none;
+.sidebar:after,
+.sidebar:before {
+	content: "";
+	position: fixed;
+	left: 0;
+	top: 10px;
+	bottom: 0;
+	height: 100vh;
+	width: 100px;
+	background-color: #DFEDF0;
+	@include box-shadow(0 0 16px rgba(17, 37, 60, 0.5));
+	@include transform(translateX(-100%));
+	@include transition(.5s);
 }
 
+.sidebar:before {
+	bottom: 0;
+	top: 50px;
+}
+
+.menu-shown .sidebar:after,
+.menu-shown .sidebar:before {
+	@include transition(0.8s);
+}
+
+.menu-shown .sidebar:before {
+	@include transform(translateX(-98px) rotate(4deg));
+}
+
+.menu-shown .sidebar:after {
+	@include transform(translateX(-96px) rotate(2deg));
+}
+
+.sidebar .logo img.sidebar-logo,
+.sidebar .logo span {
+	width: 220px !important;
+	text-align: center;
+}
+
+.sidebar .logo {
+	display: block;
+	font-size: 0;
+	padding: 0;
+	text-align: left;
+	@include transition(.15s);
+}
+
+.sidebar .logo:hover {
+	opacity: 0.5;
+}
+
+.sidebar .logo span {
+	color: #fff;
+}
+
+.site-nav {
+	margin-top: 70px;
+}
+
+.site-nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+.sidebar ul.secondary-links {
+	margin-top: 35px;
+}
+
+.sidebar ul li a {
+	color: #fff;
+	@include transition(.15s);
+}
+
+.site-nav .secondary-links li a {
+	color: rgba(255,255,255,0.8);
+}
+
+.sidebar ul li a:hover {
+	opacity: 0.5;
+}
+.sidebar .active a,
+.sidebar ul li a:active,
+.sidebar ul li a:focus {
+	color: rgba(0, 0, 0, 0.4);
+	opacity: 1;
+	text-shadow: 0 1px 0 rgba(255,255,255,0.08);
+}
+.site-nav li {
+	padding: 10px 0;
+	text-transform: uppercase;
+}
+
+.site-nav .primary-links li {
+	font-size: 1.4em;
+	font-weight: 900;
+	font-family: $headings-font-family;
+}
+
+.site-nav .secondary-links li {
+	font-size: 1.2em;
+	padding: 8px 0;
+}
+
+.sidebar-share {
+	margin-top: 45px;
+}
+.sidebar-share li {
+	display: inline-block;
+	margin-left: 20px;
+}
+.sidebar-share li:first-child {
+	margin: 0;
+}
+
+.nav-trigger {
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	height: 50px;
+	width: 50px;
+	padding: 12px;
+	z-index: 999;
+	background: rgba(0,0,0,0.4);
+	line-height: 1;
+	border-radius: 50%;
+	// @include box-shadow(0 0 0 1px rgba(255,255,255,0.1));
+	cursor: pointer;
+	-ms-touch-action: manipulation;
+	touch-action: manipulation;
+	@include transform(translate3d(0, 0, 0));
+	@include transition(transform 0.5s, background 0.35s, box-shadow 0.35s);
+
+	&:hover {
+		background: $brand-green;
+	}
+
+	.menu-shown & {
+		background: $brand-green;
+	}
+
+	.close {
+		opacity: 0
+	}
+
+	svg * {
+		pointer-events: none;
+		width: 26px;
+		height: 26px;
+		stroke: #fff;
+		stroke-width: 3px;
+		stroke-linecap: round;
+		@include transition(.5s);
+	}
+}
+
+.menu-shown .nav-trigger .close { opacity: 1 }
+.menu-shown .nav-trigger .menu { opacity: 0 }
 
 
-//............................................
 
-// in page navigation
+@media screen and (max-width: 455px) {
+	.menu-shown .nav-trigger {
+		@include transform(translateX(0));
+	}
+}
 
-//............................................
+@media screen and (max-width: 414px) {
+	.sidebar {
+		padding: 100px 17% 17%;
+		width: 100%;
+	}
+
+	.sidebar .logo img.sidebar-logo,
+	.sidebar .logo span {
+		width: 100% !important;
+	}
+
+	.menu-shown .content-wrapper {
+		@include transform(translateX(-100%));
+	}
+}
+
+/////////////////////////////////////
+
+// back/forward buttons
+
+/////////////////////////////////////
 
 .page-nav {
 	margin: 0 0 1.5em;
@@ -717,11 +244,19 @@ Main Components
 	a {
 		position: relative;
 		display: inline-block;
-		color: $gray-light;
+		padding: 0.6em 1.5em;
+		color: white;
 		text-transform: uppercase;
 		font-weight: 700;
 		font-size: 0.8em;
+		background: #ccc;
+		@include transition(background 0.2s);
 
+		&:hover {
+			background: $brand-primary;
+		}
+
+		// arrow
 		&::before {
 			position: relative;
 		    top: 0;
@@ -734,7 +269,7 @@ Main Components
 		    border-top: 0.15em solid black;
 		    transform: rotate(-45deg);
 		    margin-right: 0.5em;
-			border-color: $brand-red;
+			border-color: white;
 			@include backface-visibility(hidden);
 			@include transition(transform .2s);
 		}

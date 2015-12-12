@@ -4,32 +4,55 @@
     background-repeat: no-repeat;
 }
 
-.section-content {
+.section .section-content {
     @extend .container;
     padding-top: 6em;
     padding-bottom: 6em;
+
+    @media (max-width: $screen-xs-max) {
+        max-width: 90%;
+    }
+}
+
+.section-compact .section-content {
+    padding-top: 2em;
+    padding-bottom: 2em;
 }
 
 .section-heading {
-    padding: 2em 0;
+    margin-bottom: 3em;
     font-size: 1.2em;
 	letter-spacing: .2em;
 	text-transform: uppercase;
     font-weight: 900;
+    text-align: center;
 
     &:first-child {
         margin-top: 0;
     }
 
-    + .lead,
-    + hr {
-        margin-top: -2em;
-    }
-
     @media (min-width: $screen-sm) {
-        font-size: 1.4em;
+        font-size: 1.6em;
     }
 }
+
+.section-heading {
+    + .lead,
+    + hr {
+        margin-top: -2.5em;
+    }
+}
+
+.section-heading-sm {
+    margin-bottom: 1.5em;
+    font-size: 1em;
+    font-weight: 900;
+
+    @media (min-width: $screen-sm) {
+        font-size: 1.3em;
+    }
+}
+
 
 .section-image {
     display: block;
@@ -71,6 +94,9 @@
     }
 }
 
+.section-bordered {
+    border-top: 5px dashed $gray-lighter;
+}
 
  .section-narrow .section-content {
     max-width: 50em;
@@ -110,8 +136,14 @@
     }
 }
 
+.section-green {
+    background: $brand-green;
+    color: white;
+}
+
 .section-yellow {
     background-color: $brand-yellow;
+    color: white;
 }
 
 .section-purple {
@@ -120,8 +152,13 @@
 }
 
 .section-gray {
-    background-color: #efefef;
+    background-color: #f2f2f2;
     color: $gray-dark;
+}
+
+.section-dark-gray {
+    background: #222;
+    color: white;
 }
 
 .section-light-gray {
@@ -144,4 +181,10 @@
 		@include make-xs-column(2, 0);
 		@include make-sm-column(1, 0);
 	}
+}
+
+.section-skills {
+    .display-heading {
+        color: white;
+    }
 }

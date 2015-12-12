@@ -1,5 +1,12 @@
-{% include contact-section.html %}
-
+{% assign default-message = "Do you have a project or an idea you would like to share?" %}
+<section class="section section-white">
+    <div class="section-content text-center">
+        <p class="lead text-center">{% if include.message %}{{ include.message }}{% else %}{{ default-message }}{% endif %}</p>
+        <a href="/contact/" class="btn btn-cta btn-fancy switch-page" data-hover-text="Sweet!">
+        	<span>Let's talk</span>
+        </a>
+    </div>
+</section>
 
 <section class="section-screenshots">
     <div class="row">

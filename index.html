@@ -1,11 +1,18 @@
 ---
 layout: default
-bodyclass: page-cv
+bodyclass: page-home
 ---
 
 {% include home-intro.html %}
 
-{% include latest-projects.html show-button="true" %}
+{% include specialized-in.html %}
+
+<div class="section">
+    <div class="section-content">
+    	<h2 class="display-heading">Latest projects</h2>
+        {% include latest-projects.html show-button="true" %}
+    </div>
+</div>
 
 {% include history.html %}
 

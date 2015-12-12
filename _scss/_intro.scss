@@ -1,5 +1,5 @@
 // bourban dependent
-@import '../bower_components/bourbon/app/assets/stylesheets/bourbon';
+@import '../components/bourbon/app/assets/stylesheets/bourbon';
 
 
 .cd-intro {
@@ -17,19 +17,18 @@
 	vertical-align: middle;
 	text-align: center;
 	padding: 0 5%;
-	//background: $color-2; // transparent for now
-	@include font-smoothing;
+
 
 	h1 {
 		@extend .hero-heading;
-		color: $gray-dark;
 	}
 
 	p {
 		margin: 1em 0;
+		font-weight: 400;
 
 		@media (min-width: $screen-md-min) {
-			font-size: 1.6em;
+			font-size: 1.5em;
 		}
 	}
 
@@ -44,10 +43,10 @@
 
 	@include MQ(M) {
 
-		h1 {
-			font-size: 4em;
-			font-weight: 300;
-		}
+		// h1 {
+		// 	font-size: 4em;
+		// 	font-weight: 300;
+		// }
 
 		p {
 			max-width: 30em;
@@ -349,7 +348,7 @@ Mask
 	padding-bottom: 10px;
 	/* overwrite default style */
 	opacity: 1;
-	font-weight: 700;
+
 	/* <h1> text is not visible - it is used only as a container for the ::after element */
 	color: transparent;
 	overflow: hidden;
@@ -362,7 +361,7 @@ Mask
 		left: 0;
 		height: 100%;
 		width: 100%;
-		color: $color-3;
+		color: $headings-color;
 		@include animation-name(cd-reveal-up);
 		@include animation-fill-mode(backwards);
 	}
@@ -380,7 +379,7 @@ Mask
 			left: -1em;
 			height: 2px;
 			width: calc(100% + 2em);
-			background-color: $color-3;
+			background-color: lighten($brand-green, 30%);
 			@include animation(cd-loading-mask 1s .3s both);
 		}
 	}

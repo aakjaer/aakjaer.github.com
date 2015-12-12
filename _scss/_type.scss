@@ -1,4 +1,15 @@
 // typography
+h1, h2, h3, h4, h5 {
+    text-transform: uppercase;
+}
+
+h1,.alpha   { }
+h2,.beta    { }
+h3,.gamma   { }
+h4,.delta   { }
+h5,.epsilon { }
+h6,.zeta    { }
+
 
 .thin { font-weight: 100; }
 .light { font-weight: 300; }
@@ -8,17 +19,21 @@
 
 .lead {
     max-width: 30em;
-    margin-bottom: 2em;
-    font-weight: 300;
+    margin-bottom: 3em;
+    font-weight: 400;
     line-height: 1.6em;
 
     @media (min-width: $screen-sm-min) {
-        font-size: 1.3em;
+        font-size: 1.4em;
     }
 
     &.text-center {
         @include center-block();
     }
+}
+
+.text-nowrap {
+    white-space: nowrap;
 }
 
 .text-white { color: white; }
@@ -30,27 +45,44 @@
 .text-yellow { color: $brand-yellow; }
 .text-gray { color: #777; }
 .text-light-gray { color: #bbb; }
+.text-purple { color: $brand-purple; }
+.text-green { color: $brand-green; }
 
 .all-caps {
     text-transform: uppercase;
 }
 
 .display-heading {
-    margin-bottom: 0.5em;
-    font-size: 60px;
+    margin-bottom: 2em;
+    font-size: 2.5em;
     text-transform: uppercase;
+    text-align: center;
+    font-weight: 900;
+
+    @media (min-width: $screen-md-min) {
+        font-size: 4vw;
+    }
+}
+
+.display-heading {
+    + .lead,
+    + hr {
+        margin-top: -3em;
+    }
 }
 
 .hero-heading {
-    max-width: 15em;
-    margin-top: 0;
-    font-size: 10vw; // has backup size from headers
-    text-transform: uppercase;
+    max-width: 12em;
+    margin: 0 auto;
+    font-size: 12vw; // has backup size from headers
     font-weight: 900;
-    @include center-block();
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: -0.025em;
+    // color: $brand-primary;
 
     @media (min-width: $screen-md-min) {
-        font-size: 6vw;
+        font-size: 5.5vw;
     }
 }
 
@@ -64,6 +96,11 @@ hr {
     &:last-child {
         margin-bottom: 0;
     }
+}
+
+.separator-thin {
+    border-width: 1px;
+    max-width: 60px;
 }
 
 .separator-lg {
@@ -85,4 +122,6 @@ hr {
 .separator-blue { border-color: $brand-blue; }
 .separator-dark-blue { border-color: $brand-blue; }
 .separator-red { border-color: $brand-red; }
+.separator-purple { border-color: $brand-purple; }
+.separator-green { border-color: $brand-green; }
 .separator-yellow { border-color: $brand-yellow; }

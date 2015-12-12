@@ -8,44 +8,38 @@
 
         <link rel="stylesheet" href="/css/main.css">
 
-        <link href="http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet">
+        <script src="https://use.typekit.net/duu6pyk.js"></script>
+        <script>try{Typekit.load({ async: false });}catch(e){}</script>
     </head>
     <body>
+        <div class="page animsition">
+            <div class="nav-trigger">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 30 26 26"><g class="menu"><path d="M-.5 51.5h23M-.5 35.5h23M-.5 43.5h23"></path></g><g class="close"><path d="M2.9 35.3l16.2 16.3M2.9 51.6l16.3-16.3"></path></g></svg>
+            </div>
 
-        <header>
-            <a href="{{ site.baseurl }}/" class="logo">Aakjaer</a>
-            {% include site-nav.html %}
-        </header>
+            <aside class="sidebar">
+                {% include site-nav.html %}
+            </aside>
 
-        <main id="main" class="main-content" role="main">
-            {{ content }}
-        </main>
+            <div class="content-wrapper">
+                <header class="branding">
+                    <a href="{{ site.baseurl }}/" class="logo animate fadein">Aakjaer</a>
+                </header>
 
+                <main id="main" class="main-content" role="main">
+                    {{ content }}
+                </main>
+            </div>
+        </div>
 
-        <div class="cd-overlay-nav">
-            <span></span>
-        </div> <!-- cd-overlay-nav -->
-
-        <div class="cd-overlay-content">
-            <span></span>
-        </div> <!-- cd-overlay-content -->
-
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-        <script src="{{ site.baseurl }}/bower_components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js"></script>
+        <script src="{{ site.baseurl }}/components/jquery/dist/jquery.min.js"></script>
         <script src="{{ site.baseurl }}/js/modernizr.min.js"></script>
-        <script src="{{ site.baseurl }}/js/jquery.smoothstate.min.js"></script>
-        <script src="{{ site.baseurl }}/js/jquery.menu-aim.js"></script>
-        <script src="{{ site.baseurl }}/js/jquery.fittext.js"></script>
+        <script src="{{ site.baseurl }}/js/animsition.min.js"></script>
         <script src="{{ site.baseurl }}/js/jquery.waypoints.min.js"></script>
         <script src="{{ site.baseurl }}/js/site-nav.js"></script>
         <script src="{{ site.baseurl }}/js/salvattore.min.js"></script>
-        <script src="{{ site.baseurl }}/js/classie.js"></script>
-        <script src="{{ site.baseurl }}/bower_components/fancyBox/source/jquery.fancybox.js"></script>
-		<script src="{{ site.baseurl }}/js/uiMorphingButton_fixed.js"></script>
-		<script src="{{ site.baseurl }}/js/contact-button.js"></script>
+        <script src="{{ site.baseurl }}/components/fancyBox/source/jquery.fancybox.js"></script>
         <script src="{{ site.baseurl }}/js/main.js"></script>
-
-
 
         <script>
           (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

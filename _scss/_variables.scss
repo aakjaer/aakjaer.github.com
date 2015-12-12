@@ -3,21 +3,21 @@
 
 // custom variables
 
-$brand-red: #D85458;
-$brand-blue: #3791C5;
-$brand-green: #1cff94;
+$brand-red: #F9615B;
+$brand-blue: #35ADC3;
+$brand-green: #43C7AE;
 $brand-dark-blue: #293B50;
 $brand-light-blue: #A1DDF9;
-$brand-yellow: #FAE273;
-$brand-purple: #765174;
+$brand-yellow: #D6B44A;
+$brand-purple: #CA5CA3;
+$brand-pink: #E03C71;
 $brand-light-gray: #bbb;
 $white-accent: rgb(240, 240, 240);
 
 
-
 $color-1: $brand-red; // Black
 $color-2: $body-bg; // San Juan
-$color-3: white; // White
+$color-3: $gray;
 $color-4: #fb5e58; // Carnation
 
 
@@ -29,3 +29,4 @@ $above-content: 3;
 // fonts
 
 $primary-font: sans-serif;
+$link-color: $brand-green;
