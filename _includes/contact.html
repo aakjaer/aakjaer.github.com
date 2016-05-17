@@ -8,4 +8,12 @@
     </div>
 </section>
 
-{% include portfolio-screenshots.html %}
+<section class="section-screenshots">
+    <div class="row">
+        {% for screenshot in site.data.screenshots  %}
+            <div class="col">
+                <img src="{{ site.baseurl }}/img/work/{{ screenshot }}" alt="" />
+            </div>
+        {% endfor %}
+    </div>
+</section>
