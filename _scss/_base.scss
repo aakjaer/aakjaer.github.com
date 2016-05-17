@@ -250,7 +250,7 @@ blockquote {
 	}
 }
 
-.btn-fancy:hover::before { 
+.btn-fancy:hover::before {
 	top: 0;
 }
 .btn-fancy:hover span {
@@ -487,7 +487,7 @@ th {
 	}
 
 	.project-heading {
-		margin: 0;
+		margin: 0 0 0.3em;
 		font-size: 1em;
 		font-weight: 900;
 		color: $gray;
@@ -505,11 +505,11 @@ th {
 
 	.project:hover {
 		@include transform(translateY(-3px));
-		
+
 		.project-heading {
 			color: $link-color;
 		}
-	
+
 		img {
 			@include box-shadow(0 5px 5px rgba(0, 0, 0, 0.2));
 
@@ -736,6 +736,3 @@ footer[role="contentinfo"] {
     	text-align: center;
     }
 }
-
-
-
