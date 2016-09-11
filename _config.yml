@@ -13,4 +13,4 @@ permalink: date
 markdown: redcarpet
 #   extensions: ['fenced_code_blocks', 'smart']
 
-highlighter: pygment
+highlighter: rouge
