@@ -425,7 +425,7 @@ th {
 
 // .project-image img,
 .project-image {
-	@extend .img-rounded;
+	border-radius: $border-radius-base;
 	margin-bottom: $grid-gutter-width;
 }
 
