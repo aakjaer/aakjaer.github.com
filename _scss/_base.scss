@@ -451,8 +451,8 @@ th {
 // latest projects - front page
 
 .latest-projects {
-	@include make-row();
-	@include center-block();
+	@include display(flex);
+	@include flex-wrap(wrap);
 
 	a {
 		position: absolute;
@@ -476,7 +476,7 @@ th {
 	}
 
 	.project, img, .project-heading {
-		@include transition(0.3s);
+		@include transition(0.2s);
 	}
 
 	img,
