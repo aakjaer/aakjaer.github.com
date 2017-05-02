@@ -4,13 +4,15 @@ author:
   name: Daniel Aakjær Sørensen
   email: contact@aakjaer.co
 
+host: 0.0.0.0
+
 sass:
   sass_dir: _scss
 
 permalink: date
 
-# Markdown library
-markdown: redcarpet
-#   extensions: ['fenced_code_blocks', 'smart']
-
 highlighter: rouge
+
+
+# gems:
+#   - jekyll-sitemap

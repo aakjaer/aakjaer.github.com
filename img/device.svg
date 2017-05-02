@@ -2,7 +2,7 @@
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <svg width="818px" height="1668px" viewBox="0 0 818 1668" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:1.41421;">
     <g>
-        <path d="M818.518,110.661L818.518,1558.22C818.518,1619.33 767.279,1668.88 704.073,1668.88L114.445,1668.88C51.2387,1668.88 0,1619.33 0,1558.22L0,110.661C0,49.5445 51.2387,0 114.445,0L704.073,0C767.279,0 818.518,49.5445 818.518,110.661Z" style="fill:rgb(34,34,34);"/>
+        <!-- <path d="M818.518,110.661L818.518,1558.22C818.518,1619.33 767.279,1668.88 704.073,1668.88L114.445,1668.88C51.2387,1668.88 0,1619.33 0,1558.22L0,110.661C0,49.5445 51.2387,0 114.445,0L704.073,0C767.279,0 818.518,49.5445 818.518,110.661Z" style="fill:rgb(34,34,34);"/> -->
         <circle id="button" cx="414.933" cy="1572.39" r="64.8787" style="fill:none;stroke-width:4.17px;stroke:white;stroke-opacity:0.1;"/>
         <path id="speaker" d="M515.625,77.9855C515.625,69.1444 508.458,61.9773 499.616,61.9773L381.692,61.9773C372.851,61.9773 365.684,69.1444 365.684,77.9855L365.684,78.0751C365.684,86.9162 372.851,94.0833 381.692,94.0833L499.616,94.0833C508.458,94.0833 515.625,86.9162 515.625,78.0751L515.625,77.9855Z" style="fill:none;stroke-width:4.17px;stroke:white;stroke-opacity:0.1;"/>
         <circle id="camera" cx="319.032" cy="78.0303" r="16.138" style="fill:none;stroke-width:4.17px;stroke:white;stroke-opacity:0.1;"/>

@@ -1,7 +1,9 @@
 // Content sections
 .section {
     position: relative;
+    overflow: hidden;
     background-repeat: no-repeat;
+    background-color: $body-bg;
 }
 
 .section .section-content {
@@ -43,6 +45,10 @@
     }
 }
 
+.section-heading--left {
+    text-align: left;
+}
+
 .section-heading-sm {
     margin-bottom: 1.5em;
     font-size: 1em;
@@ -52,7 +58,6 @@
         font-size: 1.3em;
     }
 }
-
 
 .section-image {
     display: block;
@@ -156,7 +161,7 @@
     color: $gray-dark;
 }
 
-.section-dark-gray {
+.section--dark-gray {
     background: #222;
     color: white;
 }
@@ -187,4 +192,13 @@
     .display-heading {
         color: white;
     }
+}
+
+
+.section--servicelovers {
+    @include gradient-directional(#1D1129,#323050,-35deg);
+}
+
+.section--printix {
+    background: #459EEC;
 }

@@ -9,7 +9,7 @@ $('.animsition').animsition({
     timeoutCountdown: 5000,
     onLoadEvent: true,
     transition: function(url){ window.location.href = url; }
-  });
+});
 
 
   // scroll related animations
@@ -20,7 +20,25 @@ $('.animsition').animsition({
       offset: '90%'
   });
 
-  // lightbox 
+
+  var waypoints = $('.section--dark-gray').waypoint({
+      handler: function(direction) {
+          $('.nav-trigger').toggleClass('nav-trigger--invert', direction === 'down');
+      },
+      offset: 45
+  });
+
+  var waypoints = $('.section--dark-gray').waypoint({
+      handler: function(direction) {
+          $('.nav-trigger').toggleClass('nav-trigger--invert', direction === 'up');
+      },
+      offset: function (){
+        return -this.element.clientHeight + 45
+      }
+  });
+
+
+  // lightbox
   $(".fancybox").fancybox({
     helpers: {
         overlay: {

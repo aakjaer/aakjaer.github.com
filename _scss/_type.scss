@@ -37,7 +37,7 @@ h6,.zeta    { }
 }
 
 .text-white { color: white; }
-.text-faded { color: $text-color; }
+.text-white-dimmed { color: rgba(255,255,255, 0.7); }
 .text-blue { color: $brand-blue; }
 .text-dark-blue { color: $brand-dark-blue; }
 .text-light-blue { color: $brand-light-blue; }

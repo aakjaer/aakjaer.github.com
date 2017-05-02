@@ -3,45 +3,59 @@
 
 
 .sidebar {
+	overflow-y: auto;
 	position: fixed;
+	z-index: $above-content;
+	opacity: 0;
+	visibility: hidden;
+	left: 0;
 	top: 0;
 	right: 0;
 	height: 100%;
-	width: 360px;
-	overflow-y: auto;
 	padding: 50px 60px 60px;
-	//background: $brand-primary;
 	@include linear-gradient(to right, #55A999, $brand-primary);
 	color: #fff;
 	filter: none;
 	@include transform(translate3D(0,0,0));
-	@include transition(all .35s, transform .5s);
+	@include transition(all .25s, transform .4s);
 
 	.safari & {
 		min-height: 100vh;
 	}
 }
 
-.menu-shown .content-wrapper,
-.menu-shown .nav-trigger {
-	@include transform(translateX(-360px));
+.menu-shown {
+
+	body {
+		overflow: hidden;
+	}
+
+	.sidebar {
+		opacity: 1;
+		visibility: visible;
+	}
 }
 
-.menu-shown .sidebar {
-	@include transform(translateX(0));
-	webkit-overflow-scrolling: touch;
-}
+// .menu-shown .content-wrapper,
+// .menu-shown .nav-trigger {
+// 	@include transform(translateX(-360px));
+// }
+
+// .menu-shown .sidebar {
+// 	@include transform(translateX(0));
+// 	webkit-overflow-scrolling: touch;
+// }
 
 .sidebar-container {
 	opacity: 0;
 	@include transform(translateX(50px));
-	@include transition(0.5s 0s);
+	@include transition(0.4s 0s);
 }
 
 .menu-shown .sidebar-container {
 	opacity: 1;
 	@include transform(none);
-	@include transition(0.5s 0.15s);
+	@include transition(0.4s 0.15s);
 }
 
 .sidebar:after,
@@ -49,24 +63,24 @@
 	content: "";
 	position: fixed;
 	left: 0;
-	top: 10px;
+	top: 30px;
 	bottom: 0;
 	height: 100vh;
 	width: 100px;
-	background-color: #DFEDF0;
+	background-color: white;
 	@include box-shadow(0 0 16px rgba(17, 37, 60, 0.5));
 	@include transform(translateX(-100%));
-	@include transition(.5s);
+	@include transition(0.4s);
 }
 
 .sidebar:before {
 	bottom: 0;
-	top: 50px;
+	top: 70px;
 }
 
 .menu-shown .sidebar:after,
 .menu-shown .sidebar:before {
-	@include transition(0.8s);
+	@include transition(0.7s);
 }
 
 .menu-shown .sidebar:before {
@@ -99,15 +113,6 @@
 	color: #fff;
 }
 
-.site-nav {
-	margin-top: 70px;
-}
-
-.site-nav ul {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-}
 
 .sidebar ul.secondary-links {
 	margin-top: 35px;
@@ -116,10 +121,6 @@
 .sidebar ul li a {
 	color: #fff;
 	@include transition(.15s);
-}
-
-.site-nav .secondary-links li a {
-	color: rgba(255,255,255,0.8);
 }
 
 .sidebar ul li a:hover {
@@ -132,84 +133,112 @@
 	opacity: 1;
 	text-shadow: 0 1px 0 rgba(255,255,255,0.08);
 }
-.site-nav li {
-	padding: 10px 0;
-	text-transform: uppercase;
+
+
+
+.site-nav {
+	margin-top: 70px;
+
+	ul {
+		list-style: none;
+		margin: 0 0 0 5%;
+		padding: 0;
+	}
+
+	li {
+		padding: 3px 0;
+		text-transform: uppercase;
+	}
+
+	.primary-links {
+
+		li {
+			font-size: 2em;
+			font-weight: 900;
+			font-family: $headings-font-family;
+
+			@media (min-width: $screen-sm-min) {
+				font-size: 3em;
+			}
+		}
+	}
+
+	.secondary-links li {
+		font-size: 1.2em;
+		padding: 8px 0;
+
+		a {
+			color: rgba(255,255,255,0.8);
+		}
+	}
 }
 
-.site-nav .primary-links li {
-	font-size: 1.4em;
-	font-weight: 900;
-	font-family: $headings-font-family;
-}
 
-.site-nav .secondary-links li {
-	font-size: 1.2em;
-	padding: 8px 0;
-}
-
-.sidebar-share {
-	margin-top: 45px;
-}
-.sidebar-share li {
-	display: inline-block;
-	margin-left: 20px;
-}
-.sidebar-share li:first-child {
-	margin: 0;
-}
 
 .nav-trigger {
 	position: fixed;
 	top: 20px;
 	right: 20px;
-	height: 50px;
-	width: 50px;
-	padding: 12px;
+	height: 42px;
+	width: 42px;
+	padding: 10px;
 	z-index: 999;
-	background: rgba(0,0,0,0.4);
+	background-color: $gray-dark;
 	line-height: 1;
 	border-radius: 50%;
-	// @include box-shadow(0 0 0 1px rgba(255,255,255,0.1));
 	cursor: pointer;
 	-ms-touch-action: manipulation;
 	touch-action: manipulation;
-	@include transform(translate3d(0, 0, 0));
-	@include transition(transform 0.5s, background 0.35s, box-shadow 0.35s);
+	@include transition(all 0.15s);
 
-	&:hover {
-		background: $brand-green;
+	// close and burger icons
+	svg * {
+		pointer-events: none;
+		width: 26px;
+		height: 26px;
+		stroke: white;
+		stroke-width: 3px;
+		stroke-linecap: round;
+		@include transition(.4s);
 	}
 
-	.menu-shown & {
-		background: $brand-green;
+	&:hover {
+		@include transform(scale(1.1));
 	}
 
 	.close {
 		opacity: 0
 	}
 
+	&.nav-trigger--invert {
+		border-color: transparent;
+		background-color: white;
+
+		svg * {
+			stroke: $gray-dark;
+		}
+	}
+}
+
+.menu-shown .nav-trigger {
+	border-color: transparent;
+	background-color: rgba(white,0.9);
+
+	.close { opacity: 1 }
+	.menu { opacity: 0 }
+
 	svg * {
-		pointer-events: none;
-		width: 26px;
-		height: 26px;
-		stroke: #fff;
-		stroke-width: 3px;
-		stroke-linecap: round;
-		@include transition(.5s);
+		stroke: $brand-blue;
 	}
 }
 
-.menu-shown .nav-trigger .close { opacity: 1 }
-.menu-shown .nav-trigger .menu { opacity: 0 }
 
 
-
-@media screen and (max-width: 455px) {
-	.menu-shown .nav-trigger {
-		@include transform(translateX(0));
-	}
-}
+// @media screen and (max-width: 455px) {
+// 	.menu-shown .nav-trigger {
+// 		@include transform(translateX(0));
+// 	}
+// }
 
 @media screen and (max-width: 414px) {
 	.sidebar {
@@ -223,7 +252,7 @@
 	}
 
 	.menu-shown .content-wrapper {
-		@include transform(translateX(-100%));
+		@include transform(translateX(-2%));
 	}
 }
 

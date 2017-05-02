@@ -1,6 +1,6 @@
 ---
 layout: default
-bodyclass: page-home
+page_class: page-home
 ---
 
 {% include home-intro.html %}
@@ -9,8 +9,8 @@ bodyclass: page-home
 
 <div class="section">
     <div class="section-content">
-    	<h2 class="display-heading">Latest projects</h2>
-        {% include latest-projects.html show-button="true" %}
+    	<h2 class="display-heading">Client work</h2>
+        {% include latest-projects.html limit=true show-button=true %}
     </div>
 </div>
 

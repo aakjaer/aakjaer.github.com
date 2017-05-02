@@ -29,13 +29,6 @@ a:focus {
 	text-decoration: none;
 }
 
-
-
-
-header[role="banner"] {
-	text-align: right;
-}
-
 .form-control {
 	@include box-shadow(none);
 }
@@ -100,10 +93,17 @@ header[role="banner"] {
 	min-height: 100vh;
 	z-index: 500;
     background: white;
-    position: relative;
-    @include transition(0.5s);
+    @include transition(0.4s);
     @include transform(translate3d(0, 0, 0));
-    @include box-shadow(0 0 26px rgba(17,37,60,0.3));
+}
+
+header[role="banner"] {
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 80px;
+	width: 100%;
+	z-index: 10;
 }
 
 .branding {
@@ -117,8 +117,6 @@ header[role="banner"] {
 		z-index: $above-content;
 	}
 }
-
-
 
 
 .teasers {
@@ -297,6 +295,9 @@ blockquote {
 
 .btn-secondary {
 	@include button-variant(white, $brand-blue, transparent);
+	padding: 10px 25px;
+	font-size: 0.9em;
+	text-transform: uppercase;
 }
 
 .narrow {
@@ -345,6 +346,10 @@ th {
 	}
 }
 
+.project-header .section-content {
+	padding-top: 2em;
+}
+
 .project-brow {
 	display: block;
 	margin-bottom: 0;
@@ -353,7 +358,7 @@ th {
 	font-weight: 600;
 
 	@media (min-width: $screen-md-min) {
-		font-size: 1.2em;
+
 	}
 }
 
@@ -382,6 +387,7 @@ th {
 		font-size: 0.8em;
 	}
 
+	&.project-demo,
 	&.project-technology {
 		font-size: 0.85em;
 
@@ -418,7 +424,7 @@ th {
 		margin-top: 1.5em;
 		margin-bottom: 1.5em;
 		text-transform: uppercase;
-		color: white;
+		// color: white;
 		letter-spacing: 0.1em;
 	}
 }
@@ -548,15 +554,40 @@ th {
 	}
 
 
+.tilt--sm {
+	@media (min-width: $screen-sm-min) {
+		@include rotate(-12deg);
+	}
+}
+
+.tilt--md {
+	@media (min-width: $screen-md-min) {
+		@include rotate(-12deg);
+	}
+}
+
+
+
 // mobile device to display screenshots inside
 .device {
 	position: relative;
 	max-width: 400px;
 	@include center-block();
 	margin-bottom: 1.5em;
+	border-radius: 30px;
+	background-color: rgb(34,34,34);
+	@include box-shadow(inset 0 -5px 10px rgba(170,180,200,.2), 0 2px 6px rgba(0,20,60,.15), 0 5px 30px rgba(0,20,60,.01));
+
+	@media (min-width: $screen-md-min) {
+		border-radius: 40px;
+	}
 }
-.device__bg {
+
+.device--white {
+	background-color: #fff;
 }
+
+.device__bg {}
 
 // show mobile device on svg devices
 .device__screen {
@@ -568,7 +599,13 @@ th {
 	width: 91.575092%;
 	height: 79%;
 	margin: 0 auto;
-	background: rgba(white, 0.1);
+	// background: rgba(white, 0.1);
+
+	img {
+		border-radius: 10px;
+		border: 2px solid rgba(150,150,150,.1);
+		@include box-shadow(inset 1px 1px 10px rgba(255,255,255, 0.15));
+	}
 }
 
 

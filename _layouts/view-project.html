@@ -1,30 +1,37 @@
 ---
 layout: default
-bodyclass: page-projects page-view-project
 ---
 
-<div class="section section-intro section-more">
+<header class="project-header section section-more">
     <div class="section-content">
-        <p class="project-brow text-light-gray">Project</p>
+        <p class="project-brow text-light-gray">Client work</p>
         <h1 class="hero-heading text-center">{{ page.title }}</h1>
 
-        <hr class="separator-redz separator-lg" />
+        <hr class="separator-green separator-lg" />
 
         <ul class="project-details text-center">
+            {% if page.client != null %}
             <li class="project-detail">
                 <span>Client</span>
                 {{ page.client }}
             </li>
+            {% endif %}
             <li class="project-detail project-technology">
                 <span>Technology used</span>
 
                 <ul>
                     {% for item in page.technology %}<li>{{ item }}</li>{% endfor %}
-                </ul>  
+                </ul>
             </li>
+            {% if page.demo_url != null %}
+            <li class="project-detail project-demo">
+                <span>Website</span>
+                <a href="{{ page.demo_url }}">{{ page.demo_url_text }}</a>
+            </li>
+            {% endif %}
         </ul>
     </div>
-</div>
+</header>
 
 {{ content }}
 
@@ -33,4 +40,4 @@ bodyclass: page-projects page-view-project
 </nav>
  -->
 
-{% include contact.html message="Are you looking for something similar? <br/> Write me a couple of lines and hopefully I can help you." %}
+{% include contact.html message="Are you looking to design or build something similar?" %}

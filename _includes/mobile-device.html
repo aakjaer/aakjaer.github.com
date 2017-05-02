@@ -1,5 +1,9 @@
-<div class="device">
+<div class="device{% if include.variant == "white" %} device--white{% endif %}">
+    {% if include.variant == "white" %}
+    <img class="device__bg" src="{{ site.baseurl }}/img/device-white.svg" />
+    {% else %}
     <img class="device__bg" src="{{ site.baseurl }}/img/device.svg" />
+    {% endif %}
     <div class="device__screen">
         <img src="{{ site.baseurl }}{{ include.image }}" alt="" />
     </div>
