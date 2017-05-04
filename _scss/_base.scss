@@ -293,6 +293,10 @@ blockquote {
 	}
 }
 
+.btn-primary {
+	
+}
+
 .btn-secondary {
 	@include button-variant(white, $brand-blue, transparent);
 	padding: 10px 25px;
