@@ -14,5 +14,5 @@ permalink: date
 highlighter: rouge
 
 
-# gems:
-#   - jekyll-sitemap
+gems:
+  - jekyll-sitemap
