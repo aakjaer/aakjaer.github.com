@@ -1,6 +1,6 @@
 // typography
 h1, h2, h3, h4, h5 {
-    text-transform: uppercase;
+    // text-transform: uppercase;
 }
 
 h1,.alpha   { }
@@ -20,11 +20,11 @@ h6,.zeta    { }
 .lead {
     max-width: 30em;
     margin-bottom: 3em;
-    font-weight: 400;
+    font-weight: 500;
     line-height: 1.6em;
 
     @media (min-width: $screen-sm-min) {
-        font-size: 1.4em;
+        font-size: 1.6em;
     }
 
     &.text-center {
@@ -55,9 +55,7 @@ h6,.zeta    { }
 .display-heading {
     margin-bottom: 2em;
     font-size: 2.5em;
-    text-transform: uppercase;
     text-align: center;
-    font-weight: 900;
 
     @media (min-width: $screen-md-min) {
         font-size: 4vw;
@@ -72,18 +70,24 @@ h6,.zeta    { }
 }
 
 .hero-heading {
-    max-width: 12em;
+    // max-width: 12em;
     margin: 0 auto;
-    font-size: 12vw; // has backup size from headers
-    font-weight: 900;
-    text-align: center;
-    text-transform: uppercase;
+    font-size: 10vw; // has backup size from headers
+    font-weight: 200;
+    // text-align: center;
+    // text-transform: uppercase;
     letter-spacing: -0.025em;
     // color: $brand-primary;
 
     @media (min-width: $screen-md-min) {
         font-size: 5.5vw;
     }
+}
+
+.group-heading {
+    margin-bottom: 1em;
+    font-size: 1.6em;
+    font-weight: 600;
 }
 
 
@@ -125,3 +129,5 @@ hr {
 .separator-purple { border-color: $brand-purple; }
 .separator-green { border-color: $brand-green; }
 .separator-yellow { border-color: $brand-yellow; }
+
+

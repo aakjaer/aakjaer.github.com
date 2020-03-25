@@ -4,7 +4,7 @@
 
 .cd-intro {
 	position: relative;
-	min-height: 100vh;
+	height: 100vh;
 	width: 100%;
 	/* vertically align its content */
 	display: table;
@@ -15,7 +15,7 @@
 	/* vertically align inside its parent */
 	display: table-cell;
 	vertical-align: middle;
-	text-align: center;
+	// text-align: center;
 	padding: 0 5%;
 
 
@@ -23,14 +23,6 @@
 		@extend .hero-heading;
 	}
 
-	p {
-		margin: 1em 0;
-		font-weight: 400;
-
-		@media (min-width: $screen-md-min) {
-			font-size: 1.5em;
-		}
-	}
 
 	.action-wrapper {
 		@include clearfix;
@@ -42,11 +34,6 @@
 	}
 
 	@include MQ(M) {
-
-		// h1 {
-		// 	font-size: 4em;
-		// 	font-weight: 300;
-		// }
 
 		p {
 			max-width: 30em;

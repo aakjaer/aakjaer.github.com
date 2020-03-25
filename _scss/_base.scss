@@ -19,9 +19,7 @@ body {
 }
 
 .container {
-	@media (max-width: $screen-sm-max) {
-		width: 90%;
-	}
+	width: 90%;
 }
 
 a:hover,
@@ -46,8 +44,8 @@ a:focus {
 
 .logo {
 	display: inline-block;
-	height: 75px;
-	width: 200px;
+	height: 100px;
+	width: 300px;
     z-index: $content;
 	margin: 50px 0;
 	background: url(../img/logo.svg) 50% 50% no-repeat;
@@ -775,6 +773,6 @@ footer[role="contentinfo"] {
     @include make-sm-column(4);
 
     @media (min-width: $screen-sm-min) {
-    	text-align: center;
+    	// text-align: center;
     }
 }

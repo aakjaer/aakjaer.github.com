@@ -36,28 +36,27 @@
     @media (min-width: $screen-sm) {
         font-size: 1.6em;
     }
-}
 
-.section-heading {
+    &--left {
+        text-align: left;
+    }
+
+    &-sm {
+        margin-bottom: 1.5em;
+        font-size: 1em;
+        font-weight: 900;
+    
+        @media (min-width: $screen-sm) {
+            font-size: 1.3em;
+        }
+    }
+
     + .lead,
     + hr {
         margin-top: -2.5em;
     }
 }
 
-.section-heading--left {
-    text-align: left;
-}
-
-.section-heading-sm {
-    margin-bottom: 1.5em;
-    font-size: 1em;
-    font-weight: 900;
-
-    @media (min-width: $screen-sm) {
-        font-size: 1.3em;
-    }
-}
 
 .section-image {
     display: block;
@@ -162,7 +161,7 @@
 }
 
 .section--dark-gray {
-    background: #222;
+    background: #111;
     color: white;
 }
 
