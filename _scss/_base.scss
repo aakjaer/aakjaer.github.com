@@ -19,11 +19,14 @@ body {
 }
 
 .container {
-	max-width: none;
-
-	@include media-breakpoint-up(xl) {
-		max-width: 1680px;
+	
+	@include media-breakpoint-down(lg) {
+		max-width: none;
 	}
+
+	// @include media-breakpoint-up(xl) {
+	// 	max-width: 1680px;
+	// }
 }
 
 
