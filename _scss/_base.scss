@@ -297,12 +297,6 @@ blockquote {
 	text-transform: uppercase;
 }
 
-.narrow {
-	max-width: 50em;
-    margin: 0 auto;
-}
-
-
 th {
 	min-width: 20%;
 	padding-right: 15px;
@@ -510,16 +504,33 @@ th {
 }
 
 
+.tilt-left-sm,
+.tilt-right-sm,
+.tilt-left-md,
+.tilf-right-md {
+	transition: transform 0.3s ease-in-out;
+}
 
-.tilt--sm {
+
+.tilt-left-sm {
 	@include media-breakpoint-up(sm) {
 		transform: rotate(-8deg);
 	}
 }
-
-.tilt--md {
+.tilt-right-sm {
 	@include media-breakpoint-up(sm) {
+		transform: rotate(8deg);
+	}
+}
+
+.tilt-left-md {
+	@include media-breakpoint-up(md) {
 		transform: rotate(-8deg);
+	}
+}
+.tilt-right-md {
+	@include media-breakpoint-up(md) {
+		transform: rotate(8deg);
 	}
 }
 
