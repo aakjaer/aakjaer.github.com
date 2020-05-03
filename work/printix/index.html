@@ -16,110 +16,90 @@ technology:
 ---
 
 
-<div class="section section-narrow section-bordered">
-    <div class="section-content">
-        <h3 class="section-heading text-center text-yellow">Project details</h3>
-        <p class="lead text-center">In an industry where change and innovation is avoided to keep things at status-quo, Danish start-up Printix is on a mission to replace traditionel business print infrastructure with a cloud-based SaaS solution.</p>
+<section class="section section-narrow">
+    <div class="section-content py-0">
+        <p class="lead">In an industry where change and innovation is scarce, Danish start-up Printix is on a mission to replace traditionel business print infrastructure with a cloud-based SaaS solution.</p>
+        <p>I was initially hired to give Printix's public website a make-over, but Printix was in dire need of UI, UX and templating experience, so I ended up focusing on redesigning all of their existing web applications: An administrative system to manage the print environment in, an app for the end-user to handle and release their printed documents from and a couple of minor apps for technicians etc.</p>
 
-        <p>I was initially hired to give Printix's main website a make-over, but Printix was in dire need of UI, UX and templating experience, so I ended up taking on the challenge of redesigning and reimplementing all of their existing web apps: An administrative system to manage the print environment in, an app for the end-user to handle and release their printed documents from and a couple of minor apps for technicians etc.</p>
+        <h3 class="group-heading">Conversion rates</h3>
+        <p>The old client software installation process turned out to be one of the main causes for low conversion rates, and was therefor heavily improved focusing on giving the user clear indications of the process, remaining time and by adding a familiar app look'n'feel to the design.</p>
     </div>
-</div>
+
+    <div class="container">
+        <div class="browser">
+            {% include svg/browser-top.html %}
+            <img src="{{ site.baseurl }}/img/projects/printix/01.png" alt="" />
+        </div>
+    </div>
+
+    <div class="section-content py-1">
+        <h3 class="group-heading">Dashboard</h3>
+        <p>The process of designing and implementing dashboards is often times challenging, because of the complexity and the many use-cases it has to cover.</p>
+        <p>This too was a great exercise in user-needs vs. actual available data and involved people from all areas of the company.</p>
+    </div>
+
+    <div class="container">
+        <div class="browser">
+            {% include svg/browser-top.html %}
+            <img src="{{ site.baseurl }}/img/projects/printix/02.png" alt="" />
+        </div>
+    </div>
+</section>
 
 
-<div class="section section--printix">
-    <div class="section-content text-white">
+<section class="section section-full section-light-gray">
+    <div class="section-content">
+        <div class="row">
+            <div class="col-md-4 pr-md-5">
+                <h3 class="group-heading">
+                    Keeping things clean
+                </h3>
 
-        <figure class="project-image row">
-            <div class="col-md-4 col-md-push-8">
-                <div class="project-image-text">
-                    <figcaption class="text-center">Conversion rates</figcaption>
-                    <p class="text-white-dimmed">The old client software installation process turned out to be one of the main causes for the low conversion rates, and was therefor heavily improved focusing on giving the user clear indications of the process, remaining time and by adding a familiar app look'n'feel to the design.</p>
-                </div>
-            </div>
-            <div class="col-md-8 col-md-pull-4">
-                <div class="browser">
-                    {% include svg/browser-top.html %}
-                    <img src="{{ site.baseurl }}/img/projects/printix/01.png" alt="" />
-                </div>
-            </div>
-        </figure>
-
-        <figure class="project-image row">
-            <div class="col-md-4">
-                <div class="project-image-text">
-                    <figcaption class="text-center">Dashboard</figcaption>
-                    <p class="text-white-dimmed">The process of designing and implementing dashboards is often times challenging, because of the complexity and the many use-cases it has to cover.</p>
-
-                    <p class="text-white-dimmed">This too was a great exercise in user-needs vs. actual available data and involved people from all areas of the company.</p>
-                </div>
+                <p>A common problem when designing applications that grow rapidly in complexity is to maintain a UI that is simple and easy on the eye.</p>
+        
+                <p>I purposely kept the design very light with only a few colors while minimising the number of elements on each page to allow for an inevitable growing feature set.</p>
             </div>
             <div class="col-md-8">
-                <div class="browser">
-                    {% include svg/browser-top.html %}
-                    <img src="{{ site.baseurl }}/img/projects/printix/02.png" alt="" />
-                </div>
-            </div>
-        </figure>
-
-    </div>
-</div>
-
-
-<div class="section section-light-gray">
-    <div class="section-content">
-        <figure class="project-image row">
-            <div class="col-md-4 col-md-push-8">
-                <div class="project-image-text">
-                    <figcaption class="text-center">
-                        Keeping it clean
-                    </figcaption>
-
-                    <p>A common problem when designing applications that grow rapidly in complexity is to maintain a UI that is simple and easy on the eye.</p>
-
-                    <p>I purposely kept the design very light with only a few colors while minimising the number of elements on each page to allow for a growing feature set.</p>
-                </div>
-            </div>
-            <div class="col-md-8 col-md-pull-4">
-                <div class="browser">
+                <div class="browser mt-0">
                     {% include svg/browser-top.html %}
                     <img src="{{ site.baseurl }}/img/projects/printix/03.png" alt="" />
                 </div>
             </div>
-        </figure>
-
-        <figure class="project-image row">
-            <div class="col-md-4">
+        </div>
+    </div>
+    <div class="section-content pt-0">
+        <div class="row">
+            <div class="col-md-4 pl-md-5 order-md-2">
                 <div class="project-image-text">
-                    <figcaption class="text-center">
+                    <h3 class="group-heading">
                         Simple forms
-                    </figcaption>
+                    </h3>
                     <p>Describing heavy technical concepts like virtual print environments in a UI eventually takes a lot of forms to tweak the many settings and options.</p>
-
+        
                     <p>The forms were kept clean with scalabillity in mind and in the process I wrote a couple of custom components (fx. <a href="http://aakjaer.co/switch/">checkbox/switch</a>) to improve the experience on mobile.</p>
                 </div>
             </div>
-            <div class="col-md-8">
-                <div class="browser">
+            <div class="col-md-8 order-md-1">
+                <div class="browser mt-0">
                     {% include svg/browser-top.html %}
                     <img src="{{ site.baseurl }}/img/projects/printix/04.png" alt="" />
                 </div>
             </div>
-        </figure>
+        </div>
     </div>
-</div>
+</section>
 
 
-<div class="section section--printix">
+<div class="section section-blue">
     <div class="section-content text-white">
-
-        <figure class="project-image row">
-            <div class="col-md-3 col-md-offset-2 tilt--md">
+        <figure class="row">
+            <div class="col-md-4 offset-md-2 tilt--md">
                 {% include mobile-device.html image="/img/projects/printix/05.png" variant="white" %}
             </div>
-            <div class="col-md-5 col-md-offset-1">
-                <figcaption class="text-center">
+            <div class="col-md-4 offset-md-1">
+                <h3 class="group-heading">
                     Flexibility
-                </figcaption>
+                </h3>
                 <p class="text-white-dimmed">From the get-go we wanted the users to be able to access and manage their print environment from whatever device they prefer.</p>
 
                 <p class="text-white-dimmed">Therefor every single front-end component in this project was designed and implemented with responsiveness in mind - of course.</p>
@@ -137,29 +117,25 @@ technology:
             More screenshots
         </h2>
 
-        <div class="row">
-            <div class="col-sm-6 col-md-4">
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
+            <div class="col">
                 {% include mobile-device.html image="/img/projects/printix/11.png" variant="white" %}
             </div>
-            <div class="col-sm-6 col-md-4">
+            <div class="col">
                 {% include mobile-device.html image="/img/projects/printix/07.png" variant="white" %}
             </div>
-            <div class="col-sm-6 col-md-4">
+            <div class="col">
                 {% include mobile-device.html image="/img/projects/printix/10.png" variant="white" %}
             </div>
-        </div>
-
-        <div class="row">
-            <div class="col-sm-6 col-md-4">
+            <div class="col">
                 {% include mobile-device.html image="/img/projects/printix/08.png" variant="white" %}
             </div>
-            <div class="col-sm-6 col-md-4">
+            <div class="col">
                 {% include mobile-device.html image="/img/projects/printix/09.png" variant="white" %}
             </div>
-            <div class="col-sm-6 col-md-4">
+            <div class="col">
                 {% include mobile-device.html image="/img/projects/printix/06.png" variant="white" %}
             </div>
         </div>
-
     </div>
 </section>

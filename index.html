@@ -5,16 +5,18 @@ page_class: page-home
 
 {% include home-intro.html %}
 
-{% include specialized-in.html %}
-
-<div class="section">
+<div class="section section-full">
     <div class="section-content">
-    	<h2 class="display-heading">Latest work</h2>
-        <p class="lead text-center">Enough talk. Let's see some examples already.</p>
-        {% include latest-projects.html limit=true show-button=true %}
+    	<!-- <h2 class="display-heading">Latest projects</h2> -->
+        <!-- <p class="lead text-center">Enough talk. Let's see some examples already.</p> -->
+        {% include latest-projects.html %}
     </div>
 </div>
 
-{% include history.html %}
 
 {% include contact.html %}
+
+    
+
+
+

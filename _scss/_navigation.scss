@@ -1,5 +1,4 @@
 // bourban dependent
-@import '../components/bourbon/app/assets/stylesheets/bourbon';
 
 
 .sidebar {
@@ -13,11 +12,11 @@
 	right: 0;
 	height: 100%;
 	padding: 50px 60px 60px;
-	@include linear-gradient(to right, #55A999, $brand-primary);
+	@include gradient-directional(#9708CC, #F97794, $deg: -35deg);
 	color: #fff;
 	filter: none;
-	@include transform(translate3D(0,0,0));
-	@include transition(all .25s, transform .4s);
+	transform: translate3D(0,0,0);
+	transition: opacity 0.15s ease-in-out 0.25s, visibility 0s 0.35s;
 
 	.safari & {
 		min-height: 100vh;
@@ -33,29 +32,20 @@
 	.sidebar {
 		opacity: 1;
 		visibility: visible;
+		transition: opacity 0.25s ease-in-out, visibility 0s;
 	}
 }
 
-// .menu-shown .content-wrapper,
-// .menu-shown .nav-trigger {
-// 	@include transform(translateX(-360px));
-// }
-
-// .menu-shown .sidebar {
-// 	@include transform(translateX(0));
-// 	webkit-overflow-scrolling: touch;
-// }
-
 .sidebar-container {
 	opacity: 0;
-	@include transform(translateX(50px));
-	@include transition(0.4s 0s);
+	transform: translateX(50px);
+	transition: all 0.25s 0s;
 }
 
 .menu-shown .sidebar-container {
 	opacity: 1;
-	@include transform(none);
-	@include transition(0.4s 0.15s);
+	transform: none;
+	transition: all 0.25s 0.25s;
 }
 
 .sidebar:after,
@@ -68,9 +58,9 @@
 	height: 100vh;
 	width: 100px;
 	background-color: white;
-	@include box-shadow(0 0 16px rgba(17, 37, 60, 0.5));
-	@include transform(translateX(-100%));
-	@include transition(0.4s);
+	box-shadow: 0 0 16px rgba(17, 37, 60, 0.5);
+	transform: translateX(-100%);
+	transition: 0.4s;
 }
 
 .sidebar:before {
@@ -80,15 +70,15 @@
 
 .menu-shown .sidebar:after,
 .menu-shown .sidebar:before {
-	@include transition(0.7s);
+	transition: 0.7s;
 }
 
 .menu-shown .sidebar:before {
-	@include transform(translateX(-98px) rotate(4deg));
+	transform: translateX(-98px) rotate(4deg);
 }
 
 .menu-shown .sidebar:after {
-	@include transform(translateX(-96px) rotate(2deg));
+	transform: translateX(-96px) rotate(2deg);
 }
 
 .sidebar .logo img.sidebar-logo,
@@ -102,7 +92,7 @@
 	font-size: 0;
 	padding: 0;
 	text-align: left;
-	@include transition(.15s);
+	transition: .15s;
 }
 
 .sidebar .logo:hover {
@@ -115,29 +105,29 @@
 
 
 .sidebar ul.secondary-links {
-	margin-top: 35px;
+	margin-top: 4rem;
 }
 
 .sidebar ul li a {
 	color: #fff;
-	@include transition(.15s);
+	transition: .15s;
 }
 
 .sidebar ul li a:hover {
-	opacity: 0.5;
+	opacity: 0.75;
 }
 .sidebar .active a,
 .sidebar ul li a:active,
 .sidebar ul li a:focus {
-	color: rgba(0, 0, 0, 0.4);
+	color: black;
 	opacity: 1;
-	text-shadow: 0 1px 0 rgba(255,255,255,0.08);
+	text-shadow: 0 1px 0 rgba(255,255,255,0.15);
 }
 
 
 
 .site-nav {
-	margin-top: 70px;
+	margin-top: 4rem;
 
 	ul {
 		list-style: none;
@@ -147,25 +137,27 @@
 
 	li {
 		padding: 3px 0;
-		text-transform: uppercase;
 	}
 
 	.primary-links {
 
-		li {
+		li > a {
 			font-size: 2em;
-			font-weight: 900;
+			font-weight: 400;
+			letter-spacing: -0.015em;
+			text-transform: uppercase;
 			font-family: $headings-font-family;
 
-			@media (min-width: $screen-sm-min) {
-				font-size: 3em;
+			@include media-breakpoint-up(sm) {
+				font-size: 2.5em;
 			}
 		}
 	}
 
-	.secondary-links li {
-		font-size: 1.2em;
-		padding: 8px 0;
+	.secondary-links li > a {
+		font-size: 1.3rem;
+		font-weight: 400;
+		padding: 0.5rem 0;
 
 		a {
 			color: rgba(255,255,255,0.8);
@@ -177,70 +169,70 @@
 
 .nav-trigger {
 	position: fixed;
-	top: 20px;
-	right: 20px;
-	height: 42px;
-	width: 42px;
+	top: 1rem;
+	right: 1rem;
+	height: 2.5rem;
+	width: 2.5rem;
 	padding: 10px;
 	z-index: 999;
-	background-color: $gray-dark;
+	background-color: rgba(255,255,255, 0.5);
 	line-height: 1;
 	border-radius: 50%;
 	cursor: pointer;
-	-ms-touch-action: manipulation;
 	touch-action: manipulation;
-	@include transition(all 0.15s);
+	transition: all .2s;
 
-	// close and burger icons
-	svg * {
-		pointer-events: none;
-		width: 26px;
-		height: 26px;
-		stroke: white;
-		stroke-width: 3px;
-		stroke-linecap: round;
-		@include transition(.4s);
+	@include media-breakpoint-up(md) {
+		top: 1.5rem;
+		right: 1.5rem;
+		width: 3rem;
+		height: 3rem;	
 	}
 
+
 	&:hover {
-		@include transform(scale(1.1));
+		transform: scale(1.1);
+
+		svg path {
+			fill: $primary;
+		}
+	}
+
+	// closse and burger icons
+	svg path {
+		pointer-events: none;
+		width: 1.5rem;
+		height: 1.5rem;
+		stroke: $body-color;
+		stroke-width: 3px;
+		stroke-linecap: round;
+		transition: .4s;
+
+		@include media-breakpoint-up(md) {
+			width: 2.5rem;
+			height: 2.5rem;	
+		}
 	}
 
 	.close {
 		opacity: 0
 	}
-
-	&.nav-trigger--invert {
-		border-color: transparent;
-		background-color: white;
-
-		svg * {
-			stroke: $gray-dark;
-		}
-	}
 }
 
 .menu-shown .nav-trigger {
 	border-color: transparent;
-	background-color: rgba(white,0.9);
+	background-color: transparent;
 
 	.close { opacity: 1 }
 	.menu { opacity: 0 }
 
-	svg * {
-		stroke: $brand-blue;
+	path {
+		stroke: #fff;
 	}
 }
 
 
-
-// @media screen and (max-width: 455px) {
-// 	.menu-shown .nav-trigger {
-// 		@include transform(translateX(0));
-// 	}
-// }
-
-@media screen and (max-width: 414px) {
+@media (max-width: 414px) {
 	.sidebar {
 		padding: 50px 17% 17%;
 		width: 100%;
@@ -252,7 +244,7 @@
 	}
 
 	.menu-shown .content-wrapper {
-		@include transform(translateX(-2%));
+		transform: translateX(-2%);
 	}
 }
 
@@ -266,7 +258,7 @@
 	margin: 0 0 1.5em;
 	text-align: center;
 
-	@media (min-width: $screen-md-min) {
+	@include media-breakpoint-up(sm) {
 		text-align: left;
 	}
 
@@ -279,10 +271,10 @@
 		font-weight: 700;
 		font-size: 0.8em;
 		background: #ccc;
-		@include transition(background 0.2s);
+		transition: background-color 0.2s;
 
 		&:hover {
-			background: $brand-primary;
+			background: $primary;
 		}
 
 		// arrow
@@ -299,8 +291,8 @@
 		    transform: rotate(-45deg);
 		    margin-right: 0.5em;
 			border-color: white;
-			@include backface-visibility(hidden);
-			@include transition(transform .2s);
+			backface-visibility: hidden;
+			transition: transform .2s;
 		}
 
 		&:hover {
@@ -308,7 +300,7 @@
 		}
 
 		&:hover::before {
-			@include transform(translateX(-5px) rotate(-45deg));
+			transform: translateX(-5px) rotate(-45deg);
 		}
 	}
 }

@@ -3,17 +3,83 @@ layout: default
 page_class: page-projects
 ---
 
-<h1 class="hero-heading">Work</h1>
-<hr class="separator-green separator-lg" />
-
-<div class="section">
+<section class="section">
 	<div class="section-content">
-		{% include latest-projects.html %}
+		<div class="latest-projects">
+			<figure class="project wow fadeIn" data-wow-delay="0.3s">
+				<img src="{{ site.baseurl }}/img/projects/printix/thumb.png" alt="" />
+				<figcaption>
+					<h4 class="project-heading">
+						Printix
+					</h4>
+					<p>Product design for Danish cloud based print management fronteers Printix.</p>
+					<a href="{{ site.baseurl }}/work/printix/">View project</a>
+				</figcaption>
+			</figure>
+		
+			<figure class="project wow fadeIn" data-wow-delay="0.3s">
+				<img src="{{ site.baseurl }}/img/projects/servicelovers/thumb.png" alt="" />
+				<figcaption>
+					<h4 class="project-heading">
+						Servicelovers
+					</h4>
+					<p>Digital identity and iOS/Android app design for Servicelovers.</p>
+					<a href="{{ site.baseurl }}/work/servicelovers/">View project</a>
+				</figcaption>
+			</figure>
+		
+			<figure class="project wow fadeIn" data-wow-delay="0.3s">
+				<img src="{{ site.baseurl }}/img/projects/vw-service-booking/thumb.jpg" alt="" />
+				<figcaption>
+					<h4 class="project-heading">
+						VW Service booking
+					</h4>
+					<p>Redesigning VW's service booking flow.</p>
+					<a href="{{ site.baseurl }}/work/vw-service-booking/">View project</a>
+				</figcaption>
+			</figure>
+		
+			{% if include.limit != true %}
+		
+			<figure class="project wow fadeIn" data-wow-delay="0.3s">
+				<img src="{{ site.baseurl }}/img/projects/vivino/thumb.jpg" alt="" />
+				<figcaption>
+					<h4 class="project-heading">
+						Vivino.com
+					</h4>
+					<p>Complete rewrite of Vivino.com's front-end.</p>
+					<a href="{{ site.baseurl }}/work/vivino/">View project</a>
+				</figcaption>
+			</figure>
+		
+			<figure class="project wow fadeIn" data-wow-delay="0.3s">
+				<img src="{{ site.baseurl }}/img/projects/vw-retail/thumb.jpg" alt="" />
+				<figcaption>
+					<h4 class="project-heading">
+						VW Retail
+					</h4>
+					<p>13 car VW dealer websites merged into one.</p>
+					<a href="{{ site.baseurl }}/work/vw-retail/">View project</a>
+				</figcaption>
+			</figure>
+		
+			<figure class="project wow fadeIn" data-wow-delay="0.3s">
+				<img src="{{ site.baseurl }}/img/projects/semler-car-dealers/thumb.jpg" alt="" />
+				<figcaption>
+					<h4 class="project-heading">
+						Semler car dealers
+					</h4>
+					<p>Custom build car dealer CMS, involving more than 300 websites, 17 car brands and multiple portal designs.</p>
+					<a href="{{ site.baseurl }}/work/semler-car-dealers/">View project</a>
+				</figcaption>
+			</figure>
+			{% endif %}
+		</div>
 	</div>
-</div>
-
-{% include current-projects.html %}
+</section>
 
 {% include experience.html %}
+
+
 
 {% include contact.html message="Made it all the way down here? You should drop me a line." %}

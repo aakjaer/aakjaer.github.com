@@ -5,22 +5,29 @@ title: Volkswagen Service Booking
 client: Volkswagen
 responsibility: Build Templates
 technology:
+  - Photoshop
   - HTML5
   - CSS3
   - SASS
-  - Twitter Bootstrap
+  - Bootstrap
   - JS
-  - jQuery
   - Github
 ---
 
 
-<div class="section section-narrow section-bordered">
+<div class="section section-bordered">
     <div class="section-content">
-        <h3 class="section-heading text-center text-yellow">Project details</h3>
-        <p class="lead text-center">I was hired to redesign and reimplement Volkswagen's service-booking form from ground up, to make service bookings smooth for mobile visitors, and improve the total number of online service bookings.</p>
+        <div class="row">
+            <div class="col-md-6">
+                <h3 class="section-heading text-yellow">Project details</h3>
+                <p class="lead">I was hired to redesign and reimplement Volkswagen's service-booking form from ground up, to make service bookings smooth for mobile visitors, and improve the total number of online service bookings.</p>
 
-        <p>The old sign-up flow was a very traditional, fairly unstyled, corporate looking, and way too many form fields, that I initially had to convince the client to optimize. My idea was to challange the existing somewhat conservative and restricted CI that Volkswagen is infamous for, while maintaining a calm and professional look/feel. Everything was build with a <a href="http://jekyllrb.com/">Jekyll</a>/<a href="http://getbootstrap.com/">Bootstrap</a> prototype with a trace of JS.</p>
+                <p>The old sign-up flow was a very traditional, fairly unstyled, corporate looking, and way too many form fields, that I initially had to convince the client to optimize. My idea was to challange the existing somewhat conservative and restricted CI that Volkswagen is infamous for, while maintaining a calm and professional look/feel. Everything was build with a <a href="http://jekyllrb.com/">Jekyll</a>/<a href="http://getbootstrap.com/">Bootstrap</a> prototype with a trace of JS.</p>
+            </div>
+            <div class="col-md-6">
+                {% include mobile-device.html image="/img/projects/vw-service-booking/04.png" %}
+            </div>
+        </div>
     </div>
 </div>
 
@@ -46,15 +53,12 @@ technology:
             </div>
         </div>
 
-        <h3 class="section-heading text-center text-blue">Responsiveness</h3>
-        <hr />
+        <!-- <h3 class="section-heading text-center text-blue"></h3>
+        <hr /> -->
 
         <div class="row">
             <div class="col-sm-6 col-md-4 col-md-offset-2">
                 {% include mobile-device.html image="/img/projects/vw-service-booking/03.png" %}
-            </div>
-            <div class="col-sm-6 col-md-4">
-                {% include mobile-device.html image="/img/projects/vw-service-booking/04.png" %}
             </div>
         </div>
     </div>

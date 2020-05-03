@@ -2,42 +2,37 @@
 layout: default
 ---
 
-<header class="project-header section section-more">
-    <div class="section-content">
-        <p class="project-brow text-light-gray">Client work</p>
-        <h1 class="hero-heading text-center">{{ page.title }}</h1>
+<div class="section section-narrow">
+    <div class="section-content pb-0">
+        <header class="project-header">
+            <p class="project-brow">Client work</p>
+            <h1 class="hero-heading">{{ page.title }}</h1>
 
-        <hr class="separator-green separator-lg" />
-
-        <ul class="project-details text-center">
-            {% if page.client != null %}
-            <li class="project-detail">
-                <span>Client</span>
-                {{ page.client }}
-            </li>
-            {% endif %}
-            <li class="project-detail project-technology">
-                <span>Technology used</span>
-
-                <ul>
-                    {% for item in page.technology %}<li>{{ item }}</li>{% endfor %}
-                </ul>
-            </li>
-            {% if page.demo_url != null %}
-            <li class="project-detail project-demo">
-                <span>Website</span>
-                <a href="{{ page.demo_url }}">{{ page.demo_url_text }}</a>
-            </li>
-            {% endif %}
-        </ul>
+            <div class="project-details">
+                {% if page.client != null %}
+                <div class="project-detail">
+                    <span>Client</span>
+                    {{ page.client }}
+                </div>
+                {% endif %}
+                <div class="d-none project-detail project-technology">
+                    <span>Tools & technology</span>
+    
+                    <ul class="d-flex">
+                        {% for item in page.technology %}<li>{{ item }}</li>{% endfor %}
+                    </ul>
+                </div>
+                {% if page.demo_url != null %}
+                <div class="project-detail project-demo">
+                    <span>Website</span>
+                    <a href="{{ page.demo_url }}">{{ page.demo_url_text }}</a>
+                </div>
+                {% endif %}
+            </div>        
+        </header>
     </div>
-</header>
+</div>
 
 {{ content }}
 
-<!-- <nav class="page-nav">
-    <a href="{{ site.baseurl }}/projects/">All projects</a>
-</nav>
- -->
-
-{% include contact.html message="Do you need help designing or building something similar?" %}
+{% include contact.html message="You need help designing or building something similar?" %}

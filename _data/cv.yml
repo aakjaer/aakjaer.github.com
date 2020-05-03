@@ -1,6 +1,6 @@
 projects:
   - title: "Semler Retail"
-    period: "2014/12 - 2015-07"
+    period: "2014/12-2015-07"
     description: |
       <p>I was hired to design and implement the front-end for Volkswagen Retail, a concept combining 13 Volkswagen Retail dealers into a single website.</p>
       <p>Website: <a href="http://volkswagen.semlerretail.dk/">Volkswagen Semler Retail</a></p>
@@ -18,7 +18,7 @@ projects:
         large: "/img/work/2014-12_vw_retail_04_lg.jpg"
 
   - title: "Volkswagen Service booking"
-    period: "2015/04 - 2015-06"
+    period: "2015/04-2015-06"
     description: |
       <p>In an attempt to convert more visits to Volkswagen's website into service bookings, I was assigned to redesign the booking form from ground up, focusing on making things easier for VW's mobile visitors.</p>
       <p>My initial thought was to challange the existing somewhat conservative and restricted CI, while maintaining a calm and professional look/feel. Everything was build with a <a href="http://jekyllrb.com">Jekyll</a>/<a href="http://www.getbootstrap.com/">Bootstrap</a> prototype, with a minimum use of Photoshop.</p>
@@ -60,7 +60,7 @@ projects:
     contact: "Head of the Internet department, Semler Services Thomas Hansen"
 
   - title: "SEAT.dk - Front-end development tutoring"
-    period: "2014/07 - 2014-08"
+    period: "2014/07-2014-08"
     description: |
       <p>Teaching fundamental front-end development skills for building a Bootstrap based <a href="http://seat.dk/">SEAT.dk</a> from scratch, including understanding HTML semantics, my thoughts on patterns to look for in a design, planning responsive behavior, CSS naming strategies, CSS pre-processor techniques, typography, tips and tricks for styling etc.</p>
     technology: "HTML5, Twitter Bootstrap, CSS3, JS, jQuery, SASS, Github"
@@ -68,7 +68,7 @@ projects:
     contact: "Project manager Semler Services, Kenneth Bang"
 
   - title: "Porsche.dk navigation"
-    period: "2015/02 - 2015-02"
+    period: "2015/02-2015-02"
     description: |
       <p>Minor assignment building a responsive multilevel dropdown navigation for the new danish Porsche website.</p>
       <p>URL: <a href="http://porsche.dk">Porsche.dk</a></p>
@@ -76,7 +76,7 @@ projects:
     role: "Front-end developer"
 
   - title: "Vivino"
-    period: "2013/12 - 2014/05"
+    period: "2013/12-2014/05"
     description: |
       <p>During the first part of 2014 I was lucky enough to help Vivino implement their brand new website for <a href="http://vivino.com">Vivino.com</a>. I was in charge of writing the front-end templates from scratch, working closely with the design team and programmers, tying the front-end and back-end functionality together.</p>
     technology: "HTML5, CSS, CSS3, Jekyll, Twitter Bootstrap, RoR, JS, SASS, Github"
@@ -98,7 +98,7 @@ projects:
       footer: "Theis Søndergaard - COO & Co-founder, Vivino"
 
   - title: "Atea Denmark"
-    period: "2012/06 - 2013/04"
+    period: "2012/06-2013/04"
     description: |
       <p>I was hired to design and implement a public and two administrative webinterfaces for Atea's tele project.</p>
     technology: "Photoshop, Jekyll (for prototyping), LESS, CSS, Grunt, JS, Twitter Bootstrap, jQuery, Github, Subversion"
@@ -113,7 +113,7 @@ projects:
         large: "/img/work/2012-06_ateatele_03_lg.jpg"
 
   - title: "Briza Maxima"
-    period: "2012/02 - 2012/03"
+    period: "2012/02-2012/03"
     description: |
       <p>In this project I designed an online identity for the Briza Maxima girls. Working closely together with Briza Maxima, doing mindmaps and trying my best to get all the girls ideas down on paper, I managed to come up with a design that would represent the girls and their process of working.</p>
     resposibility: |
@@ -152,7 +152,7 @@ projects:
 
 
   - title: "Audi Denmark"
-    period: "2011/10 - 2011/11"
+    period: "2011/10-2011/11"
     description: |
         <p>Creating a iPad based version of a info-stand for an annual danish auto show. The stand allowed customers to view car specs, price and order a demoride and brochures.</p>
         <p>The primary goal was to keep everything web based.</p>
@@ -170,7 +170,7 @@ projects:
         large: "/img/work/2011-11-03_audi_infostand.jpg"
 
   - title: "Skoda Denmark"
-    period: "2011/04 - 2011/05"
+    period: "2011/04-2011/05"
     description: |
       <p>Skoda made a quick 'n' dirty implementation of the new CI on skoda.dk because of a tight deadline and hired me to make a thorough review and re-implementation of the the HTML, CSS and JavaScript and give advice on how to optimize certain areas of the site. </p>
     resposibility: |
@@ -187,7 +187,7 @@ projects:
     # images:
 
   - title: "Semler Group (Scandinavian Motor Co.)"
-    period: "2009/04 - 2010/08"
+    period: "2009/04-2010/08"
     description: |
       <p>The project was a ground up redesign of an old web based application maintaining the websites of the 250+ car dealers associated to Semler Group (VW).</p>
       <p>I was responsible for designing portal- and public brand sites for 13 car brands, and implementing 25 HTML based templates pr. brand. Furthermore a new CMS/admin system was designed and implemented specially for this project. </p>

@@ -1,5 +1,6 @@
 // bootstrap variables
-@import "custom-bootstrap-variables";
+@import '../node_modules/bootstrap/scss/functions';
+@import 'override-bootstrap-variables';
 
 // custom variables
 
@@ -17,7 +18,7 @@ $white-accent: rgb(240, 240, 240);
 
 $color-1: $brand-red; // Black
 $color-2: $body-bg; // San Juan
-$color-3: $gray;
+$color-3: $gray-500;
 $color-4: #fb5e58; // Carnation
 
 
@@ -25,8 +26,3 @@ $color-4: #fb5e58; // Carnation
 $below-content: 1;
 $content: 2;
 $above-content: 3;
-
-// fonts
-
-$primary-font: sans-serif;
-$link-color: $brand-green;

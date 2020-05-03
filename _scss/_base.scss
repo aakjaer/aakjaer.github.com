@@ -6,29 +6,29 @@ html, body { height: 100%; }
 
 body {
 	margin: 0;
-	-webkit-font-smoothing: antialiased;
-    -moz-font-smoothing: antialiased;
-    -o-font-smoothing: antialiased;
-    font-smoothing: antialiased;
+	// -webkit-font-smoothing: antialiased;
+    // -moz-font-smoothing: antialiased;
+    // -o-font-smoothing: antialiased;
+    // font-smoothing: antialiased;
 }
 
-@include selection {
+::selection {
 	background: $brand-blue;
 	color: #fff;
 	opacity: 1;
 }
 
 .container {
-	width: 90%;
+	max-width: none;
+
+	@include media-breakpoint-up(xl) {
+		max-width: 1680px;
+	}
 }
 
-a:hover,
-a:focus {
-	text-decoration: none;
-}
 
 .form-control {
-	@include box-shadow(none);
+	box-shadow: none;
 }
 
 .form-actions {
@@ -37,9 +37,8 @@ a:focus {
 }
 
 .contact-form {
-	@include center-block;
 	max-width: 30em;
-	margin-bottom: 5em;
+	margin: 0 auto 5em;
 }
 
 .logo {
@@ -49,9 +48,8 @@ a:focus {
     z-index: $content;
 	margin: 50px 0;
 	background: url(../img/logo.svg) 50% 50% no-repeat;
-	@include text-hide();
 
-	@media (min-width: $screen-sm-min) {
+	@include media-breakpoint-up(sm) {
 
 		html:not(.page-home) & {
 			height: 100px;
@@ -78,7 +76,7 @@ a:focus {
 	}
 
 
-	@media screen and (min-width: $screen-sm-min) {
+	@include media-breakpoint-up(sm) {
 		padding: 170px 0 100px;
 
 		.stage-img {
@@ -90,10 +88,10 @@ a:focus {
 
 .content-wrapper {
 	min-height: 100vh;
-	z-index: 500;
+	// z-index: 500;
     background: white;
-    @include transition(0.4s);
-    @include transform(translate3d(0, 0, 0));
+    transition: all 0.4s;
+    transform: translate3d(0, 0, 0);
 }
 
 header[role="banner"] {
@@ -134,14 +132,13 @@ header[role="banner"] {
 		font-size: 1.6rem;
 		line-height: 1.5em;
 
-		@media screen and (min-width: $screen-sm-min) {
+		@include media-breakpoint-up(sm) {
 			padding-right: 30px;
 			font-size: 18px;
 			font-size: 1.8rem;
 		}
 
-		@media screen and (max-width: $screen-xs-max) {
-
+		@include media-breakpoint-down(xs) {
 			& + .teaser {
 				margin-top: 50px;
 			}
@@ -150,7 +147,7 @@ header[role="banner"] {
 }
 
 img {
-	@extend .img-responsive;
+	@extend .img-fluid;
 }
 
 
@@ -166,7 +163,7 @@ blockquote {
 		content: '“';
 		display: block;
 		overflow: hidden;
-		@include center-block();
+		margin: 0 auto;
 		text-align: center;
 		width: 100px;
 		height: 100px;
@@ -178,10 +175,8 @@ blockquote {
 }
 
 .quote-image {
-	@include center-block;
 	max-width: 5em;
-	margin-top: 2em;
-	margin-bottom: 1em;
+	margin-top: 2em auto 1em;
 	border-radius: 50%;
 }
 
@@ -193,7 +188,7 @@ blockquote {
 .timeline-when {
 	font-weight: 400;
 
-	@media (min-width: $screen-sm-min) {
+	@include media-breakpoint-up(sm) {
 		text-align: right;
 	}
 }
@@ -213,7 +208,7 @@ blockquote {
     padding: 6px 12px;
     font-size: 18px;
     line-height: 1.6;
-    @include user-select(none);
+    user-select: none;
 }
 
 .cta {
@@ -242,8 +237,8 @@ blockquote {
 	}
 
 	span, &::before {
-    	@include transition(all 0.3s);
-    	@include backface-visibility(hidden);
+    	transition: all 0.3s;
+    	backface-visibility: hidden;
 	}
 }
 
@@ -251,20 +246,19 @@ blockquote {
 	top: 0;
 }
 .btn-fancy:hover span {
-    @include transform(translateY(300%));
+    transform: translateY(300%);
 }
 
 .btn-cta {
-    padding: 0 2em;
-	line-height: 3.5em;
+    padding: 0.5rem 2rem;
+	line-height: 3em;
     text-transform: uppercase;
     font-weight: 800;
-	border: 3px solid $brand-pink;
+	border: 3px solid $primary;
 	background: transparent;
-	color: $brand-pink;
+	color: $primary;
 	border-width: 3px;
-	font-size: 1.2em;
-	@include transition(all 0.3s);
+	transition: all 0.3s;
 
 	&:hover {
 		background: $brand-pink;
@@ -283,7 +277,7 @@ blockquote {
 	color: $brand-green;
 	border-width: 3px;
 	font-size: 1em;
-	@include transition(all 0.3s);
+	transition: all 0.3s;
 
 	&:hover {
 		background: $brand-green;
@@ -305,7 +299,7 @@ blockquote {
 
 .narrow {
 	max-width: 50em;
-    @include center-block();
+    margin: 0 auto;
 }
 
 
@@ -334,7 +328,7 @@ th {
 	padding: 1em 0;
 	background: white;
 	text-align: center;
-	border-bottom: 1px solid $gray-lighter;
+	border-bottom: 1px solid $gray-200;
 
 	.btn {
 		padding: 10px 35px;
@@ -349,20 +343,15 @@ th {
 	}
 }
 
-.project-header .section-content {
-	padding-top: 2em;
+.project-header  {
 }
 
 .project-brow {
 	display: block;
 	margin-bottom: 0;
-	text-align: center;
 	text-transform: uppercase;
 	font-weight: 600;
-
-	@media (min-width: $screen-md-min) {
-
-	}
+	color: $text-muted;
 }
 
 .project-intro .section-content {
@@ -376,42 +365,21 @@ th {
 
 .project-detail {
 	margin-bottom: 1.5em;
-	font-size: 0.9em;
+	font-size: 1rem;
 	text-transform: uppercase;
-	@extend .heavy;
-
-	@media (min-width: $screen-md-min) {
-		font-size: 1.2em;
-	}
+	font-weight: 600;
 
 	span {
 		display: block;
-		color: $brand-light-gray;
+		color: $text-muted;
 		font-size: 0.8em;
 	}
 
 	&.project-demo,
 	&.project-technology {
-		font-size: 0.85em;
 
 		ul {
 			@extend .list-unstyled;
-			@include make-row();
-		}
-
-		li {
-			display: inline-block;
-		}
-
-		li::before {
-			content: "/";
-			display: inline-block;
-			padding: 0 2px;
-			color: lighten($text-color, 50%);
-		}
-
-		li:first-child::before {
-			content: "";
 		}
 	}
 }
@@ -421,30 +389,17 @@ th {
 .project-image {
 
 	figure {}
-	figcaption {
-		font-size: 1.1em;
-		font-weight: 700;
-		margin-top: 1.5em;
-		margin-bottom: 1.5em;
-		text-transform: uppercase;
-		// color: white;
-		letter-spacing: 0.1em;
-	}
+	figcaption {}
 }
 
 // .project-image img,
 .project-image {
-	border-radius: $border-radius-base;
+	border-radius: $border-radius;
 	margin-bottom: $grid-gutter-width;
 }
 
 .project-image-text {
-	@include center-block();
-	margin-bottom: 3em;
-
-	@media (min-width: $screen-md-min) {
-		width: 90%;
-	}
+	margin: 0 0 3em;
 }
 
 .project-image-caption {
@@ -452,7 +407,6 @@ th {
 }
 
 .project-preview {
-	@include make-row();
 	margin-top: 5em;
 }
 
@@ -460,8 +414,16 @@ th {
 // latest projects - front page
 
 .latest-projects {
-	@include display(flex);
-	@include flex-wrap(wrap);
+	display: flex;
+	flex-wrap: wrap;
+	@include make-row();
+	@include row-cols(1);
+	@include media-breakpoint-up(sm) {
+		@include row-cols(2);
+	}
+	@include media-breakpoint-up(lg) {
+		@include row-cols(3);
+	}
 
 	a {
 		position: absolute;
@@ -477,51 +439,48 @@ th {
 	}
 
 	.project {
+		@include make-col-ready();
 		overflow: hidden;
 		position: relative;
-		display: inline-block;
-		@include make-sm-column(4);
-		@include fadeIn;
+		padding-left: 1rem;
+		padding-right: 1rem;
+		margin-bottom: 2rem;
 	}
 
 	.project, img, .project-heading {
-		@include transition(0.2s);
+		transition: 0.2s ease-in-out;
+	}
+
+	picture {
+		display: block;
 	}
 
 	img,
 	.img-placeholder {
-		border-radius: 8px;
-		@include box-shadow(0 1px 1px rgba(0, 0, 0, 0.1));
+		box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 		background: rgba(black, 0.05);
 	}
 
 	.project-heading {
-		margin: 0 0 0.3em;
-		font-size: 1em;
-		font-weight: 900;
-		color: $gray;
+		margin-bottom: 0 0 0.3em;
+		font-size: 1.125em;
+		font-weight: 600;
 	}
 
 	p {
-		font-size: 0.9em;
-		color: $gray-light;
+		font-size: 1rem;
+		color: $text-muted;
 	}
 
 	figcaption {
-		padding: 2em 0;
+		padding: 1.5em 0 2em;
 		min-height: 5em;
 	}
 
 	.project:hover {
-		@include transform(translateY(-3px));
 
 		.project-heading {
 			color: $link-color;
-		}
-
-		img {
-			@include box-shadow(0 5px 5px rgba(0, 0, 0, 0.2));
-
 		}
 	}
 }
@@ -534,38 +493,35 @@ th {
 ////////////////////////////////////////
 
 .browser {
-	margin-bottom: 1.5em;
-	@include box-shadow(0 1px 1px rgba(0, 0, 0, 0.1));
+	max-width: 1400px;
+	margin: 3rem auto;
+	border-radius: 7px;
+	box-shadow: 0 1rem 20px rgba(0,0,0,.1);
+	
+	.browser-top {
+		display: block;
+		@include border-top-radius(3px);
+	}
 
 	img {
-		@include border-bottom-radius(4px);
+		border-radius: 6px;
+		@include media-breakpoint-up(sm) {
+			@include border-top-radius(0);
+		}
 	}
 }
 
-	.browser-top {
-		display: block;
-		@include border-top-radius(4px);
-	}
-
-	.browser-bg {
-		fill: rgb(215, 215, 215);
-	}
-
-	.browser-url,
-	.browser-buttons {
-		fill: white;
-	}
 
 
 .tilt--sm {
-	@media (min-width: $screen-sm-min) {
-		@include rotate(-12deg);
+	@include media-breakpoint-up(sm) {
+		transform: rotate(-8deg);
 	}
 }
 
 .tilt--md {
-	@media (min-width: $screen-md-min) {
-		@include rotate(-12deg);
+	@include media-breakpoint-up(sm) {
+		transform: rotate(-8deg);
 	}
 }
 
@@ -574,15 +530,15 @@ th {
 // mobile device to display screenshots inside
 .device {
 	position: relative;
-	max-width: 400px;
-	@include center-block();
-	margin-bottom: 1.5em;
-	border-radius: 30px;
+	max-width: 20rem;
+	margin: 0 auto 1.5em;
+	border-radius: 40px;
 	background-color: rgb(34,34,34);
-	@include box-shadow(inset 0 -5px 10px rgba(170,180,200,.2), 0 2px 6px rgba(0,20,60,.15), 0 5px 30px rgba(0,20,60,.01));
+	box-shadow: inset 0 -5px 10px rgba(170,180,200,.2), 0 2px 6px rgba(0,20,60,.15), 0 5px 30px rgba(0,20,60,.01);
 
-	@media (min-width: $screen-md-min) {
+	@include media-breakpoint-up(sm) {
 		border-radius: 40px;
+		max-width: 400px;
 	}
 }
 
@@ -607,7 +563,7 @@ th {
 	img {
 		border-radius: 10px;
 		border: 2px solid rgba(150,150,150,.1);
-		@include box-shadow(inset 1px 1px 10px rgba(255,255,255, 0.15));
+		box-shadow: inset 1px 1px 10px rgba(255,255,255, 0.15);
 	}
 }
 
@@ -615,7 +571,7 @@ th {
 .showcases {
 	@include make-row();
 
-	@media (max-width: $screen-xs-max) {
+	@include media-breakpoint-down(xs) {
 		margin-left: 0;
 		margin-right: 0;
 	}
@@ -623,8 +579,8 @@ th {
 
 
 #showcases[data-columns]::before {
-	@media (min-width: $screen-sm-min){
-		content: '2 .col-sm-6';
+	@include media-breakpoint-up(sm) {
+		content: '3 .col-sm-4';
 	}
 }
 
@@ -634,32 +590,26 @@ th {
 	padding: 30px;
 	background: white;
 	border-radius: 12px;
-	@include box-shadow(0 1px 1px rgba(0, 0, 0, 0.1));
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+	font-size: 1rem;
+
+	&-heading {
+		margin: 0 0 1rem;
+		font-size: 1.25em;
+		font-weight: 700;
+	}
 
 	time {
 		display: block;
-		font-size: 0.9em;
+		font-size: 1rem;
 	}
-
-	.body {
-		font-size: 1.1em;
-	}
-}
-
-.showcase-heading {
-	margin: 1em 0 1.5em;
-	font-size: 1em;
-	color: $gray;
-	font-weight: 900;
-	text-align: center;
-	letter-spacing: 0.1em;
 }
 
 .showcase h4 {
 	font-size: 0.9em;
 	font-weight: 900;
 	margin: 20px 0 5px;
-	color: $gray;
+	color: $gray-500;
 }
 
 .showcase-recommendation {
@@ -686,13 +636,13 @@ th {
 }
 
 .showcase-images {
-	@include make-row(12px);
+	display: flex;
 	@extend .list-unstyled;
+	flex-wrap: wrap;
 	margin-top: 1.5em;
 	margin-bottom: 1.5em;
 
 	li {
-		float: left;
 		width: 100px;
 		padding: 6px;
 		margin-bottom: 15px;
@@ -714,26 +664,34 @@ footer[role="contentinfo"] {
 	padding: 25px 0 40px;
 }
 
-.animating {
-	&.fadein { @include fadeIn; }
-	&.fadein-left { @include fadeInLeft; }
-	&.fadein-left-big { @include fadeInLeftBig; }
-	&.fadein-right { @include fadeInRight; }
-	&.fadein-up { @include fadeInUp; }
-	&.fadein-up-big { @include fadeInUpBig; }
-	&.fadein-down { @include fadeInDown; }
 
-	&[data-delay="100"] { @include delay(0.1s); }
-	&[data-delay="200"] { @include delay(0.2s); }
-	&[data-delay="300"] { @include delay(0.3s); }
-	&[data-delay="400"] { @include delay(0.4s); }
-	&[data-delay="500"] { @include delay(0.5s); }
-	&[data-delay="600"] { @include delay(0.6s); }
-	&[data-delay="700"] { @include delay(0.7s); }
-	&[data-delay="800"] { @include delay(0.8s); }
-	&[data-delay="900"] { @include delay(0.9s); }
-	&[data-delay="1000"] { @include delay(1s); }
-}
+////////////////////////////////////////
+
+// Page and images transitions
+
+////////////////////////////////////////
+
+
+// .wow {
+// 	&.fadein { @include fadeIn; }
+// 	&.fadein-left { @include fadeInLeft; }
+// 	&.fadein-left-big { @include fadeInLeftBig; }
+// 	&.fadein-right { @include fadeInRight; }
+// 	&.fadein-up { @include fadeInUp; }
+// 	&.fadein-up-big { @include fadeInUpBig; }
+// 	&.fadein-down { @include fadeInDown; }
+
+// 	&[data-delay="100"] { @include delay(0.1s); }
+// 	&[data-delay="200"] { @include delay(0.2s); }
+// 	&[data-delay="300"] { @include delay(0.3s); }
+// 	&[data-delay="400"] { @include delay(0.4s); }
+// 	&[data-delay="500"] { @include delay(0.5s); }
+// 	&[data-delay="600"] { @include delay(0.6s); }
+// 	&[data-delay="700"] { @include delay(0.7s); }
+// 	&[data-delay="800"] { @include delay(0.8s); }
+// 	&[data-delay="900"] { @include delay(0.9s); }
+// 	&[data-delay="1000"] { @include delay(1s); }
+// }
 
 // page animations
 @keyframes fade-in {
@@ -770,9 +728,10 @@ footer[role="contentinfo"] {
 
 .skill {
     margin-bottom: 50px;
-    @include make-sm-column(4);
+	
+	@include make-col-ready();
 
-    @media (min-width: $screen-sm-min) {
-    	// text-align: center;
-    }
+	@include media-breakpoint-up(sm) {
+		@include make-col(4);
+	}	
 }

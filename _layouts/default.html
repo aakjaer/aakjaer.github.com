@@ -7,12 +7,20 @@
         <meta name="viewport" content="width=device-width">
 
         <link rel="stylesheet" href="/css/main.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
         <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     </head>
     <body>
         <div class="page animsition">
             <div class="nav-trigger">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 30 26 26"><g class="menu"><path d="M-.5 51.5h23M-.5 35.5h23M-.5 43.5h23"></path></g><g class="close"><path d="M2.9 35.3l16.2 16.3M2.9 51.6l16.3-16.3"></path></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 30 26 26">
+                    <g class="menu">
+                        <path d="M-.5 51.5h23M-.5 35.5h23M-.5 43.5h23"></path>
+                    </g>
+                    <g class="close">
+                        <path d="M2.9 35.3l16.2 16.3M2.9 51.6l16.3-16.3"></path>
+                    </g>
+                </svg>
             </div>
 
             <aside class="sidebar">
@@ -30,13 +38,13 @@
             </div>
         </div>
 
-        <!-- <script src="https://use.typekit.net/duu6pyk.js"></script>
-        <script>try{Typekit.load({ async: false });}catch(e){}</script> -->
-
-        <script src="{{ site.baseurl }}/components/jquery/dist/jquery.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
         <script src="{{ site.baseurl }}/js/modernizr.min.js"></script>
         <script src="{{ site.baseurl }}/js/animsition.min.js"></script>
-        <script src="{{ site.baseurl }}/js/jquery.waypoints.min.js"></script>
+        <script src="{{ site.baseurl }}/js/wow.min.js"></script>
+        <script>
+            new WOW().init();
+        </script>
         <script src="{{ site.baseurl }}/js/site-nav.js"></script>
         <script src="{{ site.baseurl }}/js/salvattore.min.js"></script>
         <script src="{{ site.baseurl }}/components/fancyBox/source/jquery.fancybox.js"></script>
