@@ -416,14 +416,12 @@ th {
 .latest-projects {
 	display: flex;
 	flex-wrap: wrap;
-	@include make-row();
-	@include row-cols(1);
-	@include media-breakpoint-up(sm) {
-		@include row-cols(2);
-	}
-	@include media-breakpoint-up(lg) {
-		@include row-cols(3);
-	}
+	// @include media-breakpoint-up(sm) {
+	// 	@include row-cols(2);
+	// }
+	// @include media-breakpoint-up(lg) {
+	// 	@include row-cols(3);
+	// }
 
 	a {
 		position: absolute;
