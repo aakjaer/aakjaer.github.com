@@ -215,40 +215,6 @@ blockquote {
     padding: 3em 0;
 }
 
-.btn-fancy {
-	position: relative;
-	overflow: hidden;
-
-	span {
-		display: inline-block;
-		width: 100%;
-		height: 100%;
-		color: $brand-pink;
-	}
-
-	&::before {
-		content: attr(data-hover-text);
-		position: absolute;
-		left: 0;
-    	top: -100%;
-		height: 100%;
-		width: 100%;
-		color: white;
-	}
-
-	span, &::before {
-    	transition: all 0.3s;
-    	backface-visibility: hidden;
-	}
-}
-
-.btn-fancy:hover::before {
-	top: 0;
-}
-.btn-fancy:hover span {
-    transform: translateY(300%);
-}
-
 .btn-cta {
     padding: 0.5rem 2rem;
 	line-height: 3em;
@@ -266,6 +232,46 @@ blockquote {
 		border-color: transparent;
 	}
 }
+
+// sliding text on hover
+
+.btn-fancy {
+	position: relative;
+	overflow: hidden;
+
+	span, &::before {
+    	transition: all 0.3s;
+    	backface-visibility: hidden;
+	}
+
+	span {
+		display: inline-block;
+		width: 100%;
+		height: 100%;
+		color: $brand-pink;
+	}
+
+	&::before {
+		content: attr(data-hover-text);
+		position: absolute;
+		left: 0;
+    	top: -100%;
+		height: 100%;
+		width: 100%;
+		padding: 0.5rem 0;
+		line-height: 3em;	
+		color: #fff;
+	}
+
+	&:hover::before {
+		top: 0;
+	}
+
+	&:hover span {
+		transform: translateY(300%);
+	}
+}
+
 
 .btn-submit {
     padding: 0 2em;
