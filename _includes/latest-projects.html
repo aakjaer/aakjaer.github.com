@@ -8,13 +8,10 @@
                 <source srcset="{{site.baseurl}}/img/projects/{{ project.slug }}/{{ project.images.small }}" />
                 <img alt="{{ project.title }}" class="lazyloaded" src="{{site.baseurl}}/img/projects/{{ project.slug }}/{{ project.images.large }}" />
             </picture>
-            <a href="https://google.com">Hest</a>
         </figure>
     {% endfor %}
 </div>
 
-{% if include.show-button == true %}
-    <div class="cta text-center">
-        <a href="{{ site.baseurl }}/work/" class="btn btn-cta switch-page">More projects</a>
-    </div>
-{% endif %}
+<div class="cta text-center">
+    <a href="{{ site.baseurl }}/work/" class="btn btn-cta switch-page">View projects</a>
+</div>

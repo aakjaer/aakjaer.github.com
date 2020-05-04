@@ -1,4 +1,5 @@
 {% assign default-message = "Do you have a project or an idea you would like to share?" %}
+{% comment %}
 <section class="section section-white">
     <div class="section-content text-center">
         <p class="lead text-center text-muted">{% if include.message %}{{ include.message }}{% else %}{{ default-message }}{% endif %}</p>
@@ -7,3 +8,12 @@
         </a>
     </div>
 </section>
+{% endcomment %}
+
+<section class="section section-narrow">
+	<div class="section-content">
+		<h1 class="hero-heading">Get in touch</h1>
+		<p class="lead">Whether you have ideas for a project or just feedback, feel free to <a href="mailto:daniel.aakjaer@gmail.com">send me an e-mail</a>.</p>
+		{% include social-links.html %}
+	</div>
+</div>
