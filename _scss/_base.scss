@@ -160,26 +160,15 @@ img {
 }
 
 blockquote {
+	position: relative;
 	border: 0;
 	font-size: 1.25rem;
 
-	&::before {
-		content: '“';
-		display: block;
-		overflow: hidden;
-		margin: 0 auto;
-		width: 100px;
-		height: 100px;
-		font-family: serif;
-		font-size: 8em;
-		line-height: 1em;
-		color: $gray-300;
-	}
-
 	footer {
 		display: flex;
+		margin-top: 2rem;
 		flex-direction: row;
-		justify-content: center;
+		justify-content: left;
 		align-items: center;
 		text-align: left;
 	}
