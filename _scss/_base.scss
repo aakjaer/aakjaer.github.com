@@ -352,7 +352,7 @@ th {
 	margin-bottom: 0;
 	text-transform: uppercase;
 	font-weight: 600;
-	color: #7767e8;
+	color: $text-muted;
 	font-size: 0.9325rem;
 }
 
@@ -534,7 +534,6 @@ th {
 		transform: rotate(8deg);
 	}
 }
-
 
 
 // mobile device to display screenshots inside
