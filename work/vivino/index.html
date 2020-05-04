@@ -18,28 +18,55 @@ technology:
 ---
 
 
-<div class="section section-bordered">
-    <div class="section-content compact">
-        <h3 class="section-heading text-yellow">Project details</h3>
-        <p class="lead text-center">I had the privilege of working for Vivino, a danish start-up company situated in Copenhagen and San Francisco, specializing in delivering wine ratings, reviews and prices to the biggest wine community in the world, currently counting more than 11 mio. users.</p>
-
-        <div class="narrow">
-            <p>I was hired to help the Copenhagen based Vivino team build a new front-end for <a href="http://vivino.com">Vivino.com</a>. Back then their Android and iOS apps were generating a lot of traffic and new users (around 3 mio.), but the website had been down prioritised for quite a while, and needed a serious overhaul.</p>
-            <p>The in-house designer, <a href="http://www.beak.dk/">Andreas Weiland</a>, had already begun the process of designing the many pages and elements when I got on the team, so my role started out with guiding and tweaking the designs in a direciton suited for web, by identifying reusable elements, streamlining typography, planning responsive behavior etc.</p>
-        </div>
+<div class="section section-narrow">
+    <div class="section-content pt-0">
+        <p class="lead">I had the privilege of working for Vivino, a danish start-up company situated in Copenhagen and San Francisco, specializing in delivering wine ratings, reviews and prices to the biggest wine community in the world, currently counting more than 35 mio. users.</p>        
+        <p>My task was to help the Copenhagen based Vivino team build a new front-end for <a href="http://vivino.com">Vivino.com</a>. Back then their Android and iOS apps were generating a lot of traffic and new users (around 3 mio.), but the website had been down prioritised for quite a while, and needed a serious overhaul.</p>
+        <p>The in-house designer, <a href="https://www.andreasweiland.com/">Andreas Weiland</a>, had already begun the process of designing the many pages and elements when I got on the team, so my role started out guiding and tweaking the designs in a direciton suited for web, by identifying reusable elements, streamlining typography, planning responsive behavior etc.</p>
     </div>
 </div>
 
 
-<div class="section section--dark-gray">
+<div class="section section-full bg-sandy">
     <div class="section-content">
-        <h2 class="section-heading text-white">
-            Winery pages
-        </h2>
-        <div class="col-sm-10 col-sm-offset-1">
-            <div class="browser">
-                {% include svg/browser-top.html %}
-                <img src="{{ site.baseurl }}/img/projects/vivino/winery-full.jpg" alt="" />
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="section-heading">
+                    Building the templates
+                </h2>
+                <p>To isolate my efforts and keep things simple, I started out by building the front-end as a static prototype in <a href="http://jekyllrb.com">Jekyll</a>. This made it faster to iterate and implement the many changes with the designer, without constantly having the complexity of the backend code to deal with.</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="browser wow fadeInUp">
+                    <img src="{{ site.baseurl }}/img/projects/vivino/winery-full.jpg" alt="" />
+                </div>
+
+                <div class="browser wow fadeInUp">
+                    <img src="{{ site.baseurl }}/img/projects/vivino/country-full.jpg" alt="" />
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="browser wow fadeInUp">
+                    <img src="{{ site.baseurl }}/img/projects/vivino/grapes-full.jpg" alt="" />
+                </div>
+
+                <div class="row">
+                    <div class="col wow fadeInUp">
+                        <div class="browser mt-md-0">
+                            <img src="{{ site.baseurl }}/img/projects/vivino/detail-shot1.png" alt="" />
+                        </div>
+                    </div>
+                    <div class="col wow fadeInUp">
+                        <div class="browser mt-md-0">
+                            <img src="{{ site.baseurl }}/img/projects/vivino/detail-shot2.png" alt="" />
+                        </div>
+                        <div class="browser mt-md-0">
+                            <img src="{{ site.baseurl }}/img/projects/vivino/detail-shot3.jpg" alt="" />            
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -48,58 +75,12 @@ technology:
 <section class="section section-white section-narrow">
     <div class="section-content">
         <blockquote class="text-center">
-
-            <p>&ldquo;Daniel helped us out implementing our brand new website for Vivino.com. He was responsible for the markup, styling and basic scripting of the new site, working in Bootstrap 3 prototypes and releasing modular segments of the design into the main Rails project.</p><p>Daniel did an amazing job, delivering high quality, while communicating clearly on his deliverables. Will use again!&rdquo;</p>
+            <p>&ldquo;Daniel helped us out implementing our brand new website for Vivino.com. He was responsible for the markup, styling and basic scripting of the new site, working in Bootstrap 3 prototypes and releasing modular segments of the design into the main Rails project.</p>
+            <p>Daniel did an amazing job, delivering high quality, while communicating clearly on his deliverables. Will use again!&rdquo;</p>
             <footer>
                 <img class="quote-image" src="{{ site.baseurl }}/img/projects/vivino/theis.jpg" alt="" />
-                Theis Søndergaard - COO &amp; Co-founder, Vivino
+                <div>Theis Søndergaard <br/> <span class="text-muted">COO &amp; Co-founder, Vivino</span></div>
             </footer>
         </blockquote>
-    </div>
-</section>
-
-
-<!-- Winery section -->
-<section class="section section--dark-gray">
-    <div class="section-content">
-        <figure class="project-image row">
-            <div class="col-md-4 col-md-push-8">
-                <div class="project-image-text">
-                    <figcaption class="text-center">Templates galore</figcaption>
-                    <p>To isolate my efforts and keep things simple, I started out by building the front-end as a static <a href="http://jekyllrb.com">Jekyll</a> website. This made it faster to prototype and implement the many changes with the designer, without constantly having the complexity of the backend code to deal with.</p>
-
-                    <p></p>
-
-                    <small>(Note that the design details have been changed since I was on the project, causing some differences in the screenshots.)</small>
-                </div>
-            </div>
-            <div class="col-md-8 col-md-pull-4">
-                <div class="browser">
-                    {% include svg/browser-top.html %}
-                    <img src="{{ site.baseurl }}/img/projects/vivino/grapes-full.jpg" alt="" />
-                </div>
-            </div>
-        </figure>
-
-        <div class="row">
-            <div class="col-md-4">
-                <div class="row">
-                    <div class="col-sm-6 col-md-12">
-                        <img class="project-image" src="{{ site.baseurl }}/img/projects/vivino/detail-shot1.png" alt="" />
-                    </div>
-                    <div class="col-sm-6 col-md-12">
-                        <img class="project-image" src="{{ site.baseurl }}/img/projects/vivino/detail-shot2.png" alt="" />
-                        <img class="project-image" src="{{ site.baseurl }}/img/projects/vivino/detail-shot3.jpg" alt="" />
-                    </div>
-                </div>
-            </div>
-
-            <figure class="project-image col-md-8">
-                <div class="browser">
-                    {% include svg/browser-top.html %}
-                    <img src="{{ site.baseurl }}/img/projects/vivino/country-full.jpg" alt="" />
-                </div>
-            </figure>
-        </div>
     </div>
 </section>

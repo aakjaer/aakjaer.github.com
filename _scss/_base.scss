@@ -161,27 +161,36 @@ img {
 
 blockquote {
 	border: 0;
+	font-size: 1.25rem;
 
 	&::before {
 		content: '“';
 		display: block;
 		overflow: hidden;
 		margin: 0 auto;
-		text-align: center;
 		width: 100px;
 		height: 100px;
 		font-family: serif;
 		font-size: 8em;
 		line-height: 1em;
-		color: $brand-green;
+		color: $gray-300;
+	}
+
+	footer {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		text-align: left;
+	}
+
+	.quote-image {
+		max-width: 5em;
+		margin-right: 2rem;
+		border-radius: 50%;
 	}
 }
 
-.quote-image {
-	max-width: 5em;
-	margin-top: 2em auto 1em;
-	border-radius: 50%;
-}
 
 .timeline-when,
 .timeline-what {
@@ -354,7 +363,8 @@ th {
 	margin-bottom: 0;
 	text-transform: uppercase;
 	font-weight: 600;
-	color: $text-muted;
+	color: #7767e8;
+	font-size: 0.9325rem;
 }
 
 .project-intro .section-content {
@@ -419,12 +429,6 @@ th {
 .latest-projects {
 	display: flex;
 	flex-wrap: wrap;
-	// @include media-breakpoint-up(sm) {
-	// 	@include row-cols(2);
-	// }
-	// @include media-breakpoint-up(lg) {
-	// 	@include row-cols(3);
-	// }
 
 	a {
 		position: absolute;
@@ -441,7 +445,7 @@ th {
 
 	.project {
 		@include make-col-ready();
-		overflow: hidden;
+		// overflow: hidden;
 		position: relative;
 		padding-left: 1rem;
 		padding-right: 1rem;
@@ -458,7 +462,6 @@ th {
 
 	img,
 	.img-placeholder {
-		box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
 		background: rgba(black, 0.05);
 	}
 

@@ -3,7 +3,7 @@ layout: default
 page_class: page-projects
 ---
 
-<section class="section">
+<section class="section section-full">
 	<div class="section-content">
 		<div class="latest-projects row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4">
 			<figure class="project wow fadeIn" data-wow-delay="0.3s">
@@ -29,19 +29,6 @@ page_class: page-projects
 			</figure>
 		
 			<figure class="project wow fadeIn" data-wow-delay="0.3s">
-				<img src="{{ site.baseurl }}/img/projects/vw-service-booking/thumb.jpg" alt="" />
-				<figcaption>
-					<h4 class="project-heading">
-						VW Service booking
-					</h4>
-					<p>Redesigning VW's service booking flow.</p>
-					<a href="{{ site.baseurl }}/work/vw-service-booking/">View project</a>
-				</figcaption>
-			</figure>
-		
-			{% if include.limit != true %}
-		
-			<figure class="project wow fadeIn" data-wow-delay="0.3s">
 				<img src="{{ site.baseurl }}/img/projects/vivino/thumb.jpg" alt="" />
 				<figcaption>
 					<h4 class="project-heading">
@@ -51,7 +38,7 @@ page_class: page-projects
 					<a href="{{ site.baseurl }}/work/vivino/">View project</a>
 				</figcaption>
 			</figure>
-		
+				
 			<figure class="project wow fadeIn" data-wow-delay="0.3s">
 				<img src="{{ site.baseurl }}/img/projects/vw-retail/thumb.jpg" alt="" />
 				<figcaption>
@@ -73,13 +60,21 @@ page_class: page-projects
 					<a href="{{ site.baseurl }}/work/semler-car-dealers/">View project</a>
 				</figcaption>
 			</figure>
-			{% endif %}
+
+			<figure class="project wow fadeIn" data-wow-delay="0.3s">
+				<img src="{{ site.baseurl }}/img/projects/vw-service-booking/thumb.jpg" alt="" />
+				<figcaption>
+					<h4 class="project-heading">
+						VW Service booking
+					</h4>
+					<p>Redesigning VW's service booking flow.</p>
+					<a href="{{ site.baseurl }}/work/vw-service-booking/">View project</a>
+				</figcaption>
+			</figure>
 		</div>
 	</div>
 </section>
 
 {% include experience.html %}
-
-
 
 {% include contact.html message="Made it all the way down here? You should drop me a line." %}
