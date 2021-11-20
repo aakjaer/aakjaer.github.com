@@ -12,7 +12,7 @@
 	right: 0;
 	height: 100%;
 	padding: 50px 60px 60px;
-	@include gradient-directional(#9708CC, #F97794, $deg: -35deg);
+	@include gradient-directional($indigo, #5620EF, $deg: -35deg);
 	color: #fff;
 	filter: none;
 	transform: translate3D(0,0,0);
@@ -142,21 +142,20 @@
 	.primary-links {
 
 		li > a {
-			font-size: 2em;
-			font-weight: 400;
-			letter-spacing: -0.015em;
+			font-size: 1.5em;
+			font-weight: 200;
 			text-transform: uppercase;
 			font-family: $headings-font-family;
 
 			@include media-breakpoint-up(sm) {
-				font-size: 2.5em;
+				font-size: 2em;
 			}
 		}
 	}
 
 	.secondary-links li > a {
-		font-size: 1.3rem;
-		font-weight: 400;
+		font-size: 1.125rem;
+		font-weight: 200;
 		padding: 0.5rem 0;
 
 		a {
@@ -204,7 +203,7 @@
 		width: 1.5rem;
 		height: 1.5rem;
 		stroke: $body-color;
-		stroke-width: 3px;
+		stroke-width: 2px;
 		stroke-linecap: round;
 		transition: .4s;
 

@@ -35,7 +35,7 @@ $grays: map-merge(
 );
 
 $blue:    #2d00f7 !default;
-$indigo:  #6610f2 !default;
+$indigo:  #6833FF !default;
 $purple:  #b100e8 !default;
 $pink:    #f20089 !default;
 $red:     #dc3545 !default;
@@ -66,7 +66,7 @@ $colors: map-merge(
   $colors
 );
 
-$primary:       $pink !default;
+$primary:       $indigo !default;
 $secondary:     $gray-600 !default;
 $success:       $green !default;
 $info:          $cyan !default;
@@ -169,14 +169,14 @@ $sizes: map-merge(
 // Settings for the `<body>` element.
 
 $body-bg:                   $white !default;
-$body-color:                $gray-900 !default;
+$body-color:                #424668 !default;
 
 
 // Links
 //
 // Style anchor elements.
 
-$link-color:                              theme-color("primary") !default;
+$link-color:                              #5620EF !default;
 $link-decoration:                         underline;
 $link-hover-color:                        darken($link-color, 15%) !default;
 $link-hover-decoration:                   underline !default;
@@ -215,7 +215,7 @@ $container-max-widths: (
   sm: 540px,
   md: 720px,
   lg: 960px,
-  xl: 1140px
+  xl: 1440px
 ) !default;
 
 @include _assert-ascending($container-max-widths, "$container-max-widths");
@@ -277,7 +277,7 @@ $embed-responsive-aspect-ratios: join(
 // Font, line-height, and color for body text, headings, and more.
 
 // stylelint-disable value-keyword-case
-$font-family-sans-serif:      "Quicksand", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-sans-serif:      Sora, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
 $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 $font-family-base:            $font-family-sans-serif !default;
 // stylelint-enable value-keyword-case
@@ -286,14 +286,14 @@ $font-size-base:              1rem !default; // Assumes the browser default, typ
 $font-size-lg:                $font-size-base * 1.25 !default;
 $font-size-sm:                $font-size-base * .875 !default;
 
-$font-weight-lighter:         lighter !default;
+$font-weight-lighter:         200 !default;
 $font-weight-light:           300 !default;
 $font-weight-normal:          400 !default;
-$font-weight-bold:            700 !default;
-$font-weight-bolder:          bolder !default;
+$font-weight-bold:            600 !default;
+$font-weight-bolder:          800 !default;
 
-$font-weight-base:            $font-weight-normal !default;
-$line-height-base:            1.5 !default;
+$font-weight-base:            $font-weight-light !default;
+$line-height-base:            1.6 !default;
 
 $h1-font-size:                $font-size-base * 2.5 !default;
 $h2-font-size:                $font-size-base * 2 !default;
@@ -304,9 +304,9 @@ $h6-font-size:                $font-size-base !default;
 
 $headings-margin-bottom:      $spacer / 2 !default;
 $headings-font-family:        null !default;
-$headings-font-weight:        500 !default;
-$headings-line-height:        1.2 !default;
-$headings-color:              null !default;
+$headings-font-weight:        $font-weight-light !default;
+$headings-line-height:        1.3 !default;
+$headings-color:              #4A2F97 !default;
 
 $display1-size:               6rem !default;
 $display2-size:               5.5rem !default;

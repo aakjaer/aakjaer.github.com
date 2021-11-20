@@ -1,3 +1,9 @@
+- title: Cupra Design System
+  slug: cupra
+  images:
+    small: cupra-design-system.jpg
+    large: cupra-design-system@2x.jpg
+    original: cupra-design-system@2x.jpg
 - title: SinonJS character
   slug: sinon
   images:

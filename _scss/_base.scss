@@ -202,9 +202,9 @@ blockquote {
     vertical-align: middle;
     touch-action: manipulation;
 	font-family: $headings-font-family;
-	border-radius: 100px;
     cursor: pointer;
     border: 1px solid transparent;
+	border-radius: 0;
     white-space: nowrap;
     padding: 6px 12px;
     font-size: 18px;
@@ -218,20 +218,30 @@ blockquote {
 }
 
 .btn-cta {
-    padding: 0.5rem 2rem;
-	line-height: 3em;
-    text-transform: uppercase;
-    font-weight: 800;
-	border: 3px solid $primary;
+	display: inline flex;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+    padding: 1rem 2.5rem;
+    text-transform: lowercase;
+    font-weight: 600;
+	border: 4px solid $primary !important;
 	background: transparent;
 	color: $primary;
 	border-width: 3px;
 	transition: all 0.3s;
+	
+	.icon {
+		transition: transform 0.25s ease-in-out;
+	}
 
 	&:hover {
-		background: $brand-pink;
+		background: $primary;
 		color: white;
-		border-color: transparent;
+
+		.icon {
+			transform: translateX(5px);
+		}
 	}
 }
 
@@ -741,4 +751,13 @@ footer[role="contentinfo"] {
 	@include media-breakpoint-up(sm) {
 		@include make-col(4);
 	}	
+}
+
+.quote {
+	margin: 4rem 0;
+	padding: 2.5rem 3rem;
+	background: #F4EFFF;
+	color: #461FB5;
+	font-size: 1.5rem;
+	font-weight: 200;
 }

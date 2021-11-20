@@ -2,13 +2,13 @@
 	<nav class="site-nav">
 		<ul class="primary-links">
 			<li{% if page.page_class contains "page-home" %} class="active"{% endif %}>
-				<a class="switch-page" href="{{ site.baseurl }}/">Latest</a>
-			</li>
-			<li{% if page.page_class contains "page-projects" %} class="active"{% endif %}>
-				<a class="switch-page" href="{{ site.baseurl }}/work/">Projects</a>
+				<a class="switch-page" href="{{ site.baseurl }}/">Home</a>
 			</li>
 			<li{% if page.page_class contains "page-about" %} class="active"{% endif %}>
 				<a class="switch-page" href="{{ site.baseurl }}/about/">About</a>
+			</li>
+			<li{% if page.page_class contains "page-projects" %} class="active"{% endif %}>
+				<a class="switch-page" href="{{ site.baseurl }}/archive/">Archive</a>
 			</li>
 		</ul>
 
