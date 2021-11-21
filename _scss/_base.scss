@@ -207,14 +207,10 @@ blockquote {
 	border-radius: 0;
     white-space: nowrap;
     padding: 6px 12px;
-    font-size: 18px;
+    font-size: 16px;
     line-height: 1.6;
 	user-select: none;
 	text-decoration: none;
-}
-
-.cta {
-    padding: 3em 0;
 }
 
 .btn-cta {
@@ -222,65 +218,25 @@ blockquote {
 	justify-content: center;
 	align-items: center;
 	gap: 1rem;
-    padding: 1rem 2.5rem;
+    padding: 0.75rem 1.75rem;
     text-transform: lowercase;
-    font-weight: 600;
-	border: 4px solid $primary !important;
-	background: transparent;
-	color: $primary;
-	border-width: 3px;
-	transition: all 0.3s;
+	border: 4px solid $brand-dark-blue;
+	font-size: 18px;
+	font-weight: $font-weight-bold;
+	color: $brand-dark-blue;
+	transition: all 0.2s ease-in-out;
 	
 	.icon {
-		transition: transform 0.25s ease-in-out;
+			transition: all 0.2s ease-in-out;
 	}
 
 	&:hover {
-		background: $primary;
-		color: white;
+		border-color: $primary;
+		color: $primary;
 
 		.icon {
 			transform: translateX(5px);
 		}
-	}
-}
-
-// sliding text on hover
-
-.btn-fancy {
-	position: relative;
-	overflow: hidden;
-
-	span, &::before {
-    	transition: all 0.3s;
-    	backface-visibility: hidden;
-	}
-
-	span {
-		display: inline-block;
-		width: 100%;
-		height: 100%;
-		color: $brand-pink;
-	}
-
-	&::before {
-		content: attr(data-hover-text);
-		position: absolute;
-		left: 0;
-    	top: -100%;
-		height: 100%;
-		width: 100%;
-		padding: 0.5rem 0;
-		line-height: 3em;	
-		color: #fff;
-	}
-
-	&:hover::before {
-		top: 0;
-	}
-
-	&:hover span {
-		transform: translateY(300%);
 	}
 }
 
@@ -494,8 +450,8 @@ th {
 
 	a {
 		display: block;
-		height: 2rem;
-		width: 2rem;
+		height: 1.75rem;
+		width: 1.75rem;
 		color: $body-color;
 		transition: color 0.2s ease;
 
@@ -505,7 +461,7 @@ th {
 	}
 
 	li + li > a {
-		margin-left: 1.5rem;
+		margin-left: 1rem;
 	}
 }
 
@@ -628,14 +584,12 @@ th {
 	margin-bottom: 30px;
 	padding: 30px;
 	background: white;
-	border-radius: 12px;
-	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+	box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.05);
 	font-size: 1rem;
 
 	&-heading {
 		margin: 0 0 1rem;
 		font-size: 1.25em;
-		font-weight: 700;
 	}
 
 	time {
@@ -646,7 +600,6 @@ th {
 
 .showcase h4 {
 	font-size: 0.9em;
-	font-weight: 900;
 	margin: 20px 0 5px;
 	color: $gray-500;
 }
@@ -757,7 +710,28 @@ footer[role="contentinfo"] {
 	margin: 4rem 0;
 	padding: 2.5rem 3rem;
 	background: #F4EFFF;
-	color: #461FB5;
-	font-size: 1.5rem;
-	font-weight: 200;
+	color: #3D1B9F;
+	font-size: 1.25rem;
+	font-weight: $font-weight-light;
+}
+
+.fancy-list {
+	margin: 2rem 0;
+
+	> li {
+		position: relative;
+		margin: 0 0 2rem;
+		padding-left: 3rem;
+
+		&::before {
+			content: "";
+			position: absolute;
+			display: block;
+			left: 1rem;
+			top: 1rem;
+			width: 1rem;
+			height: 3px;
+			background-color: $body-color;
+		}
+	}
 }

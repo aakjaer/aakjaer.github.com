@@ -1,9 +1,10 @@
 // typography
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
     letter-spacing: -0.05em;
 }
 
-.thin { font-weight: 100; }
+.font-weight-lighter { font-weight: $font-weight-lighter; }
 .light { font-weight: 300; }
 .medium { font-weight: 500; }
 .bold { font-weight: 700; }
@@ -14,7 +15,7 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 200;
 
     @include media-breakpoint-up(sm) {
-        font-size: 1.5rem;
+        font-size: 1.375rem;
     }
 
     &.text-center {
@@ -43,6 +44,10 @@ h1, h2, h3, h4, h5, h6 {
     text-transform: uppercase;
 }
 
+.text-small {
+    font-size: 14px;
+}
+
 .display-heading {
     margin-bottom: 2em;
     font-size: 2.5em;
@@ -64,8 +69,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .group-heading {
-    margin: 2.5em 0 2rem;
-    font-size: 1.5rem;
+    margin: 5em 0 1em;
+    font-size: 1.125rem;
+    letter-spacing: 0.015em;
+    text-transform: uppercase;
 }
 
 
