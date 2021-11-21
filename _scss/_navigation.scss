@@ -168,13 +168,10 @@
 
 .nav-trigger {
 	position: fixed;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	bottom: 1.5rem;
+	top: 1.5rem;
 	right: 1.5rem;
-	height: 3rem;
-	width: 3rem;
+	width: 2.75rem;
+	height: 2.75rem;	
 	padding: 10px;
 	z-index: 999;
 	background-color: rgba(255,255,255, 0.8);
@@ -187,24 +184,23 @@
 	@include media-breakpoint-up(md) {
 		top: 1.5rem;
 		right: 1.5rem;
-		width: 2.75rem;
-		height: 2.75rem;	
 	}
 
 	&:hover {
 		transform: scale(1.1);
 
-		svg path {
+		path {
 			fill: $primary;
 		}
 	}
 
-	// closse and burger icons
-	svg path {
+	// close- and burger icons
+	path {
 		pointer-events: none;
 		width: 1.75rem;
 		height: 1.75rem;
 		stroke: $body-color;
+		fill: $body-color;
 		stroke-width: 3px;
 		transition: .4s;
 

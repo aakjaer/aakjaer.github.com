@@ -17,16 +17,16 @@
 
     .section-content {
         @extend .container;
-        padding: 6rem 1.5rem;
+        padding: 4rem 1.5rem;
         font-size: 1.125rem;
     
         @include media-breakpoint-up(sm) {
-            padding-left: 2.5rem;
-            padding-right: 2.5rem;
+            padding: 6rem 2.5rem;
         }
-
+        
         @include media-breakpoint-up(lg) {
-            padding: 6rem 4rem;        
+            padding-left: 4rem;
+            padding-right: 4rem;
         }
     }
 }

@@ -708,11 +708,15 @@ footer[role="contentinfo"] {
 
 .quote {
 	margin: 4rem 0;
-	padding: 2.5rem 3rem;
+	padding: 1.5rem 2rem;
 	background: #F4EFFF;
 	color: #3D1B9F;
 	font-size: 1.25rem;
 	font-weight: $font-weight-light;
+
+	@include media-breakpoint-up(md) {
+		padding: 2.5rem 3rem;
+	}
 }
 
 .fancy-list {
