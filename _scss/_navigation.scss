@@ -12,7 +12,7 @@
 	right: 0;
 	height: 100%;
 	padding: 50px 60px 60px;
-	@include gradient-directional($indigo, #5620EF, $deg: -35deg);
+	@include gradient-directional($indigo, $brand-pink, $deg: -35deg);
 	color: #fff;
 	filter: none;
 	transform: translate3D(0,0,0);
