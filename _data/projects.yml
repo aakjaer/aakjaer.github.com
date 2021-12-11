@@ -1,3 +1,9 @@
+- title: Mindpool
+  slug: mindpool
+  images:
+    small: mindpool-01-sm.jpg
+    large: mindpool-01-lg.jpg
+    original: mindpool-01-lg.jpg
 - title: Cupra Design System
   slug: cupra
   images:
