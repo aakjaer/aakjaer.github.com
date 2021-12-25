@@ -166,61 +166,6 @@
 
 
 
-.nav-trigger {
-	position: fixed;
-	top: 1.5rem;
-	right: 1.5rem;
-	width: 2.75rem;
-	height: 2.75rem;	
-	padding: 10px;
-	z-index: 999;
-	background-color: rgba(255,255,255, 0.8);
-	line-height: 1;
-	border-radius: 50%;
-	cursor: pointer;
-	touch-action: manipulation;
-	transition: all .2s;
-
-	@include media-breakpoint-up(md) {
-		top: 1.5rem;
-		right: 1.5rem;
-	}
-
-	&:hover {
-		transform: scale(1.1);
-
-		path {
-			fill: $primary;
-		}
-	}
-
-	// close- and burger icons
-	path {
-		pointer-events: none;
-		width: 1.75rem;
-		height: 1.75rem;
-		stroke: $body-color;
-		fill: $body-color;
-		stroke-width: 3px;
-		transition: .4s;
-
-		@include media-breakpoint-up(md) {
-			width: 2.5rem;
-			height: 2.5rem;	
-		}
-	}
-
-	.close {
-		opacity: 0
-	}
-}
-
-.menu-shown .nav-trigger {
-	.close { opacity: 1 }
-	.menu { opacity: 0 }
-}
-
-
 @media (max-width: 414px) {
 	.sidebar {
 		padding: 50px 17% 17%;

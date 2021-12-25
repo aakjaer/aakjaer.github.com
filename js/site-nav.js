@@ -8,6 +8,12 @@ jQuery(document).ready(function($){
 		toggleNav();
 	});
 
+	// burger menu
+	var $hamburger = $(".hamburger");
+	$hamburger.on("click", function(e) {
+		$hamburger.toggleClass("is-active");
+	});
+
 	function toggleNav(){
 		var navIsVisible = ( !$rootElement.hasClass('menu-shown') ) ? true : false;
 		$rootElement.toggleClass('menu-shown', navIsVisible);
@@ -17,3 +23,15 @@ jQuery(document).ready(function($){
 		}
 	}
 });
+
+
+// <script>
+//   // Look for .hamburger
+//   var hamburger = document.querySelector(".hamburger");
+//   // On click
+//   hamburger.addEventListener("click", function() {
+//     // Toggle class "is-active"
+//     hamburger.classList.toggle("is-active");
+//     // Do something else, like open/close menu
+//   });
+// </script>

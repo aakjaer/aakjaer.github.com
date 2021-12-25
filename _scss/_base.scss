@@ -1,4 +1,5 @@
-
+@import "hamburger-settings";
+@import "../node_modules/hamburgers/_sass/hamburgers/hamburgers";
 
 //.......................................
 
@@ -23,10 +24,6 @@ body {
 	@include media-breakpoint-down(lg) {
 		max-width: none;
 	}
-
-	// @include media-breakpoint-up(xl) {
-	// 	max-width: 1680px;
-	// }
 }
 
 

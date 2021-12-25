@@ -20,16 +20,12 @@
     </head>
     <body>
         <div class="page animsition">
-            <div class="nav-trigger">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="-2 30 26 26">
-                    <g class="menu">
-                        <path d="M-.5 51.5h23M-.5 35.5h23M-.5 43.5h23"></path>
-                    </g>
-                    <g class="close">
-                        <path d="M2.9 35.3l16.2 16.3M2.9 51.6l16.3-16.3"></path>
-                    </g>
-                </svg>
-            </div>
+            
+            <button class="nav-trigger hamburger hamburger--collapse" type="button" aria-label="Menu" aria-controls="navigation">
+                <span class="hamburger-box">
+                    <span class="hamburger-inner"></span>
+                </span>
+            </button>
 
             <aside class="sidebar">
                 {% include site-nav.html %}

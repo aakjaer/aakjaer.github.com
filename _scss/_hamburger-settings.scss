@@ -1,0 +1,46 @@
+$hamburger-padding-x           : 12px !default;
+$hamburger-padding-y           : 12px !default;
+$hamburger-layer-width         : 24px !default;
+$hamburger-layer-height        : 3px !default;
+$hamburger-layer-spacing       : 4px !default;
+$hamburger-layer-color         : $body-color !default;
+$hamburger-layer-border-radius : 0;
+$hamburger-hover-opacity       : 1 !default;
+$hamburger-active-layer-color  : $body-color !default;
+// $hamburger-active-hover-opacity: $hamburger-hover-opacity !default;
+
+// // To use CSS filters as the hover effect instead of opacity,
+// // set $hamburger-hover-use-filter as true and
+// // change the value of $hamburger-hover-filter accordingly.
+// $hamburger-hover-use-filter   : true !default;
+// $hamburger-hover-filter       : opacity(50%) !default;
+// $hamburger-active-hover-filter: $hamburger-hover-filter !default;
+
+
+button.hamburger {
+	position: fixed;
+	top: 1.5rem;
+	right: 1.5rem;
+    height: 48px;
+    width: 48px;
+	z-index: $zindex-fixed;
+	border-radius: 100px;
+    outline: none;
+	background-color: rgba(255,255,255, 0.8);
+    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+	line-height: 1;
+	cursor: pointer;
+	touch-action: manipulation;
+
+	@include media-breakpoint-up(md) {
+		top: 1.5rem;
+		right: 1.5rem;
+	}
+}
+
+
+.hamburger.is-active .hamburger-inner, 
+.hamburger.is-active .hamburger-inner::before, 
+.hamburger.is-active .hamburger-inner::after {
+
+}
