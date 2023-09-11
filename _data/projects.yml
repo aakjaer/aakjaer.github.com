@@ -1,3 +1,9 @@
+- title: UI kit
+  slug: ui-kit
+  images:
+    small: ui-kit.png
+    large: ui-kit@2x.png
+    original: ui-kit@2x.png
 - title: Mindpool
   slug: mindpool
   images:
