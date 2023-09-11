@@ -55,7 +55,7 @@
 	left: 0;
 	top: 30px;
 	bottom: 0;
-	height: 100vh;
+	height: 80vh;
 	width: 100px;
 	background-color: white;
 	box-shadow: 4px 10px 16px rgba(0,0,0,0.25), 2px 2px 4px rgba(0,0,0,0.05);
@@ -70,15 +70,15 @@
 
 .menu-shown .sidebar:after,
 .menu-shown .sidebar:before {
-	transition: 0.7s;
+	transition: 0.8s 0.4s;
 }
 
 .menu-shown .sidebar:before {
-	transform: translateX(-98px) rotate(4deg);
+	transform: translateX(-90px) rotate(6deg);
 }
 
 .menu-shown .sidebar:after {
-	transform: translateX(-96px) rotate(2deg);
+	transform: translateX(-95px) rotate(4deg);
 }
 
 .sidebar .logo img.sidebar-logo,

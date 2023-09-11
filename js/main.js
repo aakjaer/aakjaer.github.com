@@ -1,5 +1,5 @@
 $(function(){
-
+  
   // Page preloading animation
   $('.animsition').animsition({
       inDuration: 800,
@@ -11,13 +11,24 @@ $(function(){
       transition: function(url){ window.location.href = url; }
   });
 
-  // lightbox
-  $(".fancybox").fancybox({
-    helpers: {
-        overlay: {
-          locked: false
-        }
-      }
+  var swiper = new Swiper(".quick-gallery", {
+    effect: "fade",
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    pagination: {
+        el: ".swiper-pagination",
+    } 
   });
 
+    var encEmail = "ZGFuaWVsLmFha2phZXJAZ21haWwuY29t";
+    var email = "".concat(atob(encEmail));
+    
+    if ($('#encryptedEmail').html() == ""){
+      $('#encryptedEmail').html(email);
+    } 
+
+    $("#encryptedEmail").attr("href", "mailto: " + email);
+    
 });
