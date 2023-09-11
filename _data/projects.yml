@@ -4,6 +4,12 @@
     small: ui-kit.png
     large: ui-kit@2x.png
     original: ui-kit@2x.png
+- title: Coloplast
+  slug: coloplast
+  images:
+    small: coloplast.png
+    large: coloplast@2x.png
+    original: coloplast@2x.png
 - title: Mindpool
   slug: mindpool
   images:
