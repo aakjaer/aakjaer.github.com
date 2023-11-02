@@ -1,3 +1,9 @@
+- title: Audi Leasing
+  slug: audi-leasing
+  images:
+    small: audi-leasing.png
+    large: audi-leasing@2x.png
+    original: audi-leasing@2x.png
 - title: UI kit
   slug: ui-kit
   images:
