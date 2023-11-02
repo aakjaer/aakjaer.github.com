@@ -49,16 +49,16 @@
   images: 
     small: cc-conversations-screen.png
     large: cc-conversations-screen@2x.png
-- title: Connected Cars conversations
-  slug: connected-cars
-  images: 
-    small: cc-conversations.png
-    large: cc-conversations@2x.png
 - title: SinonJS character
   slug: sinon
   images:
     small: sinon-02.png
     large: sinon-02@2x.png
+- title: Connected Cars conversations
+  slug: connected-cars
+  images: 
+    small: cc-conversations.png
+    large: cc-conversations@2x.png
 - title: Connected Cars Fleet dashboard
   slug: connected-cars
   images:
