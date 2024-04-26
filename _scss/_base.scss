@@ -13,12 +13,6 @@ body {
     // font-smoothing: antialiased;
 }
 
-::selection {
-	background: $brand-blue;
-	color: #fff;
-	opacity: 1;
-}
-
 .container {
 	
 	@include media-breakpoint-down(lg) {
