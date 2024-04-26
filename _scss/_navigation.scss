@@ -1,169 +1,218 @@
 // bourban dependent
 
-
-.sidebar {
-	overflow-y: auto;
-	position: fixed;
-	z-index: $above-content;
-	opacity: 0;
-	visibility: hidden;
-	left: 0;
-	top: 0;
-	right: 0;
-	height: 100%;
-	padding: 50px 60px 60px;
-	@include gradient-directional($indigo, $brand-pink, $deg: -35deg);
-	color: #fff;
-	filter: none;
-	transform: translate3D(0,0,0);
-	transition: opacity 0.15s ease-in-out 0.25s, visibility 0s 0.35s;
-
-	.safari & {
-		min-height: 100vh;
-	}
-}
-
-.menu-shown {
-
-	body {
-		overflow: hidden;
+// Desktop sized devices
+@include media-breakpoint-up(md) {
+	.hamburger,
+	.secondary-links {
+		display: none !important;
 	}
 
-	.sidebar {
-		opacity: 1;
-		visibility: visible;
-		transition: opacity 0.25s ease-in-out, visibility 0s;
-	}
-}
-
-.sidebar-container {
-	opacity: 0;
-	transform: translateX(50px);
-	transition: all 0.25s 0s;
-}
-
-.menu-shown .sidebar-container {
-	opacity: 1;
-	transform: none;
-	transition: all 0.25s 0.25s;
-}
-
-.sidebar:after,
-.sidebar:before {
-	content: "";
-	position: fixed;
-	left: 0;
-	top: 30px;
-	bottom: 0;
-	height: 80vh;
-	width: 100px;
-	background-color: white;
-	box-shadow: 4px 10px 16px rgba(0,0,0,0.25), 2px 2px 4px rgba(0,0,0,0.05);
-	transform: translateX(-100%);
-	transition: 0.4s;
-}
-
-.sidebar:before {
-	bottom: 0;
-	top: 70px;
-}
-
-.menu-shown .sidebar:after,
-.menu-shown .sidebar:before {
-	transition: 0.8s 0.4s;
-}
-
-.menu-shown .sidebar:before {
-	transform: translateX(-90px) rotate(6deg);
-}
-
-.menu-shown .sidebar:after {
-	transform: translateX(-95px) rotate(4deg);
-}
-
-.sidebar .logo img.sidebar-logo,
-.sidebar .logo span {
-	width: 220px !important;
-	text-align: center;
-}
-
-.sidebar .logo {
-	display: block;
-	font-size: 0;
-	padding: 0;
-	text-align: left;
-	transition: .15s;
-}
-
-.sidebar .logo:hover {
-	opacity: 0.5;
-}
-
-.sidebar .logo span {
-	color: #fff;
-}
-
-
-.sidebar ul.secondary-links {
-	margin-top: 4rem;
-}
-
-.sidebar ul li a {
-	color: #fff;
-	transition: .15s;
-	text-decoration: none;
-}
-
-.sidebar ul li a:hover {
-	opacity: 0.75;
-	text-decoration: underline;	
-}
-.sidebar .active a,
-.sidebar ul li a:active,
-.sidebar ul li a:focus {
-	color: rgba(0,0,0,0.7);
-	opacity: 1;
-	text-shadow: 0 1px 0 rgba(255,255,255,0.15);
-}
-
-.site-nav {
-	margin-top: 4rem;
-
-	ul {
-		list-style: none;
-		margin: 0 0 0 5%;
-		padding: 0;
+	.header-container {
+		padding: 0 4rem;
 	}
 
-	li {
-		padding: 3px 0;
+	.site-nav {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		font-size: 1.125rem;
+	}
+
+	.logo {
+		padding: 1.5rem 0;
+		color: $body-color;
+		font-weight: 600;
+		letter-spacing: -0.03em;
+		text-decoration: none;
+
+		&:hover {
+			color: $body-color;
+			text-decoration: none;
+		}
 	}
 
 	.primary-links {
+		display: flex;
+		flex-direction: row;
+		list-style: none;
 
-		li > a {
-			font-size: 1.5rem;
-			font-weight: $font-weight-normal;
-			text-transform: uppercase;
-			font-family: $headings-font-family;
-
-			@include media-breakpoint-up(sm) {
-				font-size: 2em;
-			}
+		li {
+			padding: 1.5rem;
 		}
-	}
-
-	.secondary-links li > a {
-		font-size: 1.125rem;
-		font-weight: 200;
-		padding: 0.5rem 0;
 
 		a {
-			color: rgba(255,255,255,0.8);
+			color: $body-color;
+			font-weight: 400;
+			letter-spacing: -0.03em;
+			text-decoration: none;
+
 		}
 	}
 }
 
+// Mobile sized devices
+@include media-breakpoint-down(sm) {
+
+	.sidebar {
+		overflow-y: auto;
+		position: fixed;
+		z-index: $above-content;
+		opacity: 0;
+		visibility: hidden;
+		left: 0;
+		top: 0;
+		right: 0;
+		height: 100%;
+		padding: 50px 60px 60px;
+		@include gradient-directional($indigo, $brand-pink, $deg: -35deg);
+		color: #fff;
+		filter: none;
+		transform: translate3D(0,0,0);
+		transition: opacity 0.15s ease-in-out 0.25s, visibility 0s 0.35s;
+
+		.safari & {
+			min-height: 100vh;
+		}
+	}
+
+	.menu-shown {
+		body {
+			overflow: hidden;
+		}
+
+		.sidebar {
+			opacity: 1;
+			visibility: visible;
+			transition: opacity 0.25s ease-in-out, visibility 0s;
+		}
+	}
+
+	.header-container {
+		opacity: 0;
+		max-width: 1680px;
+		transform: translateX(50px);
+		transition: all 0.25s 0s;
+	}
+
+	.menu-shown .header-container {
+		opacity: 1;
+		transform: none;
+		transition: all 0.25s 0.25s;
+	}
+
+
+	// Paper effect
+	.sidebar:after,
+	.sidebar:before {
+		content: "";
+		position: fixed;
+		left: 0;
+		top: 30px;
+		bottom: 0;
+		height: 80vh;
+		width: 100px;
+		background-color: white;
+		box-shadow: 4px 10px 16px rgba(0,0,0,0.25), 2px 2px 4px rgba(0,0,0,0.05);
+		transform: translateX(-100%);
+		transition: 0.4s;
+	}
+
+	.sidebar:before {
+		bottom: 0;
+		top: 70px;
+	}
+
+	.menu-shown .sidebar:after,
+	.menu-shown .sidebar:before {
+		transition: 0.8s 0.4s;
+	}
+
+	.menu-shown .sidebar:before {
+		transform: translateX(-90px) rotate(6deg);
+	}
+
+	.menu-shown .sidebar:after {
+		transform: translateX(-95px) rotate(4deg);
+	}
+
+	.sidebar .logo img.sidebar-logo,
+	.sidebar .logo span {
+		width: 220px !important;
+		text-align: center;
+	}
+
+	.sidebar .logo {
+		display: none;
+		font-size: 0;
+		padding: 0;
+		text-align: left;
+		transition: .15s;
+	}
+
+	.sidebar .logo:hover {
+		opacity: 0.5;
+	}
+
+	.sidebar .logo span {
+		color: #fff;
+	}
+
+
+	.sidebar .secondary-links {
+		margin-top: 4rem;
+	}
+
+	.sidebar ul li a {
+		color: #fff;
+		transition: .15s;
+		text-decoration: none;
+	}
+
+	.sidebar ul li a:hover {
+		opacity: 0.75;
+		text-decoration: underline;	
+	}
+	.sidebar .active a,
+	.sidebar ul li a:active,
+	.sidebar ul li a:focus {
+		color: rgba(0,0,0,0.7);
+		opacity: 1;
+		text-shadow: 0 1px 0 rgba(255,255,255,0.15);
+	}
+
+	.site-nav {
+		margin-top: 4rem;
+
+		ul {
+			list-style: none;
+			margin: 0 0 0 5%;
+			padding: 0;
+		}
+
+		li {
+			padding: 3px 0;
+		}
+
+		.primary-links {
+
+			li > a {
+				font-size: 2rem;
+				font-weight: $font-weight-normal;
+				text-transform: uppercase;
+			}
+		}
+
+		.secondary-links li > a {
+			font-size: 1.125rem;
+			font-weight: 200;
+			padding: 0.5rem 0;
+
+			a {
+				color: rgba(255,255,255,0.8);
+			}
+		}
+	}
+}
 
 
 @media (max-width: 414px) {

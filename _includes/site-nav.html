@@ -1,15 +1,19 @@
-<div class="sidebar-container">
+<div class="header-container">
 	<nav class="site-nav">
+		<a href="{{ site.baseurl }}/" class="logo">Daniel Aakjær Sørensen</a>
 		<ul class="primary-links">
 			<li{% if page.page_class contains "page-home" %} class="active"{% endif %}>
 				<a class="switch-page" href="{{ site.baseurl }}/">Home</a>
 			</li>
+			<li{% if page.page_class contains "page-work" %} class="active"{% endif %}>
+				<a class="switch-page" href="{{ site.baseurl }}/work/">Work</a>
+			</li>
 			<li{% if page.page_class contains "page-about" %} class="active"{% endif %}>
 				<a class="switch-page" href="{{ site.baseurl }}/about/">About</a>
 			</li>
-			<li{% if page.page_class contains "page-projects" %} class="active"{% endif %}>
+			<!-- <li{% if page.page_class contains "page-projects" %} class="active"{% endif %}>
 				<a class="switch-page" href="{{ site.baseurl }}/archive/">Archive</a>
-			</li>
+			</li> -->
 		</ul>
 
 		<ul class="secondary-links">

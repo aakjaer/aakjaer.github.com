@@ -19,22 +19,27 @@ $hamburger-active-layer-color  : $body-color !default;
 
 button.hamburger {
 	position: fixed;
-	top: 1.5rem;
-	right: 1.5rem;
+	top: 1rem;
+	right: 1rem;
     height: 48px;
     width: 48px;
 	z-index: $zindex-fixed;
 	border-radius: 100px;
-    outline: none;
+	outline: none;
 	background-color: rgba(255,255,255, 0.8);
-    box-shadow: 2px 2px 10px rgba(0,0,0,0.1);
+	box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
 	line-height: 1;
 	cursor: pointer;
 	touch-action: manipulation;
+	transition: all 0.25s 0.25s;
 
-	@include media-breakpoint-up(md) {
-		top: 1.5rem;
-		right: 1.5rem;
+	// @include media-breakpoint-up(md) {
+	// 	top: 1.5rem;
+	// 	right: 1.5rem;
+	// }
+
+	&:hover {
+		transform: scale(1.04);
 	}
 }
 

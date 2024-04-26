@@ -14,12 +14,10 @@ body {
 }
 
 .container {
-	
 	@include media-breakpoint-down(lg) {
 		max-width: none;
 	}
 }
-
 
 .form-control {
 	box-shadow: none;
@@ -36,21 +34,21 @@ body {
 }
 
 .logo {
-	display: inline-block;
-	height: 100px;
-	width: 300px;
-    z-index: $content;
-	margin: 50px 0;
-	background: url(../img/logo.svg) 50% 50% no-repeat;
+	// display: inline-block;
+	// height: 100px;
+	// width: 300px;
+    // z-index: $content;
+	// margin: 50px 0;
+	// background: url(../img/logo.svg) 50% 50% no-repeat;
 
-	@include media-breakpoint-up(sm) {
+	// @include media-breakpoint-up(sm) {
 
-		html:not(.page-home) & {
-			height: 100px;
-			width: 300px;
-			margin: 70px;
-		}
-	}
+	// 	html:not(.page-home) & {
+	// 		height: 100px;
+	// 		width: 300px;
+	// 		margin: 70px;
+	// 	}
+	// }
 }
 
 // stage section
