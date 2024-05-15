@@ -187,51 +187,52 @@ blockquote {
 	}
 }
 
-.btn {
-    display: inline-block;
-    margin-bottom: 0;
-    font-weight: normal;
-    text-align: center;
-    vertical-align: middle;
-    touch-action: manipulation;
-	font-family: $headings-font-family;
-    cursor: pointer;
-    border: 1px solid transparent;
-	border-radius: 0;
-    white-space: nowrap;
-    padding: 6px 12px;
-    font-size: 16px;
-    line-height: 1.6;
-	user-select: none;
-	text-decoration: none;
-}
+// .btn {
+//     display: inline-block;
+//     margin-bottom: 0;
+//     font-weight: normal;
+//     text-align: center;
+//     vertical-align: middle;
+//     touch-action: manipulation;
+// 	font-family: $headings-font-family;
+//     cursor: pointer;
+//     border: 1px solid transparent;
+// 	border-radius: 0;
+//     white-space: nowrap;
+//     padding: 6px 12px;
+//     font-size: 16px;
+//     line-height: 1.6;
+// 	user-select: none;
+// 	text-decoration: none;
+// }
 
 .btn-cta {
-	display: inline flex;
+	display: inline-flex;
 	justify-content: center;
 	align-items: center;
-	gap: 1rem;
-    padding: 0.875rem 1.375rem;
-	font-size: 1.25rem;
-	border: 2px solid $primary;
+	gap: 0.75rem;
+    padding: 1rem 1.375rem;
+	font-size: 1rem;
+	border: 3px solid $primary;
 	border-radius: 10rem;
 	color: $primary;
-	font-weight: 400;
+	font-weight: 600;
 	transition: all 0.2s ease-in-out;
 	text-transform: uppercase;
+	text-decoration: none;
 
 	@include media-breakpoint-up(md){
 		padding: 1.125rem 2rem;
 	}
 	
 	.icon {
-		width: 20px;
-		height: 20px;
 		transition: all 0.2s ease-in-out;
 	}
 
 	&:hover {
+		transform: scale(1.06);
 		background-color: $primary;
+		border-color: $primary;
 		color: #fff;
 
 		.icon {
@@ -389,10 +390,6 @@ th {
 .work-history {
 	gap: 0.25rem;
 
-	@include media-breakpoint-down(sm) {
-		font-size: 1rem;
-	}
-
 	.list-group-item {
 		display: flex;
 		flex-wrap: wrap;
@@ -431,7 +428,6 @@ th {
 		text-align: right;
 
 		@include media-breakpoint-down(sm) {
-
 			font-size: 1rem;
 		}
 	}
@@ -441,7 +437,6 @@ th {
 		
 		> div {
 			padding: 2rem 0 1rem;
-			font-size: 1rem;
 		}
 	}
 }
@@ -567,7 +562,7 @@ th {
 	gap: 2.5rem;
 
 	a {
-		font-size: 1rem;
+		font-size: 0.875rem;
 		transition: color 0.2s ease;
 		text-decoration: none;
 		text-transform: uppercase;
@@ -761,8 +756,43 @@ table td {
 }
 
 footer[role="contentinfo"] {
+	display: flex;
+	min-height: 75vh;
+
+	.section-content {
+		display: flex;
+		flex: 1;
+		flex-direction: column;
+		justify-content: space-between;
+	}
+
 	a { color: rgba(255, 255, 255, 0.7) }
 	a:hover { color: #fff }
+}
+
+
+.footer-contact {
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+
+	.btn {
+		padding: 1rem 2rem;
+		font-size: 1rem;
+		border: 1px solid rgba(255, 255, 255, 0.15);
+		border-radius: 10rem;
+		font-weight: 600;
+		transition: all 0.2s ease-in-out;
+		text-decoration: none;
+
+		&:hover {
+			background-color: rgba(255, 255, 255, 0.075);
+		}
+	}
+
+	@include media-breakpoint-up(sm) {
+		flex-direction: row;
+	}
 }
 
 
@@ -841,8 +871,7 @@ footer[role="contentinfo"] {
 	padding: 1.5rem 2rem 1.5rem;
 	background: #F4EFFF;
 	color: #3D1B9F;
-	font-size: 1.5rem;
-	font-weight: $font-weight-light;
+	border-radius: 1.5rem;
 
 	@include media-breakpoint-up(md) {
 		padding: 2.5rem 3rem 1.5rem;

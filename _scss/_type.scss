@@ -5,7 +5,7 @@ h1, h2, h3, h4, h5, h6,
     letter-spacing: -0.03em;
 }
 
-$text-white-dimmed: rgba(255,255,255, 0.7);
+$text-white-dimmed: rgba(255,255,255, 0.75);
 
 .font-weight-lighter { font-weight: $font-weight-lighter; }
 .light { font-weight: 300; }
@@ -26,10 +26,11 @@ $text-white-dimmed: rgba(255,255,255, 0.7);
 .text-green { color: $brand-green; }
 
 
-.hero-lead,
-.lead {
+.lead,
+.hero-lead {
     max-width: 50rem;
     margin-bottom: 1.5em;
+    font-weight: 400;
 
     @include media-breakpoint-up(sm) {
         font-size: 1.5rem;
@@ -61,8 +62,9 @@ $text-white-dimmed: rgba(255,255,255, 0.7);
     margin-bottom: 2em;
     max-width: 60rem;
     font-size: 4rem;
-    font-weight: 400;
+    font-weight: 900;
     line-height: 1;
+    text-transform: uppercase;
 
     @include media-breakpoint-up(md) {
         font-size: 6rem;
@@ -70,21 +72,22 @@ $text-white-dimmed: rgba(255,255,255, 0.7);
 }
 
 .hero-heading {
-    font-size: 12vw; // has backup size from headers
-    font-weight: 500;
+    font-size: 10vw; // has backup size from headers
+    font-weight: 900;
     line-height: 1;
     letter-spacing: -0.05em;
     perspective: 1000;
 
     @include media-breakpoint-up(md) {
-        font-size: 10vw;
+        font-size: 8vw;
+        text-transform: uppercase;
     }
 }
 
 .section-heading {
     margin-bottom: 2rem;
     font-size: 1.5em;
-    font-weight: 500;
+    font-weight: 800;
 
     &:first-child {
         margin-top: 0;
@@ -111,8 +114,8 @@ $text-white-dimmed: rgba(255,255,255, 0.7);
 
 .group-heading {
     margin: 3rem 0 0.75rem;
-    font-size: 2rem;
-    font-weight: 500;
+    font-size: 1.5rem;
+    font-weight: 700;
 }
 
 hr {

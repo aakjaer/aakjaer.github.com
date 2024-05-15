@@ -37,11 +37,6 @@
     }
 }
 
-.section-compact .section-content {
-    padding-top: 2em;
-    padding-bottom: 2em;
-}
-
 .section-image {
     display: block;
     max-width: 500px;
@@ -53,12 +48,6 @@
     margin-right: auto;
 }
 
-.section-sm > .container {
-    @include media-breakpoint-up(md) {
-        max-width: 70%;
-    }
-}
-
 .section-hero {
     display: flex;
     align-items: center;
@@ -66,6 +55,11 @@
 
     @include media-breakpoint-up(md){
         min-height: calc(100vh - 8rem);
+    }
+
+    .hero-actions {
+        display: flex;
+        gap: 0.75rem;
     }
 }
 

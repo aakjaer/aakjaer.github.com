@@ -17,7 +17,7 @@ page_class: page-home
 
 <div class="section section-full section-bordered latest-projects">
     <div class="section-content pb-5">
-        <h2 class="h5 text-uppercase mb-5 wow fadeInUp" data-wow-offset="50">Recent projects</h2>
+        <h2 id="recent-projects" class="section-heading text-uppercase mb-5 wow fadeInUp" data-wow-offset="50">Recent projects</h2>
         <div class="row">
             <div class="col-md-7 wow fadeInUp" data-wow-offset="100">
                 <figure>
@@ -92,9 +92,9 @@ page_class: page-home
     <div class="section-content">
         <div class="row justify-content-md-center"">
             <div class="col-lg-9">
-                <h2 class="h5 text-uppercase mb-5 wow fadeInUp">Work history</h2>
+                <h2 class="section-heading text-uppercase mb-5 wow fadeInUp text-center">Work history</h2>
 
-                <div id="workHistory" class="work-history list-group  wow fadeInUp">
+                <div id="workHistory" class="work-history list-group wow fadeInUp">
                     <a class="list-group-item" data-bs-toggle="collapse" href="#zublimeWorkHistory" data-bs-parent="#workHistory" role="button" aria-expanded="false" aria-controls="zublimeWorkHistory">
                         <div class="work-history_company">Zublime</div> 
                         <div class="work-history_title">Design Lead</div>
@@ -207,9 +207,10 @@ page_class: page-home
                         <div class="work-history_company contractor">ATEA Denmark</div>
                         <div class="work-history_title">UX/UI Designer</div>
                         <div class="work-history_year">2012 - 2013</div>
-                    </div>                    
+                    </div>
+                    
+                    <div class="mt-4 ml-3 text-small text-white-dimmed contractor">Contractor role</div>
                 </div>
-                <div class="mt-4 ml-3 text-small text-white-dimmed contractor">Contractor role</div>
             </div>
         </div>
     </div>
@@ -219,8 +220,8 @@ page_class: page-home
 
 <!-- Random work -->
 <div class="latest-projects section section-full section-bordered">
-    <div class="section-content pb-0">
-        <h2 class="h5 text-uppercase mb-5 wow fadeInUp">More work</h2>
+    <div class="section-content">
+        <h2 class="section-heading text-uppercase mb-5 wow fadeInUp">More work</h2>
 
         <figure class="wow fadeInUp">
             <picture>
@@ -457,18 +458,8 @@ page_class: page-home
             <div class="col-md-6">
             </div>
         </div>
-
-
     </div>
 </div>
-
-<!-- Card list 
-<div class="section section-full">
-    <div class="section-content">
-        {% include latest-projects.html %}
-    </div>
-</div>
--->
 
 {% include contact.html %}
 

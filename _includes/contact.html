@@ -1,20 +1,35 @@
-{% assign default-message = "Do you have a project or an idea you would like to share?" %}
-{% comment %}
-<section class="section section-white">
-    <div class="section-content text-center">
-        <p class="lead text-center text-muted">{% if include.message %}{{ include.message }}{% else %}{{ default-message }}{% endif %}</p>
-        <a href="/contact/" class="btn btn-cta btn-fancy switch-page" data-hover-text="Sweet!">
-        	<span>Let's talk</span>
-        </a>
-    </div>
-</section>
-{% endcomment %}
+<footer class="section section-md section-dark" role="contentinfo">
+	<div class="section-content pb-4">
+		<div class="footer-group">
+			<h1 class="display-heading mb-4">Let's talk</h1>
+			<p>Whether you have ideas for a project or just feedback, feel free to reach out.</p>
 
-<footer class="section section-dark" role="contentinfo">
-	<div class="section-content">
-		<h1 class="display-heading mb-4">Get in touch</h1>
-		<p class="">Whether you have ideas for a project or just feedback, feel free to <a id="encryptedEmail">send me an e-mail</a>.</p>
+			<div class="footer-contact mt-5">
+				<a class="btn btn-lg btn-outline-light" href="mailto:daniel.aakjaer@gmail.com">daniel.aakjaer@gmail.com</a>
+				<a class="btn btn-lg btn-outline-light" href="tel:+4525337548" type="button" href="">+45 2533 7548</a>
+			</div>
+		</div>
 		
-		{% include social-links.html %}
+		<div class="footer-group">
+			<ul class="contact-links mt-5">
+				<li>
+					<a href="https://www.linkedin.com/in/danielaakjaer">
+						LinkedIn
+						<!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><title>logo linkedin</title><g class="nc-icon-wrapper" fill="currentColor"><path d="M29,1H3A2,2,0,0,0,1,3V29a2,2,0,0,0,2,2H29a2,2,0,0,0,2-2V3A2,2,0,0,0,29,1ZM9.887,26.594H5.374V12.25H9.887ZM7.63,10.281a2.625,2.625,0,1,1,2.633-2.625A2.624,2.624,0,0,1,7.63,10.281ZM26.621,26.594H22.2V19.656c0-1.687,0-3.75-2.35-3.75s-2.633,1.782-2.633,3.656v7.126H12.8V12.25h4.136v1.969h.094a4.7,4.7,0,0,1,4.231-2.344c4.513,0,5.359,3,5.359,6.844Z" fill="currentColor"/></g></svg>					 -->
+					</a>
+				</li>
+				<li>
+					<a href="https://www.instagram.com/danielaakjaer/">
+						Instagram
+						<!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"><title>instangram</title><g class="nc-icon-wrapper" fill="currentColor"><path data-color="color-2" d="M16,12a4,4,0,0,1-4,4,4,4,0,1,0,4-4Z"/><path d="M24,1H8A7.008,7.008,0,0,0,1,8V24a7.008,7.008,0,0,0,7,7H24a7.008,7.008,0,0,0,7-7V8A7.008,7.008,0,0,0,24,1ZM7.5,9A1.5,1.5,0,1,1,9,7.5,1.5,1.5,0,0,1,7.5,9ZM16,23a7,7,0,1,1,7-7A7,7,0,0,1,16,23Z" fill="currentColor"/></g></svg> -->
+					</a>
+				</li>
+				<li>
+					<a href="https://www.twitter.com/danielaakjaer/">
+						X/Twitter
+					</a>
+				</li>
+			</ul>
+		</div>
 	</div>
 </footer>

@@ -31,7 +31,7 @@ button.hamburger {
 	line-height: 1;
 	cursor: pointer;
 	touch-action: manipulation;
-	transition: all 0.2s cubic-bezier(0.64, 0.57, 0.67, 1.53);
+	transition: all 0.2s cubic-bezier(0.7, 0, 0.7, 1.5);
 
 	// @include media-breakpoint-up(md) {
 	// 	top: 1.5rem;
@@ -39,7 +39,7 @@ button.hamburger {
 	// }
 
 	&:hover {
-		transform: scale(1.5);
+		transform: scale(1.15);
 	}
 }
 
