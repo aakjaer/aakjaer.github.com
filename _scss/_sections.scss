@@ -10,8 +10,8 @@
         padding-right: 1.5rem;
 
         @include media-breakpoint-up(lg) {
-            padding-left: 4rem;
-            padding-right: 4rem;
+            padding-left: 4.5rem;
+            padding-right: 4.5rem;
         }
     }
 
@@ -25,8 +25,7 @@
         }
         
         @include media-breakpoint-up(lg) {
-            padding-left: 4rem;
-            padding-right: 4rem;
+            padding: 6rem 4.5rem;
         }
     }
 }
@@ -42,35 +41,6 @@
     padding-top: 2em;
     padding-bottom: 2em;
 }
-
-.section-heading {
-    margin-bottom: 1.5em;
-    font-size: 1.5em;
-    font-weight: 600;
-
-    &:first-child {
-        margin-top: 0;
-    }
-
-    @include media-breakpoint-up(sm) {
-        font-size: 1.6em;
-    }
-
-    &--left {
-        text-align: left;
-    }
-
-    &-sm {
-        margin-bottom: 1.5em;
-        font-size: 1em;
-        font-weight: 900;
-    
-        @include media-breakpoint-up(sm) {
-            font-size: 1.3em;
-        }
-    }
-}
-
 
 .section-image {
     display: block;
@@ -89,6 +59,15 @@
     }
 }
 
+.section-hero {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+
+    @include media-breakpoint-up(md){
+        min-height: calc(100vh - 8rem);
+    }
+}
 
 .section-more {
     padding-bottom: 3em;
@@ -114,11 +93,11 @@
 }
 
 .section-bordered {
-    border-top: 2px dashed $gray-200;
+    border-top: 1px solid $gray-200;
 }
 
  .section-narrow .section-content {
-    max-width: 45em !important;
+    max-width: 40em !important;
 }
 
 // color combinations
@@ -171,12 +150,11 @@
 
 .section-gray {
     background-color: #f3f4f5;
-    color: $gray-700;
 }
 
-.section-dark-gray {
-    background: #111;
-    color: white;
+.section-dark {
+    background: #0D181B;
+    color: #fff;
 }
 
 .section-light-gray {

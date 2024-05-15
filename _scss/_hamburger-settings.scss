@@ -1,5 +1,5 @@
-$hamburger-padding-x           : 12px !default;
-$hamburger-padding-y           : 12px !default;
+$hamburger-padding-x           : 10px !default;
+$hamburger-padding-y           : 14px !default;
 $hamburger-layer-width         : 24px !default;
 $hamburger-layer-height        : 3px !default;
 $hamburger-layer-spacing       : 4px !default;
@@ -31,7 +31,7 @@ button.hamburger {
 	line-height: 1;
 	cursor: pointer;
 	touch-action: manipulation;
-	transition: all 0.25s 0.25s;
+	transition: all 0.2s cubic-bezier(0.64, 0.57, 0.67, 1.53);
 
 	// @include media-breakpoint-up(md) {
 	// 	top: 1.5rem;
@@ -39,7 +39,7 @@ button.hamburger {
 	// }
 
 	&:hover {
-		transform: scale(1.04);
+		transform: scale(1.5);
 	}
 }
 

@@ -1,8 +1,11 @@
 // typography
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
+    font-weight: 500;
     letter-spacing: -0.03em;
 }
+
+$text-white-dimmed: rgba(255,255,255, 0.7);
 
 .font-weight-lighter { font-weight: $font-weight-lighter; }
 .light { font-weight: 300; }
@@ -10,12 +13,26 @@ h1, h2, h3, h4, h5, h6,
 .bold { font-weight: 700; }
 .heavy { font-weight: 900; }
 
+.text-white { color: white; }
+.text-white-dimmed { color: $text-white-dimmed; }
+.text-blue { color: $brand-blue; }
+.text-dark-blue { color: $brand-dark-blue; }
+.text-light-blue { color: $brand-light-blue; }
+.text-red { color: $brand-red; }
+.text-yellow { color: $brand-yellow; }
+.text-gray { color: #777; }
+.text-light-gray { color: #bbb; }
+.text-purple { color: $brand-purple; }
+.text-green { color: $brand-green; }
+
+
+.hero-lead,
 .lead {
-    margin-bottom: 1.5em;
     max-width: 50rem;
+    margin-bottom: 1.5em;
 
     @include media-breakpoint-up(sm) {
-        font-size: 1.75rem;
+        font-size: 1.5rem;
     }
 
     &.text-center {
@@ -28,20 +45,12 @@ h1, h2, h3, h4, h5, h6,
     white-space: nowrap;
 }
 
-.text-white { color: white; }
-.text-white-dimmed { color: rgba(255,255,255, 0.7); }
-.text-blue { color: $brand-blue; }
-.text-dark-blue { color: $brand-dark-blue; }
-.text-light-blue { color: $brand-light-blue; }
-.text-red { color: $brand-red; }
-.text-yellow { color: $brand-yellow; }
-.text-gray { color: #777; }
-.text-light-gray { color: #bbb; }
-.text-purple { color: $brand-purple; }
-.text-green { color: $brand-green; }
-
 .all-caps {
     text-transform: uppercase;
+}
+
+.text-normal {
+    font-size: 1rem;
 }
 
 .text-small {
@@ -50,10 +59,10 @@ h1, h2, h3, h4, h5, h6,
 
 .display-heading {
     margin-bottom: 2em;
-    font-size: 3rem;
-    font-weight: 300;
-    line-height: 1.15;
-    max-width: 62rem;
+    max-width: 60rem;
+    font-size: 4rem;
+    font-weight: 400;
+    line-height: 1;
 
     @include media-breakpoint-up(md) {
         font-size: 6rem;
@@ -61,21 +70,50 @@ h1, h2, h3, h4, h5, h6,
 }
 
 .hero-heading {
-    font-size: 10vw; // has backup size from headers
-    font-weight: 300;
+    font-size: 12vw; // has backup size from headers
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: -0.05em;
+    perspective: 1000;
 
     @include media-breakpoint-up(md) {
+        font-size: 10vw;
+    }
+}
+
+.section-heading {
+    margin-bottom: 2rem;
+    font-size: 1.5em;
+    font-weight: 500;
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    @include media-breakpoint-up(sm) {
         font-size: 3rem;
+    }
+
+    &--left {
+        text-align: left;
+    }
+
+    &-sm {
+        margin-bottom: 1.5em;
+        font-size: 1rem;
+        font-weight: 900;
+
+        @include media-breakpoint-up(sm) {
+            font-size: 1.3rem;
+        }
     }
 }
 
 .group-heading {
     margin: 3rem 0 0.75rem;
-    font-size: 1.25rem;
-    letter-spacing: 0.015em;
-    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 500;
 }
-
 
 hr {
     margin-bottom: 3em;
@@ -117,3 +155,7 @@ hr {
 .separator-yellow { border-color: $brand-yellow; }
 
 
+abbr,
+acronym {
+    border-bottom: 1px dotted;
+}

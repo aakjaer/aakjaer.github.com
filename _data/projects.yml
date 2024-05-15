@@ -87,8 +87,8 @@
 - title: Connected Cars Fleet vehicle list
   slug: connected-cars
   images: 
-    small: cc-map-vehicle-list.png
-    large: cc-map-vehicle-list@2x.png
+    small: cc-map-vehicle-list.jpg
+    large: cc-map-vehicle-list@2x.jpg
 - title: Connected Cars meeting room
   slug: connected-cars
   images:
