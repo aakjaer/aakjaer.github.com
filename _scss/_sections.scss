@@ -50,7 +50,7 @@
 
 .section-hero {
     display: flex;
-    align-items: center;
+    align-items: flex-end;
     min-height: 100vh;
 
     @include media-breakpoint-up(md){

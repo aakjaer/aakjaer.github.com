@@ -62,7 +62,7 @@ $text-white-dimmed: rgba(255,255,255, 0.75);
     margin-bottom: 2em;
     max-width: 60rem;
     font-size: 4rem;
-    font-weight: 900;
+    font-weight: 700;
     line-height: 1;
     text-transform: uppercase;
 
@@ -72,8 +72,8 @@ $text-white-dimmed: rgba(255,255,255, 0.75);
 }
 
 .hero-heading {
-    font-size: 10vw; // has backup size from headers
-    font-weight: 900;
+    font-size: 16vw; // has backup size from headers
+    font-weight: 700;
     line-height: 1;
     letter-spacing: -0.05em;
     perspective: 1000;
@@ -87,7 +87,7 @@ $text-white-dimmed: rgba(255,255,255, 0.75);
 .section-heading {
     margin-bottom: 2rem;
     font-size: 1.5em;
-    font-weight: 800;
+    font-weight: 700;
 
     &:first-child {
         margin-top: 0;
