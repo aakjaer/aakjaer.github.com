@@ -30,7 +30,6 @@
     }
 }
 
-
 .section-full .section-content {
     @include media-breakpoint-up(xl) {
         max-width: 1680px;
@@ -179,12 +178,19 @@
 	}
 }
 
-.section-skills {
-    .display-heading {
-        color: white;
-    }
+.section-skills .display-heading {
+    color: white;
 }
 
+.header-container {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+
+    @include media-breakpoint-up(lg) {
+        padding-left: 4.5rem;
+        padding-right: 4.5rem;
+    }
+}
 
 .section--servicelovers {
     @include gradient-directional(#1D1129,#323050,-35deg);

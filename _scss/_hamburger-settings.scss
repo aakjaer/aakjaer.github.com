@@ -31,7 +31,7 @@ button.hamburger {
 	line-height: 1;
 	cursor: pointer;
 	touch-action: manipulation;
-	transition: all 0.4s cubic-bezier(0.6, 0, 0.4, 1);
+	transition: all 0.2s cubic-bezier(0.6, 0, 0.4, 1);
 
 	&:hover {
 		transform: scale(1.15);

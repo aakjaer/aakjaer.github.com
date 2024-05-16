@@ -217,7 +217,7 @@ blockquote {
 	border-radius: 10rem;
 	color: $primary;
 	font-weight: 700;
-	transition: all 0.2s cubic-bezier(0.6, 0, 0.4, 1);
+	transition: all $easing-default;
 	text-transform: uppercase;
 	text-decoration: none;
 
@@ -970,6 +970,6 @@ footer[role="contentinfo"] {
 	justify-content: center;
 
 	@include media-breakpoint-up(sm) {
-		gap: 4rem;
+		gap: 3rem;
 	}
 }
