@@ -4,8 +4,9 @@ const heroHeading = new SplitType(".hero-heading.anim", { types: "lines, words" 
 const displayHeading = new SplitType(".display-heading.anim")
 const sectionHeading = new SplitType(".section-heading.anim", { types: "lines, words"}) 
 
+
 gsap.from(heroHeading.words, {
-  duration: 1,
+  duration: 0.75,
   yPercent: 100,
   delay: 1,
   ease: "power4.out",
@@ -30,8 +31,8 @@ gsap.from(sectionHeading.words, {
   ease: "power4.out",
   stagger: 0.1,
   scrollTrigger: { 
-    trigger: ".section-heading.anim" 
-  },  
+    trigger: ".section-heading.anim"
+  }
 });
 
 
@@ -73,7 +74,7 @@ class WordTransition {
         yPercent: 100,
 			},
 			{
-        duration: 0.5,
+        duration: 0.4,
 				opacity: 1,
         yPercent: 0,
         ease: "circ",
