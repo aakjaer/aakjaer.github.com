@@ -71,13 +71,14 @@ class WordTransition {
 			chars,
 			{
 				opacity: 0,
-        yPercent: 100,
+        		yPercent: 100,
 			},
 			{
-        duration: 0.4,
+        		duration: 0.3,
 				opacity: 1,
-        yPercent: 0,
-        ease: "circ",
+				yPercent: 0,
+				ease: "circ",
+				stagger: 0.02,
 				onReverseComplete: this.nextWord
 			}
 		);

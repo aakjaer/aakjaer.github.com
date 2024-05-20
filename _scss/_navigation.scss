@@ -8,9 +8,9 @@
 	}
 
 	.site-nav {
-		display: grid;
+		display: flex;
 		height: 5rem;
-		grid-template-columns: auto 3fr;
+		justify-content: space-between;
 		align-items: center;
 		font-size: 1.125rem;
 	}
@@ -34,14 +34,13 @@
 		list-style: none;
 
 		li {
-			flex: 1;
 			text-align: right;
 		}
 
 		a {
 			position: relative;
-			padding: 1.25rem;
-			font-size: 1rem;
+			padding: 1.5rem;
+			font-size: 2rem;
 			color: $body-color;
 			font-weight: 400;
 			text-decoration: none;
@@ -87,7 +86,8 @@
 		right: 0;
 		height: 100vh;
 		padding: 50px 60px 60px;
-		@include gradient-directional($indigo, $brand-pink, $deg: -35deg);
+		background: $body-color;
+		// @include gradient-directional($indigo, $brand-pink, $deg: -35deg);
 		color: #fff;
 		filter: none;
 		will-change: opacity;
@@ -194,9 +194,8 @@
 	.sidebar .active a,
 	.sidebar ul li a:active,
 	.sidebar ul li a:focus {
-		color: rgba(0,0,0,0.7);
+		color: $brand-green;
 		opacity: 1;
-		text-shadow: 0 1px 0 rgba(255,255,255,0.15);
 	}
 
 	.site-nav {

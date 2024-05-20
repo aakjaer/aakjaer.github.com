@@ -9,6 +9,11 @@
         padding-left: 1.5rem;
         padding-right: 1.5rem;
 
+        @include media-breakpoint-up(sm) {
+            padding-left: 2.5rem;
+            padding-right: 2.5rem;
+        }
+
         @include media-breakpoint-up(lg) {
             padding-left: 4.5rem;
             padding-right: 4.5rem;
@@ -27,12 +32,16 @@
         @include media-breakpoint-up(lg) {
             padding: 6rem 4.5rem;
         }
+
+        @include media-breakpoint-up(xl) {
+            padding: 7.5rem 4.5rem;
+        }
     }
 }
 
 .section-full .section-content {
     @include media-breakpoint-up(xl) {
-        max-width: 1680px;
+        max-width: 1920px;
     }
 }
 
@@ -49,11 +58,11 @@
 
 .section-hero {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     min-height: 100vh;
 
     @include media-breakpoint-up(md){
-        min-height: calc(100vh - 8rem);
+        min-height: calc(100vh - 5rem);
     }
 
     .hero-actions {
@@ -72,7 +81,6 @@
         left: 50%;
         content: "";
         display: inline-block;
-        /* By using an em scale, the arrows will size with the font */
         width: 1.5em;
         height: 1.5em;
         border-left: 0.2em solid black;
@@ -85,7 +93,11 @@
     }
 }
 
-.section-bordered {
+.section-bordered-full {
+    border-top: 1px solid $gray-200;
+}
+
+.section-bordered  .section-content {
     border-top: 1px solid $gray-200;
 }
 
@@ -127,7 +139,7 @@
 }
 
 .section-green {
-    background: $brand-green;
+    background: #9EA39F;
     color: white;
 }
 
@@ -142,7 +154,7 @@
 }
 
 .section-gray {
-    background-color: #f3f4f5;
+    background-color: #f0f0f0;
 }
 
 .section-dark {

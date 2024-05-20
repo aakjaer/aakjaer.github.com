@@ -5,6 +5,9 @@
 			<li class="wow fadeIn {% if page.page_class == "page-home" %}active{% endif %}">
 				<a class="switch-page" href="{{ site.baseurl }}/">Home</a>
 			</li>
+			<li class="wow fadeIn {% if page.page_class contains "page-work" %}active{% endif %}">
+				<a class="switch-page" href="{{ site.baseurl }}/work/">Work</a>
+			</li>
 			<li class="wow fadeIn {% if page.page_class contains "page-about" %}active{% endif %}">
 				<a class="switch-page" href="{{ site.baseurl }}/about/">About</a>
 			</li>

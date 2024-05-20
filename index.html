@@ -13,14 +13,15 @@ page_class: page-home
 </div>
 
 
-<!-- Recent work -->
+<!-- Recent projects -->
 
-<div class="section section-full section-bordered latest-projects">
+<div class="latest-projects section section-full">
     <div class="section-content pb-5">
-        <h2 id="recent-projects" class="section-heading text-uppercase mb-5 anim" data-wow-offset="50">Recent work</h2>
+        <hr>
+        <h2 id="recent-projects" class="section-heading text-uppercase mb-5 anim" data-wow-offset="50">Recent projects</h2>
 
         <div class="row">
-            <div class="col-md-7 wow fadeInUp">
+            <div class="col-lg-7 wow fadeInUp">
                 <figure>
                     <picture>
                         <source media="(min-width:1000px)" srcset="{{site.baseurl}}/img/projects/coloplast/coloplast-preview@2x.png" />
@@ -32,7 +33,8 @@ page_class: page-home
                     </div>
                 </figure>
             </div>
-            <div class="col-md-5 wow fadeInUp" data-wow-delay="0.5s" data-wow-offset="100">
+
+            <div class="col-lg-5 wow fadeInUp">
                 <figure>
                     <picture>
                         <source media="(min-width:1000px)" srcset="{{site.baseurl}}/img/projects/zublime/zublime-preview@2x.png" />
@@ -47,7 +49,7 @@ page_class: page-home
         </div>
 
         <div class="row">
-            <div class="col-md-5 wow fadeInUp" data-wow-delay="0.5s">
+            <div class="col-md-6 col-lg-4 wow fadeInUp">
                 <figure>
                     <picture>
                         <source media="(min-width:1000px)" srcset="{{site.baseurl}}/img/projects/audi-leasing/audi-leasing-preview@2x.png" />
@@ -60,11 +62,11 @@ page_class: page-home
                 </figure>
             </div>
 
-            <div class="col-md-7 wow fadeInUp" data-wow-delay="0.8s">
+            <div class="col-md-6 col-lg-4 wow fadeInUp">
                 <figure>
                     <picture>
                         <source media="(min-width:1000px)" srcset="{{site.baseurl}}/img/projects/ui-kit/ui-kit-preview@2x.png" />
-                        <img alt="{{ project.title }}" src="{{site.baseurl}}/img/projects/coloplast/ui-kit-preview.png" loading="lazy" decoding="async" />
+                        <img alt="{{ project.title }}" src="{{site.baseurl}}/img/projects/ui-kit/ui-kit-preview.png" loading="lazy" decoding="async" />
                     </picture>
                     <div class="wow fadeInUp" data-wow-offset="100">
                         <h3 class="h4 mt-4 mb-0">UI Kit - personal project</h3>
@@ -72,138 +74,150 @@ page_class: page-home
                     </div>
                 </figure>
             </div>
-        </div>
 
+            <div class="col-md-6 col-lg-4 wow fadeInUp">
+                <figure>
+                    <picture>
+                        <source media="(min-width:1000px)" srcset="{{site.baseurl}}/img/projects/windward/windward-preview@2x.jpg" />
+                        <img alt="{{ project.title }}" src="{{site.baseurl}}/img/projects/windward/windward-preview.jpg" loading="lazy" decoding="async" />
+                    </picture>
+                    <div class="wow fadeInUp" data-wow-offset="100">
+                        <h3 class="h4 mt-4 mb-0">Windward Mayreau - personal project</h3>
+                        <p class="text-normal text-muted">2021-2022</p>
+                    </div>
+                </figure>
+            </div>
+        </div>
+        <div class="text-center">
+            <a href="{{site.baseurl}}/work/" class="btn btn-cta">More projects</a>
+        </div>
     </div>
 </div>
 
 
 <!-- Work history  -->
 
-<div class="section section-full section-dark">
+<div class="section section-full">
     <div class="section-content">
-        <div class="row justify-content-md-center"">
-            <div class="col-lg-9">
-                <h2 class="section-heading text-uppercase text-center wow fadeInUp">Work history</h2>
 
-                <div id="workHistory" class="work-history list-group wow fadeInUp">
-                    <a class="list-group-item" data-bs-toggle="collapse" href="#zublimeWorkHistory" data-bs-parent="#workHistory" role="button" aria-expanded="false" aria-controls="zublimeWorkHistory">
-                        <div class="work-history_company">Zublime</div> 
-                        <div class="work-history_title">Design Lead</div>
-                        <div class="work-history_year">2023 - 2024</div>
+        <h2 class="section-heading text-uppercase wow fadeInUp">Work history</h2>
 
-                        <div id="zublimeWorkHistory" class="work-history_details collapse">
-                            <div>
-                                <h5>Responsibilities</h5>
-                                <ul class="nifty-list">
-                                    <li>Update and improve UX/UI for existing partner platform.</li>
-                                    <li>Streamline existing design system and systematize color palettes, spacing, typography and components.</li>
-                                    <li>Introduce design token system in Token Studio to sync design decisions between Figma and front-end apps.</li>
-                                    <li>Extensive UX work for new AI sales assistant including navigation principles</li>
-                                    <li>Rebrand, design and build new company website</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </a>
+        <div id="workHistory" class="work-history list-group-flush wow fadeInUp">
+            <a class="list-group-item" data-bs-toggle="collapse" href="#zublimeWorkHistory" data-bs-parent="#workHistory" role="button" aria-expanded="false" aria-controls="zublimeWorkHistory">
+                <div class="work-history_company">Zublime</div> 
+                <div class="work-history_title">Design Lead</div>
+                <div class="work-history_year">2023 - 2024</div>
 
-                    <a class="list-group-item" data-bs-toggle="collapse" href="#coloplastWorkHistory" data-bs-parent="#workHistory" role="button" aria-expanded="false" aria-controls="coloplastWorkHistory">
-                        <div class="work-history_company contractor">Coloplast</div> 
-                        <div class="work-history_title">Design System Specialist</div>
-                        <div class="work-history_year">2022 - 2023</div>
-
-                        <div id="coloplastWorkHistory" class="collapse work-history_details">
-                            <div>
-                                <h5>Responsibilities</h5>
-                                <ul class="nifty-list">
-                                    <li>Partake in defining the initial vision and setting direction for the project</li>
-                                    <li>Analyze state of existing design, and identify UI components and elements across all Coloplast's websites</li>
-                                    <li>set up design system architecture in Figma and building all UI components</li>
-                                    <li>define and set up principles and systems for color theming, typography, spacing, elevation etc.</li>
-                                    <li>define and set up the design token system in Token Studio to sync design decisions with the front-end</li>
-                                    <li>document components usage, technical specification and general design system onboarding</li>
-                                    <li>gather feedback from designers and stakeholders</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </a>
-
-                    <a class="list-group-item" data-bs-toggle="collapse" href="#semlerWorkHistory" data-bs-parent="#workHistory" role="button" aria-expanded="false" aria-controls="semlerWorkHistory">
-                        <div class="work-history_company contractor">Semler</div> 
-                        <div class="work-history_title">Senior Product Designer</div>
-                        <div class="work-history_year">2020 - 2022</div>
-
-                        <div id="semlerWorkHistory" class="collapse work-history_details">
-                            <div>
-                                <h5>Responsibilities</h5>
-                                <ul class="nifty-list">
-                                    <li>Introduce Figma company wide and implement a design system- and component-based approach into the existing design/development cycle.</li>
-                                    <li>Build foundational UI kits for 6 <abbr data-bs-toggle="tooltip" data-bs-title="Volkswagen Group">VAG</abbr> brands and Semler to ensure design consistency with existing projects and the brands corporate identities.</li>
-                                    <li>All new UX/UI design projects across all brands.</li>
-                                </ul>
-                                <h5>Projects</h5>
-                                <ul class="nifty">
-                                    <li>ŠKODA used cars</li>
-                                    <li>Private leasing sites for Audi, Volkswagen, SEAT, ŠKODA</li>
-                                    <li>Service- & repair plans for Audi, Volkswagen, SEAT, ŠKODA</li>
-                                    <li>Volkswagen GO site - re-designing new long-term rental pages</li>
-                                    ŠKODA partner map V2 - rethinking the mobile experience and re-implementing the <li>front-end</li>
-                                    <li>Volkswagen accessories - redesigning existing accessory page</li>
-                                    <li>ŠKODA finance calculator</li>
-                                    <li>SEAT Hola - long term rental</li>
-                                    <li>ŠKODA All Inclusive site</li>
-                                    <li>Porsche Taycan prebooking campaign</li>
-                                    <li>ŠKODA accessories - redesigning existing accessory page</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </a>
-
-                    <a class="list-group-item" data-bs-toggle="collapse" href="#ccWorkHistory" data-bs-parent="#workHistory" role="button" aria-expanded="false" aria-controls="ccWorkHistory">
-                        <div class="work-history_company">Connected Cars</div> 
-                        <div class="work-history_title">Senior Product Designer</div>
-                        <div class="work-history_year">2017 - 2020</div>
-
-                        <div id="ccWorkHistory" class="collapse work-history_details">
-                            <div>                                
-                                <h5>Responsibilities</h5>
-                                <ul class="nifty-list">
-                                    <li>Take ownership of everything design (except their mobile applications) and redesign their POC of a car workshop product, to a full-fledged production grade web application.</li>
-                                    <li>Plan and design Connected Cars Workshop.</li>
-                                    <li>Plan and designing Connected Cars Fleet.</li>
-                                    <li>Identify existing end-user workflows through interviews, and iterate over UI solutions with the end-users.</li>
-                                    <li>Define brand identity for Connected Cars.</li>
-                                    <li>Technical specs for front-end developers hand-over to ensure consistency between the prototypes and final product.</li>
-                                    <li>Design and implement Connected Cars public website including illustrations.</li>
-                                    <li>Basic QA including bug-reporting for features before and after going live.</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </a>
-
-                    <div class="list-group-item">
-                        <div class="work-history_company">Printix</div>
-                        <div class="work-history_title">Design Lead</div>
-                        <div class="work-history_year">2016 - 2017</div>
+                <div id="zublimeWorkHistory" class="work-history_details collapse">
+                    <div>
+                        <h5>Responsibilities</h5>
+                        <ul class="nifty-list">
+                            <li>Update and improve UX/UI for existing partner platform.</li>
+                            <li>Streamline existing design system and systematize color palettes, spacing, typography and components.</li>
+                            <li>Introduce design token system in Token Studio to sync design decisions between Figma and front-end apps.</li>
+                            <li>Extensive UX work for new AI sales assistant including navigation principles</li>
+                            <li>Rebrand, design and build new company website</li>
+                        </ul>
                     </div>
-                    <div class="list-group-item">
-                        <div class="work-history_company contractor">Servicelovers</div>
-                        <div class="work-history_title">UX/UI Designer</div>
-                        <div class="work-history_year">2015 - 2016</div>
-                    </div>
-                    <div class="list-group-item">
-                        <div class="work-history_company contractor">Vivino</div>
-                        <div class="work-history_title">Frontend Developer</div>
-                        <div class="work-history_year">2014 - 2014</div>
-                    </div>
-                    <div class="list-group-item">
-                        <div class="work-history_company contractor">ATEA Denmark</div>
-                        <div class="work-history_title">UX/UI Designer</div>
-                        <div class="work-history_year">2012 - 2013</div>
-                    </div>
-                    
-                    <div class="mt-4 ml-3 text-small text-white-dimmed contractor">Contractor role</div>
                 </div>
+            </a>
+
+            <a class="list-group-item" data-bs-toggle="collapse" href="#coloplastWorkHistory" data-bs-parent="#workHistory" role="button" aria-expanded="false" aria-controls="coloplastWorkHistory">
+                <div class="work-history_company contractor">Coloplast</div> 
+                <div class="work-history_title">Design System Specialist</div>
+                <div class="work-history_year">2022 - 2023</div>
+
+                <div id="coloplastWorkHistory" class="collapse work-history_details">
+                    <div>
+                        <h5>Responsibilities</h5>
+                        <ul class="nifty-list">
+                            <li>Partake in defining the initial vision and setting direction for the project</li>
+                            <li>Analyze state of existing design, and identify UI components and elements across all Coloplast's websites</li>
+                            <li>set up design system architecture in Figma and building all UI components</li>
+                            <li>define and set up principles and systems for color theming, typography, spacing, elevation etc.</li>
+                            <li>define and set up the design token system in Token Studio to sync design decisions with the front-end</li>
+                            <li>document components usage, technical specification and general design system onboarding</li>
+                            <li>gather feedback from designers and stakeholders</li>
+                        </ul>
+                    </div>
+                </div>
+            </a>
+
+            <a class="list-group-item" data-bs-toggle="collapse" href="#semlerWorkHistory" data-bs-parent="#workHistory" role="button" aria-expanded="false" aria-controls="semlerWorkHistory">
+                <div class="work-history_company contractor">Semler</div> 
+                <div class="work-history_title">Senior Product Designer</div>
+                <div class="work-history_year">2020 - 2022</div>
+
+                <div id="semlerWorkHistory" class="collapse work-history_details">
+                    <div>
+                        <h5>Responsibilities</h5>
+                        <ul class="nifty-list">
+                            <li>Introduce Figma company wide and implement a design system- and component-based approach into the existing design/development cycle.</li>
+                            <li>Build foundational UI kits for 6 <abbr data-bs-toggle="tooltip" data-bs-title="Volkswagen Group">VAG</abbr> brands and Semler to ensure design consistency with existing projects and the brands corporate identities.</li>
+                            <li>All new UX/UI design projects across all brands.</li>
+                        </ul>
+                        <h5>Projects</h5>
+                        <ul class="nifty">
+                            <li>ŠKODA used cars</li>
+                            <li>Private leasing sites for Audi, Volkswagen, SEAT, ŠKODA</li>
+                            <li>Service- & repair plans for Audi, Volkswagen, SEAT, ŠKODA</li>
+                            <li>Volkswagen GO site - re-designing new long-term rental pages</li>
+                            ŠKODA partner map V2 - rethinking the mobile experience and re-implementing the <li>front-end</li>
+                            <li>Volkswagen accessories - redesigning existing accessory page</li>
+                            <li>ŠKODA finance calculator</li>
+                            <li>SEAT Hola - long term rental</li>
+                            <li>ŠKODA All Inclusive site</li>
+                            <li>Porsche Taycan prebooking campaign</li>
+                            <li>ŠKODA accessories - redesigning existing accessory page</li>
+                        </ul>
+                    </div>
+                </div>
+            </a>
+
+            <a class="list-group-item" data-bs-toggle="collapse" href="#ccWorkHistory" data-bs-parent="#workHistory" role="button" aria-expanded="false" aria-controls="ccWorkHistory">
+                <div class="work-history_company">Connected Cars</div> 
+                <div class="work-history_title">Senior Product Designer</div>
+                <div class="work-history_year">2017 - 2020</div>
+
+                <div id="ccWorkHistory" class="collapse work-history_details">
+                    <div>                                
+                        <h5>Responsibilities</h5>
+                        <ul class="nifty-list">
+                            <li>Take ownership of everything design (except their mobile applications) and redesign their POC of a car workshop product, to a full-fledged production grade web application.</li>
+                            <li>Plan and design Connected Cars Workshop.</li>
+                            <li>Plan and designing Connected Cars Fleet.</li>
+                            <li>Identify existing end-user workflows through interviews, and iterate over UI solutions with the end-users.</li>
+                            <li>Define brand identity for Connected Cars.</li>
+                            <li>Technical specs for front-end developers hand-over to ensure consistency between the prototypes and final product.</li>
+                            <li>Design and implement Connected Cars public website including illustrations.</li>
+                            <li>Basic QA including bug-reporting for features before and after going live.</li>
+                        </ul>
+                    </div>
+                </div>
+            </a>
+
+            <div class="list-group-item">
+                <div class="work-history_company">Printix</div>
+                <div class="work-history_title">Design Lead</div>
+                <div class="work-history_year">2016 - 2017</div>
             </div>
+            <div class="list-group-item">
+                <div class="work-history_company contractor">Servicelovers</div>
+                <div class="work-history_title">UX/UI Designer</div>
+                <div class="work-history_year">2015 - 2016</div>
+            </div>
+            <div class="list-group-item">
+                <div class="work-history_company contractor">Vivino</div>
+                <div class="work-history_title">Frontend Developer</div>
+                <div class="work-history_year">2014 - 2014</div>
+            </div>
+            <div class="list-group-item">
+                <div class="work-history_company contractor">ATEA Denmark</div>
+                <div class="work-history_title">UX/UI Designer</div>
+                <div class="work-history_year">2012 - 2013</div>
+            </div>
+            
+            <div class="mt-4 ml-3 text-muted contractor">Contractor role</div>
         </div>
     </div>
 </div>
@@ -211,189 +225,7 @@ page_class: page-home
 
 
 <!-- Random work -->
-<div id="moreWork" class="latest-projects section section-full section-bordered">
-    <div class="section-content">
-        <h2 class="section-heading text-uppercase mb-5 wow fadeInUp">More work</h2>
 
-        <figure class="wow fadeInUp">
-            <picture>
-                <source media="(min-width:1000px)" srcset="{{site.baseurl}}/img/projects/zublime/zublime-ai@2x.jpg" />
-                <img alt="{{ project.title }}" src="{{site.baseurl}}/img/projects/zublime/zublime-ai.jpg" loading="lazy" decoding="async" />
-            </picture>
-        </figure>
-
-        <figure class="wow fadeInUp">
-            <picture>
-                <source  media="(min-width:1000px)" srcset="{{site.baseurl}}/img/projects/zublime/zublime-ai-02@2x.jpg" />
-                <img alt="{{ project.title }}" src="{{site.baseurl}}/img/projects/zublime/zublime-ai-02.jpg" loading="lazy" decoding="async" />
-            </picture>
-        </figure>
-
-        <figure class="wow fadeInUp">
-            <picture>
-                <source media="(min-width:1000px)" srcset="{{site.baseurl}}/img/projects/coloplast/coloplast-02@2x.jpg" />
-                <img alt="{{ project.title }}" src="{{site.baseurl}}/img/projects/coloplast/coloplast-02@2x.jpg" loading="lazy" decoding="async" />
-            </picture>
-        </figure>
-        
-        <figure class="wow fadeInUp">
-            <picture>
-                <source media="(min-width:1000px)" srcset="{{site.baseurl}}/img/projects/coloplast/cp-color-roles@2x.png" />
-                <img alt="{{ project.title }}" src="{{site.baseurl}}/img/projects/coloplast/cp-color-roles@2x.png" loading="lazy" decoding="async" />
-            </picture>
-        </figure> 
-        <figure class="wow fadeInUp">
-            <picture>
-                <source media="(min-width:1000px)" srcset="{{site.baseurl}}/img/projects/ui-kit/ui-kit-02@2x.jpg" />
-                <img alt="{{ project.title }}" src="{{site.baseurl}}/img/projects/ui-kit/ui-kit-02.jpg" loading="lazy" decoding="async" />
-            </picture>
-        </figure>
-
-        <figure class="wow fadeInUp">
-            <picture>
-                <source media="(min-width:1000px)" srcset="{{site.baseurl}}/img/projects/audi-leasing/audi-leasing-02@2x.jpg" />
-                <img alt="{{ project.title }}" src="{{site.baseurl}}/img/projects/audi-leasing/audi-leasing@.jpg" loading="lazy" decoding="async" />
-            </picture>
-        </figure>
-
-        <div class="row">
-            <div class="col-md-8">
-                <figure class="wow fadeInLeft">
-                    <picture>
-                        <source media="(min-width:1000px)" srcset="{{site.baseurl}}/img/projects/cupra/cupra-02@2x.jpg" />
-                        <img alt="{{ project.title }}" src="{{site.baseurl}}/img/projects/cupra/cupra.jpg" loading="lazy" decoding="async" />
-                    </picture>
-                </figure>
-            </div>
-            <div class="col-md-4">
-                <figure class="wow fadeInRight">
-                    <picture>
-                        <source  media="(min-width:1000px)" srcset="{{site.baseurl}}/img/projects/ui-kit/ui-kit-03@2x.png" />
-                        <img alt="{{ project.title }}" src="{{site.baseurl}}/img/projects/ui-kit/ui-kit-02@2x.png" loading="lazy" decoding="async" />
-                    </picture>
-                </figure>
-            </div>
-        </div>
-
-        <figure class="wow fadeInUp">
-            <picture>
-                <source media="(min-width:1000px)" srcset="{{site.baseurl}}/img/projects/windward/windward-01@2x.jpg" />
-                <img alt="{{ project.title }}" src="{{site.baseurl}}/img/projects/windward/windward-01.jpg" loading="lazy" decoding="async" />
-            </picture>
-        </figure>
-
-        <figure class="wow fadeInUp">
-            <picture>
-                <source media="(min-width:1000px)" srcset="{{site.baseurl}}/img/projects/windward/windward-02@2x.jpg" />
-                <img alt="{{ project.title }}" src="{{site.baseurl}}/img/projects/windward/windward-02.jpg" loading="lazy" decoding="async" />
-            </picture>
-        </figure>
-
-        <div class="row">
-            <div class="col-md-6">
-                <figure class="wow fadeInLeft">
-                    <picture>
-                        <source media="(min-width:1000px)" srcset="{{site.baseurl}}/img/projects/sinon/sinon-01@2x.png" />
-                        <img alt="{{ project.title }}" src="{{site.baseurl}}/img/projects/sinon/sinon-01.png" loading="lazy" decoding="async" />
-                    </picture>
-                </figure>
-            </div>
-            <div class="col-md-6">
-                <figure class="wow fadeInRight" data-wow-delay="0.4s">
-                    <picture>
-                        <source media="(min-width:1000px)" srcset="{{site.baseurl}}/img/projects/sinon/sinon-02@2x.png" />
-                        <img alt="{{ project.title }}" src="{{site.baseurl}}/img/projects/sinon/sinon-02.png" loading="lazy" decoding="async" />
-                    </picture>
-                </figure>
-            </div>
-        </div>
-
-        <figure class="wow fadeInUp">
-            <picture>
-                <source media="(min-width:1000px)" srcset="{{site.baseurl}}/img/projects/connected-cars/cc-map-vehicle-list@2x.jpg" />
-                <img alt="{{ project.title }}" src="{{site.baseurl}}/img/projects/connected-cars/cc-map-vehicle-list.jpg" loading="lazy" decoding="async" />
-            </picture>
-        </figure>
-
-        <div class="row">
-            <div class="col-md-6">
-                <figure class="wow fadeInUp">
-                    <picture>
-                        <source media="(min-width:1000px)" srcset="{{site.baseurl}}/img/projects/connected-cars/cc-empty-states@2x.png" />
-                        <img alt="{{ project.title }}" src="{{site.baseurl}}/img/projects/connected-cars/cc-empty-states.png" loading="lazy" decoding="async" />
-                    </picture>
-                </figure>
-            </div>
-            <div class="col-md-6">
-                <figure class="wow fadeInUp">
-                    <picture>
-                        <source media="(min-width:1000px)" srcset="{{site.baseurl}}/img/projects/connected-cars/cc-hero-illustration@2x.png" />
-                        <img alt="{{ project.title }}" src="{{site.baseurl}}/img/projects/connected-cars/cc-hero-illustration.png" loading="lazy" decoding="async" />
-                    </picture>
-                </figure>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-4">
-                <figure class="wow fadeInUp">
-                    <picture>
-                        <source media="(min-width:1000px)" srcset="{{site.baseurl}}/img/projects/connected-cars/cc-fleet-maturity@2x.png" />
-                        <img alt="{{ project.title }}" src="{{site.baseurl}}/img/projects/connected-cars/cc-fleet-maturity.png" loading="lazy" decoding="async" />
-                    </picture>
-                </figure>
-            </div>
-            <div class="col-md-4">
-                <figure class="wow fadeInUp">
-                    <picture>
-                        <source media="(min-width:1000px)" srcset="{{site.baseurl}}/img/projects/connected-cars/cc-misc-illustrations@2x.png" />
-                        <img alt="{{ project.title }}" src="{{site.baseurl}}/img/projects/connected-cars/cc-misc-illustrations.png" loading="lazy" decoding="async" />
-                    </picture>
-                </figure>
-            </div>
-            <div class="col-md-4">
-                <figure class="wow fadeInUp">
-                    <picture>
-                        <source media="(min-width:1000px)" srcset="{{site.baseurl}}/img/projects/connected-cars/cc-multi-convos@2x.png" />
-                        <img alt="{{ project.title }}" src="{{site.baseurl}}/img/projects/connected-cars/cc-multi-convos.png" loading="lazy" decoding="async" />
-                    </picture>
-                </figure>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-6">
-                <figure class="wow fadeInUp">
-                    <picture>
-                        <source media="(min-width:1000px)" srcset="{{site.baseurl}}/img/projects/windspotter/windspotter-app@2x.png" />
-                        <img alt="{{ project.title }}" src="{{site.baseurl}}/img/projects/windspotter/windspotter-app.png" loading="lazy" decoding="async" />
-                    </picture>
-                </figure>
-            </div>
-            <div class="col-md-6">
-                <figure class="wow fadeInUp">
-                    <picture>
-                        <source media="(min-width:1000px)" srcset="{{site.baseurl}}/img/projects/printix/printix-illustration@2x.png" />
-                        <img alt="{{ project.title }}" src="{{site.baseurl}}/img/projects/connected-cars/printix/printix-illustration.png" loading="lazy" decoding="async" />
-                    </picture>
-                </figure>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-6">
-                <figure class="wow fadeInUp">
-                    <picture>
-                        <source media="(min-width:1000px)" srcset="{{site.baseurl}}/img/projects/audi-leasing/audi-leasing-01@2x.png" />
-                        <img alt="{{ project.title }}" src="{{site.baseurl}}/img/projects/audi-leasing/audi-leasing-01.png" loading="lazy" decoding="async" />
-                    </picture>
-                </figure>
-            </div>
-            <div class="col-md-6">
-            </div>
-        </div>
-    </div>
-</div>
 
 {% include contact.html %}
 
