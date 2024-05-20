@@ -42,5 +42,8 @@ $(function(){
   } 
 
   $("#encryptedEmail").attr("href", "mailto: " + email);
+
+
+
     
 });

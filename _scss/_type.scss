@@ -69,18 +69,38 @@ $text-white-dimmed: rgba(255,255,255, 0.75);
     @include media-breakpoint-up(md) {
         font-size: 6rem;
     }
+
+    > div {
+        position: relative;
+        margin: 0;
+    }
+}
+
+.anim {
+
+    .line {
+            overflow: hidden;
+        }
+}
+
+// classes for handling staggering
+.split-parent {
+    overflow: hidden;
+}
+
+.split-child {
+    display: inline-block;
 }
 
 .hero-heading {
-    font-size: 16vw; // has backup size from headers
+    font-size: 8vw;
     font-weight: 700;
-    line-height: 1;
+    line-height: 1.05em;
     letter-spacing: -0.05em;
-    perspective: 1000;
+    text-transform: uppercase;
 
     @include media-breakpoint-up(md) {
         font-size: 8vw;
-        text-transform: uppercase;
     }
 }
 

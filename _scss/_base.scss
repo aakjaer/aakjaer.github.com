@@ -561,12 +561,60 @@ th {
 	@extend .list-unstyled;
 	display: flex;
 	gap: 2.5rem;
-
+	
 	a {
 		font-size: 0.875rem;
 		transition: color 0.2s ease;
 		text-decoration: none;
 		text-transform: uppercase;
+	}
+}
+
+////////////////////////////////////////
+
+// parallax
+
+////////////////////////////////////////
+
+.img {
+	position: relative;
+	width: Min(80vw, 900px);
+	padding: 10vw;
+}
+
+.image-container.parallax {
+	width: 100%;
+	padding-top: 80%;
+	position: relative;
+	overflow: hidden;
+
+	img {
+		width: auto;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 50%;
+		transform: translateX(-50%) scale(1.4);
+		transform-origin: 50% 50%;
+	}
+}
+
+// Smooth scroll
+.lenis {
+	&.lenis-smooth {
+		scroll-behavior: auto;
+
+		[data-lenis-prevent] {
+			overscroll-behavior: contain;
+		}
+	}
+
+	&.lenis-stopped {
+		overflow: hidden;
+	}
+
+	&.lenis-scrolling iframe {
+		pointer-events: none;
 	}
 }
 
