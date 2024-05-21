@@ -516,6 +516,18 @@ th {
 			margin-bottom: 4.5rem;
 		}
 	}
+
+	@include media-breakpoint-up(lg) {
+		.row {
+			margin-left: -2.25rem;
+			margin-right: -2.25rem;
+		}
+		
+		[class*="col-"] {
+			padding-left: 2.25rem;
+			padding-right: 2.25rem;
+		}
+	}
 	
 	figure > a {
 		position: absolute;
