@@ -40,7 +40,7 @@
 		a {
 			position: relative;
 			padding: 1.5rem;
-			font-size: 2rem;
+			font-size: 1rem;
 			color: $body-color;
 			font-weight: 400;
 			text-decoration: none;
@@ -75,7 +75,7 @@
 // Mobile sized devices
 @include media-breakpoint-down(sm) {
 
-	.sidebar {
+	.site-header {
 		overflow-y: auto;
 		position: fixed;
 		z-index: $above-content;
@@ -94,16 +94,10 @@
 		transition: opacity 0.15s ease-in-out 0.25s, visibility 0s 0.35s;
 	}
 
-	.menu-shown {
-		body {
-			overflow: hidden;
-		}
-
-		.sidebar {
-			opacity: 1;
-			visibility: visible;
-			transition: opacity 0.25s ease-in-out, visibility 0s;
-		}
+	.menu-shown  .site-header {
+		opacity: 1;
+		visibility: visible;
+		transition: opacity 0.25s ease-in-out, visibility 0s;
 	}
 
 	.header-container {
@@ -121,8 +115,8 @@
 
 
 	// Paper effect
-	.sidebar:after,
-	.sidebar:before {
+	.site-header:after,
+	.site-header:before {
 		content: "";
 		position: fixed;
 		left: 0;
@@ -136,64 +130,70 @@
 		transition: 0.4s;
 	}
 
-	.sidebar:before {
+	.site-header:before {
 		bottom: 0;
 		top: 70px;
 	}
 
-	.menu-shown .sidebar:after,
-	.menu-shown .sidebar:before {
+	.menu-shown .site-header:after,
+	.menu-shown .site-header:before {
 		transition: 0.8s 0.4s;
 	}
 
-	.menu-shown .sidebar:before {
+	.menu-shown .site-header:before {
 		transform: translateX(-90px) rotate(6deg);
 	}
 
-	.menu-shown .sidebar:after {
+	.menu-shown .site-header:after {
 		transform: translateX(-95px) rotate(4deg);
 	}
 
-	.sidebar .logo img.sidebar-logo,
-	.sidebar .logo span {
+	.site-header .logo img.site-header-logo,
+	.site-header .logo span {
 		width: 220px !important;
 		text-align: center;
 	}
 
-	.sidebar .logo {
-		display: none;
-		font-size: 0;
-		padding: 0;
+	.site-header .logo {
+		position: absolute;
+		bottom: 2rem;
+		left: 2rem;
 		text-align: left;
 		transition: .15s;
+		color: #fff;
+		font-weight: 400;
+		font-size: 1.5rem;
+		letter-spacing: -0.03em;
+		text-decoration: none;
+		color: $text-white-dimmed;
 	}
 
-	.sidebar .logo:hover {
+	.site-header .logo:hover {
 		opacity: 0.5;
 	}
 
-	.sidebar .logo span {
+	.site-header .logo span {
 		color: #fff;
 	}
 
 
-	.sidebar .secondary-links {
+	.site-header .secondary-links {
 		margin-top: 4rem;
 	}
 
-	.sidebar ul li a {
+	.site-header ul li a {
 		color: #fff;
 		transition: .15s;
 		text-decoration: none;
 	}
 
-	.sidebar ul li a:hover {
+	.site-header ul li a:hover {
 		opacity: 0.75;
 		text-decoration: underline;	
 	}
-	.sidebar .active a,
-	.sidebar ul li a:active,
-	.sidebar ul li a:focus {
+	.site-header .active a,
+	.site-header ul li a:active,
+	.site-header ul li a:focus {
 		color: $brand-green;
 		opacity: 1;
 	}
@@ -214,9 +214,10 @@
 		.primary-links {
 
 			li > a {
-				font-size: 3rem;
+				font-size: 4rem;
+				font-weight: 400;
 				line-height: 1;
-				letter-spacing: -0.05em;
+				letter-spacing: -0.03em;
 
 				&:hover {
 					text-decoration: none;
@@ -238,13 +239,13 @@
 
 
 @media (max-width: 414px) {
-	.sidebar {
+	.site-header {
 		padding: 50px 17% 17%;
 		width: 100%;
 	}
 
-	.sidebar .logo img.sidebar-logo,
-	.sidebar .logo span {
+	.site-header .logo img.site-header-logo,
+	.site-header .logo span {
 		width: 100% !important;
 	}
 

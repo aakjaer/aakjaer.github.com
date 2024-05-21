@@ -15,7 +15,6 @@ $(function(){
       transition: function(url){ window.location.href = url; }
   });
 
-
   var swiper = new Swiper(".quick-gallery", {
     effect: "fade",
     navigation: {
@@ -42,8 +41,5 @@ $(function(){
   } 
 
   $("#encryptedEmail").attr("href", "mailto: " + email);
-
-
-
     
 });
