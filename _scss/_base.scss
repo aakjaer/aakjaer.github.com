@@ -413,12 +413,14 @@ th {
 			color: text-muted;
 		}
 
-		.work-history_company {
-			transform: translateX(5px);
-		}
+		@include media-breakpoint-up(sm) {
+			.work-history_company {
+				transform: translateX(5px);
+			}
 
-		.work-history_year {
-			transform: translateX(-5px);
+			.work-history_year {
+				transform: translateX(-5px);
+			}
 		}
 	}
 
