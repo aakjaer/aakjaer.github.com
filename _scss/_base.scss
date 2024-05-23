@@ -1005,8 +1005,10 @@ footer[role="contentinfo"] {
 	border-radius: $border-radius;
 
 	@include media-breakpoint-up(xl) {
-		margin-left: -10rem;
-		margin-right: -10rem;
+		&.expand {
+			margin-left: -10rem;
+			margin-right: -10rem;
+		}
 	}
 }
 
