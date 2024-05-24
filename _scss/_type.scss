@@ -203,3 +203,14 @@ acronym {
     .pb-lg-0 { padding-bottom: 0 !important; }
     .pl-lg-0 { padding-left: 0 !important; }
 }
+
+ @include media-breakpoint-up(xl) {
+    .mt-xl-0 { margin-top: 0 !important; }
+    .mr-xl-0 { margin-right: 0 !important; }
+    .mb-xl-0 { margin-bottom: 0 !important; }
+    .ml-xl-0 { margin-left: 0 !important; }
+    .pt-xl-0 { padding-top: 0 !important; }
+    .pr-xl-0 { padding-right: 0 !important; }
+    .pb-xl-0 { padding-bottom: 0 !important; }
+    .pl-xl-0 { padding-left: 0 !important; }
+}
