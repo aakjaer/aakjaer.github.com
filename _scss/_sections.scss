@@ -23,10 +23,10 @@
     .section-content {
         @extend .container;
         padding: 4rem 1.5rem;
-        font-size: 1.25rem;
     
         @include media-breakpoint-up(sm) {
             padding: 6rem 2.5rem;
+            font-size: 1.125rem;
         }
         
         @include media-breakpoint-up(lg) {
@@ -97,7 +97,7 @@
     border-top: 1px solid $gray-200;
 }
 
-.section-bordered  .section-content {
+.section-bordered .section-content {
     border-top: 1px solid $gray-200;
 }
 
