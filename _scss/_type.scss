@@ -3,11 +3,11 @@
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
     font-weight: 500;
-    letter-spacing: -0.03em;
+    letter-spacing: -0.05em;
     line-height: 1.15em;
 }
 
-$text-white-dimmed: rgba(255,255,255, 0.75);
+$text-white-dimmed: rgba(255,255,255, 0.6);
 
 .font-weight-lighter { font-weight: $font-weight-lighter; }
 .light { font-weight: 300; }
@@ -30,7 +30,7 @@ $text-white-dimmed: rgba(255,255,255, 0.75);
 
 .lead,
 .hero-lead {
-    max-width: 50rem;
+    max-width: 45rem;
     margin-bottom: 1.5em;
     font-size: 1.25rem;
     font-weight: 500;
@@ -49,7 +49,7 @@ $text-white-dimmed: rgba(255,255,255, 0.75);
 
 .lead-lg {
     @include media-breakpoint-up(md) {
-        font-size: 1.75rem;
+        font-size: 1.5rem;
     }
 }
 
@@ -72,13 +72,13 @@ $text-white-dimmed: rgba(255,255,255, 0.75);
 .display-heading {
     margin-bottom: 4rem;
     font-size: 3.5rem;
-    font-weight: 600;
+    font-weight: 500;
     line-height: 1;
     text-transform: uppercase;
 
     @include media-breakpoint-up(md) {
         max-width: 50rem;
-        font-size: 6rem;
+        font-size: 5rem;
     }
 
     > div {
@@ -105,22 +105,27 @@ $text-white-dimmed: rgba(255,255,255, 0.75);
 
 .hero-heading {
     font-size: 8vw;
-    font-weight: 700;
+    font-weight: 500;
     line-height: 1.05em;
-    letter-spacing: -0.05em;
+    letter-spacing: -0.07em;
+    max-width: 10em;
     text-transform: uppercase;
+    color: $gray-950;
 
     @include media-breakpoint-up(md) {
         font-size: clamp(5rem, 8vw, 8rem);
+    }
+
+    .highlight {
+        color: $gray-100;
     }
 }
 
 .section-heading {
     margin-bottom: 1em;
     line-height: 1.15em;
-    font-size: clamp(1.75rem, 3vw, 4rem);
+    font-size: clamp(1.75rem, 3.5vw, 4rem);
     letter-spacing: -0.05em;
-    font-weight: 500;
 
     &:first-child {
         margin-top: 0;

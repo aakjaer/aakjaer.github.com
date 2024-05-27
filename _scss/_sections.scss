@@ -10,31 +10,22 @@
         padding-right: 1.5rem;
 
         @include media-breakpoint-up(sm) {
-            padding-left: 2.5rem;
-            padding-right: 2.5rem;
-        }
-
-        @include media-breakpoint-up(lg) {
-            padding-left: 4.5rem;
-            padding-right: 4.5rem;
+            padding-left: 2vw;
+            padding-right: 2vw;
         }
     }
 
     .section-content {
         @extend .container;
-        padding: 4rem 1.5rem;
+        padding: 4rem 1rem;
     
         @include media-breakpoint-up(sm) {
-            padding: 6rem 2.5rem;
+            padding: 6rem 2vw;
             font-size: 1.125rem;
         }
         
-        @include media-breakpoint-up(lg) {
-            padding: 6rem 4.5rem;
-        }
-
         @include media-breakpoint-up(xl) {
-            padding: 7.5rem 4.5rem;
+            padding: 7.5rem 2vw;
         }
     }
 }
@@ -97,8 +88,12 @@
     border-top: 1px solid $gray-200;
 }
 
-.section-bordered .section-content {
-    border-top: 1px solid $gray-200;
+.section-bordered {
+
+    .section-content {
+        padding-top: 0;
+        border-top: 1px solid $gray-200;
+    }
 }
 
  .section-narrow .section-content {
@@ -138,9 +133,8 @@
     }
 }
 
-.section-green {
-    background: #9EA39F;
-    color: white;
+.section-muted {
+    background: $gray-300;
 }
 
 .section-yellow {
@@ -158,12 +152,12 @@
 }
 
 .section-dark {
-    background: #0D181B;
+    background: $gray-950;
     color: #fff;
 }
 
-.section-light-gray {
-    background-color: #f3f4f5;
+.section-subtle {
+    background-color: $gray-100;
 }
 
 
@@ -193,7 +187,6 @@
 .section-skills .display-heading {
     color: white;
 }
-
 
 .section--servicelovers {
     @include gradient-directional(#1D1129,#323050,-35deg);

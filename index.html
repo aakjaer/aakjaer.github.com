@@ -6,7 +6,7 @@ page_class: page-home
 {% include home-intro.html %}
 
 <!-- Client list -->
-<div class="section section-full">
+<div class="section section-full section-subtle" data-item>
     <div class="section-content">
         {% include clients.html %}
     </div>
@@ -16,33 +16,33 @@ page_class: page-home
 <!-- Recent projects -->
 
 <div class="latest-projects section section-full">
-    <div class="section-content py-5">
-        <hr>
-        <h2 id="recent-projects" class="section-heading text-uppercase mb-5 anim" data-wow-offset="50">Recent projects</h2>
+    <div class="section-content">
+        <h2 id="recent-projects" class="display-heading text-uppercase mb-5" data-wow-offset="50">About</h2>
 
         <div class="row">
+            <div class="col-lg-5 wow fadeInUp">
+                <figure>
+                    <picture>
+                        <source media="(min-width:1000px)" srcset="{{site.baseurl}}/img/projects/zublime/zublime-preview@2x.png" />
+                        <img alt="{{ project.title }}" src="{{site.baseurl}}/img/projects/zublime/zublime-preview.png"
+                            loading="lazy" decoding="async" />
+                    </picture>
+                    <div class="mb-3">
+                        <h3 class="h4 mt-4 mb-0 text-uppercase">Zublime AI</h3>
+                        <p class="text-normal text-muted">2023-2024</p>
+                    </div>
+                </figure>
+            </div>
+
             <div class="col-lg-7 wow fadeInUp">
                 <figure>
                     <picture>
                         <source media="(min-width:1000px)" srcset="{{site.baseurl}}/img/projects/coloplast/coloplast-preview@2x.png" />
                         <img alt="{{ project.title }}" src="{{site.baseurl}}/img/projects/coloplast/coloplast-preview.png" loading="lazy" decoding="async" />
                     </picture>
-                    <div class="wow fadeInUp" data-wow-offset="100">
-                        <h3 class="h4 mt-4 mb-0">Coloplast Design System</h3>
-                        <p class="text-normal text-muted">2023-2024</p>
-                    </div>
-                </figure>
-            </div>
-
-            <div class="col-lg-5 wow fadeInUp">
-                <figure>
-                    <picture>
-                        <source media="(min-width:1000px)" srcset="{{site.baseurl}}/img/projects/zublime/zublime-preview@2x.png" />
-                        <img alt="{{ project.title }}" src="{{site.baseurl}}/img/projects/zublime/zublime-preview.png" loading="lazy" decoding="async" />
-                    </picture>
-                    <div class="wow fadeInUp" data-wow-offset="100">
-                        <h3 class="h4 mt-4 mb-0">Zublime AI</h3>
-                        <p class="text-normal text-muted">2023-2024</p>
+                    <div class="mb-3">
+                        <h3 class="h4 mt-4 mb-0 text-uppercase">Coloplast Design System</h3>
+                        <p class="text-normal text-muted">2022-2023</p>
                     </div>
                 </figure>
             </div>
@@ -55,8 +55,8 @@ page_class: page-home
                         <source media="(min-width:1000px)" srcset="{{site.baseurl}}/img/projects/audi-leasing/audi-leasing-preview@2x.png" />
                         <img alt="{{ project.title }}" src="{{site.baseurl}}/img/projects/audi-leasing/audi-leasing-preview.png" loading="lazy" decoding="async" />
                     </picture>
-                    <div class="wow fadeInUp" data-wow-offset="100">
-                        <h3 class="h4 mt-4 mb-0">Audi Leasing</h3>
+                    <div>
+                        <h3 class="h4 mt-4 mb-0 text-uppercase">Audi Leasing</h3>
                         <p class="text-normal text-muted">2020-2021</p>
                     </div>
                 </figure>
@@ -68,8 +68,8 @@ page_class: page-home
                         <source media="(min-width:1000px)" srcset="{{site.baseurl}}/img/projects/ui-kit/ui-kit-preview@2x.png" />
                         <img alt="{{ project.title }}" src="{{site.baseurl}}/img/projects/ui-kit/ui-kit-preview.png" loading="lazy" decoding="async" />
                     </picture>
-                    <div class="wow fadeInUp" data-wow-offset="100">
-                        <h3 class="h4 mt-4 mb-0">UI Kit - personal project</h3>
+                    <div>
+                        <h3 class="h4 mt-4 mb-0 text-uppercase">UI Kit</h3>
                         <p class="text-normal text-muted">2023-2024</p>
                     </div>
                 </figure>
@@ -81,8 +81,8 @@ page_class: page-home
                         <source media="(min-width:1000px)" srcset="{{site.baseurl}}/img/projects/windward/windward-preview@2x.jpg" />
                         <img alt="{{ project.title }}" src="{{site.baseurl}}/img/projects/windward/windward-preview.jpg" loading="lazy" decoding="async" />
                     </picture>
-                    <div class="wow fadeInUp" data-wow-offset="100">
-                        <h3 class="h4 mt-4 mb-0">Windward Mayreau - personal project</h3>
+                    <div>
+                        <h3 class="h4 mt-4 mb-0 text-uppercase">Windward Mayreau</h3>
                         <p class="text-normal text-muted">2021-2022</p>
                     </div>
                 </figure>

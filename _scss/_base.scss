@@ -95,8 +95,8 @@ header[role="banner"] {
 .site-header .header-container {
 
 	@include media-breakpoint-up(md) {
-		padding-left: 2.5rem;
-		padding-right: 2.5rem;
+		padding-left: 2vw;
+		padding-right: 2vw;
 	}
 
 	// @include media-breakpoint-up(lg) {
@@ -222,10 +222,11 @@ blockquote {
 	gap: 0.75rem;
     padding: 0.75rem 1.375rem;
 	font-size: 0.875rem;
-	border: 2px solid $body-color;
+	font-weight: 500;
+	color: $white;
+	letter-spacing: 0.015em;
 	border-radius: 10rem;
-	color: $body-color;
-	font-weight: 600;
+	background-color: $gray-950;
 	transition: all $easing-default;
 	text-transform: uppercase;
 	text-decoration: none;
@@ -240,14 +241,19 @@ blockquote {
 	}
 
 	&:hover {
-		transform: scale(1.06);
-		background-color: $body-color;
-		color: #fff;
+		transform: scale(1.04);
+		background-color: $gray-800;
+		color: $white;
 		text-decoration: none;
 
 		.icon {
 			transform: translateX(3px);
 		}
+	}
+
+	&:active {
+		transform: scale(0.94);
+		background-color: $gray-950;
 	}
 }
 
@@ -408,6 +414,7 @@ th {
 		transition: all 0.2s ease-in-out;
 		color: $body-color;
 		font-weight: 400;
+		background: none;
 		
 		@include media-breakpoint-up(md) {
 			flex-direction: row;
@@ -417,7 +424,7 @@ th {
 	}
 
 	a.list-group-item:hover {
-		background-color: rgba(0,0,0, 0.015);
+		background-color: rgba(0,0,0, 0.025);
 		border-color: $body-color;
 
 		.work-history_company,
@@ -506,43 +513,43 @@ th {
 
 	@include media-breakpoint-up(sm) {
 		.row {
-			margin-left: -1.25rem;
-			margin-right: -1.25rem;
+			margin-left: -1.125;
+			margin-right: -1.125rem;
 		}
 		
 		[class*="col-"] {
-			padding-left: 1.25rem;
-			padding-right: 1.25rem;
+			padding-left: 1.125rem;
+			padding-right: 1.125rem;
 		}
 	}
 	
 	@include media-breakpoint-up(md) {
 		.row {
-			margin-left: -1.25rem;
+			margin-left: -1.125rem;
 			margin-right: -1.25rem;
 		}
 		
 		[class*="col-"] {
-			padding-left: 1.25rem;
-			padding-right: 1.25rem;
+			padding-left: 1.125rem;
+			padding-right: 1.125rem;
 		}
 		
 		figure {
-			margin-bottom: 4.5rem;
+			margin-bottom: 2.25rem;
 		}
 	}
 
-	@include media-breakpoint-up(lg) {
-		.row {
-			margin-left: -2.25rem;
-			margin-right: -2.25rem;
-		}
+	// @include media-breakpoint-up(lg) {
+	// 	.row {
+	// 		margin-left: -2.25rem;
+	// 		margin-right: -2.25rem;
+	// 	}
 		
-		[class*="col-"] {
-			padding-left: 2.25rem;
-			padding-right: 2.25rem;
-		}
-	}
+	// 	[class*="col-"] {
+	// 		padding-left: 2.25rem;
+	// 		padding-right: 2.25rem;
+	// 	}
+	// }
 	
 	figure > a {
 		position: absolute;
@@ -874,6 +881,10 @@ footer[role="contentinfo"] {
 			color: $body-color;
 			text-decoration: underline;
 		}
+	}
+
+	.btn-cta {
+		background-color: $gray-900;
 	}
 }
 

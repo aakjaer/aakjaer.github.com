@@ -27,7 +27,7 @@ gsap.from(displayHeading.chars, {
 gsap.from(sectionHeading.words, {
   duration: 0.6,
   yPercent: 100,
-  delay: 1,
+  delay: 0,
   ease: "power4.out",
   stagger: 0.1,
   scrollTrigger: { 
@@ -88,11 +88,32 @@ class WordTransition {
 document.addEventListener("DOMContentLoaded", function () {
 	new WordTransition("#heroWords", [
 		"Hands-on",
-    "Dedicated",
-    "Technical",
+    	"Dedicated",
+    	"Technical",
+		"Empathic",
 		"Hard working",
-    "Easy going"
+		"Ambitious",
+    	"Easy going",
 	]);
 });
 
 
+const parallaxItems = gsap.utils.toArray("[data-item]", document);
+const tl = gsap.timeline();
+
+parallaxItems.forEach((item, index) => {
+	if (index > 0) {
+		tl.to(item, {
+			scrollTrigger: {
+				trigger: item,
+				start: "top bottom",
+				end: `+=${item.offsetHeight * index} top`,
+				scrub: 1,
+				onUpdate: (self) => self.next()?.refresh(),
+				onLeave: () => ScrollTrigger.refresh(),
+			},
+			marginTop: `-${item.offsetHeight}`,
+			ease: "power1.out"
+		});
+	}
+});
