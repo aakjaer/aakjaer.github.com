@@ -3,7 +3,7 @@
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
     font-weight: 500;
-    letter-spacing: -0.05em;
+    letter-spacing: -0.03em;
     line-height: 1.15em;
 }
 
@@ -124,7 +124,7 @@ $text-white-dimmed: rgba(255,255,255, 0.6);
 .section-heading {
     margin-bottom: 1em;
     line-height: 1.15em;
-    font-size: clamp(1.75rem, 3.5vw, 4rem);
+    font-size: clamp(1.75rem, 3.5vw, 3rem);
     letter-spacing: -0.05em;
 
     &:first-child {
@@ -149,8 +149,10 @@ $text-white-dimmed: rgba(255,255,255, 0.6);
 .group-heading {
     margin: 3rem 0 0.75rem;
     font-size: 1.375rem;
-    font-weight: 600;
+    font-weight: 500;
 }
+
+
 
 .separator-thin {
     border-width: 1px;

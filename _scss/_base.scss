@@ -873,9 +873,9 @@ footer[role="contentinfo"] {
 		justify-content: space-between;
 	}
 
-	.contact-links a { 
+	.contact-links a {
 		font-weight: 500;
-		color: $text-muted;
+		color: $text-white-dimmed;
 
 		&:hover {
 			color: $body-color;
