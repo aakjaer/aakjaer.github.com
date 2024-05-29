@@ -71,14 +71,13 @@ $text-white-dimmed: rgba(255,255,255, 0.6);
 
 .display-heading {
     margin-bottom: 4rem;
-    font-size: 3.5rem;
+    font-size: clamp(2rem, 6vw, 5rem);
     font-weight: 500;
     line-height: 1;
     text-transform: uppercase;
 
     @include media-breakpoint-up(md) {
         max-width: 50rem;
-        font-size: 5rem;
     }
 
     > div {
@@ -124,7 +123,7 @@ $text-white-dimmed: rgba(255,255,255, 0.6);
 .section-heading {
     margin-bottom: 1em;
     line-height: 1.15em;
-    font-size: clamp(1.75rem, 3.5vw, 3rem);
+    font-size: clamp(1.75rem, 2.5vw, 3rem);
     letter-spacing: -0.05em;
 
     &:first-child {
