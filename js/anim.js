@@ -90,7 +90,6 @@ document.addEventListener("DOMContentLoaded", function () {
 		"Hands-on",
     	"Dedicated",
     	"Technical",
-		"Empathic",
 		"Hard working",
 		"Ambitious",
     	"Easy going",
@@ -121,8 +120,9 @@ parallaxItems.forEach((item, index) => {
 
 const toggleNavbar = gsap.from('.site-header', { 
 	yPercent: -100,
+	opacity: 0,
 	paused: true,
-	duration: 0.2,
+	duration: 0.5,
 	ease: "power1.out",
 }).progress(1);
 
@@ -132,4 +132,16 @@ ScrollTrigger.create({
 	onUpdate: (self) => {
 		self.direction === -1 ? toggleNavbar.play() : toggleNavbar.reverse()
 	}
+});
+
+
+const fadeInElm = gsap.utils.toArray('.hest');
+
+fadeInElm.forEach((box, i) => {
+  const anim = gsap.fromTo(box, {autoAlpha: 0, y: 50}, {duration: 1, autoAlpha: 1, y: 0});
+  ScrollTrigger.create({
+    trigger: box,
+    animation: anim,
+    toggleActions: 'play none none none'
+  });
 });

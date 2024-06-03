@@ -879,7 +879,6 @@ footer[role="contentinfo"] {
 		color: $text-white-dimmed;
 
 		&:hover {
-			color: $body-color;
 			text-decoration: underline;
 		}
 	}
@@ -921,20 +920,14 @@ footer[role="contentinfo"] {
   animation-name: fade-in;
 }
 
-
-@keyframes fade-out {
-  0% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
+.fadeNifty {
+	animation-name: fadeNifty;
 }
 
 @include keyframes(fadeInUp) {
 	0% {
 		opacity: 0;
-		@include transform(translateY(20px));
+		@include transform(translateY(80px));
 	}
 
 	100% {
@@ -945,6 +938,29 @@ footer[role="contentinfo"] {
 
 @mixin fadeInUp($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
 	@include animation-name(fadeInUp);
+	@include count($count);
+	@include duration($duration);
+	@include delay($delay);
+	@include function($function);
+	@include fill-mode($fill);
+	@include visibility($visibility);
+}
+
+
+@include keyframes(fadeNifty) {
+	0% {
+		opacity: 0;
+		@include transform(scale(0.98) translateY(80px));
+	}
+
+	100% {
+		opacity: 1;
+		@include transform(scale(1) translateY(0));
+	}
+}
+
+@mixin fadeNifty($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+	@include animation-name(fadeNifty);
 	@include count($count);
 	@include duration($duration);
 	@include delay($delay);
