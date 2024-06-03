@@ -232,8 +232,8 @@ blockquote {
 	text-decoration: none;
 
 	@include media-breakpoint-up(md){
-		font-size: 1rem;
-		padding: 1.125rem 2rem;
+		// font-size: 1rem;
+		padding: 1rem 1.75rem;
 	}
 	
 	.icon {
@@ -476,7 +476,8 @@ th {
 		font-size: 1rem;
 		
 		> div {
-			padding: 4rem 0 1rem;
+			max-width: 45rem;
+			padding: 2rem 0 1rem;
 		}
 	}
 }

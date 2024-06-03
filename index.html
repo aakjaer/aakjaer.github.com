@@ -6,7 +6,7 @@ page_class: page-home
 {% include home-intro.html %}
 
 <!-- Client list -->
-<div class="section section-full section-subtle" data-item>
+<div class="section section-full section-subtle" data-parallax>
     <div class="section-content">
         {% include clients.html %}
     </div>
@@ -17,9 +17,9 @@ page_class: page-home
 
 <div class="latest-projects section section-full">
     <div class="section-content">
-        <h2 id="recent-projects" class="section-heading text-uppercase mb-5" data-wow-offset="50">Recent work</h2>
+        <h2 id="recent-projects" class="section-heading text-uppercase mb-5 anim">Recent work</h2>
 
-        <div class="row">
+        <div class="row mb-md-5">
             <div class="col-lg-5 wow fadeInUp">
                 <figure>
                     <picture>
@@ -28,7 +28,7 @@ page_class: page-home
                             loading="lazy" decoding="async" />
                     </picture>
                     <div class="mb-3">
-                        <h3 class="h4 mt-4 mb-0 text-uppercase">Zublime AI</h3>
+                        <h3 class="h5 mt-4 mb-0 text-uppercase">Zublime AI</h3>
                         <p class="text-normal text-muted">2023-2024</p>
                     </div>
                 </figure>
@@ -41,7 +41,7 @@ page_class: page-home
                         <img alt="{{ project.title }}" src="{{site.baseurl}}/img/projects/coloplast/coloplast-preview.png" loading="lazy" decoding="async" />
                     </picture>
                     <div class="mb-3">
-                        <h3 class="h4 mt-4 mb-0 text-uppercase">Coloplast Design System</h3>
+                        <h3 class="h5 mt-4 mb-0 text-uppercase">Coloplast Design System</h3>
                         <p class="text-normal text-muted">2022-2023</p>
                     </div>
                 </figure>
@@ -56,7 +56,7 @@ page_class: page-home
                         <img alt="{{ project.title }}" src="{{site.baseurl}}/img/projects/audi-leasing/audi-leasing-preview.png" loading="lazy" decoding="async" />
                     </picture>
                     <div>
-                        <h3 class="h4 mt-4 mb-0 text-uppercase">Audi Leasing</h3>
+                        <h3 class="h5 mt-4 mb-0 text-uppercase">Audi Leasing</h3>
                         <p class="text-normal text-muted">2020-2021</p>
                     </div>
                 </figure>
@@ -69,7 +69,7 @@ page_class: page-home
                         <img alt="{{ project.title }}" src="{{site.baseurl}}/img/projects/ui-kit/ui-kit-preview.png" loading="lazy" decoding="async" />
                     </picture>
                     <div>
-                        <h3 class="h4 mt-4 mb-0 text-uppercase">UI Kit</h3>
+                        <h3 class="h5 mt-4 mb-0 text-uppercase">UI Kit</h3>
                         <p class="text-normal text-muted">2023-2024</p>
                     </div>
                 </figure>
@@ -82,7 +82,7 @@ page_class: page-home
                         <img alt="{{ project.title }}" src="{{site.baseurl}}/img/projects/windward/windward-preview.jpg" loading="lazy" decoding="async" />
                     </picture>
                     <div>
-                        <h3 class="h4 mt-4 mb-0 text-uppercase">Windward Mayreau</h3>
+                        <h3 class="h5 mt-4 mb-0 text-uppercase">Windward Mayreau</h3>
                         <p class="text-normal text-muted">2021-2022</p>
                     </div>
                 </figure>
@@ -124,7 +124,7 @@ page_class: page-home
 
             <a class="list-group-item" data-bs-toggle="collapse" href="#coloplastWorkHistory" data-bs-parent="#workHistory" role="button" aria-expanded="false" aria-controls="coloplastWorkHistory">
                 <div class="work-history_company contractor">Coloplast</div> 
-                <div class="work-history_title">Design System Specialist</div>
+                <div class="work-history_title">System Designer</div>
                 <div class="work-history_year">2022 - 2023</div>
 
                 <div id="coloplastWorkHistory" class="collapse work-history_details">
@@ -183,39 +183,83 @@ page_class: page-home
                     <div>                                
                         <h5>Responsibilities</h5>
                         <ul class="nifty-list">
-                            <li>Take ownership of everything design (except their mobile applications) and redesign their POC of a car workshop product, to a full-fledged production grade web application.</li>
-                            <li>Plan and design Connected Cars Workshop.</li>
-                            <li>Plan and designing Connected Cars Fleet.</li>
-                            <li>Identify existing end-user workflows through interviews, and iterate over UI solutions with the end-users.</li>
+                            <li>Take ownership of all web related products and rethink an existing workshop SaaS product, to a production ready product.</li>
+                            <li>Plan and design Connected Cars Workshop and Fleet products while working closely with POs, FE and BE developers, data scientists and management.</li>
+                            <li>Identify existing end-user workflow challenges through interviews and user tests, and iterate over new UI solutions with the end-users.</li>
                             <li>Define brand identity for Connected Cars.</li>
-                            <li>Technical specs for front-end developers hand-over to ensure consistency between the prototypes and final product.</li>
-                            <li>Design and implement Connected Cars public website including illustrations.</li>
+                            <li>Technical specs for front-end developers hand-over, to ensure consistency between the prototypes and final product.</li>
                             <li>Basic QA including bug-reporting for features before and after going live.</li>
                         </ul>
                     </div>
                 </div>
             </a>
 
-            <div class="list-group-item">
-                <div class="work-history_company">Printix</div>
+            <a class="list-group-item" data-bs-toggle="collapse" href="#printixWorkHistory" data-bs-parent="#workHistory" role="button" aria-expanded="false" aria-controls="printixWorkHistory">
+                <div class="work-history_company">Printix</div> 
                 <div class="work-history_title">Design Lead</div>
                 <div class="work-history_year">2016 - 2017</div>
-            </div>
-            <div class="list-group-item">
-                <div class="work-history_company contractor">Servicelovers</div>
+
+                <div id="printixWorkHistory" class="collapse work-history_details">
+                    <div>
+                        <p>In an industry where change and innovation is scarce, Danish start-up Printix was on a mission to replace traditional
+                        business print infrastructure with a cloud-based SaaS solution.</p>
+                        
+                        <p><strong>Printix was acquired by Kofax for double-digit million figure (USD) in 2021</strong>.</p>
+
+                        <h5 class="mt-4">Responsibilities</h5>
+                        <ul class="nifty-list">
+                            <li>Take lead on design direction and user experience for Printix' 3 SaaS products.</li>
+                            <li>Introduce a customer centric culture and design process.</li>
+                            <li>Establish a UI kit of components, colors, typography etc. for improved reuse and handover.</li>
+                            <li>Hands-on design, working closely with POs, frontend and backend teams.</li>
+                        </ul>
+                    </div>
+                </div>
+            </a>
+
+            <a class="list-group-item" data-bs-toggle="collapse" href="#serviceloversWorkHistory" data-bs-parent="#workHistory" role="button" aria-expanded="false" aria-controls="serviceloversWorkHistory">
+                <div class="work-history_company contractor">Servicelovers</div> 
                 <div class="work-history_title">UX/UI Designer</div>
                 <div class="work-history_year">2015 - 2016</div>
-            </div>
-            <div class="list-group-item">
-                <div class="work-history_company contractor">Vivino</div>
-                <div class="work-history_title">Frontend Developer</div>
+
+                <div id="serviceloversWorkHistory" class="collapse work-history_details">
+                    <div>
+                        <p>Building a community of service connoisseurs, by enabling customers to focus on giving positive feedback on their service experiences.</p>
+
+                        <h5 class="mt-4">Responsibilities</h5>
+                        <ul class="nifty-list">
+                            <li>Define a digital identity and set the design direction for Servicelovers products.</li>
+                            <li>Take charge on all things design.</li>
+                            <li>Design new mobile app for service loving customers to rate their experiences.</li>
+                        </ul>
+                    </div>
+                </div>
+            </a>
+
+            <a class="list-group-item" data-bs-toggle="collapse" href="#vivinoWorkHistory" data-bs-parent="#workHistory" role="button" aria-expanded="false" aria-controls="vivinoWorkHistory">
+                <div class="work-history_company contractor">Vivino</div> 
+                <div class="work-history_title">Frontend developer</div>
                 <div class="work-history_year">2014 - 2014</div>
-            </div>
-            <div class="list-group-item">
-                <div class="work-history_company contractor">ATEA Denmark</div>
-                <div class="work-history_title">UX/UI Designer</div>
-                <div class="work-history_year">2012 - 2013</div>
-            </div>
+
+                <div id="vivinoWorkHistory" class="collapse work-history_details">
+                    <div>
+                        <p>I had the pleasure of working for Vivino, a danish start-up company situated in Copenhagen and San Francisco,
+                        specializing in delivering wine ratings, reviews and prices to the biggest wine community in the world, with 65 mio.+
+                        users and 15 mio.+ different wines.</p>
+
+                        <p>My task was to help the Copenhagen based development team build a new front-end for Vivino.com. Back then their Android
+                        and iOS apps were generating a lot of traffic and new users (around 3 mio.), but their website was basically non-existing and was needed for non-mobile users and use-cases.</p>
+
+                        <h5 class="mt-4">Responsibilities</h5>
+                        <ul class="nifty-list">
+                            <li>Implement frontend templates with the new design</li>
+                            <li>Working closely with the in-house designer, to guide the design process towards reusability and speed optimization.</li>
+                            <li>Identify reusable elements for components, streamlining typography and planning responsive behavior.</li>
+                            <li>Ensuring quality of final implementation.</li>
+                        </ul>
+                    </div>
+                </div>
+            </a>
             
             <div class="mt-4 ml-3 text-muted contractor">Contractor role</div>
         </div>

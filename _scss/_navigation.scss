@@ -1,18 +1,28 @@
 // global styles
 
-.page-home .site-header,
-.page-about .site-header {
+.page-home .site-header {
 	@include media-breakpoint-up(md) {
-		background-color: $gray-300;
+		// background-color: $gray-300;
 	}
 }
 
+//.........................................
 
 // Desktop sized devices
+
+//.........................................
+
 @include media-breakpoint-up(md) {
 	.burger,
 	.secondary-links {
 		display: none !important;
+	}
+
+	.site-header {
+		position: fixed;
+		top: 0;
+		width: 100%;
+		z-index: $zindex-fixed;
 	}
 
 	.site-nav {
@@ -81,7 +91,13 @@
 	}
 }
 
+
+//.........................................
+
 // Mobile sized devices
+
+//.........................................
+
 @include media-breakpoint-down(sm) {
 
 	.site-header {

@@ -98,7 +98,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-const parallaxItems = gsap.utils.toArray("[data-item]", document);
+const parallaxItems = gsap.utils.toArray("[data-parallax]", document);
 const tl = gsap.timeline();
 
 parallaxItems.forEach((item, index) => {
@@ -108,12 +108,28 @@ parallaxItems.forEach((item, index) => {
 				trigger: item,
 				start: "top bottom",
 				end: `+=${item.offsetHeight * index} top`,
-				scrub: 1,
+				scrub: 0.5,
 				onUpdate: (self) => self.next()?.refresh(),
 				onLeave: () => ScrollTrigger.refresh(),
 			},
 			marginTop: `-${item.offsetHeight}`,
 			ease: "power1.out"
 		});
+	}
+});
+
+
+const toggleNavbar = gsap.from('.site-header', { 
+	yPercent: -100,
+	paused: true,
+	duration: 0.2,
+	ease: "power1.out",
+}).progress(1);
+
+ScrollTrigger.create({
+	start: "top+=10",
+	end: "top+=20",
+	onUpdate: (self) => {
+		self.direction === -1 ? toggleNavbar.play() : toggleNavbar.reverse()
 	}
 });
