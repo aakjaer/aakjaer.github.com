@@ -4,9 +4,312 @@ page_class: page-work
 ---
 
 
-<div class="section section-hero section-full">
-    <div class="section-content pt-5 pb-5">
-        <p class="lead text-uppercase text-center">Casestudy</p>
-        <h1 class="hero-heading text-uppercase anim text-white">Coloplast</h1>
+<div class="section section-full">
+    <div class="section-content pb-5">
+        <h1 class="hero-heading text-uppercase anim text mb-3">Coloplast</h1>
+        <p class="lead text-uppercase anim text mb-5">Design system</p>
+
+        <picture>
+            <source media="(min-width:1000px)" srcset="{{site.baseurl}}/img/projects/coloplast/coloplast-primary@2x.jpg" />
+            <img alt="{{ project.title }}" src="{{site.baseurl}}/img/projects/coloplast/coloplast-primary.jpg" loading="lazy"
+                decoding="async" />
+        </picture>
     </div>
 </div>
+
+<div class="section section-full">
+    <div class="section-content">
+        <div class="project-outline">
+            <div class="row">
+                <div class="col-md-10 offset-md-1 col-lg-3 offset-lg-0">
+                    <ul class="project-detail-list list-unstyled">
+                        <li>
+                            <h5 class="heading-xs text-muted">Role</h5>
+                            <p>System Designer</p>
+                        </li>
+                        <li>
+                            <h5 class="heading-xs text-muted">Location & Year</h5>
+                            <p>Copenhagen 2022-2023</p>
+                        </li>
+                        <li>
+                            <h5 class="heading-xs text-muted">Duration</h5>
+                            <p>1 year 5 months</p>
+                        </li>
+                        <li>
+                            <h5 class="heading-xs text-muted">Client</h5>
+                            <p>Coloplast, established in Denmark in 1957, stands as a global leader in medical devices and services, specializing in ostomy care, continence care, wound care, and skin health.</p>
+                            
+                            <p>Renowned for its innovative solutions, the company is committed to improving the lives of individuals with intimate
+                            healthcare needs. From ostomy bags and catheters to wound dressings and skincare products, Coloplast offers a
+                            comprehensive range of tailored solutions aimed at enhancing comfort, dignity, and independence.</p>
+                        </li>
+                    </ul>
+
+                </div>
+                <div class="col-md-10 offset-md-1 col-lg-6 offset-lg-2">
+                    <h5 class="heading-md mt-0">The challenge</h5>
+                    <p>Coloplast was struggling to keep brand- and design consistency across its 100+ international websites for end-consumers
+                    and healthcare professionals. Years of relying entirely on
+                    agencies for UX/UI work, had resulted in a highly incoherent and outdated presence across all digital channels.</p>
+                    
+                    <p>Not only was this turning into a major maintenance and financial issue, hindering any further brand development. It was also
+                    starting to affect how end users and even Coloplast itself perceived the brand.</p>
+
+                    <h5 class="heading-md">Outcome</h5>
+                    <p>Smaller release deadlines were met throughout the project, but the first version (v1.0) of the Figma design system and
+                        the frontend Node packages, were launched during the Summer of 2023.</p>
+
+                    <h5 class="heading-sm">Our main wins</h5>
+
+                    <ul class="nifty-list">
+                        <li>Creating a foundation to bring down the cost of maintaining and further develop Coloplast’s online presence, by putting structure around every step of the design-to-production life-cycle.</li>
+                        <li>A solid v1.0 of Coloplast’s design system with of 25 Figma components, 10 front-end components (and counting), systems for color, typography, spacing etc., meticulously documented and ready to use.</li>
+                        <li>Introducing accessibility as a guiding star for all new components, colors system, typography, navigation and more (WCAG 2.1).</li>
+                        <li>Centralized guidelines, design patterns, components and more for designers, developers, product owners or new team members getting familiar with Coloplast’s ways of working.</li>
+                        <li>New in-house design system team responsible for governing the core design principles and process of evolving the design.</li>
+                        <li>A tailored semantic color system with support for light/dark theming and product specific themes.</li>
+                        <li>Introducing a shared language for designers, developers and stakeholders for UX, UI and front-end.</li>
+                        <li>A design tokens system to streamline the distribution of design decisions between designers and developers.</li>
+                        <li>Upgrading to Figma Organization Plan, and the restructuring team/folder structure for all teams, along with a recommendation on how to structure design files.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section section-full section-subtle">
+    <div class="section-content">
+        <div class="project-content">
+            <div class="row">
+                <div class="col-md-10 offset-md-1 col-lg-7 offset-lg-2">
+                    <h2 class="section-heading">Case description</h2>
+                    <p>Before I joined Coloplast in 2022, there had already been a first stab at a POC of a design system, but sadly the
+                    project was unsuccessful and put on hold.</p>
+
+                    <p>I got on board after a round of “restructuring”, leaving non of the original team members to join the new
+                        project. The
+                        new project group consisted of mid-level management, product owners, a project manager, a design manager, a
+                        release
+                        train engineer, a frontend architect and myself.</p>
+            
+                    <h3 class="group-heading">Lessons from the past</h3>
+                    <p>While going over the original POC, it seemed like a lot of good thoughts had gone into it, and they managed
+                        to build a
+                        simple UI library in Figma, with a handful of key components. So what caused the project to fail?
+                        The idea of a design system was initially suggested to management, after a research phase, and accepted
+                        early on. But
+                        months after, when presenting a conceptual button frontend component in Figma as the result of their labor,
+                        management
+                        lost their patience and the project was put on ice. Leading members of the new project team, had some
+                        valuable insights
+                        to why the project had failed:</p>
+            
+                    <ul class="nifty-list">
+                        <li>They weren’t able to effectively convey the purpose, benefits and challenges of implementing a design
+                            system to
+                            stakeholders and management. Management simple didn’t understand what a design system is even after
+                            months of work.</li>
+                        <li>They didn’t provide a convincing vision and a roadmap of how to get there.</li>
+                        <li>The POC didn’t provide any measurable impact or value.</li>
+                    </ul>
+
+
+                    <h2 class="group-heading">Taking inventory</h2>
+                    
+                    <p>Everyone on the team was convinced a design system was the right solution, but we needed a new plan to get management
+                        fully behind the project. And fast.</p>
+                    
+                    <p>We did two full-day workshops to set the direction for the project. One outcome was to focus on a full inventory of
+                        the
+                        existing websites and apps to:</p>
+                    
+                    <ul class="nifty-list">
+                        <li>Map out existing design variations to better determine which parts to base the design system upon.</li>
+                        <li>Identify UX patterns for e.g. authentication flows.</li>
+                        <li>Identify and prioritize component candidates.</li>
+                        <li>Map out colors, typography, spacing and much more.</li>
+                    </ul>
+                    
+                    <p>We also did a thorough analisys of 10+ top design systems (e.g. Atlassian, IBM, Shopify, Pinterest, Google and more)
+                        for
+                        inspiration on scope and direction we wanted take.Some of the high-level issues we identified during the initial
+                        phase:</p>
+                    
+                    <ul class="nifty-list">
+                        <li>Limited support for accessibility. A legal requirement to support accessibility guidelines (WCAG 2.1) looming in
+                            the
+                            horizon. Color contrast being a main concern.</li>
+                        <li>Fragmented ownership of cross-product consistency and branding</li>
+                        <li>3rd party agency was responsible for UX and UI design, leading to design inconsistencies and ownership conflicts
+                            between
+                            the internal product owners and external designers.</li>
+                        <li>An inconsistent design process created friction with the developers, attempting to systemize things on the
+                            frontend,
+                            contributing to an ever growing list of differences between designs and final products.</li>
+                        <li>Fragmented, multi-generational frontend implementations made global updates and maintenance an almost
+                            insurmountable
+                            task.</li>
+                    </ul>
+                    
+                    <p>Examples of low-level issues identified:</p>
+                    
+                    <ul class="nifte-list">
+                        <li>Inconsistent or incorrect use of brand colors in design files and on the frontend.</li>
+                        <li>Inconsistent use of typography.</li>
+                        <li>Scattered and inconsistent accessibility support.</li>
+                        <li>No guidelines for designers, developers or stakeholders.</li>
+                        <li>Design files inconsistently organized across teams and files leading to overhead time for cross-team designers
+                            and developers.</li>
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section section-full section-white">
+    <div class="section-content">
+        <div class="project-content">
+            <div class="row">
+                <div class="col-md-8 col-lg-5">
+                    <h3 class="section-heading">First release</h3>
+
+                    <p>Acknowledging that implementing a design system was going to be a huge undertaking, combined with palpable pressure from management to not repeat past mistakes, we set out to address several low-hanging issues asap. We needed to prove that our team was capable of delivering small tangible improvements, while clearly communicating the plan and building the larger system.</p>
+
+                    <p>As a first release, we decided to create a color system, to address one of the main goals: accessibility. This would be an semi-isolated effort, meeting an upcoming legal requirement to support WCAG 2.1, and would require us to set up all the base systems to push decisions from design to production.</p>
+
+                    <h3 class="group-heading">Getting the fundamentals right</h3>
+
+                    <p>With a limited crew of only 2, the front-end architect and myself, set out to plan, build and set up all the foundational systems required to release a color system. This involved a color naming convention [TODO]</p>
+
+                    <p>Design tokens was not a new concept, but most real-world solutions up til that point were often hand-held, requiring a lot of manual work between design and code. A few new tools had emerged to help close some of these gaps, and we ended up including Tokens Studio (Figma Studio back then), to handle and share design decisions between design and code.</p>                    
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section section-full">
+    <div class="section-content pt-0">
+        <picture>
+            <source media="(min-width:1000px)"
+                srcset="{{site.baseurl}}/img/projects/coloplast/cp-design-architecture@2x.png" />
+            <img alt="{{ project.title }}" src="{{site.baseurl}}/img/projects/coloplast/cp-design-architecture.png"
+                loading="lazy" decoding="async" />
+        </picture>
+    </div>
+</div>
+
+
+<div class="section section-full">
+    <div class="section-content">
+        <div class="project-content">
+            <div class="row">
+                <div class="col-md-4">
+                    <h2 class="section-heading">Color system</h2>
+                </div>
+                <div class="col-md-8 col-lg-6">
+                    <p>Coloplast already had a limited set of brand colors, but we needed more granular control to cover the many color combinations for buttons, states, theming, etc. </p>
+
+                    <p>At this point our team had grown with an additional designer and together we defined <strong>10 core palettes</strong>, with accessibility in mind, to form the foundation for the semantic and component level colors. This involved A LOT of testing, reviewing color models, researching best practices, refactoring, tweaking etc. (Thank you for staying in the fight <a href="https://www.linkedin.com/in/mia-bak-winther/" target="_blank">Mia Bak Winther</a> 🙏🏻).</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section section-full">
+    <div class="section-content pt-0">
+        <picture>
+            <source media="(min-width:1000px)"
+                srcset="{{site.baseurl}}/img/projects/coloplast/cp-core-palettes@2x.png" />
+            <img alt="{{ project.title }}" src="{{site.baseurl}}/img/projects/coloplast/cp-core-palettes.png"
+                loading="lazy" decoding="async" />
+        </picture>
+
+        <picture class="mt-4">
+            <source media="(min-width:1000px)"
+                srcset="{{site.baseurl}}/img/projects/coloplast/cp-color-roles@2x.png" />
+            <img alt="{{ project.title }}" src="{{site.baseurl}}/img/projects/coloplast/cp-color-roles.png"
+                loading="lazy" decoding="async" />
+        </picture>
+
+    </div>
+</div>
+
+<div class="section section-full">
+    <div class="section-content">
+        <div class="project-content">
+            <div class="row">
+                <div class="d-flex flex-column col-md-8 col-lg-5 justify-content-md-center">
+                    <h2 class="section-heading">Semantic colors</h2>
+
+                    <p>The semantic color layer and color roles (foreground, background, border, focus etc.) were added to bring purpose to the color names, and simplify the number of colors available to designers. We tested a handful of different naming approaches on designers and developers to determine the best one.</p>
+                        
+                    <p>Ideally this abstraction would make it a easier to choose colors, while making it harder for designers to go rogue. Muted secondary text, would translate to <code>color.fg.muted</code>.  Also we hoped it would help designers and developers establish a shared language around color usage.</p>
+
+                    <p></p>
+                </div>
+                <div class="col-md-6 offset-md-1">
+                    <picture class="border">
+                        <source media="(min-width:1000px)"
+                            srcset="{{site.baseurl}}/img/projects/coloplast/cp-semantic-colors@2x.png" />
+                        <img alt="{{ project.title }}" src="{{site.baseurl}}/img/projects/coloplast/cp-semantic-colors.png"
+                            loading="lazy" decoding="async" />
+                    </picture>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section section-full section-white">
+    <div class="section-content">
+        <div class="row">
+            <div class="col-md-6">
+                <picture>
+                    <source media="(min-width:1000px)" srcset="{{site.baseurl}}/img/projects/coloplast/cp-neutral-color-stack@2x.png" />
+                    <img alt="{{ project.title }}" src="{{site.baseurl}}/img/projects/coloplast/cp-neutral-color-stack.png" loading="lazy"
+                        decoding="async" />
+                </picture>
+            </div>
+            <div class="col-md-6">
+                <picture>
+                    <source media="(min-width:1000px)" srcset="{{site.baseurl}}/img/projects/coloplast/cp-brand-color-stack@2x.png" />
+                    <img alt="{{ project.title }}" src="{{site.baseurl}}/img/projects/coloplast/cp-brand-color-stack.png"
+                        loading="lazy" decoding="async" />
+                </picture>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section section-full">
+    <div class="section-content">
+        <div class="project-content">
+            <h2 class="section-heading">Typography</h2>
+        </div>
+    </div>
+</div>
+
+<div class="section section-full">
+    <div class="section-content">
+        <div class="project-content">
+            <h2 class="section-heading">Components</h2>
+        </div>
+
+        <picture class="mt-4">
+            <source media="(min-width:1000px)" srcset="{{site.baseurl}}/img/projects/coloplast/cp-template-example@2x.jpg" />
+            <img alt="{{ project.title }}" src="{{site.baseurl}}/img/projects/coloplast/cp-template-example.jpg" loading="lazy"
+                decoding="async" />
+        </picture>
+
+    </div>
+</div>
+
+
+<!-- next project -->
+
+{% include contact.html %}

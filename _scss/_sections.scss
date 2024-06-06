@@ -3,7 +3,6 @@
     position: relative;
     overflow: hidden;
     background-repeat: no-repeat;
-    background-color: $body-bg;
 
     .container {
         padding-left: 1.5rem;
@@ -21,7 +20,6 @@
     
         @include media-breakpoint-up(sm) {
             padding: 6rem 2vw;
-            font-size: 1.125rem;
         }
         
         @include media-breakpoint-up(xl) {
@@ -107,6 +105,14 @@
     background: white;
 }
 
+.section-subtle {
+    background-color: $gray-50;
+}
+
+.section-muted {
+    background: $gray-300;
+}
+
 .section-light-blue {
     background: $brand-light-blue;
 }
@@ -134,10 +140,6 @@
     }
 }
 
-.section-muted {
-    background: $gray-300;
-}
-
 .section-yellow {
     background-color: $brand-yellow;
     color: white;
@@ -157,9 +159,7 @@
     color: #fff;
 }
 
-.section-subtle {
-    background-color: $gray-100;
-}
+
 
 
 
@@ -195,4 +195,9 @@
 
 .bg-sandy {
     background-color: #f6f0e4;
+}
+
+
+.section-group {
+
 }

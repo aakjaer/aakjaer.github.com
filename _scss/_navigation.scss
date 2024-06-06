@@ -60,7 +60,7 @@
 			padding: 1.5rem;
 			font-size: 0.875rem;
 			color: $body-color;
-			font-weight: 400;
+			font-weight: 500;
 			text-decoration: none;
 
 			// Dot
@@ -123,7 +123,7 @@
 			left: 0;
 			opacity: 1;
 			visibility: visible;
-			transition: opacity 0.25s ease-in-out, visibility 0s;
+			transition: opacity 0.25s ease-in-out, visibility 0s, background-color 0.25s;
 		}
 	}
 

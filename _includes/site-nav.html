@@ -2,13 +2,13 @@
 	<nav class="site-nav">
 		<a href="{{ site.baseurl }}/" class="logo">Daniel Aakjær Sørensen</a>
 		<ul class="nav primary-links">
-			<li class="{% if page.page_class == "page-home" %}active{% endif %}">
+			<li>
 				<a class="switch-page" href="{{ site.baseurl }}/">Home</a>
 			</li>
-			<li class="{% if page.page_class contains "page-work" %}active{% endif %}">
+			<li>
 				<a class="switch-page" href="{{ site.baseurl }}/work/">Work</a>
 			</li>
-			<li class="{% if page.page_class contains "page-about" %}active{% endif %}">
+			<li>
 				<a class="switch-page" href="{{ site.baseurl }}/about/">About</a>
 			</li>
 		</ul>

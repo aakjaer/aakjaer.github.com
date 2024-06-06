@@ -64,6 +64,10 @@ $text-white-dimmed: rgba(255,255,255, 0.6);
     font-size: 1rem;
 }
 
+.text-lg {
+    font-size: 1.25em;
+}
+
 .text-small {
     font-size: 0.875rem;
 }
@@ -85,11 +89,9 @@ $text-white-dimmed: rgba(255,255,255, 0.6);
     }
 }
 
-.anim {
-
-    .line {
-            overflow: hidden;
-        }
+.anim .line {
+    overflow: hidden;
+    transition: all 0.2s ease-in-out;
 }
 
 // classes for handling staggering
@@ -102,7 +104,7 @@ $text-white-dimmed: rgba(255,255,255, 0.6);
 }
 
 .hero-heading {
-    font-size: 10vw;
+    font-size: 3.5rem;
     font-weight: 500;
     line-height: 1.05em;
     letter-spacing: -0.05em;
@@ -123,7 +125,6 @@ $text-white-dimmed: rgba(255,255,255, 0.6);
     margin-bottom: 1em;
     line-height: 1.15em;
     font-size: clamp(1.75rem, 2.5vw, 3rem);
-    letter-spacing: -0.05em;
 
     &:first-child {
         margin-top: 0;
@@ -132,25 +133,37 @@ $text-white-dimmed: rgba(255,255,255, 0.6);
     &--left {
         text-align: left;
     }
-
-    &-sm {
-        margin-bottom: 1.5em;
-        font-size: 1rem;
-        font-weight: 900;
-
-        @include media-breakpoint-up(sm) {
-            font-size: 1.3rem;
-        }
-    }
 }
 
 .group-heading {
-    margin: 3rem 0 0.75rem;
+    margin: 3.5rem 0 0.75em;
     font-size: 1.375rem;
-    font-weight: 500;
+    letter-spacing: 0;
+
+    @include media-breakpoint-up(md) {
+        font-size: 1.5rem;
+    }
 }
 
+.heading-md {
+    margin: 3rem 0 1rem;
+    font-size: 1.25rem;
+    letter-spacing: 0;
+    text-transform: uppercase;
+}
 
+.heading-sm {
+    margin: 1.5rem 0 1rem;
+    font-size: 1rem;
+    letter-spacing: 0;
+}
+
+.heading-xs {
+    font-size: 0.75rem;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    font-weight: 600;
+}
 
 .separator-thin {
     border-width: 1px;
@@ -180,6 +193,12 @@ $text-white-dimmed: rgba(255,255,255, 0.6);
 .separator-green { border-color: $brand-green; }
 .separator-yellow { border-color: $brand-yellow; }
 
+
+code {
+    display: inline-block;
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+}
 
 abbr,
 acronym {

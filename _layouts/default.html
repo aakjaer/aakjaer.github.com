@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js{% if page.page_class != "" %} {{ page.page_class }}{% endif %}">
+<html>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -11,15 +11,14 @@
         <meta property="og:type" content="website">
         <meta property="og:description" content="Copenhagen based freelance designer">
 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
         <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css">
     </head>
-    <body>
-        <div class="page animsition">
+    <body data-scrolling-direction="down" data-scrolling-started="false" data-barba="wrapper">
+        <div class="page">
             
             <div class="burger burger-squeeze nav-trigger" type="button" aria-label="Menu" aria-controls="navigation">
                 <div class="burger-lines"></div>
@@ -30,29 +29,29 @@
             </header>
 
             <div class="content-wrapper">
-                <main id="main" class="main-content" role="main">
+                <main id="main" class="main-content" role="main" data-barba="container" data-barba-namespace="{{ page.page_class }}">
                     {{ content }}
                 </main>
             </div>
+
+            <div class="transition-overlay"></div>
         </div>
 
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-            crossorigin="anonymous"></script>
-        <script src="{{ site.baseurl }}/js/animsition.min.js"></script>
-        <script src="{{ site.baseurl }}/js/wow.min.js"></script>
-        <script>new WOW().init();</script>
-        <script src="{{ site.baseurl }}/js/anime.min.js"></script>
-
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> 
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@barba/core"></script>
+        <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
         <script src="https://unpkg.com/split-type"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-        
         <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
         <script src="{{ site.baseurl }}/js/site-nav.js"></script>
         <script src="{{ site.baseurl }}/js/anim.js"></script>
         <script src="{{ site.baseurl }}/js/main.js"></script>
+        <!-- <script src="{{ site.baseurl }}/js/wow.min.js"></script> -->
+        <!-- <script>new WOW().init();</script> -->
+
+        
 
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-JFVV1HKDC6"></script>
         <script>

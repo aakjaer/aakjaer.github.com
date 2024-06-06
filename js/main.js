@@ -1,19 +1,19 @@
 $(function(){
 
-  const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
-  const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+  // const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]');
+  // const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl));
 
 
   // Page preloading animation
-  $('.animsition').animsition({
-      inDuration: 800,
-      outDuration: 400,
-      linkElement: '.switch-page',
-      timeout: false,
-      timeoutCountdown: 5000,
-      onLoadEvent: true,
-      transition: function(url){ window.location.href = url; }
-  });
+  // $('.animsition').animsition({
+  //     inDuration: 800,
+  //     outDuration: 400,
+  //     linkElement: '.switch-page',
+  //     timeout: false,
+  //     timeoutCountdown: 5000,
+  //     onLoadEvent: true,
+  //     transition: function(url){ window.location.href = url; }
+  // });
 
   var swiper = new Swiper(".quick-gallery", {
     effect: "fade",
