@@ -6,12 +6,11 @@ page_class: page-work
 
 <div class="section section-full">
     <div class="section-content pb-5">
-        <h1 class="hero-heading text-uppercase anim text mb-3">Coloplast</h1>
+        <h1 class="hero-heading anim text mb-3">Coloplast</h1>
         <p class="lead text-uppercase anim text mb-5">Design system</p>
-
         <picture>
-            <source media="(min-width:1000px)" srcset="{{site.baseurl}}/img/projects/coloplast/coloplast-primary@2x.jpg" />
-            <img alt="{{ project.title }}" src="{{site.baseurl}}/img/projects/coloplast/coloplast-primary.jpg" loading="lazy"
+            <source media="(min-width:1000px)" srcset="{{site.baseurl}}/img/projects/coloplast/coloplast-products@2x.jpg" />
+            <img alt="{{ project.title }}" src="{{site.baseurl}}/img/projects/coloplast/coloplast-products.jpg" loading="lazy"
                 decoding="async" />
         </picture>
     </div>
@@ -39,9 +38,7 @@ page_class: page-work
                             <h5 class="heading-xs text-muted">Client</h5>
                             <p>Coloplast, established in Denmark in 1957, stands as a global leader in medical devices and services, specializing in ostomy care, continence care, wound care, and skin health.</p>
                             
-                            <p>Renowned for its innovative solutions, the company is committed to improving the lives of individuals with intimate
-                            healthcare needs. From ostomy bags and catheters to wound dressings and skincare products, Coloplast offers a
-                            comprehensive range of tailored solutions aimed at enhancing comfort, dignity, and independence.</p>
+                            <p>Renowned for its innovative solutions, the company is committed to improving the lives of individuals with intimate healthcare needs. From ostomy bags and catheters to wound dressings and skincare products, Coloplast offers a comprehensive range of tailored solutions aimed at enhancing comfort, dignity, and independence.</p>
                         </li>
                     </ul>
 
@@ -56,7 +53,7 @@ page_class: page-work
                     starting to affect how end users and even Coloplast itself perceived the brand.</p>
 
                     <h5 class="heading-md">Outcome</h5>
-                    <p>Smaller release deadlines were met throughout the project, but the first version (v1.0) of the Figma design system and
+                    <p>Smaller release deadlines were met throughout the project, and a v1.0 of the Figma design system and
                         the frontend Node packages, were launched during the Summer of 2023.</p>
 
                     <h5 class="heading-sm">Our main wins</h5>
@@ -78,12 +75,18 @@ page_class: page-work
     </div>
 </div>
 
+<picture>
+    <source media="(min-width:1000px)" srcset="{{site.baseurl}}/img/projects/coloplast/coloplast-faces@2x.jpg" />
+    <img alt="{{ project.title }}" src="{{site.baseurl}}/img/projects/coloplast/coloplast-faces.jpg" loading="lazy"
+        decoding="async" />
+</picture>
+
 <div class="section section-full section-subtle">
     <div class="section-content">
         <div class="project-content">
             <div class="row">
-                <div class="col-md-10 offset-md-1 col-lg-7 offset-lg-2">
-                    <h2 class="section-heading">Case description</h2>
+                <div class="col-md-10 col-lg-6">
+                    <h2 class="display-heading">Case description</h2>
                     <p>Before I joined Coloplast in 2022, there had already been a first stab at a POC of a design system, but sadly the
                     project was unsuccessful and put on hold.</p>
 
@@ -93,17 +96,13 @@ page_class: page-work
                         release
                         train engineer, a frontend architect and myself.</p>
             
-                    <h3 class="group-heading">Lessons from the past</h3>
+                    <h3 class="heading-md">Lessons from the past</h3>
                     <p>While going over the original POC, it seemed like a lot of good thoughts had gone into it, and they managed
-                        to build a
-                        simple UI library in Figma, with a handful of key components. So what caused the project to fail?
+                        to build a simple UI library in Figma, with a handful of key components. So what caused the project to fail?
                         The idea of a design system was initially suggested to management, after a research phase, and accepted
-                        early on. But
-                        months after, when presenting a conceptual button frontend component in Figma as the result of their labor,
-                        management
-                        lost their patience and the project was put on ice. Leading members of the new project team, had some
-                        valuable insights
-                        to why the project had failed:</p>
+                        early on. But months after, when presenting a conceptual button frontend component in Figma as the result of their labor,
+                        management lost their patience and the project was put on ice. Leading members of the new project team, had some
+                        valuable insights to what went wrong:</p>
             
                     <ul class="nifty-list">
                         <li>They weren’t able to effectively convey the purpose, benefits and challenges of implementing a design
@@ -113,9 +112,26 @@ page_class: page-work
                         <li>They didn’t provide a convincing vision and a roadmap of how to get there.</li>
                         <li>The POC didn’t provide any measurable impact or value.</li>
                     </ul>
+                </div>
+                <div class="col-lg-5 offset-lg-1">
+                    <picture>
+                        <source media="(min-width:1000px)" srcset="{{site.baseurl}}/img/projects/coloplast/cp-product-jacket@2x.jpg" />
+                        <img alt="{{ project.title }}" src="{{site.baseurl}}/img/projects/coloplast/cp-product-jacket.jpg" loading="lazy"
+                            decoding="async" />
+                    </picture>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
-                    <h2 class="group-heading">Taking inventory</h2>
+<div class="section section-full section-subtle">
+    <div class="section-content">
+        <div class="row">
+            <div class="col-md-10 col-lg-6 offset-lg-1 order-lg-2">
+                <div class="project-content">
+                    <h2 class="heading-md">Taking inventory</h2>
                     
                     <p>Everyone on the team was convinced a design system was the right solution, but we needed a new plan to get management
                         fully behind the project. And fast.</p>
@@ -131,25 +147,18 @@ page_class: page-work
                         <li>Map out colors, typography, spacing and much more.</li>
                     </ul>
                     
-                    <p>We also did a thorough analisys of 10+ top design systems (e.g. Atlassian, IBM, Shopify, Pinterest, Google and more)
-                        for
-                        inspiration on scope and direction we wanted take.Some of the high-level issues we identified during the initial
-                        phase:</p>
+                    <p>Some of the high-level issues we identified during this initial phase:</p>
                     
                     <ul class="nifty-list">
                         <li>Limited support for accessibility. A legal requirement to support accessibility guidelines (WCAG 2.1) looming in
-                            the
-                            horizon. Color contrast being a main concern.</li>
-                        <li>Fragmented ownership of cross-product consistency and branding</li>
+                            the horizon. Color contrast being a main concern.</li>
+                        <li>Fragmented ownership of cross-product consistency and branding.</li>
                         <li>3rd party agency was responsible for UX and UI design, leading to design inconsistencies and ownership conflicts
-                            between
-                            the internal product owners and external designers.</li>
+                            between the internal product owners and external designers.</li>
                         <li>An inconsistent design process created friction with the developers, attempting to systemize things on the
-                            frontend,
-                            contributing to an ever growing list of differences between designs and final products.</li>
+                            frontend, contributing to an ever growing list of differences between designs and final products.</li>
                         <li>Fragmented, multi-generational frontend implementations made global updates and maintenance an almost
-                            insurmountable
-                            task.</li>
+                            insurmountable task.</li>
                     </ul>
                     
                     <p>Examples of low-level issues identified:</p>
@@ -159,11 +168,18 @@ page_class: page-work
                         <li>Inconsistent use of typography.</li>
                         <li>Scattered and inconsistent accessibility support.</li>
                         <li>No guidelines for designers, developers or stakeholders.</li>
-                        <li>Design files inconsistently organized across teams and files leading to overhead time for cross-team designers
-                            and developers.</li>
+                        <li>Design files inconsistently organized across teams and files leading to overhead time for cross-team designers and developers.</li>
                     </ul>
 
+                    <p>We also carried out a thorough analysis of 10+ top design systems (e.g. Atlassian, IBM, Shopify, Pinterest, Google and more) for inspiration on scope and direction we wanted take.</p>
                 </div>
+            </div>
+            <div class="col-lg-5 order-lg-1">
+                <picture>
+                    <source media="(min-width:1000px)" srcset="{{site.baseurl}}/img/projects/coloplast/cp-product-jacket@2x.jpg" />
+                    <img alt="{{ project.title }}" src="{{site.baseurl}}/img/projects/coloplast/cp-product-jacket.jpg"
+                        loading="lazy" decoding="async" />
+                </picture>
             </div>
         </div>
     </div>
@@ -173,18 +189,20 @@ page_class: page-work
     <div class="section-content">
         <div class="project-content">
             <div class="row">
-                <div class="col-md-8 col-lg-5">
-                    <h3 class="section-heading">First release</h3>
+                <div class="col-sm-10 offset-sm-1 col-lg-6 offset-lg-3">
+                    <h3 class="section-heading">Planning 1st release</h3>
+                    <p>Acknowledging that implementing an entire design system in an large organization was going to be a huge undertaking,
+                    combined with palpable pressure from management to not repeat past mistakes, we set out to address several low-hanging
+                    issues asap. We needed to prove that our team was capable of delivering small tangible improvements, while clearly
+                    communicating the plan and building the larger system.</p>
 
-                    <p>Acknowledging that implementing a design system was going to be a huge undertaking, combined with palpable pressure from management to not repeat past mistakes, we set out to address several low-hanging issues asap. We needed to prove that our team was capable of delivering small tangible improvements, while clearly communicating the plan and building the larger system.</p>
+                    <p>To address one of our core tasks - accessibility - early on, the design system team decided to focus on building and
+                    rolling out a color system. Not only would it add value to the digital products and design teams by providing a
+                    unambiguous way of working with colors. It would also address the upcoming legal requirement for WCAG 2.1 support, which
+                    management had stakes in. Also, it would force us to get all the base systems up and running in order to push things
+                    into production.</p>
 
-                    <p>As a first release, we decided to create a color system, to address one of the main goals: accessibility. This would be an semi-isolated effort, meeting an upcoming legal requirement to support WCAG 2.1, and would require us to set up all the base systems to push decisions from design to production.</p>
-
-                    <h3 class="group-heading">Getting the fundamentals right</h3>
-
-                    <p>With a limited crew of only 2, the front-end architect and myself, set out to plan, build and set up all the foundational systems required to release a color system. This involved a color naming convention [TODO]</p>
-
-                    <p>Design tokens was not a new concept, but most real-world solutions up til that point were often hand-held, requiring a lot of manual work between design and code. A few new tools had emerged to help close some of these gaps, and we ended up including Tokens Studio (Figma Studio back then), to handle and share design decisions between design and code.</p>                    
+                    <p>With a limited crew of only 2, the front-end architect and myself, started to plan and set up all the foundational systems required to release a color system. This included setup of the necessary servers, repos and file structure, defining naming conventions, setting up base files and layouts in Figma, testing design tokens and a lot more.</p>
                 </div>
             </div>
         </div>
@@ -205,68 +223,63 @@ page_class: page-work
 
 <div class="section section-full">
     <div class="section-content">
-        <div class="project-content">
-            <div class="row">
-                <div class="col-md-4">
+        <div class="row">
+            <div class="d-flex flex-column col-lg-6 justify-content-lg-center">
+                <div class="project-content">
                     <h2 class="section-heading">Color system</h2>
-                </div>
-                <div class="col-md-8 col-lg-6">
-                    <p>Coloplast already had a limited set of brand colors, but we needed more granular control to cover the many color combinations for buttons, states, theming, etc. </p>
+                    <p>Coloplast had a limited set of brand colors, but we needed more granular control to cover the many color combinations for buttons, states, theming, etc. </p>
 
-                    <p>At this point our team had grown with an additional designer and together we defined <strong>10 core palettes</strong>, with accessibility in mind, to form the foundation for the semantic and component level colors. This involved A LOT of testing, reviewing color models, researching best practices, refactoring, tweaking etc. (Thank you for staying in the fight <a href="https://www.linkedin.com/in/mia-bak-winther/" target="_blank">Mia Bak Winther</a> 🙏🏻).</p>
+                    <p>Our team had grown with an additional designer and together we defined <strong>10 core palettes</strong>, focusing on accessibility, to form the foundation for the semantic and component level colors. This involved A LOT of testing, reviewing color models, researching best practices, refactoring, tweaking etc. (Thank you for staying in the fight <a href="https://www.linkedin.com/in/mia-bak-winther/" target="_blank">Mia</a> 🙏🏻).</p>
+
                 </div>
             </div>
-        </div>
-    </div>
-</div>
-
-<div class="section section-full">
-    <div class="section-content pt-0">
-        <picture>
-            <source media="(min-width:1000px)"
-                srcset="{{site.baseurl}}/img/projects/coloplast/cp-core-palettes@2x.png" />
-            <img alt="{{ project.title }}" src="{{site.baseurl}}/img/projects/coloplast/cp-core-palettes.png"
-                loading="lazy" decoding="async" />
-        </picture>
-
-        <picture class="mt-4">
-            <source media="(min-width:1000px)"
-                srcset="{{site.baseurl}}/img/projects/coloplast/cp-color-roles@2x.png" />
-            <img alt="{{ project.title }}" src="{{site.baseurl}}/img/projects/coloplast/cp-color-roles.png"
-                loading="lazy" decoding="async" />
-        </picture>
-
+            <div class="col-lg-5 offset-lg-1">
+                <picture>
+                    <source media="(min-width:1000px)" srcset="{{site.baseurl}}/img/projects/coloplast/cp-core-palettes@2x.png" />
+                    <img alt="{{ project.title }}" src="{{site.baseurl}}/img/projects/coloplast/cp-core-palettes.png" loading="lazy"
+                        decoding="async" />
+                </picture>
+            </div>
+        </div>        
     </div>
 </div>
 
 <div class="section section-full">
     <div class="section-content">
-        <div class="project-content">
-            <div class="row">
-                <div class="d-flex flex-column col-md-8 col-lg-5 justify-content-md-center">
+        <div class="row">
+            <div class="col-lg-5 mb-5">
+                <picture class="border">
+                    <source media="(min-width:1000px)" srcset="{{site.baseurl}}/img/projects/coloplast/cp-semantic-colors@2x.png" />
+                    <img alt="{{ project.title }}" src="{{site.baseurl}}/img/projects/coloplast/cp-semantic-colors.png"
+                        loading="lazy" decoding="async" />
+                </picture>
+            </div>
+            <div class="d-flex flex-column col-md-8 col-lg-5 offset-md-1 justify-content-md-center">
+                <div class="project-content">
                     <h2 class="section-heading">Semantic colors</h2>
 
-                    <p>The semantic color layer and color roles (foreground, background, border, focus etc.) were added to bring purpose to the color names, and simplify the number of colors available to designers. We tested a handful of different naming approaches on designers and developers to determine the best one.</p>
+                    <p>The semantic color layer and color roles (foreground, background, border, focus etc.) were added to bring purpose to color names, and simplify the number of colors available to designers. We tested a handful of different naming approaches on designers and developers to determine the best one.</p>
                         
-                    <p>Ideally this abstraction would make it a easier to choose colors, while making it harder for designers to go rogue. Muted secondary text, would translate to <code>color.fg.muted</code>.  Also we hoped it would help designers and developers establish a shared language around color usage.</p>
+                    <p>The intention was that this abstraction would make it a easier to choose colors, while putting up guardrails to make it harder for designers to go rogue. </p>
 
-                    <p></p>
-                </div>
-                <div class="col-md-6 offset-md-1">
-                    <picture class="border">
-                        <source media="(min-width:1000px)"
-                            srcset="{{site.baseurl}}/img/projects/coloplast/cp-semantic-colors@2x.png" />
-                        <img alt="{{ project.title }}" src="{{site.baseurl}}/img/projects/coloplast/cp-semantic-colors.png"
-                            loading="lazy" decoding="async" />
-                    </picture>
+                    <p>For example, muted secondary text, would use the color <code>color.fg.muted</code>. Also we hoped it would help designers and
+                    developers establish a shared language around colors in general.</p>
+
                 </div>
             </div>
         </div>
     </div>
 </div>
+
 
 <div class="section section-full section-white">
     <div class="section-content">
+        <picture class="mb-4">
+            <source media="(min-width:1000px)" srcset="{{site.baseurl}}/img/projects/coloplast/cp-color-roles@2x.png" />
+            <img alt="{{ project.title }}" src="{{site.baseurl}}/img/projects/coloplast/cp-color-roles.png" loading="lazy"
+                decoding="async" />
+        </picture>
+
         <div class="row">
             <div class="col-md-6">
                 <picture>
@@ -286,26 +299,97 @@ page_class: page-work
     </div>
 </div>
 
+
 <div class="section section-full">
-    <div class="section-content">
-        <div class="project-content">
-            <h2 class="section-heading">Typography</h2>
-        </div>
+    <div class="section-content pt-0">
+        <picture class="mt-4">
+            <source media="(min-width:1000px)"
+                srcset="{{site.baseurl}}/img/projects/coloplast/cp-elevation-model@2x.png" />
+            <img alt="{{ project.title }}" src="{{site.baseurl}}/img/projects/coloplast/cp-elevation-model.png"
+                loading="lazy" decoding="async" />
+        </picture>
     </div>
 </div>
 
 <div class="section section-full">
     <div class="section-content">
         <div class="project-content">
-            <h2 class="section-heading">Components</h2>
+            <h2 class="section-heading">Typography</h2>
+            <p class="lead">The typography was designed with accessibility optimization in mind, while balancing Coloplast's spacious and friendly feel.</p>
+            <p class="lead">To streamline how headings and body text behave on different device sizes, the underlying token system was designed to support responsiveness.</p>
+        </div>
+        <picture class="pt-5">
+            <source media="(min-width:1000px)" srcset="{{site.baseurl}}/img/projects/coloplast/cp-typography-table@2x.jpg" />
+            <img alt="{{ project.title }}" src="{{site.baseurl}}/img/projects/coloplast/cp-typography-table.jpg" loading="lazy"
+                decoding="async" />
+        </picture>
+
+        
+    </div>
+</div>
+
+
+<div class="section section-full">
+    <div class="section-content py-0">
+        <div class="row">
+            <div class="d-flex flex-column col-lg-6 justify-content-lg-center">
+                <div class="project-content">
+                    <h2 class="section-heading">Components</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam ipsam corporis ad! Quam officiis fuga nam blanditiis iusto vel? Molestiae non id voluptatum! Debitis id enim fugit sit voluptas quaerat. </p>
+                </div>
+            </div>
+            <div class="col-lg-5 offset-lg-1">
+                <picture class="border">
+                    <source media="(min-width:1000px)" srcset="{{site.baseurl}}/img/projects/coloplast/cp-component-status@2x.png" />
+                    <img alt="{{ project.title }}" src="{{site.baseurl}}/img/projects/coloplast/cp-component-status.png" loading="lazy"
+                        decoding="async" />
+                </picture>
+            </div>
         </div>
 
+        <picture class="my-4">
+            <source media="(min-width:1000px)" srcset="{{site.baseurl}}/img/projects/coloplast/cp-component-collage@2x.png" />
+            <img alt="{{ project.title }}" src="{{site.baseurl}}/img/projects/coloplast/cp-component-collage.png" loading="lazy"
+                decoding="async" />
+        </picture>
+
+        <picture class="my-4">
+            <source media="(min-width:1000px)" srcset="{{site.baseurl}}/img/projects/coloplast/cp-icon-list@2x.png" />
+            <img alt="{{ project.title }}" src="{{site.baseurl}}/img/projects/coloplast/cp-icon-list.png" loading="lazy"
+                decoding="async" />
+        </picture>
+
+        <picture class="my-4">
+            <source media="(min-width:1000px)" srcset="{{site.baseurl}}/img/projects/coloplast/cp-card-examples@2x.jpg" />
+            <img alt="{{ project.title }}" src="{{site.baseurl}}/img/projects/coloplast/cp-card-examples.jpg" loading="lazy"
+                decoding="async" />
+        </picture>
+        
         <picture class="mt-4">
             <source media="(min-width:1000px)" srcset="{{site.baseurl}}/img/projects/coloplast/cp-template-example@2x.jpg" />
             <img alt="{{ project.title }}" src="{{site.baseurl}}/img/projects/coloplast/cp-template-example.jpg" loading="lazy"
                 decoding="async" />
         </picture>
+    </div>
+</div>
 
+
+<div class="section section-full">
+    <div class="section-content">
+        <div class="project-content">
+            <h2 class="section-heading">Specs & documentation</h2>
+        </div>
+
+        <picture class="my-4">
+            <source media="(min-width:1000px)" srcset="{{site.baseurl}}/img/projects/coloplast/cp-elevation-modal@2x.png" />
+            <img alt="{{ project.title }}" src="{{site.baseurl}}/img/projects/coloplast/cp-elevation-modal.png" loading="lazy"
+                decoding="async" />
+        </picture>
+        <picture class="mt-4">
+            <source media="(min-width:1000px)" srcset="{{site.baseurl}}/img/projects/coloplast/cp-template-example@2x.jpg" />
+            <img alt="{{ project.title }}" src="{{site.baseurl}}/img/projects/coloplast/cp-template-example.jpg" loading="lazy"
+                decoding="async" />
+        </picture>
     </div>
 </div>
 

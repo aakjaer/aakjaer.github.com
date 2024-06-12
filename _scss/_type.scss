@@ -2,18 +2,19 @@
 // typography
 h1, h2, h3, h4, h5, h6,
 .h1, .h2, .h3, .h4, .h5, .h6 {
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: -0.03em;
     line-height: 1.15em;
 }
 
 $text-white-dimmed: rgba(255,255,255, 0.6);
 
-.font-weight-lighter { font-weight: $font-weight-lighter; }
-.light { font-weight: 300; }
-.medium { font-weight: 500; }
-.bold { font-weight: 700; }
-.heavy { font-weight: 900; }
+.fw-lighter { font-weight: $font-weight-lighter; }
+.fw-light { font-weight: 300; }
+.fw-medium { font-weight: 500; }
+.fw-semibold { font-weight: 600; }
+.fw-bold { font-weight: 700; }
+.fw-heavy { font-weight: 900; }
 
 .text-white { color: white; }
 .text-white-dimmed { color: $text-white-dimmed; }
@@ -64,8 +65,12 @@ $text-white-dimmed: rgba(255,255,255, 0.6);
     font-size: 1rem;
 }
 
+.text-xl {
+    font-size: 1.5rem;
+}
+
 .text-lg {
-    font-size: 1.25em;
+    font-size: 1.25rem;
 }
 
 .text-small {
@@ -117,7 +122,7 @@ $text-white-dimmed: rgba(255,255,255, 0.6);
     }
 
     .highlight {
-        color: $gray-100;
+        color: $gray-50;
     }
 }
 
@@ -203,6 +208,10 @@ code {
 abbr,
 acronym {
     border-bottom: 1px dotted;
+}
+
+strong {
+    font-weight: 700;
 }
 
  @include media-breakpoint-up(md) {
