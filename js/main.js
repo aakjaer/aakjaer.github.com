@@ -15,6 +15,11 @@ $(function(){
   //     transition: function(url){ window.location.href = url; }
   // });
 
+  // testing out custom scrollbars
+  const { OverlayScrollbars } = OverlayScrollbarsGlobal;
+  OverlayScrollbars(document.body, {});
+
+  // gallery swiper thingy
   var swiper = new Swiper(".quick-gallery", {
     effect: "fade",
     navigation: {

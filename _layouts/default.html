@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html data-overlayscrollbars-initialize>
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -14,10 +14,11 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200..800&display=swap" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/2.8.3/styles/overlayscrollbars.css" rel="stylesheet" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
         <link rel="stylesheet" href="{{ site.baseurl }}/css/main.css">
     </head>
-    <body data-scrolling-direction="down" data-scrolling-started="false" data-barba="wrapper">
+    <body data-scrolling-direction="down" data-scrolling-started="false" data-barba="wrapper" data-overlayscrollbars-initialize>
         <div class="page">
             
             <div class="burger burger-squeeze nav-trigger" type="button" aria-label="Menu" aria-controls="navigation">
@@ -44,6 +45,12 @@
         <script src="https://unpkg.com/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
         <script src="https://unpkg.com/split-type"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/overlayscrollbars/2.8.3/browser/overlayscrollbars.browser.es6.js"></script>
+
+
+
+
+" defer></script>
         <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
         <script src="{{ site.baseurl }}/js/site-nav.js"></script>
         <script src="{{ site.baseurl }}/js/anim.js"></script>
