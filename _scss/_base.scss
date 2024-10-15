@@ -2,9 +2,6 @@
 @import "../node_modules/hamburgers/_sass/hamburgers/hamburgers";
 
 
-:root {
-	--custom-gutter: 1rem;
-}
 
 //.......................................
 
@@ -230,6 +227,7 @@ blockquote {
 	transition: all $easing-default;
 	text-transform: uppercase;
 	text-decoration: none;
+	will-change: contents;
 
 	@include media-breakpoint-up(md){
 		// font-size: 1rem;
@@ -237,7 +235,7 @@ blockquote {
 	}
 	
 	.icon {
-		transition: all 0.2s ease-in-out;
+		transition: $easing-default;
 	}
 
 	&:hover {
@@ -353,7 +351,7 @@ th {
 	margin-bottom: 0;
 	text-transform: uppercase;
 	font-weight: 600;
-	color: $text-muted;
+	color: var(--fg-muted);
 	font-size: 0.9325rem;
 }
 
@@ -374,7 +372,7 @@ th {
 
 	span {
 		display: block;
-		color: $text-muted;
+		color: var(--fg-muted);
 		font-size: 0.8em;
 	}
 
@@ -446,7 +444,7 @@ th {
 		.work-history_company,
 		.work-history_title,
 		.work-history_year {
-			color: text-muted;
+			color: fg-muted;
 		}
 
 		@include media-breakpoint-up(sm) {
@@ -606,7 +604,7 @@ th {
 
 	figure p {
 		font-size: 1rem;
-		color: $text-muted;
+		color: var(--fg-muted);
 	}
 
 	figcaption {
