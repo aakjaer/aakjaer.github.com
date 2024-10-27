@@ -9,6 +9,8 @@
     --fg-muted: #{$text-muted};
     --fg-inverse: var(--neutral-50);
     --fg-inverse-muted: var(--neutral-200);
+    
+    --bg-subtle: var(--neutral-100);
 
     // Palettes
     --neutral-50: #{$gray-50};
@@ -29,6 +31,8 @@
 
 .fg-default {color: var(--fg-muted)}
 .fg-inverse-muted {color: var(--fg-inverse-muted)}
+
+.bg-subtle { background: var(--bg-subtle)}
 
 
 $brand-red: #F9615B;
