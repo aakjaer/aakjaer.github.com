@@ -994,6 +994,7 @@ new MutationObserver(syncGround).observe(document.documentElement,{attributes:tr
 function resize(){
   const w=stage.clientWidth, h=stage.clientHeight; if(!w||!h) return;
   renderer.setSize(w,h,false); camera.aspect=w/h; camera.updateProjectionMatrix();
+  renderer.render(scene,camera); // resizing clears the canvas; redraw before the browser paints
 }
 new ResizeObserver(resize).observe(stage); resize();
 const ease=t=>t<0.5?2*t*t:1-Math.pow(-2*t+2,2)/2;
