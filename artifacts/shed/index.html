@@ -35,8 +35,14 @@ body{margin:0;height:100%;background:var(--bg);color:var(--ink);
 h1{font-family:"Barlow Semi Condensed","Barlow",system-ui,sans-serif;font-weight:600;font-size:27px;line-height:1.05;margin:0;letter-spacing:-0.01em}
 .sub{margin:8px 0 0;color:var(--muted);font-size:14px;max-width:34ch}
 .lgroup h2{font-family:"Barlow Semi Condensed","Barlow",system-ui,sans-serif;font-weight:600;font-size:16px;margin:0}
-.ghead{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px}
-.ghead button{background:none;border:0;color:var(--accent);font:inherit;font-size:13px;cursor:pointer;padding:2px 0}
+.lgroup h2{margin-bottom:6px}
+.lgroup+.lgroup{margin-top:22px}
+#layerbox summary{font-family:"Barlow Semi Condensed","Barlow",system-ui,sans-serif;font-weight:600;font-size:17px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center}
+#layerbox summary::-webkit-details-marker{display:none}
+#layerbox summary::after{content:"";width:8px;height:8px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:rotate(45deg) translateY(-2px);transition:transform .2s}
+#layerbox[open] summary::after{transform:rotate(-135deg) translateY(-2px)}
+#layerbox[open] summary{margin-bottom:14px}
+#layerbox .note{margin-top:22px}
 ul{list-style:none;margin:0;padding:0}
 li label{display:flex;align-items:center;gap:10px;padding:4px 0;cursor:pointer}
 input[type=checkbox]{appearance:none;-webkit-appearance:none;width:18px;height:18px;border:1.5px solid var(--muted);border-radius:4px;margin:0;display:grid;place-content:center;flex:none;background:transparent;cursor:pointer}
@@ -152,8 +158,11 @@ body.guiding .hint{display:none}
         <button data-preset="vent">Ventilation</button>
       </div>
     </div>
+    <details id="layerbox">
+    <summary>Lag</summary>
     <div id="layers"></div>
     <p class="note">Bygget ud fra vores mål. Terrænet er tegnet vandret, selvom det stiger ca. 7 cm mod den lave ende, og affaldsskærmens placering er anslået. Hold musen over eller tryk på en del for at se, hvad den er.</p>
+    </details>
   </aside>
   <main id="stage">
     <canvas id="c" aria-label="3D-model af skuret"></canvas>
@@ -703,17 +712,10 @@ ex.addEventListener('input',()=>setExplode(+ex.value));
 // ---------- layer panel ----------
 const layersEl=document.getElementById('layers');
 const state={}; LAYERS.forEach(l=>state[l.id]=true);
-const boxes={}, groupBtns={};
+const boxes={};
 GROUPS.forEach(gn=>{
   const sec=document.createElement('section'); sec.className='lgroup';
-  const head=document.createElement('div'); head.className='ghead';
-  const h=document.createElement('h2'); h.textContent=gn; head.appendChild(h);
-  const btn=document.createElement('button'); btn.type='button'; head.appendChild(btn); groupBtns[gn]=btn;
-  btn.addEventListener('click',()=>{
-    const ls=LAYERS.filter(l=>l.group===gn); const anyOn=ls.some(l=>state[l.id]);
-    let n=0; ls.forEach(l=>{ if(state[l.id]!==!anyOn) setVis(l.id,!anyOn,true,(n++)*30); });
-  });
-  sec.appendChild(head);
+  const h=document.createElement('h2'); h.textContent=gn; sec.appendChild(h);
   const ul=document.createElement('ul');
   LAYERS.filter(l=>l.group===gn).forEach(l=>{
     const li=document.createElement('li'); const lab=document.createElement('label');
@@ -726,10 +728,7 @@ GROUPS.forEach(gn=>{
   });
   sec.appendChild(ul); layersEl.appendChild(sec);
 });
-function refreshGroupBtns(){
-  GROUPS.forEach(gn=>{ const anyOn=LAYERS.filter(l=>l.group===gn).some(l=>state[l.id]);
-    groupBtns[gn].textContent=anyOn?'Skjul alle':'Vis alle'; });
-}
+function refreshGroupBtns(){}
 const layerAnims={}, curF={}, DIST=5;
 LAYERS.forEach(l=>curF[l.id]=1);
 function setVis(id,on,animate=true,delay=0){
