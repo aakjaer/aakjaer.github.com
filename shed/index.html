@@ -1,0 +1,1022 @@
+<!doctype html>
+<html lang="da">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Model af skurtaget</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;600&family=Barlow+Semi+Condensed:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#E3E6DF;--panel:#F2F3EF;--ink:#1D241E;--muted:#5D675D;--line:#CDD2C7;
+  --accent:#3E5A34;--accent-ink:#F2F3EF;--ground:#C6CAC0;
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#171B18;--panel:#1E2420;--ink:#E6EBE3;--muted:#9BA698;--line:#323A33;
+    --accent:#9DBB86;--accent-ink:#141814;--ground:#2C332D;color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#171B18;--panel:#1E2420;--ink:#E6EBE3;--muted:#9BA698;--line:#323A33;
+  --accent:#9DBB86;--accent-ink:#141814;--ground:#2C332D;color-scheme:dark;
+}
+html{height:100%;scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;height:100%;background:var(--bg);color:var(--ink);
+  font-family:"Barlow",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;font-size:15px;line-height:1.45}
+#app{display:grid;grid-template-columns:300px minmax(0,1fr);height:100%}
+#panel{background:var(--panel);border-right:1px solid var(--line);overflow:auto;padding:22px 20px 20px;display:flex;flex-direction:column;gap:20px}
+h1{font-family:"Barlow Semi Condensed","Barlow",system-ui,sans-serif;font-weight:600;font-size:27px;line-height:1.05;margin:0;letter-spacing:-0.01em}
+.sub{margin:8px 0 0;color:var(--muted);font-size:14px;max-width:34ch}
+.lgroup h2{font-family:"Barlow Semi Condensed","Barlow",system-ui,sans-serif;font-weight:600;font-size:16px;margin:0}
+.ghead{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:4px}
+.ghead button{background:none;border:0;color:var(--accent);font:inherit;font-size:13px;cursor:pointer;padding:2px 0}
+ul{list-style:none;margin:0;padding:0}
+li label{display:flex;align-items:center;gap:10px;padding:4px 0;cursor:pointer}
+input[type=checkbox]{appearance:none;-webkit-appearance:none;width:18px;height:18px;border:1.5px solid var(--muted);border-radius:4px;margin:0;display:grid;place-content:center;flex:none;background:transparent;cursor:pointer}
+input[type=checkbox]:checked{background:var(--accent);border-color:var(--accent)}
+input[type=checkbox]:checked::after{content:"";width:9px;height:5px;border-left:2px solid var(--accent-ink);border-bottom:2px solid var(--accent-ink);transform:translateY(-1px) rotate(-45deg)}
+.sw{width:22px;height:12px;border-radius:2px;flex:none;box-shadow:inset 0 0 0 1px rgba(0,0,0,.15)}
+.nm{flex:1}
+label.off .nm,label.off .sw{opacity:.45}
+.explode{border-bottom:1px solid var(--line);padding-bottom:18px}
+.explode .row{display:flex;justify-content:space-between;align-items:baseline;font-family:"Barlow Semi Condensed","Barlow",system-ui,sans-serif;font-weight:600;font-size:17px}
+.explode output{font-family:"Barlow",system-ui,sans-serif;font-weight:500;font-size:14px;color:var(--muted)}
+input[type=range]{width:100%;accent-color:var(--accent);margin:10px 0 2px}
+.ends{display:flex;justify-content:space-between;color:var(--muted);font-size:13px}
+.presets{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.presets button,.views button,#ptoggle{font:inherit;font-size:14px;border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;padding:5px 12px;cursor:pointer}
+.presets button:hover,.views button:hover,#ptoggle:hover{border-color:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.note{color:var(--muted);font-size:13px;margin:0}
+#stage{position:relative;min-height:0;min-width:0;overflow:hidden}
+canvas{display:block;width:100%;height:100%;touch-action:none}
+.views{position:absolute;top:14px;right:14px;display:flex;flex-wrap:wrap;gap:6px;justify-content:flex-end;max-width:72%}
+.views button,#ptoggle{background:var(--panel)}
+#info{position:absolute;pointer-events:none;background:var(--panel);border:1px solid var(--line);border-radius:8px;padding:8px 11px;max-width:260px;box-shadow:0 6px 18px rgba(0,0,0,.14)}
+#info b{display:block;font-family:"Barlow Semi Condensed","Barlow",system-ui,sans-serif;font-weight:600;font-size:15px}
+#info span{color:var(--muted);font-size:13px}
+.hint{position:absolute;left:14px;bottom:12px;color:var(--muted);font-size:13px;pointer-events:none}
+#ptoggle{display:flex;align-items:center;justify-content:center;position:absolute;top:14px;left:14px;width:36px;height:36px;padding:0}
+#ptoggle svg{width:20px;height:20px;display:block}
+#ptoggle .chev{transition:transform .2s;transform-box:fill-box;transform-origin:center}
+#ptoggle[aria-expanded="false"] .chev{transform:rotate(180deg)}
+#shopBtn{display:flex;align-items:center;justify-content:center;position:absolute;top:14px;left:58px;width:36px;height:36px;padding:0;border-radius:999px;border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer}
+#shopBtn:hover{border-color:var(--accent)}
+#shopBtn svg{width:19px;height:19px;display:block}
+#shop{border:1px solid var(--line);border-radius:14px;background:var(--panel);color:var(--ink);padding:0;width:min(780px,calc(100% - 24px));max-height:min(88vh,900px);overflow:hidden}
+#shop[open]{display:flex;flex-direction:column}
+#shop::backdrop{background:rgba(10,14,11,.45)}
+.s-head{display:flex;align-items:flex-start;gap:12px;padding:18px 20px 12px;border-bottom:1px solid var(--line)}
+.s-head h2{font-family:"Barlow Semi Condensed","Barlow",system-ui,sans-serif;font-weight:600;font-size:22px;margin:0;line-height:1.1}
+.s-head p{margin:4px 0 0;color:var(--muted);font-size:13px;max-width:60ch}
+#shopClose{margin-left:auto;background:none;border:0;color:var(--muted);font-size:20px;cursor:pointer;padding:2px 6px;line-height:1}
+.s-body{overflow:auto;padding:4px 20px 18px}
+.s-cat{font-family:"Barlow Semi Condensed","Barlow",system-ui,sans-serif;font-weight:600;font-size:16px;margin:16px 0 6px}
+.s-tbl{width:100%;border-collapse:collapse;font-size:14px}
+.s-tbl th{text-align:left;font-weight:500;color:var(--muted);font-size:12.5px;padding:0 8px 4px 0;border-bottom:1px solid var(--line)}
+.s-tbl td{padding:7px 8px 7px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.s-tbl td.n,.s-tbl th.n{text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}
+.s-tbl a{color:var(--accent)}
+.s-tbl small{display:block;color:var(--muted);font-size:12.5px;margin-top:2px}
+.s-na{color:var(--muted);font-style:italic}
+.s-tot{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-top:16px;padding-top:10px;border-top:2px solid var(--ink);font-family:"Barlow Semi Condensed","Barlow",system-ui,sans-serif;font-weight:600;font-size:18px}
+.s-tot span:last-child{font-variant-numeric:tabular-nums}
+.s-warn{border-left:3px solid var(--accent);padding:2px 0 2px 10px;font-size:13.5px;margin:10px 0 0}
+.s-warn b{font-weight:600}
+.s-notes{margin:14px 0 0;padding-left:18px;color:var(--muted);font-size:13px}
+.s-notes li{margin:3px 0}
+#qstart{display:none;position:absolute;top:14px;left:102px;width:36px;height:36px;padding:0;border-radius:999px;border:1px solid var(--accent);background:var(--accent);color:var(--accent-ink);cursor:pointer;align-items:center;justify-content:center}
+#qstart svg{width:16px;height:16px;display:block;margin-left:2px}
+#qstart:hover{filter:brightness(1.1)}
+#app.pc #qstart{display:flex}
+body.guiding #qstart{display:none!important}
+#panel.collapsed{display:none}
+#app.pc{grid-template-columns:minmax(0,1fr)}
+.primary{background:var(--accent)!important;color:var(--accent-ink)!important;border-color:var(--accent)!important}
+#guideBtn{font:inherit;font-weight:600;font-size:15px;border:1px solid var(--accent);border-radius:999px;padding:8px 16px;cursor:pointer;margin-top:14px}
+#guide{position:absolute;left:14px;bottom:14px;width:min(410px,calc(100% - 28px));max-height:calc(100% - 80px);overflow:auto;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px 18px 14px;box-shadow:0 10px 30px rgba(0,0,0,.18)}
+.g-top{display:flex;gap:12px;align-items:center}
+.g-num{flex:none;width:46px;height:46px;border-radius:50%;border:2px solid var(--accent);display:grid;place-items:center;font-family:"Barlow Semi Condensed","Barlow",system-ui,sans-serif;font-weight:600;font-size:24px;color:var(--accent)}
+.g-of{color:var(--muted);font-size:13px}
+#gTitle{font-family:"Barlow Semi Condensed","Barlow",system-ui,sans-serif;font-weight:600;font-size:21px;line-height:1.15;margin:0}
+#gClose{margin-left:auto;align-self:flex-start;background:none;border:0;color:var(--muted);font-size:18px;cursor:pointer;padding:2px 4px}
+#gText{margin:12px 0 10px}
+.g-h{font-family:"Barlow Semi Condensed","Barlow",system-ui,sans-serif;font-weight:600;font-size:14px;margin:8px 0 5px}
+.chips{display:flex;flex-wrap:wrap;gap:5px}
+.chip{border:1px solid var(--line);border-radius:999px;padding:2px 9px;font-size:13px}
+.g-note{border-left:3px solid var(--accent);padding:2px 0 2px 10px;color:var(--muted);font-size:13px;margin:12px 0 0}
+.g-prog{display:flex;gap:3px;margin:14px 0 12px}
+.g-prog button{flex:1;height:7px;border:0;border-radius:3px;background:var(--line);padding:0;cursor:pointer}
+.g-prog button.done{background:var(--accent);opacity:.45}
+.g-prog button.cur{background:var(--accent)}
+.g-nav{display:flex;justify-content:space-between;gap:8px}
+.g-nav button{font:inherit;font-size:14px;border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:999px;padding:6px 16px;cursor:pointer}
+.g-nav button:disabled{opacity:.4;cursor:default}
+body.guiding .hint{display:none}
+@media (max-width:760px){
+  #app{grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,1fr) auto}
+  #stage{order:1}
+  #panel{order:2;border-right:0;border-top:1px solid var(--line);max-height:46vh;padding:16px;gap:16px}
+  #panel.collapsed{display:none}
+  #ptoggle{display:flex}
+  .views{max-width:62%}
+  .hint{display:none}
+}
+</style>
+</head>
+<body>
+<div id="app">
+  <aside id="panel" aria-label="Lag">
+    <header>
+      <h1>Model af skurtaget</h1>
+      <p class="sub">Skur på 356 × 270 cm med seks spær 45×195 i faldretningen, 53,1 cm c/c og en hældning på ≈1,7°.</p>
+      <button id="guideBtn" class="primary" type="button">Start byggevejledning</button>
+    </header>
+    <div class="explode">
+      <div class="row"><label for="ex">Adskil lagene</label><output id="exv" for="ex">0 %</output></div>
+      <input type="range" id="ex" min="0" max="100" value="0">
+      <div class="ends"><span>Samlet</span><span>Adskilt</span></div>
+      <div class="presets">
+        <button data-preset="std">Standard</button>
+        <button data-preset="all">Alt</button>
+        <button data-preset="structure">Konstruktion</button>
+        <button data-preset="roof">Tagopbygning</button>
+        <button data-preset="walls">Vægge og kanter</button>
+        <button data-preset="vent">Ventilation</button>
+      </div>
+    </div>
+    <div id="layers"></div>
+    <p class="note">Bygget ud fra vores mål. Terrænet er tegnet vandret, selvom det stiger ca. 7 cm mod den lave ende, og affaldsskærmens placering er anslået. Hold musen over eller tryk på en del for at se, hvad den er.</p>
+  </aside>
+  <main id="stage">
+    <canvas id="c" aria-label="3D-model af skuret"></canvas>
+    <button id="ptoggle" aria-expanded="true" aria-controls="panel" aria-label="Skjul lag" title="Skjul lag"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2.5"/><line x1="9" y1="4" x2="9" y2="20"/><path class="chev" d="M15.5 9.5 13 12l2.5 2.5"/></svg></button>
+    <button id="shopBtn" type="button" aria-label="Indkøbsliste" title="Indkøbsliste" aria-haspopup="dialog"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2.2l2.1 10.2a1.5 1.5 0 0 0 1.5 1.2h8.4a1.5 1.5 0 0 0 1.5-1.1L20.5 8H6.2"/><circle cx="9.5" cy="19.5" r="1.3"/><circle cx="17" cy="19.5" r="1.3"/></svg></button>
+    <button id="qstart" type="button" aria-label="Start byggevejledning" title="Start byggevejledning"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M7 4.5v15a1 1 0 0 0 1.5.86l12.5-7.5a1 1 0 0 0 0-1.72L8.5 3.64A1 1 0 0 0 7 4.5z"/></svg></button>
+    <div class="views" role="group" aria-label="Kameravinkler">
+      <button data-view="iso">Overblik</button>
+      <button data-view="door">Dørside</button>
+      <button data-view="back">Bagside</button>
+      <button data-view="low">Lav ende</button>
+      <button data-view="high">Høj ende</button>
+      <button data-view="top">Oppefra</button>
+    </div>
+    <div id="info" hidden></div>
+    <section id="guide" hidden aria-live="polite" aria-label="Byggevejledning">
+      <div class="g-top"><span class="g-num" id="gNum">1</span><div><div class="g-of" id="gOf"></div><h2 id="gTitle"></h2></div><button id="gClose" type="button" aria-label="Luk vejledningen">✕</button></div>
+      <p id="gText"></p>
+      <div id="gParts"></div>
+      <p id="gNote" class="g-note"></p>
+      <div class="g-prog" id="gProg"></div>
+      <div class="g-nav"><button id="gPrev" type="button">Forrige</button><button id="gNext" type="button" class="primary">Næste</button></div>
+    </section>
+    <div class="hint">Træk for at dreje, højreklik og træk for at panorere, scroll for at zoome.</div>
+  </main>
+  <dialog id="shop" aria-labelledby="shopTitle">
+    <div class="s-head">
+      <div>
+        <h2 id="shopTitle">Indkøbsliste</h2>
+        <p>Priser fra 10-4.dk, set 19. november 2026, før mængderabat. Mængder er mine overslag ud fra modellen, med lidt spild. Tjek dem, før du bestiller.</p>
+      </div>
+      <button id="shopClose" type="button" aria-label="Luk indkøbsliste">✕</button>
+    </div>
+    <div class="s-body" id="shopBody"></div>
+  </dialog>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+<script>
+(function(){
+// ---------- geometry constants (metres) ----------
+const SL=3.56, SW=2.70;              // shed outer length (along fall) and width
+const T=0.10/(SL-0.10), TH=Math.atan(T);
+const yb=x=>2.10+(x-0.05)*T;          // underside of joists
+const DOOR=[2.38,3.46];
+
+const LAYERS=[
+ {id:'frame', name:'Stolper, løsholter og gamle remme', group:'Eksisterende', color:'#8C8A70', ex:{y:0,out:0}},
+ {id:'clad',  name:'1 på 2-beklædning',            group:'Eksisterende', color:'#4F6244', ex:{y:0,out:0.8}},
+ {id:'screen',name:'Affaldsskærm (anslået)',       group:'Eksisterende', color:'#566A4A', ex:{y:0,out:0.8}},
+ {id:'beams', name:'Nye remme og overligger', group:'Ny konstruktion', color:'#D7AE6E', ex:{y:0.45,out:0}},
+ {id:'infill',name:'Udfyldningsstolper',     group:'Ny konstruktion', color:'#CDA466', ex:{y:0.45,out:0.15}},
+ {id:'joists',name:'Spær 45×195',            group:'Ny konstruktion', color:'#E6C894', ex:{y:0.95,out:0}},
+ {id:'ladder',name:'Kantspær og klodser',    group:'Ny konstruktion', color:'#DDBD86', ex:{y:0.95,out:0.35}},
+ {id:'beslag',name:'Beslag og hulbånd',      group:'Ny konstruktion', color:'#B9BEC0', ex:{y:0.7,out:0.1}},
+ {id:'ceiling',name:'Loftbrædder',            group:'Tagopbygning', color:'#EAD9B6', ex:{y:0.6,out:0}},
+ {id:'insul', name:'Isolering 100 mm',       group:'Tagopbygning', color:'#EBD27A', ex:{y:1.35,out:0}},
+ {id:'deck',  name:'OSB-underlag 18 mm',     group:'Tagopbygning', color:'#C79B5E', ex:{y:1.75,out:0}},
+ {id:'drip',  name:'Fodblik, lav ende',       group:'Tagopbygning', color:'#A3A8A6', ex:{y:1.95,out:0.25}},
+ {id:'verge', name:'Kantprofiler 45°, sider', group:'Tagopbygning', color:'#A3A8A6', ex:{y:1.95,out:0.25}},
+ {id:'hightrim',name:'Kantprofil 45°, høj ende', group:'Tagopbygning', color:'#A3A8A6', ex:{y:1.95,out:0.25}},
+ {id:'felt1', name:'Tagpap, 1 lag',           group:'Tagopbygning', color:'#2E3130', ex:{y:2.3,out:0}},
+ {id:'bead',  name:'Tætningsfuge',            group:'Tagopbygning', color:'#141514', ex:{y:2.5,out:0}},
+ {id:'fbk',   name:'Frise: OSB og lægter', group:'Vægge og kanter', color:'#BF955A', ex:{y:0.45,out:0.55}},
+ {id:'frieze',name:'Frisebrædder',         group:'Vægge og kanter', color:'#5E7451', ex:{y:0.45,out:0.95}},
+ {id:'fascia',name:'Sternbrædder og vindskeder', group:'Vægge og kanter', color:'#5A6F4D', ex:{y:0.95,out:0.55}},
+ {id:'soffit',name:'Underbeklædning', group:'Vægge og kanter', color:'#F1F1EC', ex:{y:0.65,out:0}},
+ {id:'door',  name:'Dør og karm',          group:'Vægge og kanter', color:'#3E5034', ex:{y:0,out:0.9}},
+ {id:'gutter',name:'Tagrende og nedløb',   group:'Vægge og kanter', color:'#8E9497', ex:{y:0.95,out:0.85}},
+ {id:'roofvent',name:'Tagventilation og vindplader', group:'Ventilation', color:'#2B302B', ex:{y:0.65,out:0}},
+ {id:'fan',name:'Udsugning og friskluftrist', group:'Ventilation', color:'#E4E6E1', ex:{y:0,out:0.3}},
+ {id:'airflow',name:'Luftstrøm (pile)', group:'Ventilation', color:'#4AA3D8', ex:{y:0,out:0}},
+ {id:'gutterhw',name:'Rendejern og rørholdere', group:'Vægge og kanter', color:'#B9BEC0', ex:{y:0.95,out:0.6}},
+ {id:'ground',name:'Terræn',                     group:'Omgivelser', color:'#C6CAC0', ex:{y:0,out:0}},
+];
+const LMAP={}; LAYERS.forEach(l=>LMAP[l.id]=l);
+const GROUPS=['Eksisterende','Ny konstruktion','Tagopbygning','Vægge og kanter','Ventilation','Omgivelser'];
+const DEFAULT_OFF=['infill','ceiling','insul','fbk','screen'];
+
+// ---------- renderer / scene ----------
+const canvas=document.getElementById('c');
+const stage=document.getElementById('stage');
+const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true});
+renderer.setPixelRatio(Math.min(window.devicePixelRatio||1,2));
+renderer.shadowMap.enabled=true; renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+const scene=new THREE.Scene();
+const camera=new THREE.PerspectiveCamera(38,1,0.1,100);
+const controls=new THREE.OrbitControls(camera,canvas);
+controls.enableDamping=true; controls.dampingFactor=0.09;
+controls.maxPolarAngle=Math.PI*0.495; controls.minDistance=1.2; controls.maxDistance=24;
+const CENTER=new THREE.Vector3(1.9,1.3,1.35);
+controls.target.copy(CENTER); camera.position.set(7.4,4.2,7.2);
+
+scene.add(new THREE.HemisphereLight(0xffffff,0x7d8279,0.78));
+const sun=new THREE.DirectionalLight(0xffffff,0.82);
+sun.position.set(6.5,10,5.5); sun.target.position.copy(CENTER);
+sun.castShadow=true; sun.shadow.mapSize.set(2048,2048);
+Object.assign(sun.shadow.camera,{left:-6,right:6,top:7,bottom:-6,near:1,far:30});
+sun.shadow.bias=-0.0006;
+scene.add(sun); scene.add(sun.target);
+
+const groups={}; LAYERS.forEach(l=>{const g=new THREE.Group(); g.name=l.id; scene.add(g); groups[l.id]=g;});
+const mats={};
+LAYERS.forEach(l=>{
+  const metal=['drip','verge','hightrim','gutter','gutterhw','beslag'].includes(l.id);
+  mats[l.id]=new THREE.MeshStandardMaterial({color:l.color,roughness:(l.id==='felt1'||l.id==='felt2')?0.95:(metal?0.42:0.82),metalness:metal?0.15:0});
+});
+mats.gutter.side=THREE.DoubleSide;
+const glassMat=new THREE.MeshStandardMaterial({color:0xa9c3cc,transparent:true,opacity:0.38,roughness:0.08,metalness:0.1});
+const ventMat=new THREE.MeshStandardMaterial({color:0x2b302b,roughness:0.9});
+const steelMat=new THREE.MeshStandardMaterial({color:0xc3c7c8,roughness:0.5,metalness:0.15});
+const edgeMat=new THREE.LineBasicMaterial({color:0x1d241e,transparent:true,opacity:0.22});
+
+const meshes=[];
+const V=(x,y,z)=>new THREE.Vector3(x,y,z);
+const OUT={back:V(0,0,-1),front:V(0,0,1),low:V(-1,0,0),high:V(1,0,0),none:V(0,0,0)};
+
+function addMesh(layer,geom,pos,rotZ,info,out,mat){
+  const m=new THREE.Mesh(geom,mat||mats[layer]);
+  m.position.copy(pos); if(rotZ) m.rotation.z=rotZ;
+  m.castShadow=(layer!=='ground'); m.receiveShadow=true;
+  m.userData={layer,base:pos.clone(),out:(out||OUT.none).clone(),info,mat:m.material};
+  if(layer!=='ground'&&layer!=='insul'&&layer!=='airflow'){ m.add(new THREE.LineSegments(new THREE.EdgesGeometry(geom,20),edgeMat)); }
+  groups[layer].add(m); meshes.push(m); return m;
+}
+function box(layer,x0,x1,y0,y1,z0,z1,info,out,mat){
+  return addMesh(layer,new THREE.BoxGeometry(x1-x0,y1-y0,z1-z0),V((x0+x1)/2,(y0+y1)/2,(z0+z1)/2),0,info,out,mat);
+}
+function sbox(layer,x0,x1,z0,z1,ybot,h,info,out,mat){
+  const xc=(x0+x1)/2, len=(x1-x0)/Math.cos(TH);
+  const pos=V(xc-Math.sin(TH)*h/2, ybot(xc)+Math.cos(TH)*h/2,(z0+z1)/2);
+  return addMesh(layer,new THREE.BoxGeometry(len,h,z1-z0),pos,TH,info,out,mat);
+}
+function trap(layer,x0,x1,yB,ytop,z0,depth,info,out,mat){
+  const s=new THREE.Shape();
+  s.moveTo(x0,yB); s.lineTo(x1,yB); s.lineTo(x1,ytop(x1)); s.lineTo(x0,ytop(x0)); s.lineTo(x0,yB);
+  const g=new THREE.ExtrudeGeometry(s,{depth,bevelEnabled:false});
+  return addMesh(layer,g,V(0,0,z0),0,info,out,mat);
+}
+const I=(t,d)=>({t,d});
+
+// ---------- ground ----------
+(function(){
+  const g=new THREE.Mesh(new THREE.PlaneGeometry(16,16),new THREE.MeshStandardMaterial({color:0xc6cac0,roughness:1}));
+  g.rotation.x=-Math.PI/2; g.position.set(1.8,0,1.35); g.receiveShadow=true;
+  g.userData={layer:'ground',base:g.position.clone(),out:V(0,0,0),info:I('Terræn','Tegnet vandret her')};
+  groups.ground.add(g); mats.groundPlane=g.material;
+  const grid=new THREE.GridHelper(16,40,0x000000,0x000000);
+  grid.material.transparent=true; grid.material.opacity=0.06; grid.position.set(1.8,0.002,1.35);
+  groups.ground.add(grid);
+})();
+
+// ---------- existing frame ----------
+const postI=I('Eksisterende stolpe','≈10 × 10 cm, ca. 190 cm op til den gamle rem');
+[[0,0],[SL-0.1,0],[0,SW-0.1],[SL-0.1,SW-0.1],[1.18,0],[2.36,0],[1.30,SW-0.1],[2.28,SW-0.1],[0,1.30],[SL-0.1,1.30]]
+ .forEach(([x,z])=>box('frame',x,x+0.10,0,1.90,z,z+0.10,postI));
+const railI=I('Eksisterende løsholt','Løsholt midt i vægrammen');
+[[0.10,1.18],[1.28,2.36],[2.46,SL-0.10]].forEach(([a,b])=>box('frame',a,b,0.95,1.045,0,0.095,railI));
+[[0.10,1.30],[1.40,2.28]].forEach(([a,b])=>box('frame',a,b,0.95,1.045,SW-0.095,SW,railI));
+[[0.10,1.30],[1.40,SW-0.10]].forEach(([a,b])=>{box('frame',0,0.095,0.95,1.045,a,b,railI);box('frame',SL-0.095,SL,0.95,1.045,a,b,railI);});
+const beamI=I('Eksisterende rem','≈10 × 10 cm, overkant ca. 200 cm over terræn i den høje ende');
+box('frame',0,SL,1.90,2.00,0,0.10,beamI);
+box('frame',0,DOOR[0],1.90,2.00,SW-0.10,SW,I('Eksisterende rem','Skæres ved døren; stumpen bliver på stolpen'));
+box('frame',SL-0.10,SL,1.90,2.00,SW-0.10,SW,I('Stump af gammel rem','Hjørnestumpen bevares over stolpen'));
+box('frame',0,0.10,1.90,2.00,0.10,SW-0.10,beamI);
+box('frame',SL-0.10,SL,1.90,2.00,0.10,SW-0.10,beamI);
+
+// ---------- existing cladding ----------
+function cladRun(layer,axis,a0,a1,inner,outer,skip,out,yTop,info){
+  for(let s=a0;s<a1-0.02;s+=0.20){
+    const parts=[[s,Math.min(s+0.12,a1),inner],[s+0.11,Math.min(s+0.21,a1),outer]];
+    parts.forEach(([p,q,c])=>{
+      if(q-p<0.02) return;
+      if(skip&&q>skip[0]+0.001&&p<skip[1]-0.001) return;
+      if(axis==='x') box(layer,p,q,0.03,yTop,c[0],c[1],info,out);
+      else box(layer,c[0],c[1],0.03,yTop,p,q,info,out);
+    });
+  }
+}
+const cladI=I('Eksisterende beklædning','1 på 2, 2 × 22 mm, op til overkant af den gamle rem');
+cladRun('clad','x',-0.044,SL+0.044,[-0.022,0],[-0.044,-0.022],null,OUT.back,2.00,cladI);
+cladRun('clad','x',-0.044,SL+0.044,[SW,SW+0.022],[SW+0.022,SW+0.044],DOOR,OUT.front,2.00,cladI);
+cladRun('clad','z',0,SW,[-0.022,0],[-0.044,-0.022],null,OUT.low,2.00,cladI);
+cladRun('clad','z',0,SW,[SL,SL+0.022],[SL+0.022,SL+0.044],null,OUT.high,2.00,cladI);
+
+// ---------- bin screen (estimated) ----------
+const scrI=I('Affaldsskærm','Placering anslået ud fra billederne; toppen fastgøres til det nye yderste spær');
+box('screen',SL+0.53,SL+0.62,0,1.90,0,0.09,scrI,OUT.back);
+box('screen',SL+0.044,SL+0.53,1.80,1.90,0,0.09,scrI,OUT.back);
+cladRun('screen','x',SL+0.044,SL+0.53,[-0.022,0],[-0.044,-0.022],null,OUT.back,1.90,scrI);
+
+// ---------- new beams + door header ----------
+box('beams',0,0.10,2.00,2.10,-0.20,SW+0.20,I('Ny rem, lav ende','4×4", ca. 310 cm, går ud under kantspærene'));
+box('beams',SL-0.10,SL,2.00,2.10,0,SW-0.10,I('Ny rem, høj ende, nederste','4×4", ca. 260 cm, støder op mod overliggeren over døren'));
+box('beams',SL-0.10,SL,2.10,2.20,-0.20,SW+0.20,I('Ny rem, høj ende, øverste','4×4", ca. 310 cm, bærer kantspærene'));
+box('beams',2.28,SL,2.00,2.10,SW-0.10,SW,I('Ny overligger over døren','4×4", ca. 130 cm; hviler på remstumperne over stolperne i begge ender, åbningen bliver ca. 200 cm høj'),OUT.none,new THREE.MeshStandardMaterial({color:0xB98A4E,roughness:0.82}));
+
+// ---------- infill studs ----------
+const studI=I('Udfyldningsstolpe','45 × 95, skåret efter hældningen, lukker trekanten');
+[0.10,0.70,1.30,1.90,2.50,3.10,SL-0.145].forEach(x=>box('infill',x,x+0.045,2.00,yb(x+0.0225),0,0.095,studI,OUT.back));
+[0.10,0.70,1.30,1.90,2.335].forEach(x=>box('infill',x,x+0.045,2.00,yb(x+0.0225),SW-0.095,SW,studI,OUT.front));
+[2.38,2.98,SL-0.145].forEach(x=>box('infill',x,x+0.045,2.10,yb(x+0.0225),SW-0.095,SW,studI,OUT.front));
+
+// ---------- joists ----------
+const ZC=[0,1,2,3,4,5].map(k=>0.0225+k*0.531);
+ZC.forEach((zc,k)=>sbox('joists',-0.30,4.20,zc-0.0225,zc+0.0225,yb,0.195,
+  I(`Spær ${k+1} af 6`,'45 × 195 C24, 450 cm langt, 53,1 cm c/c, udhæng på 30 og 64 cm')));
+
+// ---------- fly rafters + noggins ----------
+const flyI=I('Kantspær','45 × 195, yderside 20 cm uden for væggen');
+sbox('ladder',-0.30,4.20,-0.20,-0.155,yb,0.195,flyI,OUT.back);
+sbox('ladder',-0.30,4.20,SW+0.155,SW+0.20,yb,0.195,flyI,OUT.front);
+const nogI=I('Klods','45 × 195, 15,5 cm lang, 57,6 cm c/c, én over hver væglinje');
+for(let k=0;k<=6;k++){
+  const x0=0.05+k*((SL-0.10)/6)-0.0225;
+  sbox('ladder',x0,x0+0.045,-0.155,0,yb,0.195,nogI,OUT.back);
+  sbox('ladder',x0,x0+0.045,SW,SW+0.155,yb,0.195,nogI,OUT.front);
+}
+
+// ---------- ceiling ----------
+sbox('ceiling',0.10,SL-0.10,0.10,SW-0.10,x=>yb(x)-0.012,0.012,I('Loftbrædder','Monteret under spærene, så loftet følger hældningen'));
+
+// ---------- insulation ----------
+for(let k=0;k<5;k++){
+  const z0=Math.max(ZC[k]+0.0225,0.10), z1=Math.min(ZC[k+1]-0.0225,SW-0.10);
+  sbox('insul',0.10,SL-0.10,z0,z1,yb,0.10,I('Isolering, 100 mm','Efterlader ca. 95 mm ventileret luftspalte ovenover'));
+}
+
+// ---------- OSB deck sheets ----------
+const deckI=I('OSB/3-underlag, 18 mm','Plader med not og fer, 244 × 61 cm, forskudte samlinger');
+for(let j=0;;j++){
+  const z0=-0.20+j*0.61; if(z0>=SW+0.20-0.01) break;
+  const z1=Math.min(z0+0.608,SW+0.20);
+  const xs=j%2===0?[-0.30,2.14,4.20]:[-0.30,0.92,3.36,4.20];
+  for(let i=0;i<xs.length-1;i++) sbox('deck',xs[i]+0.001,xs[i+1]-0.001,z0,z1,x=>yb(x)+0.195,0.018,deckI);
+}
+
+// ---------- edge flashings fixed to the OSB before the felt ----------
+const yd=x=>yb(x)+0.213;
+function pieces(a0,a1,maxLen,lap){ const o=[]; let p=a0; while(p<a1-0.001){ const q=Math.min(p+maxLen,a1); o.push([p,q]); if(q>=a1) break; p=q-lap; } return o; }
+const dripI=I('Fodblik, lav ende','Skrues på OSB’en før tagpappen; næsen går ned i tagrenden, stykker med ca. 5 cm overlæg');
+pieces(-0.25,SW+0.25,2.0,0.05).forEach(([p,q],i)=>{
+  const d=i*0.0009;
+  sbox('drip',-0.358,-0.24,p,q,x=>yd(x)+d,0.0015,dripI,OUT.low,steelMat);
+  box('drip',-0.358,-0.354,yb(-0.30)+0.175,yd(-0.356)+0.0015+d,p,q,dripI,OUT.low,steelMat);
+  box('drip',-0.385,-0.354,yb(-0.30)+0.171,yb(-0.30)+0.175,p,q,dripI,OUT.low,steelMat);
+});
+// 45° edge profile, cross-section as (outward distance from deck edge, height above deck)
+// outward: 0 = deck edge; 0.05 = outer face of the bargeboard
+const PROF=[[0.0515,-0.055],[0.0515,0.030],[0.0194,0.030],[-0.0112,0.0015],[-0.070,0.0015],[-0.070,0],[-0.0094,0],[0.0200,0.0285],[0.0500,0.0285],[0.0500,-0.055]];
+const profI=I('Kantprofil 45°','Aluminium, skrues på OSB’en før tagpappen: 5–6 cm ned over vindskeden, op over kanten og 45° ned på taget; stykker med ca. 5 cm overlæg');
+function sideProfile(sg,x0,x1,dy,o){
+  const s2=new THREE.Shape();
+  PROF.forEach(([w,v],i)=>{ const z=sg<0?-0.20-w:SW+0.20+w; const u=-z; i?s2.lineTo(u,v+dy):s2.moveTo(u,v+dy); });
+  const len=(x1-x0)/Math.cos(TH);
+  const g=new THREE.ExtrudeGeometry(s2,{depth:len,bevelEnabled:false});
+  g.rotateY(Math.PI/2); g.rotateZ(TH); g.translate(x0,yd(x0),0);
+  return addMesh('verge',g,V(0,0,0),0,profI,o,steelMat);
+}
+pieces(-0.36,4.25,2.0,0.05).forEach(([p,q],i)=>{ const d=i*0.0009; sideProfile(-1,p,q,d,OUT.back); sideProfile(1,p,q,d,OUT.front); });
+pieces(-0.25,SW+0.25,2.0,0.05).forEach(([p,q],i)=>{
+  const d=i*0.0009, s2=new THREE.Shape();
+  PROF.forEach(([w,v],j)=>{ const x=4.20+w; j?s2.lineTo(x,yd(x)+v+d):s2.moveTo(x,yd(x)+v+d); });
+  addMesh('hightrim',new THREE.ExtrudeGeometry(s2,{depth:q-p,bevelEnabled:false}),V(0,0,p),0,
+    I('Kantprofil 45°, høj ende','Samme profil som i siderne, ned over sternbrættet'),OUT.high,steelMat);
+});
+
+// ---------- single-layer felt ----------
+const feltI=I('Tagpap, 1 lag','Selvklæbende ét-lags tagpap med skifer, baner ca. 1 m brede med 10 cm overlæg, lagt ind over profilernes flanger');
+[-0.185,0.715,1.615,2.515].forEach((z0,i)=>{
+  const z1=Math.min(z0+1.0,SW+0.185);
+  sbox('felt1',-0.33,4.185,z0,z1,x=>yd(x)+0.0015+(i%2)*0.0008,0.003,feltI);
+});
+
+// ---------- bitumen bead where the felt meets the profiles ----------
+const beadI=I('Tætningsfuge','Tagpapklæber eller bitumenfuge langs tagpappens kant mod profilerne og på fodblikket');
+function beadLine(a,b){
+  const d=new THREE.Vector3().subVectors(b,a), len=d.length();
+  const m=addMesh('bead',new THREE.CylinderGeometry(0.005,0.005,len,10),a.clone().add(b).multiplyScalar(0.5),0,beadI);
+  m.quaternion.setFromUnitVectors(V(0,1,0),d.normalize());
+}
+const bh=0.0045+0.0015;
+beadLine(V(-0.33,yd(-0.33)+bh,-0.19),V(4.185,yd(4.185)+bh,-0.19));
+beadLine(V(-0.33,yd(-0.33)+bh,SW+0.19),V(4.185,yd(4.185)+bh,SW+0.19));
+beadLine(V(4.188,yd(4.188)+bh,-0.19),V(4.188,yd(4.188)+bh,SW+0.19));
+beadLine(V(-0.33,yd(-0.33)+bh,-0.19),V(-0.33,yd(-0.33)+bh,SW+0.19));
+
+// ---------- brackets and straps ----------
+const angI=I('Vinkelbeslag','To pr. spær ved hver rem; kamsøm efter producentens anvisning');
+const strapI=I('Hulbånd','Fra den nye rem ned over den gamle rem og ind i stolpen; fører vindsug ned i væggen');
+const JZ=[-0.1775,...ZC,SW+0.1775];
+[0.05,SL-0.05].forEach(xs=>{
+  const y0=yb(xs);
+  JZ.forEach((zc,k)=>{
+    [-1,1].forEach(side=>{
+      if(k===0&&side<0) return; if(k===JZ.length-1&&side>0) return;
+      const zf=zc+side*0.0225;
+      box('beslag',xs-0.02,xs+0.02,y0,y0+0.07,side>0?zf:zf-0.002,side>0?zf+0.002:zf,angI);
+      box('beslag',xs-0.02,xs+0.02,y0,y0+0.002,side>0?zf:zf-0.045,side>0?zf+0.045:zf,angI);
+    });
+  });
+});
+[0.05,1.35,SW-0.05].forEach(zc=>{
+  box('beslag',-0.002,0,1.65,2.10,zc-0.02,zc+0.02,strapI,OUT.low);
+  box('beslag',SL,SL+0.002,1.65,2.20,zc-0.02,zc+0.02,strapI,OUT.high);
+});
+
+// ---------- frieze backing (OSB + battens) ----------
+const fTop=x=>yb(x)-0.015;
+const fOsbI=I('Frise-OSB, 12 mm','Lukker trekanten og afstiver opbygningen');
+const batI=I('Lægte','≈38 mm, sætter frisen ca. 6 mm ud foran den gamle beklædning');
+trap('fbk',0,SL,2.00,fTop,-0.012,0.012,fOsbI,OUT.back);
+trap('fbk',0,SL,2.00,fTop,SW,0.012,fOsbI,OUT.front);
+box('fbk',-0.012,0,2.00,2.10,0,SW,fOsbI,OUT.low);
+box('fbk',SL,SL+0.012,2.00,2.20,0,SW,fOsbI,OUT.high);
+[0,0.6,1.2,1.8,2.4,3.0,SL-0.045].forEach(x=>{
+  box('fbk',x,x+0.045,2.00,fTop(x+0.0225),-0.050,-0.012,batI,OUT.back);
+  box('fbk',x,x+0.045,2.00,fTop(x+0.0225),SW+0.012,SW+0.050,batI,OUT.front);
+});
+[0,0.6,1.2,1.8,2.4,SW-0.045].forEach(z=>{
+  box('fbk',-0.050,-0.012,2.00,2.10,z,z+0.045,batI,OUT.low);
+  box('fbk',SL+0.012,SL+0.050,2.00,2.20,z,z+0.045,batI,OUT.high);
+});
+
+// ---------- frieze boards ----------
+const frzI=I('Frisebrædder','Går 2,5 cm ned over den gamle beklædning og stopper ved underbeklædningen; en smal kile, ca. 1 cm i den lave ende og 10 cm i den høje');
+const fbTop=x=>yb(x)-0.115;
+trap('frieze',-0.072,SL+0.072,1.975,fbTop,-0.072,0.022,frzI,OUT.back);
+trap('frieze',-0.072,DOOR[0],1.975,fbTop,SW+0.050,0.022,frzI,OUT.front);
+trap('frieze',DOOR[0],DOOR[1],2.005,fbTop,SW+0.050,0.022,I('Frise over døren','Stopper lige over dørbladet; sæt et vandnæseprofil her'),OUT.front);
+trap('frieze',DOOR[1],SL+0.072,1.975,fbTop,SW+0.050,0.022,frzI,OUT.front);
+box('frieze',-0.072,-0.050,1.975,fbTop(-0.06),-0.072,SW+0.072,frzI,OUT.low);
+box('frieze',SL+0.050,SL+0.072,1.975,fbTop(SL+0.06),-0.072,SW+0.072,frzI,OUT.high);
+
+// ---------- fascia + bargeboards ----------
+const fasI=I('Sternbræt, 2 × 25 mm','Dobbelt bræt; det nederste skjuler remmenes ender');
+const barI=I('Vindskede, 2 × 25 mm','Dobbelt bræt; det nederste hænger ca. 10 cm under kantspæret');
+box('fascia',-0.325,-0.30,yb(-0.30)-0.115,yb(-0.30)+0.12,-0.225,SW+0.225,fasI,OUT.low);
+box('fascia',-0.35,-0.325,yb(-0.30)+0.10,yb(-0.30)+0.213,-0.25,SW+0.25,fasI,OUT.low);
+box('fascia',4.20,4.225,yb(4.20)-0.115,yb(4.20)+0.12,-0.225,SW+0.225,fasI,OUT.high);
+box('fascia',4.225,4.25,yb(4.20)+0.10,yb(4.20)+0.213,-0.25,SW+0.25,fasI,OUT.high);
+sbox('fascia',-0.30,4.20,-0.225,-0.20,x=>yb(x)-0.115,0.235,barI,OUT.back);
+sbox('fascia',-0.325,4.225,-0.25,-0.225,x=>yb(x)+0.10,0.113,barI,OUT.back);
+sbox('fascia',-0.30,4.20,SW+0.20,SW+0.225,x=>yb(x)-0.115,0.235,barI,OUT.front);
+sbox('fascia',-0.325,4.225,SW+0.225,SW+0.25,x=>yb(x)+0.10,0.113,barI,OUT.front);
+
+// ---------- soffit + vents ----------
+const sofI=I('Underbeklædning','Samme linje som i siderne, ca. 10 cm under spærene');
+const sofB=x=>yb(x)-0.115;
+sbox('soffit',-0.30,-0.072,-0.20,SW+0.20,sofB,0.015,sofI);
+sbox('soffit',SL+0.072,4.20,-0.20,SW+0.20,sofB,0.015,sofI);
+sbox('soffit',-0.072,SL+0.072,-0.20,-0.072,sofB,0.015,I('Underbeklædning i siden','I flugt under remmenes ender, ca. 10 cm under spærene; kræver opklodsning at skrue i'));
+sbox('soffit',-0.072,SL+0.072,SW+0.072,SW+0.20,sofB,0.015,I('Underbeklædning i siden','I flugt under remmenes ender, ca. 10 cm under spærene; kræver opklodsning at skrue i'));
+const ventI=I('Ventilationsspalte med insektnet','Luft ind i den lave ende og ud i den høje, i hvert spærfag');
+sbox('roofvent',-0.29,-0.26,0,SW,x=>yb(x)-0.1165,0.0165,ventI,OUT.none,ventMat);
+sbox('roofvent',4.16,4.19,0,SW,x=>yb(x)-0.1165,0.0165,ventI,OUT.none,ventMat);
+const bafI=I('Vindplade','Holder isoleringen tilbage ved væglinjen og sikrer en fri luftspalte på ca. 7–9 cm over den');
+for(let k=0;k<5;k++){
+  const z0=ZC[k]+0.0225, z1=ZC[k+1]-0.0225;
+  [[0.10,0.112],[SL-0.112,SL-0.10]].forEach(([a,b])=>{
+    const m=box('roofvent',a,b,yb((a+b)/2),yb((a+b)/2)+0.12,z0,z1,bafI,OUT.none,mats.ceiling);
+    m.userData.exY=1.35;
+  });
+}
+
+// ---------- active ventilation ----------
+const inI=I('Friskluftrist','Lav placering i bagvæggen ved den høje ende, diagonalt fra udsugningen; insektnet på ydersiden');
+box('fan',2.92,3.08,0.22,0.38,-0.056,-0.044,inI,OUT.back);
+box('fan',2.92,3.08,0.22,0.38,0.10,0.112,inI);
+const di=addMesh('fan',new THREE.CylinderGeometry(0.05,0.05,0.144,20),V(3.0,0.30,0.028),0,inI); di.rotation.x=Math.PI/2;
+const fanI=I('Udsugningsventilator','Højt i væggen i den lave ende, over arbejdsbordet og diagonalt fra friskluftristen; med hygrostat, så den kun kører ved høj luftfugtighed');
+const fgI=I('Udvendig rist','Med insektnet og selvlukkende spjæld');
+box('fan',-0.056,-0.044,1.615,1.785,1.915,2.085,fgI,OUT.low);
+[1.65,1.70,1.75].forEach(y=>box('fan',-0.062,-0.056,y-0.006,y+0.006,1.925,2.075,fgI,OUT.low));
+box('fan',0.10,0.16,1.61,1.79,1.91,2.09,fanI);
+const hub=addMesh('fan',new THREE.CylinderGeometry(0.05,0.05,0.01,24),V(0.165,1.70,2.0),0,fanI,null,ventMat); hub.rotation.z=Math.PI/2;
+const fd=addMesh('fan',new THREE.CylinderGeometry(0.0625,0.0625,0.144,20),V(0.028,1.70,2.0),0,fanI); fd.rotation.z=Math.PI/2;
+
+// ---------- airflow arrows ----------
+const airMat=new THREE.MeshStandardMaterial({color:0x4aa3d8,emissive:0x1f6fa3,emissiveIntensity:0.35,transparent:true,opacity:0.85,roughness:0.5});
+function arrowPath(pts,info,exY){
+  for(let i=0;i<pts.length-1;i++){
+    const a=pts[i], b=pts[i+1], dir=new THREE.Vector3().subVectors(b,a).normalize();
+    const e=b.clone().addScaledVector(dir,-0.07);
+    const sh=addMesh('airflow',new THREE.CylinderGeometry(0.011,0.011,a.distanceTo(e),10),a.clone().add(e).multiplyScalar(0.5),0,info,null,airMat);
+    sh.quaternion.setFromUnitVectors(V(0,1,0),dir);
+    const c=addMesh('airflow',new THREE.ConeGeometry(0.03,0.07,14),b.clone().addScaledVector(dir,-0.035),0,info,null,airMat);
+    c.quaternion.setFromUnitVectors(V(0,1,0),dir);
+    [sh,c].forEach(m=>{ m.castShadow=false; m.userData.exY=exY; });
+  }
+}
+const roofAirI=I('Luft over isoleringen','Ind gennem ventilationsspalten i den lave ende, op gennem spærfaget og ud i den høje ende');
+for(let k=0;k<5;k++){
+  const zb=(ZC[k]+ZC[k+1])/2;
+  arrowPath([V(-0.275,yb(-0.275)-0.33,zb),V(-0.275,yb(-0.275)-0.05,zb),V(0.0,yb(0)+0.16,zb),V(SL,yb(SL)+0.16,zb),V(4.175,yb(4.175)-0.05,zb),V(4.175,yb(4.175)-0.33,zb)],roofAirI,1.55);
+}
+const roomAirI=I('Luftstrøm i skuret','Frisk luft ind lavt i bagvæggen ved den høje ende og ud gennem udsugningen højt over arbejdsbordet');
+arrowPath([V(3.0,0.30,-0.25),V(3.0,0.34,0.45),V(1.9,0.95,1.2),V(0.45,1.62,1.9),V(-0.20,1.70,2.0)],roomAirI,0);
+
+// ---------- door ----------
+const frI=I('Dørkarm','Sat på plastklodser og en fugtspærre');
+const lfI=I('Dørblad','Udadgående isoleret dør med glas, karm ca. 105 cm');
+box('door',DOOR[0]+0.01,DOOR[0]+0.055,0.03,1.995,SW-0.10,SW,frI,OUT.front);
+box('door',DOOR[1]-0.055,DOOR[1]-0.01,0.03,1.995,SW-0.10,SW,frI,OUT.front);
+box('door',DOOR[0]+0.01,DOOR[1]-0.01,1.95,1.995,SW-0.10,SW,frI,OUT.front);
+const lx0=DOOR[0]+0.057, lx1=DOOR[1]-0.057, lz0=SW-0.065, lz1=SW-0.015;
+box('door',lx0,lx1,0.035,1.05,lz0,lz1,lfI,OUT.front);
+box('door',lx0,lx1,1.80,1.948,lz0,lz1,lfI,OUT.front);
+box('door',lx0,lx0+0.10,1.05,1.80,lz0,lz1,lfI,OUT.front);
+box('door',lx1-0.10,lx1,1.05,1.80,lz0,lz1,lfI,OUT.front);
+box('door',lx0+0.10,lx1-0.10,1.05,1.80,SW-0.045,SW-0.035,I('Termorude','Valgfrit glas i den øverste halvdel'),OUT.front,glassMat);
+box('door',DOOR[0]+0.01,DOOR[1]-0.01,0,0.03,SW-0.12,SW+0.02,I('Bundstykke i aluminium','Suger ikke vand fra fliserne'),OUT.front,steelMat);
+box('door',lx1-0.14,lx1-0.11,1.0,1.03,SW-0.015,SW+0.03,I('Dørhåndtag',''),OUT.front,steelMat);
+
+// ---------- gutter, outlet and downpipe ----------
+const GX=-0.415, GY=yb(-0.30)+0.195, GR=0.065, GZ0=-0.25, GZ1=SW+0.25, DZ=0.15;
+const gutI=I('Tagrende, lav ende','Halvrund rende med svagt fald mod afløbet ved hjørnet');
+const gm=addMesh('gutter',new THREE.CylinderGeometry(GR,GR,GZ1-GZ0,28,1,true,-Math.PI/2,Math.PI),V(GX,GY,(GZ0+GZ1)/2),0,gutI,OUT.low);
+gm.rotation.x=Math.PI/2;
+[GZ0,GZ1].forEach(z=>{
+  const c=addMesh('gutter',new THREE.CylinderGeometry(GR,GR,0.004,28,1,false,-Math.PI/2,Math.PI),V(GX,GY,z),0,I('Endebund','Lukker renden i enden'),OUT.low);
+  c.rotation.x=Math.PI/2;
+});
+const bead=addMesh('gutter',new THREE.CylinderGeometry(0.006,0.006,GZ1-GZ0,10),V(GX-GR,GY,(GZ0+GZ1)/2),0,I('Rendens forkant','Oprullet kant, holdes af rendejernet'),OUT.low);
+bead.rotation.x=Math.PI/2;
+function pipe(layer,a,b,r,info,out){
+  const d=new THREE.Vector3().subVectors(b,a), len=d.length();
+  const m=addMesh(layer,new THREE.CylinderGeometry(r,r,len,20),a.clone().add(b).multiplyScalar(0.5),0,info,out);
+  m.quaternion.setFromUnitVectors(new THREE.Vector3(0,1,0),d.normalize()); return m;
+}
+function joint(layer,p,r,info,out){ return addMesh(layer,new THREE.SphereGeometry(r,20,12),p,0,info,out); }
+const PR=0.035, PX=-0.10;
+const p0=V(GX,GY-GR+0.01,DZ), p1=V(GX,1.90,DZ), p2=V(PX,1.90-(PX-GX),DZ), p3=V(PX,0.32,DZ), p4=V(PX-0.12,0.20,DZ);
+addMesh('gutter',new THREE.CylinderGeometry(0.045,0.04,0.05,20),V(GX,GY-GR-0.015,DZ),0,I('Afløbsstuds','Under renden ved hjørnet'),OUT.low);
+pipe('gutter',p0,p1,PR,I('Nedløbsrør','Lodret stykke fra afløbet ned under sternbrættet'),OUT.low);
+joint('gutter',p1,PR,I('Bøjning 45°','Første bøjning i svanehalsen'),OUT.low);
+pipe('gutter',p1,p2,PR,I('Svanehals','To bøjninger på 45° fører røret ind til væggen under udhænget'),OUT.low);
+joint('gutter',p2,PR,I('Bøjning 45°','Anden bøjning i svanehalsen'),OUT.low);
+pipe('gutter',p2,p3,PR,I('Nedløbsrør','Langs væggen, ca. 2 cm fra beklædningen, ned til regnvandstønden'),OUT.low);
+joint('gutter',p3,PR,I('Udløbsbøjning','Leder vandet ud i tønden eller væk fra væggen'),OUT.low);
+pipe('gutter',p3,p4,PR,I('Udløbsbøjning','Leder vandet ud i tønden eller væk fra væggen'),OUT.low);
+
+// ---------- gutter hangers and pipe clips ----------
+const hangI=I('Rendejern','Skrues på sternbrættet ca. hver 60 cm; afstand efter producentens anvisning');
+for(let z=-0.15;z<=SW+0.16;z+=0.60){
+  const sh=new THREE.Shape(); sh.absarc(0,0,GR+0.005,Math.PI,2*Math.PI,false); sh.absarc(0,0,GR+0.001,2*Math.PI,Math.PI,true);
+  addMesh('gutterhw',new THREE.ExtrudeGeometry(sh,{depth:0.025,bevelEnabled:false}),V(GX,GY,z-0.0125),0,hangI,OUT.low);
+  box('gutterhw',-0.354,-0.351,GY-0.005,GY+0.02,z-0.0125,z+0.0125,hangI,OUT.low);
+  box('gutterhw',GX-GR-0.010,GX-GR+0.004,GY-0.004,GY+0.008,z-0.0125,z+0.0125,hangI,OUT.low);
+}
+const clipI=I('Rørholder','Holder nedløbsrøret ca. 2 cm fra beklædningen');
+[1.2,0.6].forEach(y=>{
+  const t=addMesh('gutterhw',new THREE.TorusGeometry(PR+0.004,0.004,8,28),V(PX,y,DZ),0,clipI,OUT.low);
+  t.rotation.x=Math.PI/2;
+  box('gutterhw',PX+PR+0.004,-0.044,y-0.01,y+0.01,DZ-0.006,DZ+0.006,clipI,OUT.low);
+});
+
+// ---------- per-layer materials (for fading) and fly-in directions ----------
+const layerMats={}, cloneCache={};
+LAYERS.forEach(l=>layerMats[l.id]=[]);
+meshes.forEach(m=>{
+  const id=m.userData.layer, key=id+'|'+m.material.uuid;
+  let c=cloneCache[key];
+  if(!c){ c=m.material.clone(); cloneCache[key]=c; layerMats[id].push({mat:c,op:c.opacity,tr:c.transparent,em:c.emissive?c.emissive.clone():null,ei:c.emissiveIntensity||0}); }
+  m.material=c; m.userData.mat=c;
+  m.children.forEach(ch=>{ if(ch.isLineSegments){ const k2=id+'|edge'; let e=cloneCache[k2];
+    if(!e){ e=edgeMat.clone(); cloneCache[k2]=e; layerMats[id].push({mat:e,op:e.opacity,tr:true}); } ch.material=e; } });
+});
+groups.ground.children.forEach(c=>{ if(c.material) layerMats.ground.push({mat:c.material,op:c.material.opacity,tr:c.material.transparent}); });
+function setFade(id,f){
+  layerMats[id].forEach(o=>{ o.mat.opacity=o.op*f; const t=o.tr||f<0.999; if(o.mat.transparent!==t){ o.mat.transparent=t; o.mat.needsUpdate=true; } });
+}
+const layerDir={};
+(function(){
+  const cyc=[V(1,0.35,0),V(0,0.35,1),V(-1,0.35,0),V(0,0.35,-1),V(0,1,0),V(0.7,0.5,0.7),V(-0.7,0.5,0.7),V(-0.7,0.5,-0.7),V(0.7,0.5,-0.7)];
+  let ci=0;
+  LAYERS.forEach(l=>{
+    if(l.id==='ground'){ layerDir[l.id]=V(0,0,0); return; }
+    const ms=meshes.filter(m=>m.userData.layer===l.id), c=V(0,0,0), tmp=new THREE.Vector3();
+    ms.forEach(m=>{ m.geometry.computeBoundingBox(); m.geometry.boundingBox.getCenter(tmp); c.add(tmp.add(m.userData.base)); });
+    if(ms.length) c.divideScalar(ms.length);
+    const h=V(c.x-1.78,0,c.z-1.35);
+    const d=h.length()>0.6?h.normalize().add(V(0,0.35,0)):cyc[ci++%cyc.length].clone();
+    if(d.y<0.2) d.y=0.2;
+    layerDir[l.id]=d.normalize();
+  });
+})();
+
+// ---------- highlight / hover ----------
+const hlCache=new Map();
+function hlMat(m){
+  const base=m.userData.mat; let h=hlCache.get(base.uuid);
+  if(!h){ h=base.clone(); h.emissive=new THREE.Color(0x6d8f4f); h.emissiveIntensity=0.5; hlCache.set(base.uuid,h); }
+  return h;
+}
+const info=document.getElementById('info');
+let hover=null;
+function showInfo(i,cx,cy){
+  info.innerHTML=''; const b=document.createElement('b'); b.textContent=i.t; info.appendChild(b);
+  if(i.d){ const s=document.createElement('span'); s.textContent=i.d; info.appendChild(s); }
+  info.hidden=false;
+  const r=stage.getBoundingClientRect(); const w=info.offsetWidth, h=info.offsetHeight;
+  let x=cx-r.left+14, y=cy-r.top+14;
+  if(x+w>r.width-8) x=cx-r.left-w-14; if(y+h>r.height-8) y=cy-r.top-h-14;
+  info.style.left=Math.max(8,x)+'px'; info.style.top=Math.max(8,y)+'px';
+}
+function setHover(m,cx,cy){
+  if(hover&&hover!==m) hover.material=hover.userData.mat;
+  hover=m;
+  if(m){ m.material=hlMat(m); showInfo(m.userData.info,cx,cy); }
+  else info.hidden=true;
+}
+const ray=new THREE.Raycaster(), ptr=new THREE.Vector2();
+function pick(cx,cy){
+  const r=canvas.getBoundingClientRect();
+  ptr.x=((cx-r.left)/r.width)*2-1; ptr.y=-((cy-r.top)/r.height)*2+1;
+  ray.setFromCamera(ptr,camera);
+  const vis=meshes.filter(m=>m.parent.visible);
+  const hit=ray.intersectObjects(vis,false)[0];
+  return hit?hit.object:null;
+}
+let down=null;
+canvas.addEventListener('pointermove',e=>{
+  if(e.pointerType==='mouse'&&e.buttons===0) setHover(pick(e.clientX,e.clientY),e.clientX,e.clientY);
+});
+canvas.addEventListener('pointerleave',e=>{ if(e.pointerType==='mouse') setHover(null); });
+canvas.addEventListener('pointerdown',e=>{ down=[e.clientX,e.clientY]; });
+canvas.addEventListener('pointerup',e=>{
+  if(!down) return; const d=Math.hypot(e.clientX-down[0],e.clientY-down[1]); down=null;
+  if(d<6) setHover(pick(e.clientX,e.clientY),e.clientX,e.clientY);
+});
+
+// ---------- explode ----------
+const ex=document.getElementById('ex'), exv=document.getElementById('exv');
+function applyExplode(s){
+  meshes.forEach(m=>{
+    const L=LMAP[m.userData.layer]; if(!L) return;
+    const b=m.userData.base, o=m.userData.out;
+    const ey=(m.userData.exY!=null)?m.userData.exY:L.ex.y;
+    m.position.set(b.x+o.x*L.ex.out*s, b.y+ey*s, b.z+o.z*L.ex.out*s);
+  });
+}
+function setExplode(v){ ex.value=v; exv.textContent=v+' %'; applyExplode(v/100); }
+ex.addEventListener('input',()=>setExplode(+ex.value));
+
+// ---------- layer panel ----------
+const layersEl=document.getElementById('layers');
+const state={}; LAYERS.forEach(l=>state[l.id]=true);
+const boxes={}, groupBtns={};
+GROUPS.forEach(gn=>{
+  const sec=document.createElement('section'); sec.className='lgroup';
+  const head=document.createElement('div'); head.className='ghead';
+  const h=document.createElement('h2'); h.textContent=gn; head.appendChild(h);
+  const btn=document.createElement('button'); btn.type='button'; head.appendChild(btn); groupBtns[gn]=btn;
+  btn.addEventListener('click',()=>{
+    const ls=LAYERS.filter(l=>l.group===gn); const anyOn=ls.some(l=>state[l.id]);
+    let n=0; ls.forEach(l=>{ if(state[l.id]!==!anyOn) setVis(l.id,!anyOn,true,(n++)*30); });
+  });
+  sec.appendChild(head);
+  const ul=document.createElement('ul');
+  LAYERS.filter(l=>l.group===gn).forEach(l=>{
+    const li=document.createElement('li'); const lab=document.createElement('label');
+    const cb=document.createElement('input'); cb.type='checkbox'; cb.checked=true;
+    const sw=document.createElement('span'); sw.className='sw'; sw.style.background=l.color;
+    const nm=document.createElement('span'); nm.className='nm'; nm.textContent=l.name;
+    lab.append(cb,sw,nm); li.appendChild(lab); ul.appendChild(li);
+    cb.addEventListener('change',()=>setVis(l.id,cb.checked));
+    boxes[l.id]={cb,lab};
+  });
+  sec.appendChild(ul); layersEl.appendChild(sec);
+});
+function refreshGroupBtns(){
+  GROUPS.forEach(gn=>{ const anyOn=LAYERS.filter(l=>l.group===gn).some(l=>state[l.id]);
+    groupBtns[gn].textContent=anyOn?'Skjul alle':'Vis alle'; });
+}
+const layerAnims={}, curF={}, DIST=5;
+LAYERS.forEach(l=>curF[l.id]=1);
+function setVis(id,on,animate=true,delay=0){
+  const g=groups[id];
+  boxes[id].cb.checked=on; boxes[id].lab.classList.toggle('off',!on);
+  if(state[id]===on&&(!on||g.visible)&&!layerAnims[id]) return;
+  state[id]=on;
+  if(!on&&hover&&hover.parent===g) setHover(null);
+  if(!animate||window.matchMedia('(prefers-reduced-motion: reduce)').matches){
+    g.visible=on; g.position.set(0,0,0); setFade(id,1); curF[id]=1; delete layerAnims[id]; refreshGroupBtns(); return;
+  }
+  if(on&&!g.visible){ g.visible=true; g.position.copy(layerDir[id]).multiplyScalar(DIST); setFade(id,0); curF[id]=0; }
+  layerAnims[id]={from:g.position.clone(),to:on?V(0,0,0):layerDir[id].clone().multiplyScalar(DIST),f0:curF[id],f1:on?1:0,start:performance.now()+delay,dur:380,on};
+  refreshGroupBtns();
+}
+LAYERS.forEach(l=>{ if(DEFAULT_OFF.includes(l.id)) setVis(l.id,false,false); });
+refreshGroupBtns();
+
+const PRESETS={
+  std:{on:LAYERS.map(l=>l.id).filter(id=>!DEFAULT_OFF.includes(id)),ex:0},
+  all:{on:LAYERS.map(l=>l.id),ex:0},
+  vent:{on:['ground','frame','beams','joists','ladder','insul','soffit','roofvent','fan','airflow'],ex:0},
+  structure:{on:['ground','frame','beams','infill','joists','ladder','beslag'],ex:0},
+  roof:{on:['ground','frame','beams','infill','joists','ladder','beslag','ceiling','insul','deck','drip','verge','hightrim','felt1','bead','roofvent'],ex:55},
+  walls:{on:['ground','frame','clad','screen','beams','infill','joists','ladder','beslag','deck','drip','verge','hightrim','felt1','bead','fbk','frieze','fascia','soffit','roofvent','fan','door','gutter','gutterhw'],ex:0},
+};
+document.querySelectorAll('[data-preset]').forEach(b=>b.addEventListener('click',()=>{
+  const p=PRESETS[b.dataset.preset];
+  let n=0;
+  LAYERS.forEach(l=>{ const on=p.on.includes(l.id); if(state[l.id]!==on) setVis(l.id,on,true,(n++)*30); });
+  setExplode(p.ex);
+}));
+
+// ---------- camera views ----------
+const VIEWS={
+  iso:[V(7.4,4.2,7.2),CENTER.clone()],
+  door:[V(1.9,1.9,8.4),CENTER.clone()],
+  back:[V(1.9,1.9,-5.8),CENTER.clone()],
+  low:[V(-5.8,2.0,1.35),CENTER.clone()],
+  high:[V(9.4,2.2,1.35),CENTER.clone()],
+  top:[V(1.9,9.6,1.40),V(1.9,1.2,1.35)],
+};
+const reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+let anim=null;
+function flyTo(p,t){
+  if(reduce){ camera.position.copy(p); controls.target.copy(t); return; }
+  anim={p0:camera.position.clone(),t0:controls.target.clone(),p1:p.clone(),t1:t.clone(),start:performance.now(),dur:650};
+}
+document.querySelectorAll('[data-view]').forEach(b=>b.addEventListener('click',()=>{ const v=VIEWS[b.dataset.view]; flyTo(v[0],v[1]); }));
+
+// ---------- build guide ----------
+const ROOF=['deck','drip','verge','hightrim','felt1','bead'];
+const STEPS=[
+ {t:'Forbered og ryd',add:['ground','frame','clad','screen'],cam:'iso',
+  x:'Fjern det gamle tag: plastpladerne, de opklodsede spær, klodserne og de forlængede remme med bladsamlinger. Tjek stolper og gammel rem for råd og løse samlinger, især i hjørnet ved døren. Skær et bånd på 20–30 cm af den indvendige OSB øverst, så du kan komme til remmen og stolpetoppene.',
+  p:[],w:['Koben','Dyksav eller rundsav','Vaterpas','Stige'],
+  n:'Mål dine 4x4 og remmens højde, inden du bestiller. Højderne i modellen regner med 10 cm.'},
+ {t:'Nye remme og overligger',add:['beams'],cam:'iso',
+  x:'Lav ende: én ny 4x4 oven på den gamle rem. Høj ende: to 4x4, hvor kun den øverste forlænges 20 cm ud til hver side. Affas oversiden i taghældningen (≈1,7°), så spærene ligger plant. Skær den gamle rem over døren ud mellem stolperne, og læg den nye overligger helt ud til hjørnet, så den hviler på stumperne over stolperne i begge ender. Den nederste rem i den høje ende støder op mod overliggeren.',
+  p:['2 × 4x4, ca. 310 cm','1 × 4x4, ca. 260 cm','1 × 4x4, ca. 130 cm','Konstruktionsskruer'],w:['Elhøvl','Skruemaskine','Vaterpas'],
+  n:'Skru de stablede 4x4 sammen hver 30–40 cm, så de virker som én bjælke.'},
+ {t:'Læg spærene',add:['joists'],cam:'iso',
+  x:'Afkort seks spær fra 480 til 450 cm. Læg dem med 53,1 cm c/c, de yderste i flugt med de lange vægge, så de rager 30 cm ud i den lave ende og 64 cm i den høje.',
+  p:['6 × spær 45×195 C24, 480 cm'],w:['Rundsav','Målebånd','Vinkel'],
+  n:'Få dimensionen bekræftet af trælasten eller en statiker, inden du bestiller.'},
+ {t:'Kantspær og klodser',add:['ladder'],cam:'iso',
+  x:'Sæt et kantspær 20 cm uden for hver lang væg, båret af de forlængede remme. Forbind det med det yderste spær med klodser hver 57,6 cm og én over hver væglinje.',
+  p:['2 × 45×195, 480 cm','14 × klodser 45×195, 15,5 cm'],w:['Rundsav','Skruemaskine'],
+  n:'Afskæringerne fra spærene giver to klodser hver.'},
+ {t:'Beslag og hulbånd',add:['beslag'],cam:'high',
+  x:'Fastgør hvert spær og kantspær til remmene med vinkelbeslag. Sæt hulbånd fra de nye remme ned over den gamle rem og ind i stolperne i begge ender, så vindsuget føres ned i væggen.',
+  p:['28 × vinkelbeslag','Hulbånd, ca. 3 m','Kamsøm'],w:['Hammer','Skruemaskine'],
+  n:'Brug det antal kamsøm, beslagproducenten angiver.'},
+ {t:'OSB-underlag',add:['deck'],cam:'iso',
+  x:'Læg 18 mm OSB/3 med not og fer på spær og kantspær med forskudte samlinger, og skru i hvert spær.',
+  p:['OSB/3 18 mm, not og fer, ca. 15 m²','Skruer'],w:['Rundsav','Skruemaskine','Retskede'],
+  n:'Højst ±3 mm afvigelse på en 1 m retskede, og ingen spring over 3 mm mellem pladerne.'},
+ {t:'Sternbrædder og vindskeder',add:['fascia'],cam:'iso',
+  x:'Montér de dobbelte brædder på 25 mm. Det nederste skjuler remmenes ender, og det øverste flugter med oversiden af OSB’en. I hjørnerne stødes lagene, så hvert lag mødes i flugt.',
+  p:['Brædder 25 mm, ca. 31 m i alt','Rustfri skruer'],w:['Rundsav','Skruemaskine'],
+  n:'Grundmal alle sider og endetræ inden montering.'},
+ {t:'Rendejern og rørholdere',add:['gutterhw'],cam:'low',
+  x:'Skru rendejernene på sternbrættet i den lave ende ca. hver 60 cm, med fald mod afløbet ved hjørnet. Sæt rørholderne på væggen til nedløbsrøret.',
+  p:['6 × rendejern','2 × rørholdere'],w:['Snor eller laser','Skruemaskine'],
+  n:'Afstand og fald efter tagrendeproducentens anvisning.'},
+ {t:'Fodblik og kantprofiler',add:['drip','verge','hightrim'],cam:'iso',
+  x:'Skru fodblikket i den lave ende og 45°-kantprofilerne langs siderne og den høje ende direkte på OSB’en. Profilerne går 5–6 cm ned over vindskeder og sternbræt, op over kanten og 45° ned på taget. Stykkerne overlapper ca. 5 cm, og hjørnerne lukkes.',
+  p:['Fodblik, ca. 3,2 m','45°-kantprofil, ca. 12,5 m','Hjørnestykker'],w:['Pladesaks','Skruemaskine']},
+ {t:'Tagpap, 1 lag',add:['felt1'],cam:'iso',
+  x:'Rul den selvklæbende ét-lags tagpap ud i baner med 10 cm overlæg, ind over flangerne på fodblik og kantprofiler. Rul samlingerne grundigt efter.',
+  p:['Selvklæbende ét-lags tagpap, ca. 16 m²'],w:['Tagrulle','Hobbykniv'],
+  n:'Tjek at produktet er godkendt som ét-lags system ved en hældning på ca. 3 %, og hvilken minimumstemperatur klæbningen kræver.'},
+ {t:'Tætningsfuge',add:['bead'],cam:'iso',
+  x:'Luk overgangen mellem tagpappens kant og profilerne med en fuge af tagpapklæber eller bitumenfuge langs siderne, den høje ende og på fodblikket.',
+  p:['Tagpapklæber eller bitumenfuge'],w:['Fugepistol']},
+ {t:'Tagrende og nedløb',add:['gutter'],cam:'low',
+  x:'Klik tagrenden i rendejernene, sæt endebunde og afløb på, og før nedløbsrøret i en svanehals ind til væggen og ned til regnvandstønden.',
+  p:['Tagrende, ca. 3,2 m','2 × endebund','Afløbsstuds','2 × bøjning 45°','Nedløbsrør, ca. 2 m','Udløbsbøjning'],w:['Nedstryger eller fin sav']},
+ {t:'Udfyldning og frise',add:['infill','fbk','frieze'],cam:'door',
+  x:'Sæt udfyldningsstolper mellem remmen og det yderste spær, og luk trekanten med 12 mm OSB. Forsegl endetræet på de gamle brædder, og montér lægter og frisebrædder, der går 2,5 cm ned over den gamle beklædning med drypnæse.',
+  p:['45×95 til stolper','OSB/3 12 mm','Lægter ca. 38 mm','Frisebrædder','Insektnet'],w:['Rundsav','Skruemaskine','Hæftepistol']},
+ {t:'Underbeklædning og ventilation',add:['soffit','roofvent'],cam:'under',
+  x:'Sæt opklodsning under spær og klodser, og beklæd udhænget i flugt under remmenes ender. Lad en ventilationsspalte med insektnet stå åben i hver ende, i alle spærfag.',
+  p:['Underbeklædningsbrædder','Lister til opklodsning','Ventilationsspalte med insektnet'],w:['Rundsav','Skruemaskine'],
+  n:'Mal brædderne på alle sider, inden de monteres.'},
+ {t:'Isolering og loft',add:['insul','ceiling'],hide:ROOF,cam:'top',
+  x:'Indefra: sæt vindplader ved begge væglinjer, og læg 100 mm isolering mellem spærene, eller op til ca. 145 mm, hvis skuret skal have varme. Hold mindst 45 mm luft over isoleringen, og beklæd loftet under spærene.',
+  p:['Isoleringsbatts 100 mm, ca. 9 m²','Loftbrædder eller plader','Lister til at holde isoleringen nede'],w:['Isoleringskniv','Skruemaskine'],
+  n:'Taget er skjult i dette trin, så du kan se ind.'},
+ {t:'Ny dør',add:['door'],cam:'door',
+  x:'Sæt den nye dør med karm i den forhøjede åbning. Karmen skrues i stolperne og overliggeren og står på plastklodser og en fugtspærre over fliserne. Afslut med fugemasse under bundstykket og en vandnæse over døren.',
+  p:['Udadgående yderdør, karm ca. 105 cm','Plastklodser','Fugtspærre','Fugemasse'],w:['Vaterpas','Skruemaskine','Fugepistol']},
+ {t:'Aktiv ventilation',add:['fan','airflow'],hide:['clad','screen'],cam:'iso',
+  x:'Sæt friskluftristen lavt i bagvæggen ved den høje ende og udsugningen højt i væggen over arbejdsbordet. Ventilatoren skal have hygrostat og tilsluttes af en elinstallatør.',
+  p:['Udsugningsventilator med hygrostat','Friskluftrist med insektnet','2 × vægrør'],w:['Hulsav','Skruemaskine'],
+  n:'Beklædningen er skjult i dette trin, så du kan se luftens vej.'},
+ {t:'Færdig',add:[],hide:['airflow'],cam:'iso',
+  x:'Taget er færdigt. Tjek kantprofiler, fuger, tagrende og ventilation efter den første kraftige regn, og efterse maling på endetræ og samlinger.',
+  p:[],w:[]},
+];
+VIEWS.under=[V(-3.0,0.7,4.6),V(0.3,2.0,1.35)];
+const guide=document.getElementById('guide'), gProg=document.getElementById('gProg');
+let gi=-1, saved=null;
+STEPS.forEach((st,i)=>{ const b=document.createElement('button'); b.type='button'; b.setAttribute('aria-label','Trin '+(i+1)+': '+st.t); b.addEventListener('click',()=>{ gi=i; renderStep(); }); gProg.appendChild(b); });
+function setStepHL(ids){
+  LAYERS.forEach(l=>{ const on=ids.includes(l.id);
+    layerMats[l.id].forEach(o=>{ if(!o.em) return;
+      if(on){ o.mat.emissive.set(0x7fa35a); o.mat.emissiveIntensity=0.32; } else { o.mat.emissive.copy(o.em); o.mat.emissiveIntensity=o.ei; } }); });
+}
+function chips(title,arr){
+  if(!arr.length) return '';
+  const esc=t=>t.replace(/&/g,'&amp;').replace(/</g,'&lt;');
+  return '<div class="g-h">'+title+'</div><div class="chips">'+arr.map(a=>'<span class="chip">'+esc(a)+'</span>').join('')+'</div>';
+}
+function renderStep(){
+  const st=STEPS[gi], vis=new Set();
+  for(let j=0;j<=gi;j++) STEPS[j].add.forEach(id=>vis.add(id));
+  (st.hide||[]).forEach(id=>vis.delete(id));
+  let n=0; LAYERS.forEach(l=>{ const on=vis.has(l.id); if(state[l.id]!==on) setVis(l.id,on,true,(n++)*30); });
+  setStepHL(st.add);
+  const v=VIEWS[st.cam]; if(v) flyTo(v[0],v[1]);
+  document.getElementById('gNum').textContent=gi+1;
+  document.getElementById('gOf').textContent='Trin '+(gi+1)+' af '+STEPS.length;
+  document.getElementById('gTitle').textContent=st.t;
+  document.getElementById('gText').textContent=st.x;
+  document.getElementById('gParts').innerHTML=chips('Du skal bruge',st.p)+chips('Værktøj',st.w);
+  const note=document.getElementById('gNote'); note.textContent=st.n||''; note.hidden=!st.n;
+  [...gProg.children].forEach((b,i)=>{ b.className=i<gi?'done':(i===gi?'cur':''); });
+  document.getElementById('gPrev').disabled=gi===0;
+  document.getElementById('gNext').textContent=gi===STEPS.length-1?'Afslut':'Næste';
+}
+function startGuide(){
+  saved={vis:Object.assign({},state),ex:+ex.value};
+  setExplode(0); gi=0; guide.hidden=false; document.body.classList.add('guiding');
+  if(window.matchMedia('(max-width:760px)').matches&&!panel.classList.contains('collapsed')) pt.click();
+  renderStep(); document.getElementById('gNext').focus();
+}
+function endGuide(){
+  guide.hidden=true; document.body.classList.remove('guiding'); setStepHL([]);
+  let n=0; LAYERS.forEach(l=>{ if(state[l.id]!==saved.vis[l.id]) setVis(l.id,saved.vis[l.id],true,(n++)*30); });
+  setExplode(saved.ex); gi=-1; const v=VIEWS.iso; flyTo(v[0],v[1]);
+}
+document.getElementById('guideBtn').addEventListener('click',startGuide);
+document.getElementById('qstart').addEventListener('click',startGuide);
+
+// ---------- indkøbsliste ----------
+(function(){
+  const U='https://www.10-4.dk/varer/byggematerialer/';
+  const L=[
+    {cat:'Konstruktion',items:[
+      {n:'Spærtræ C24 høvlet 45×195, 480 cm',q:9,u:'stk',p:216,url:U+'trae/spaertrae/45x195mm-hovlet-spaertrae',note:'6 bjælker, 2 vindskedespær, 1 til mellemstykker. 45 kr/m.'},
+      {n:'Stolpe 100×100 dansk gran C18, 360 cm',q:2,u:'stk',p:158.40,url:U+'trae/stolper/100x100x3600mm-stolper-c18-9142877',note:'Remme 310 cm ved lav og høj ende. Ubehandlet, så synlige ender skal males.'},
+      {n:'Stolpe 100×100 dansk gran C18, 420 cm',q:1,u:'stk',p:184.80,url:U+'trae/stolper/100x100x4200mm-dansk-gran-c18-9142878',note:'Nederste rem 260 cm + dørhammer 130 cm.'},
+      {n:'NPI OSB/3 TG2 18 mm, fer og not, 122×244',q:6,u:'plade',p:360,url:U+'byggeplader/osb-plader/npi-osb-3-gulv-tag-tg2-1879404',note:'Tagdæk ca. 14 m² plus spild.'},
+      {n:'NPI OSB/3 S/E 11 mm, 122×244',q:5,u:'plade',p:169,url:U+'byggeplader/osb-plader/NPI-OSB-3-byggeplade-S-E-1935711',note:'4 til loft, 1 til trekanterne. Modellen siger 12 mm; 11 mm var det nærmeste, jeg fandt.'}
+    ]},
+    {cat:'Isolering',items:[
+      {n:'Rockwool Flexibatts 37, 95 mm, 4,47 m²/pk',q:3,u:'pk',p:241,url:U+'isolering/rockwool-isolering/flexibatts/rockwool-flexibatts-37-1939636',note:'Ingen 100 mm fundet. Batts er 570 mm brede, fagene 486 mm, så de skal skæres.'},
+      {n:'Vindstop ved skunk',q:10,u:'stk',p:null,note:'Ikke prissat.'}
+    ]},
+    {cat:'Tag',items:[
+      {n:'Isola Selvbygger tagpap, 1×7 m',q:3,u:'rl',p:759,url:U+'tag/tagpap/isola-tagpap-selvbygger-sort-1279579',note:'Se advarslen om hældning nedenfor.'},
+      {n:'Icopal sternkapsel 5A 65 mm m/skrå kant, 1 m',q:13,u:'stk',p:42,url:U+'aluprofiler/alukapsel-og-sternkapsel/icopal-sternkapsel-5a-65mm-8577165',note:'Sider og høj ende, ca. 12,1 m. Tjek at profilen passer til detaljen.'},
+      {n:'Icopal tagfod 12, 1 m',q:4,u:'stk',p:29,url:U+'aluprofiler/tagfod/icopal-tagfod-12-4025326',note:'Lav ende, ca. 3,1 m.'},
+      {n:'Bitumen-fugemasse',q:2,u:'patron',p:null,note:'Ikke prissat.'}
+    ]},
+    {cat:'Kanter og udhæng',items:[
+      {n:'Stern- og vindskedebrædder 25 mm, dobbelt',q:31,u:'lbm',p:null,note:'Ikke prissat. Ca. 15,2 m omkreds × 2 lag.'},
+      {n:'Underbeklædning til udhæng, malet hvid',q:5,u:'m²',p:null,note:'Ikke prissat.'},
+      {n:'Frise: lister ca. 38 mm + insektnet',q:11,u:'lbm',p:null,note:'Ikke prissat.'},
+      {n:'Ventilationsriste med insektnet',q:10,u:'stk',p:null,note:'Ikke prissat. Hvert fag i begge ender.'}
+    ]},
+    {cat:'Tagrende',items:[
+      {n:'Plastmo tagrende nr. 10',q:1,u:'stk',p:237,url:U+'tag/tagrender/plastmo-tagrende-3mtr-8621179-20190515_085821',note:'237 kr er prisen for 3 m. Du skal bruge over 3,1 m, så vælg en længere længde.'},
+      {n:'Rendejern, endebunde, afløb, nedløb og svanehals',q:1,u:'sæt',p:null,note:'Ikke prissat. 10-4 har en tagrendeberegner.'}
+    ]},
+    {cat:'Beslag og skruer',items:[
+      {n:'Hulbånd, vinkelbeslag, konstruktionsskruer, søm',q:1,u:'sæt',p:null,note:'Ikke prissat.'}
+    ]},
+    {cat:'Dør og el',items:[
+      {n:'Isoleret udadgående yderdør, karm ca. 105–106 cm',q:1,u:'stk',p:null,url:U+'dore/udhusdore',note:'Ikke prissat. Se udvalget af udhusdøre.'},
+      {n:'Ventilator m. hygrostat, spots IP44 m. sensor',q:1,u:'sæt',p:null,note:'Ikke prissat. Kræver elinstallatør.'}
+    ]},
+    {cat:'Levering',items:[
+      {n:'Fragt, emner op til 7 m',q:1,u:'',p:1075,note:'Sats vist på en produktside hos 10-4. Butikkerne ligger i Jylland, så regn med levering. Tjek i kurven.'}
+    ]}
+  ];
+  const fmt=v=>v.toLocaleString('da-DK',{minimumFractionDigits:0,maximumFractionDigits:2})+' kr.';
+  let tot=0,missing=0,h='';
+  L.forEach(c=>{
+    h+='<h3 class="s-cat">'+c.cat+'</h3><table class="s-tbl"><thead><tr><th>Vare</th><th class="n">Antal</th><th class="n">Stykpris</th><th class="n">I alt</th></tr></thead><tbody>';
+    c.items.forEach(i=>{
+      const name=i.url?'<a href="'+i.url+'" target="_blank" rel="noopener">'+i.n+'</a>':i.n;
+      let sp,st;
+      if(i.p==null){missing++;sp='<span class="s-na">–</span>';st='<span class="s-na">ikke prissat</span>';}
+      else{const s=i.p*i.q;tot+=s;sp=fmt(i.p);st=fmt(s);}
+      h+='<tr><td>'+name+(i.note?'<small>'+i.note+'</small>':'')+'</td><td class="n">'+i.q+(i.u?' '+i.u:'')+'</td><td class="n">'+sp+'</td><td class="n">'+st+'</td></tr>';
+    });
+    h+='</tbody></table>';
+  });
+  h+='<div class="s-tot"><span>Prissatte varer i alt</span><span>'+fmt(Math.round(tot))+'</span></div>';
+  h+='<p class="s-warn"><b>'+missing+' poster er ikke prissat</b>, så den samlede pris bliver højere.</p>';
+  h+='<p class="s-warn"><b>Hældning:</b> 10-4 angiver, at Isola Selvbygger kan bruges ned til 3°. Taget her har ca. 1,7°. Afklar det med Isola eller 10-4, før du køber pappet. Ellers skal der et andet system til, fx 2-lag.</p>';
+  h+='<ul class="s-notes"><li>18 mm OSB med fer og not koster 274,95 kr. hos Bauhaus mod 360 kr. hos 10-4.</li><li>10-4 giver mængderabat på flere varer, fx 7 % fra 20 OSB-plader.</li><li>Priserne ændrer sig. Tjek dem på siden, før du bestiller.</li></ul>';
+  document.getElementById('shopBody').innerHTML=h;
+  const dlg=document.getElementById('shop');
+  document.getElementById('shopBtn').addEventListener('click',()=>{ if(typeof dlg.showModal==='function') dlg.showModal(); else dlg.setAttribute('open',''); });
+  document.getElementById('shopClose').addEventListener('click',()=>dlg.close?dlg.close():dlg.removeAttribute('open'));
+  dlg.addEventListener('click',e=>{ if(e.target===dlg) dlg.close(); });
+})();
+document.getElementById('gClose').addEventListener('click',endGuide);
+document.getElementById('gPrev').addEventListener('click',()=>{ if(gi>0){ gi--; renderStep(); } });
+document.getElementById('gNext').addEventListener('click',()=>{ if(gi<STEPS.length-1){ gi++; renderStep(); } else endGuide(); });
+document.addEventListener('keydown',e=>{
+  if(gi<0) return;
+  if(e.key==='ArrowRight'){ document.getElementById('gNext').click(); }
+  else if(e.key==='ArrowLeft'){ document.getElementById('gPrev').click(); }
+  else if(e.key==='Escape'){ endGuide(); }
+});
+
+// ---------- panel toggle (mobile) ----------
+const panel=document.getElementById('panel'), pt=document.getElementById('ptoggle');
+pt.addEventListener('click',()=>{
+  const collapsed=panel.classList.toggle('collapsed');
+  document.getElementById('app').classList.toggle('pc',collapsed);
+  pt.setAttribute('aria-expanded',String(!collapsed));
+  const lbl=collapsed?'Vis lag':'Skjul lag';
+  pt.setAttribute('aria-label',lbl); pt.title=lbl;
+});
+
+// ---------- theme-aware ground ----------
+function syncGround(){
+  const c=getComputedStyle(document.documentElement).getPropertyValue('--ground').trim()||'#C6CAC0';
+  mats.groundPlane.color.set(c);
+}
+syncGround();
+const mq=window.matchMedia('(prefers-color-scheme: dark)');
+if(mq.addEventListener) mq.addEventListener('change',syncGround);
+new MutationObserver(syncGround).observe(document.documentElement,{attributes:true,attributeFilter:['data-theme']});
+
+// ---------- resize + loop ----------
+function resize(){
+  const w=stage.clientWidth, h=stage.clientHeight; if(!w||!h) return;
+  renderer.setSize(w,h,false); camera.aspect=w/h; camera.updateProjectionMatrix();
+}
+new ResizeObserver(resize).observe(stage); resize();
+const ease=t=>t<0.5?2*t*t:1-Math.pow(-2*t+2,2)/2;
+function loop(now){
+  for(const id in layerAnims){
+    const a=layerAnims[id]; let k=(now-a.start)/a.dur; if(k<0) continue; k=Math.min(1,k);
+    const e=a.on?1-Math.pow(1-k,3):k*k;
+    groups[id].position.lerpVectors(a.from,a.to,e);
+    const f=a.f0+(a.f1-a.f0)*Math.min(1,k*1.4); setFade(id,f); curF[id]=f;
+    if(k>=1){
+      if(!a.on){ groups[id].visible=false; groups[id].position.set(0,0,0); }
+      setFade(id,1); curF[id]=1; delete layerAnims[id];
+    }
+  }
+  if(anim){
+    const k=Math.min(1,(now-anim.start)/anim.dur), e=ease(k);
+    camera.position.lerpVectors(anim.p0,anim.p1,e); controls.target.lerpVectors(anim.t0,anim.t1,e);
+    if(k>=1) anim=null;
+  }
+  controls.update(); renderer.render(scene,camera); requestAnimationFrame(loop);
+}
+requestAnimationFrame(loop);
+})();
+</script>
+</body>
+</html>
